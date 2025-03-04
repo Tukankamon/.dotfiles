@@ -198,6 +198,7 @@
     
 
     #look for wryan kitty theme or Base2Tone
+    #test
     extraConfig = ''  
     font_family FiraCode Nerd Font Mono
 
