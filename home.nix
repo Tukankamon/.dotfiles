@@ -208,7 +208,7 @@
     url_color #0087bd
     url_style curly
   
-    background_opacity 0.9
+    background_opacity 0.8
     background_blur 1
 
     color0       #00384d
