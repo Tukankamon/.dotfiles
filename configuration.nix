@@ -172,11 +172,11 @@
   base0C = "86b3b3";
   base0D = "868cb3";
   base0E = "b386b2";
-  base0F = "b39f9f";*/
+  base0F = "b39f9f";
 
 
 
- };
+ };*/
 
  nixpkgs.config.allowUnfree = true;
  nix.settings.experimental-features = ["nix-command" "flakes"];
