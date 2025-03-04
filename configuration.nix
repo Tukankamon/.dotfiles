@@ -155,16 +155,9 @@
   system.stateVersion = "24.11"; # Did you read the comment?
  
 
- stylix.enable = true;
- stylix.autoEnable = true;
 
- #stylix.targets.nvim.enable = true;
- #stylix.targest.nixvim.enable = false;     to disable specific targets
-
- #stylix.image = "home/aved/Desktop/astronaut.jpg"; 
-
- stylix.base16Scheme = {
-  base00 = "000000";    #485867
+ /*stylix.base16Scheme = {
+  base00 = "1f262d";  #terminal bg (defualt is #485867)
   base01 = "5A6D7A";
   base02 = "6D828E";
   base03 = "8299A1";
@@ -179,13 +172,11 @@
   base0C = "86b3b3";
   base0D = "868cb3";
   base0E = "b386b2";
-  base0F = "b39f9f";
+  base0F = "b39f9f";*/
 
 
 
  };
- #stylix.cursor.package = pkgs.bibata-cursors;
- #stylix.cursor.name = "Bibata-Modern-Ice";
 
  nixpkgs.config.allowUnfree = true;
  nix.settings.experimental-features = ["nix-command" "flakes"];

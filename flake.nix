@@ -6,7 +6,6 @@
     home-manager.url = "github:nix-community/home-manager/master";	#release-24.11
     home-manager.inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
 
-    stylix.url = "github:danth/stylix";
     
   };
 
@@ -22,7 +21,7 @@
       nixos = lib.nixosSystem {
         inherit system;
         #specialArgs = { inherit system; };
-    	modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix ];
+    	modules = [ ./configuration.nix ];
       };
     };
     

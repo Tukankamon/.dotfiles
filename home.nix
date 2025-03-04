@@ -215,7 +215,6 @@
   
   
   
-  
   /*wayland.windowManager.hyprland = {
   	enable = false; 	#Enables hyprland 
   	
