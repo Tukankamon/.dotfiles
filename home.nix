@@ -96,12 +96,13 @@
   
   
   programs.fastfetch = {		#Looks hella ugly now, gotta fix that
-    enable = false;   #using stylix now	
+    enable = true;   #using stylix now	
     settings = {
       schema = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
         source = "";	#default size
-        #color = {"1" = "red";};  #(turns the light blue to red)
+        #color = {"1" = "38;2;198;148;255";};  #(turns the dark blue to purpleish)
+        color = {"2" = "38;2;198;148;255";};  #(turns the light blue to purpleish)
         padding = {
           top = 2;
           right = 6;
@@ -125,43 +126,43 @@
       {
         type = "os";
         key = "";		#Uses "" but it doesnt seem to work
-        keyColor = "38;2;185;95;137";	#33 is kinda orange
+        keyColor = "38;2;198;148;255";	#33 is kinda orange
       }
       {
         type = "kernel";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "packages";
         format = "{} (Nix)";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "shell";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "terminal";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "wm";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "uptime";
         key = "";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       {
         type = "custom";
         key = "Made ya look";
-        keyColor = "38;2;185;95;137";
+        keyColor = "38;2;198;148;255";
       }
       "break"
       {
@@ -203,17 +204,49 @@
     hide_window_decorations titlebar-only
 
     foreground #f8f8f2
-    background #000000
+    background #1f262d
     url_color #0087bd
     url_style curly
   
     background_opacity 0.9
     background_blur 1
+
+    color0       #00384d
+    color8       #517f8d
+    #: black
+
+    color1       #c43061
+    color9       #ff5a67
+    #: red
+
+    color2       #7fc06e
+    color10      #9cf087
+    #: green
+
+    color3       #f08e48
+    color11      #ffcc1b
+    #: yellow
+
+    color4       #1c8db2
+    color12      #7eb2dd
+    #: blue
+
+    color5       #c694ff
+    color13      #fb94ff
+    #: magenta
+
+    color6       #00cccc
+    color14      #00ffff
+    #: cyan
+
+    color7       #77929e
+    color15      #b7cff9
+    #: white
     '';
     
   };
   
-  
+
   
   /*wayland.windowManager.hyprland = {
   	enable = false; 	#Enables hyprland 
@@ -226,7 +259,7 @@
   	  "plugins:borders-plus-plus" = {
   	    add_borders = 1;	#0-9
   	    
-  	    "col.border_1" = "rgb(ffffff)";	#Up to 9 borders
+  	    "col.border_1"   rgb(ffffff)";	#Up to 9 borders
   	    "col.border_2" = "rgb(2222ff)";
   	    
   	    border_size_1 = 10;
