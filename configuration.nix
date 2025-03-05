@@ -129,6 +129,8 @@
    gnomeExtensions.blur-my-shell
    vscodium		#Vscodium
    brave
+   ventoy-full
+   asciiquarium-transparent
   #  wget
   ];
   # Some programs need SUID wrappers, can be configured further or are

@@ -82,6 +82,10 @@
   
   programs.fish = {
     enable = true;
+
+    fish_greeting = "";
+
+    shellInit =  "clear \n fastfetch";
     };
   
    programs.git = {
@@ -200,8 +204,6 @@
     #look for wryan kitty theme or Base2Tone
     extraConfig = ''  
     font_family FiraCode Nerd Font Mono
-
-    hide_window_decorations titlebar-only
 
     foreground #f8f8f2
     background #1f262d
