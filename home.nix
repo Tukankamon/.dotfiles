@@ -4,7 +4,8 @@
 
   imports = [ 
     ./konfig/kitty.nix 
-    ./konfig/fastfetch.nix 
+    ./konfig/fastfetch.nix
+    ./konfig/gnome.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -102,58 +103,6 @@
        init.defaultBranch = "main";
      #safe.directory = "/etc/nixos";
    };
-  };
-
-  
-  /*wayland.windowManager.hyprland = {
-  	enable = false; 	#Enables hyprland 
-  	
-  	plugins = [
-  	  inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-  	  ];
-  	
-  	settings = {
-  	  "plugins:borders-plus-plus" = {
-  	    add_borders = 1;	#0-9
-  	    
-  	    "col.border_1"   rgb(ffffff)";	#Up to 9 borders
-  	    "col.border_2" = "rgb(2222ff)";
-  	    
-  	    border_size_1 = 10;
-  	    border_size_2 = -1;		#-1 = default
-  	    
-  	    natural_rounding = "yes";
-  	};
-  };
-  };*/
-  	
-
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-        /*enabled-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell
-        ];*/
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell" = {
-        #enabled = true;
-        "blacklist"="@as []";
-	      "blur-on-overview"=false;
-	      "brightness"="1.0";
-	      "customize"=true;
-	      "enable-all"=true;
-	      "opacity"="250";
-	      "sigma"="59";
-	      "blur"=true;
-      };
-
-    };
   };
   
 

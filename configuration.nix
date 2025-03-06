@@ -28,13 +28,18 @@
   boot.loader.grub.device = "nodev";     #only works in vm apparently
   boot.loader.grub.useOSProber = true;*/
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.plymouth = {
-    enable = true;
-    theme = "spinfinity";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    plymouth = {
+      enable = true;
+      theme = "spinfinity";
   };
+  }
 
   #start-point
 
