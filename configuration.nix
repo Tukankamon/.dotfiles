@@ -144,7 +144,6 @@
    gnomeExtensions.blur-my-shell
    vscodium		#Vscodium
    brave
-   ventoy-full
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk

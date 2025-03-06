@@ -82,9 +82,13 @@
   programs.fish = {
     enable = true;
 
-    #fish_greeting = "";
+  interactiveShellInit = ''
+    set fish_greeting # Disable greeting
+    abbr --add nxs sudo nixos-rebuild switch --flake .
+    abbr --add hms home-manager switch --flake .
+  '';
 
-    shellInit =  "clear \n fastfetch";
+    shellInit =  "fastfetch";
     };
   
    programs.git = {
