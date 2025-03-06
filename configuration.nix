@@ -39,7 +39,7 @@
       enable = true;
       theme = "spinfinity";
   };
-  }
+  };
 
   #start-point
 
