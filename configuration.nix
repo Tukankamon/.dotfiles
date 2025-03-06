@@ -21,12 +21,15 @@
 
 
   # Bootloader.
-  /*boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";     #only works in vm apparently
-  boot.loader.grub.useOSProber = true;*/
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";     #only works in vm apparently
+  boot.loader.grub.useOSProber = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  /*boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;*/
+
+  #start-point
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -131,6 +134,8 @@
    brave
    ventoy-full
    asciiquarium-transparent
+   parted                       #scan partitions
+   testdisk
   #  wget
   ];
   # Some programs need SUID wrappers, can be configured further or are
