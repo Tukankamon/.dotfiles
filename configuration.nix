@@ -148,6 +148,10 @@
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk
+   libreoffice-qt
+   hunspell
+   hunspellDicts.en_US
+   hunspellDicts.es_ES
   #  wget
   ];
   # Some programs need SUID wrappers, can be configured further or are
@@ -184,7 +188,7 @@
 
  services.tlp = {
   enable = true;
-  settings={
+  settings= {
     CPU_SCALING_GOVERNOR_ON_AC = "performance";
     CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
@@ -211,7 +215,7 @@
 }
  
  /*stylix.base16Scheme = {
-  base00 = "1f262d";  #terminal bg (defualt is #485867)
+  base00 = "1f262d";  #terminal bg (defualt is #485867) (brush trees dark)
   base01 = "5A6D7A";
   base02 = "6D828E";
   base03 = "8299A1";
