@@ -121,7 +121,7 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
   
   environment.shells = with pkgs; [ fish];	#Following a video
   users.defaultUserShell = pkgs.fish;
@@ -130,7 +130,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   vim
    pkgs.home-manager
    pkgs.fastfetch
    pkgs.pipes
@@ -143,6 +143,7 @@
    neovim
    gnomeExtensions.blur-my-shell
    vscodium		#Vscodium
+   vscode 
    brave
    asciiquarium-transparent
    parted                       #scan partitions

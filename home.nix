@@ -26,13 +26,6 @@
   home.packages = [
 
     pkgs.hello
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,12 +60,12 @@
   #  /etc/profiles/per-user/aved/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vscodium";
   };
   
   
   programs.bash = {
-    enable = false;	#For home-manager configs
+    enable = false;
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";		#Shortcuts
@@ -82,11 +75,11 @@
   programs.fish = {
     enable = true;
 
-  interactiveShellInit = ''
-    set fish_greeting # Disable greeting
-    abbr --add nxs sudo nixos-rebuild switch --flake .
-    abbr --add hms home-manager switch --flake .
-  '';
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      abbr --add nxs sudo nixos-rebuild switch --flake .
+      abbr --add hms home-manager switch --flake .
+    '';
 
     shellInit =  "fastfetch";
     };
