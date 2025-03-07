@@ -68,7 +68,7 @@
     LC_NUMERIC = "es_ES.UTF-8";
     LC_PAPER = "es_ES.UTF-8";
     LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "es_ES.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
   # Enable the X11 windowing system.
@@ -131,12 +131,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
    vim
-   pkgs.home-manager
-   pkgs.fastfetch
-   pkgs.pipes
-   pkgs.cbonsai
-   pkgs.neo-cowsay
-   pkgs.lf
+   home-manager
+   fastfetch
+   pipes
+   cbonsai
+   neo-cowsay
+   lf
    git
    kitty
    fzf
@@ -177,31 +177,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
  
-
-
- /*stylix.base16Scheme = {
-  base00 = "1f262d";  #terminal bg (defualt is #485867)
-  base01 = "5A6D7A";
-  base02 = "6D828E";
-  base03 = "8299A1";
-  base04 = "98AFB5";
-  base05 = "B0C5C8";
-  base06 = "C9DBDC";
-  base07 = "E3EFEF";
-  base08 = "b38686";
-  base09 = "d8bba2";
-  base0A = "aab386";
-  base0B = "87b386";
-  base0C = "86b3b3";
-  base0D = "868cb3";
-  base0E = "b386b2";
-  base0F = "b39f9f";
-
-
-
- };*/
-
-
   services.power-profiles-daemon.enable = false;
   
   powerManagement.enable = true;      #laptop battery
@@ -229,3 +204,22 @@
 
 }
  
+ /*stylix.base16Scheme = {
+  base00 = "1f262d";  #terminal bg (defualt is #485867)
+  base01 = "5A6D7A";
+  base02 = "6D828E";
+  base03 = "8299A1";
+  base04 = "98AFB5";
+  base05 = "B0C5C8";
+  base06 = "C9DBDC";
+  base07 = "E3EFEF";
+  base08 = "b38686";
+  base09 = "d8bba2";
+  base0A = "aab386";
+  base0B = "87b386";
+  base0C = "86b3b3";
+  base0D = "868cb3";
+  base0E = "b386b2";
+  base0F = "b39f9f";
+
+ };*/
