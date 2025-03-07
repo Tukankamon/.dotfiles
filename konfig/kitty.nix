@@ -5,13 +5,19 @@
     programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
-    /*scrollback_lines = 10000;
-    enable_audio_bell = false;
-    update_check_interval = 0;*/		#Example config
+    #confirm_os_window_close = 0;
     
+    /*font = {
+      name = "JetBrainsMono Nerd Font";
+    };*/
 
     #look for wryan kitty theme or Base2Tone
     extraConfig = ''  
+
+    map ctrl+plus      increase_font_size
+    map ctrl+minus    decrease_font_size
+    map ctrl+0 restore_font_size
+
     font_family FiraCode Nerd Font Mono
 
     foreground #f8f8f2
