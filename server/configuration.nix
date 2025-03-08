@@ -55,7 +55,7 @@
   users.users.ekko = {
     isNormalUser = true;
     description = "ekko";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -83,12 +83,48 @@
 
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
+   virtualisation.docker = {
+	enable = true;
+	rootless = {
+		enable = true;
+		setSocketVariable = true;
+	};
+  };
+
+services.samba = {
+	enable = true;
+	securityType = "user";
+	openFirewall = true;
+	settings =  {
+		global = {
+			"workgroup" = "WOURKGROUP";
+			"server string" = "smbnix";
+			"netbios name" = "smbnix";
+			"hosts allow" = "192.168.1.66 localhost";
+			"guest account" = "nobody";
+			"map to guest" = "never";
+		};
+		myfiles = {
+			"path" = "~/media/myfiles";
+			"writeable" = "yes";
+			"public" = "no";
+		};
+	};
+};
+
+services.samba-wsdd = {
+	enable = true;
+	openFirewall = true;
+};
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall = {
+	enable = true;
+	allowPing = true;
+};
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
