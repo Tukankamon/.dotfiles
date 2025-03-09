@@ -25,8 +25,7 @@
 	      "blur"=true;
       };
  	"org/gnome/shell/extensions/tiling-shell" = {
-		"keybinds"=false;
-	
+                "enable-autotiling"=true;
 	};
 
     };
