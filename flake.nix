@@ -6,6 +6,8 @@
     home-manager.url = "github:nix-community/home-manager/master";	#release-24.11
     home-manager.inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
 
+    nvf.url = "github:notashelf/nvf";
+
     
   };
 

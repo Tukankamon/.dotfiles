@@ -24,6 +24,10 @@
 	      "sigma"="59";
 	      "blur"=true;
       };
+ 	"org/gnome/shell/extensions/tiling-shell" = {
+		"keybinds"=false;
+	
+	};
 
     };
   };

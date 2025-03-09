@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       #inputs.home-manager.nixos-Modules.home-manager
+      ./konfig/nvf.nix
     ];
 
   /*home-manager = {
