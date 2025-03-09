@@ -142,17 +142,20 @@
    fzf
    neovim
    gnomeExtensions.blur-my-shell
+   gnomeExtensions.tiling-shell
+   gnomeExtensions.search-light
    vscodium		#Vscodium
    vscode 
    brave
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk
-   libreoffice-qt
-   hunspell
-   hunspellDicts.en_US
-   hunspellDicts.es_ES
   #  wget
+  ];
+
+  environment.gnome.excludePackages = with pkgs; [
+	gnome-tour
+
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

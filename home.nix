@@ -60,7 +60,7 @@
   #  /etc/profiles/per-user/aved/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "vscodium";
+    #EDITOR = "vscodium";
   };
   
   
@@ -77,12 +77,23 @@
 
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-      abbr --add nxs sudo nixos-rebuild switch --flake .
-      abbr --add hms home-manager switch --flake .
+
     '';
 
     shellInit =  "fastfetch";
+
+    shellAbbrs = {
+      nxs  = "sudo nixos-rebuild switch --flake .";
+      hms = "home-manager switch --flake .";
+
+      nix-clean =  "sudo nix-collect-garbage -d";
+      home-clean = "home-manager expire-generations -d";
+      nix-orphans = "nix store gc &&  sudo nix store optimize";
+      nix-wipe  = "sudo nix profile wipe-history";
+      hm-clean-old = "home-manager remove-generations old";
+      nix-system-clean = "nix-clean && home-clean && nix-orphans && nix-wipe && hm-clean-old && nix-collect-garbage -d";
     };
+};
   
    programs.git = {
      enable = true;
@@ -94,6 +105,27 @@
    };
   };
   
+   programs.neovim = {
+	enable = true;
+	defaultEditor = true;
+	viAlias = true;
+	vimAlias = true;
+	extraConfig = ''
+		set number relativenumber
+		set tabstop=8
+		set autoindent
+		set mouse=a
+		colorscheme slate
+	  '';
+	plugins = with pkgs.vimPlugins; [
+		nvim-lspconfig
+		vim-nerdtree-tabs
+		nvim-treesitter.withAllGrammars
+		plenary-nvim
+		mini-nvim
+	];	
+
+	};	
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
