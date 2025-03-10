@@ -8,7 +8,7 @@
 
     nvf.url = "github:notashelf/nvf";
 
-    #hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
     
   };
 

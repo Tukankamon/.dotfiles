@@ -11,12 +11,19 @@ options ={
 };
 
 config = lib.mkIf config.hypr.enable {
-  #wayland.windowManager.hyprland.enable = true;
-  #settings = {};
+  /*wayland.windowManager.hyprland.enable = true;
+  settings = {
+    inputs = {
+      kb_layout = "es";
+    }
+  
+  };*/
 
     home.packages = [
-    pkgs.waybar
-    pkgs.rofi-wayland
+      pkgs.waybar
+      pkgs.rofi-wayland
+      pkgs.dunst
+      pkgs.libnotify
   ];
 
 };
