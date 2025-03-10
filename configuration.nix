@@ -11,9 +11,8 @@
   home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
     extraSpecialArgs = { inherit inputs; };
     users.aved = import ./home.nix;
+
   };   
-
-
 
   boot = {
     loader = {
@@ -26,6 +25,10 @@
       theme = "spinfinity";
   };
   };
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,10 +60,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
