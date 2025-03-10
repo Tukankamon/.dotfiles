@@ -36,6 +36,11 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };  
 
+xdg.portal = {			#This and nix settings is for hyprland
+	enable = true;
+	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+};
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
