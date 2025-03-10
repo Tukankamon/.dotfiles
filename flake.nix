@@ -22,7 +22,6 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-        #specialArgs = { inherit system; };
     	modules = [ ./configuration.nix
 		    nvf.nixosModules.default
 		  ];
