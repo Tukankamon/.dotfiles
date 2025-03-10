@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
+options ={
+  gnome.enable =
+    lib.mkEnableOption "enables gnome desktop";
+};
+
+config = lib.mkIf config.gnome.enable {
+
   dconf = {
     enable = true;
     settings = {
@@ -30,4 +37,5 @@
 
     };
   };
+};
 }
