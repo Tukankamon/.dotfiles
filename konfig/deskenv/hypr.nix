@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:     #Also need to enable it in configuration.nix
 
 {
 options ={
@@ -13,5 +13,11 @@ options ={
 config = lib.mkIf config.hypr.enable {
   #wayland.windowManager.hyprland.enable = true;
   #settings = {};
+
+    home.packages = [
+    pkgs.waybar
+    pkgs.rofi-wayland
+  ];
+
 };
 }
