@@ -12,7 +12,6 @@
     extraSpecialArgs = { inherit inputs; };
     users.aved = import ./home.nix;
 
-    gnome.enable = true;
   };   
 
   boot = {

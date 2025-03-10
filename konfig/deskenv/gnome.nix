@@ -2,8 +2,12 @@
 
 {
 options ={
-  gnome.enable =
-    lib.mkEnableOption "enables gnome desktop";
+  gnome.enable = lib.mkOption {
+    type = lib.types.bool;
+    default = true;
+    example = false;
+    description = "enables gnome desktop (need to also enable it in config)";
+  };
 };
 
 config = lib.mkIf config.gnome.enable {

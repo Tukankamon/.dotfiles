@@ -5,8 +5,7 @@
   imports = [ 
     ./konfig/kitty.nix 
     ./konfig/fastfetch.nix
-    ./konfig/gnome.nix
-    ./konfig/hypr.nix
+    ./konfig/deskenv
   ];
 
   home.username = "aved";
@@ -15,9 +14,9 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   gnome.enable = true;    #Dont forget to also disable it in configuration.nix
+  hypr.enable = false;
 
   home.packages = [
-
     pkgs.hello
   ];
 
