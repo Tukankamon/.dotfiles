@@ -21,17 +21,17 @@
 
     nixosConfigurations = {
       nixos = lib.nixosSystem {
-        inherit system;
-    	modules = [ ./configuration.nix
-		    nvf.nixosModules.default
-		  ];
+        specialArgs = {inherit inputs system;};
+    	  modules = [ ./configuration.nix
+		      nvf.nixosModules.default
+		      ];
       };
     };
     
     homeConfigurations = {
       aved = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-    	modules = [ ./home.nix ];
+    	  modules = [ ./home.nix ];
       };
     };
 	

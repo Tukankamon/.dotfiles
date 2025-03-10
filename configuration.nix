@@ -1,11 +1,19 @@
-{ pkgs, configuration, ... }:	#add inputs
+{ inputs, pkgs, configuration, ... }:	#add inputs
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
       ./konfig/nvf.nix
+      inputs.home-manager.nixosModules.home-manager
     ];
+
+  home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
+    extraSpecialArgs = { inherit inputs; };
+    users.aved = import ./home.nix;
+  }   
+
+
 
   boot = {
     loader = {
