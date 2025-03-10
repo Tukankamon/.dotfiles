@@ -8,11 +8,11 @@
 
     nvf.url = "github:notashelf/nvf";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, hyprland, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";      
