@@ -13,6 +13,6 @@ options ={
 
 config = lib.mkIf config.placeholder.enable {
   gnome.enable = true;
-}
+};
 
 }
