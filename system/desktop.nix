@@ -14,7 +14,8 @@ xdg.portal = {			#This and nix settings is for hyprland
 	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 };
 
-
+environment.sessionVariables.NIXOS_OZONE_WL = "1";
+#Forces wayland
 
 
   # Enable the GNOME Desktop Environment.
