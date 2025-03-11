@@ -3,12 +3,13 @@
 {
   programs.waybar.enable= true;
   programs.waybar.settings = {
+    mainBar = {
         "layer" = "top";
         "position" = "top";
         "reload_style_on_change" = true;
         #"modules-left" = ["custom/notification","clock","custom/pacman","tray"],
         "modules-center" = ["hyprland/workspaces"];
-        "modules-right" = ["group/expand","bluetooth","network","battery"];
+        "modules-right" = ["group/expand" "bluetooth" "network" "battery"];
 
 
         "hyprland/workspaces" = {
@@ -98,7 +99,7 @@
                 "transition-to-left" = true;
                 "click-to-reveal" = true;
             };
-            "modules" = ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
+            #"modules" = ["custom/expand" "custom/colorpicker" "cpu" "memory" "temperature" "custom/endpoint"];
         };
         "custom/colorpicker" = {
             "format" = "{}";
@@ -113,15 +114,16 @@
             "tooltip" = true;
         };
         "memory" = {
-            "format" = ""
-        },
+            "format" = "";
+        };
         "temperature" = {
             "critical-threshold" = 80;
             "format" = "";
-        },
+        };
         "tray" = {
             "icon-size" = 14;
             "spacing" = 10;
         };
+    };
   };
 }

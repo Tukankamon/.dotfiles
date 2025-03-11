@@ -1,6 +1,9 @@
 { config, pkgs, lib, ... }:     #Also need to enable it in configuration.nix
 
 {
+
+imports = [ ./wayland/waybar.nix ];
+
 options ={
   hypr.enable = lib.mkOption {
     type = lib.types.bool;
