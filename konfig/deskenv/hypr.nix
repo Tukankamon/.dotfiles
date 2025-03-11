@@ -2,7 +2,7 @@
 
 {
 
-imports = [ ./wayland/waybar.nix ];
+imports = [ ./wayland/waybar/waybar.nix ];
 
 options ={
   hypr.enable = lib.mkOption {
@@ -67,7 +67,7 @@ config = lib.mkIf config.hypr.enable {
     };
     monitor = "eDP-1, 1920x1080@144, 0x0, 1";
 
-    "exec-once" = [ "waybar" "swww img ./konfig/images/roadwp.jpg" ]; #autostart
+    "exec-once" = [ "waybar" "swww-daemon" ]; #autostart
 
     gestures = {
       workspace_swipe = true;

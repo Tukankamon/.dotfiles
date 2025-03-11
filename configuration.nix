@@ -127,6 +127,9 @@
 
   fonts.packages = with pkgs; [
     font-awesome
+    font-awesome_5
+    font-awesome_6
+
     #pkgs.nerd-fonts.jetbrains-mono
     #pkgs.nerd-fonts.fira-code
     #pkgs.nerd-fonts.droid-sans-mono
