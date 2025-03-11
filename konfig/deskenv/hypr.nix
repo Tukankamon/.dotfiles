@@ -13,13 +13,17 @@ options ={
 config = lib.mkIf config.hypr.enable {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
+
+    #"$menu" = "rofi -show run";
+    "$terminal" = "kitty";
+    "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
+
     input = {
       kb_layout = "es";
 
       follow_mouse = 1;
     };
   
-  };
 
     home.packages = [
       pkgs.waybar
@@ -47,10 +51,6 @@ config = lib.mkIf config.hypr.enable {
     layout = "dwindle";
   };
 
-    #"$menu" = "rofi -show run";
-    "$terminal" = "kitty";
-    "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
-
     "exec-once" = "waybar"; #autostart
 
     gestures = {
@@ -75,6 +75,6 @@ config = lib.mkIf config.hypr.enable {
       "$mod, 4, workspace, 4"
     ];
 
-
+  };
 };
 }
