@@ -10,7 +10,7 @@ imports = [ ./../hardware-configuration.nix ];
     };
 
     plymouth = {
-      enable = false;
+      enable = true;
       theme = "spinfinity";
   };
   };

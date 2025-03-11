@@ -86,6 +86,17 @@
             "󰁹"
             ];
         };
+
+        /*"custom/pacman" = {
+            "format" = "󰅢 {}";
+            "interval" = 30;
+            "exec" = "checkupdates | wc -l";
+            "exec-if" = "exit 0";
+            "on-click"= "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "signal"= 8;
+            "tooltip"= false;
+        };*/
+
         "custom/expand" = {
             "format" = "";
             "tooltip" = false;
@@ -101,15 +112,7 @@
                 "transition-to-left" = true;
                 "click-to-reveal" = true;
             };
-            #"modules" = ["custom/expand" "custom/colorpicker" "cpu" "memory" "temperature" "custom/endpoint"];
-        };
-        "custom/colorpicker" = {
-            "format" = "{}";
-            "return-type" = "json";
-            "interval" = "once";
-            "exec" = "~/.config/waybar/scripts/colorpicker.sh -j";
-            "on-click" = "~/.config/waybar/scripts/colorpicker.sh";
-            "signal" = 1;
+            "modules" = ["custom/expand" "cpu" "memory" "temperature" "custom/endpoint"];
         };
         "cpu" = {
             "format" = "󰻠";

@@ -1,13 +1,15 @@
 { config, libs, pkgs, ... }:
 {
 
+#@define-color color9 #cd7fff;
 programs.waybar.style =  ''
+    @define-color background #71665b;
 
     * {
         font-size:15px;
         font-family: "CodeNewRoman Nerd Font Propo";
     }
-    window#waybar{
+    window#waybar {
         all:unset;
     }
     .modules-left {
@@ -49,10 +51,6 @@ programs.waybar.style =  ''
         color:@color7;
         transition: all .3s ease;
     }
-    #custom-pacman{
-        padding: 0px 5px;
-        transition: all .3s ease;
-        color:@color7;
 
     }
     #workspaces {
@@ -139,9 +137,6 @@ programs.waybar.style =  ''
     #custom-expand:hover{
         color:rgba(255,255,255,.2);
         text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
-    }
-    #custom-colorpicker{
-        padding: 0px 5px;
     }
     #cpu,#memory,#temperature{
         padding: 0px 5px;
