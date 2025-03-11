@@ -1,5 +1,5 @@
 { config, libs, pkgs, ... }:
-
+#From Eli's dotfiles
 {
   programs.waybar.enable= true;
   programs.waybar.settings = {
@@ -7,7 +7,7 @@
         "layer" = "top";
         "position" = "top";
         "reload_style_on_change" = true;
-        #"modules-left" = ["custom/notification","clock","custom/pacman","tray"],
+        "modules-left" = ["custom/notification" "clock" "tray"];
         "modules-center" = ["hyprland/workspaces"];
         "modules-right" = ["group/expand" "bluetooth" "network" "battery"];
 
@@ -15,9 +15,9 @@
         "hyprland/workspaces" = {
             "format" = "{icon}";
             "format-icons" = {
-                "active" = "";
-                "default" = "";
-                "empty" = "";
+                "active" = "　";
+                "default" = "　";
+                "empty" = "　";
             };
             "persistent-workspaces" = {
                 "*" = [ 1 2 3 4 5];
