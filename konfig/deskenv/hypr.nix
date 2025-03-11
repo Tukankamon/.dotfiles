@@ -45,10 +45,11 @@ config = lib.mkIf config.hypr.enable {
     allow_tearing = false;
 
     layout = "dwindle";
+  };
 
     "$menu" = "rofi -show run";
     "$terminal" = "kitty";
-    "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
+    "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
 
     "exec-once" = "waybar"; #autostart
 
@@ -58,23 +59,22 @@ config = lib.mkIf config.hypr.enable {
 
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
-      "$mainMod, Q, exec, $terminal"
-      "$mainMod, R, exec, $menu"
+      "$mod, Q, exec, $terminal"
+      "$mod, R, exec, $menu"
 
-      # Move focus with mainMod + arrow keys
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      # Move focus with mod + arrow keys
+      "$mod, left, movefocus, l"
+      "$mod, right, movefocus, r"
+      "$mod, up, movefocus, u"
+      "$mod, down, movefocus, d"
 
       #Workspaces
-      "$mainmod, 1, workspace, 1"
-      "$mainmod, 2, workspace, 2"
-      "$mainmod, 3, workspace, 3"
-      "$mainmod, 4, workspace, 4"
+      "$mod, 1, workspace, 1"
+      "$mod, 2, workspace, 2"
+      "$mod, 3, workspace, 3"
+      "$mod, 4, workspace, 4"
     ];
 
-}
 
 };
 }
