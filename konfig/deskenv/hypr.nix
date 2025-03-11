@@ -11,6 +11,12 @@ options ={
 };
 
 config = lib.mkIf config.hypr.enable {
+  home.packages = [
+      pkgs.waybar
+      pkgs.rofi-wayland
+      pkgs.dunst
+      pkgs.libnotify
+  ];
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
@@ -24,14 +30,6 @@ config = lib.mkIf config.hypr.enable {
       follow_mouse = 1;
     };
   
-
-    home.packages = [
-      pkgs.waybar
-      pkgs.rofi-wayland
-      pkgs.dunst
-      pkgs.libnotify
-  ];
-
   general = {
     gaps_in = 5;
     gaps_out = 10;
