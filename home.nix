@@ -49,7 +49,7 @@
     shellInit =  "fastfetch";
 
     shellAbbrs = {
-      b  = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles";
       hms = "home-manager switch --flake ~/.dotfiles";
 
       nix-clean =  "sudo nix-collect-garbage -d";

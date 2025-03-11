@@ -97,11 +97,14 @@ config = lib.mkIf config.hypr.enable {
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
       "$mod, 4, workspace, 4"
+      "$mod, 5, workspace, 5"
 
       "$mod SHIFT, 1, movetoworkspace, 1"   #movetoworkspacesilent to not switch when moving
       "$mod SHIFT, 2, movetoworkspace, 2"
       "$mod SHIFT, 3, movetoworkspace, 3"
       "$mod SHIFT, 4, movetoworkspace, 4"
+      "$mod SHIFT, 5, movetoworkspace, 5"
+
       
     ];
 

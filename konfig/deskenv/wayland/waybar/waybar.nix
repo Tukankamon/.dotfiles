@@ -1,6 +1,8 @@
 { config, libs, pkgs, ... }:
-#From Eli's dotfiles
+#From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
 {
+    imports = [ ./waybar-css.nix ];
+
   programs.waybar.enable= true;
   programs.waybar.settings = {
     mainBar = {
@@ -16,7 +18,7 @@
             "format" = "{icon}";
             "format-icons" = {
                 "active" = ""; #snowflake
-                "default" = "";
+                "default" = "";
                 "empty" = "";
             };
             "persistent-workspaces" = {
