@@ -47,7 +47,7 @@ config = lib.mkIf config.hypr.enable {
     layout = "dwindle";
   };
 
-    "$menu" = "rofi -show run";
+    #"$menu" = "rofi -show run";
     "$terminal" = "kitty";
     "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
 
@@ -60,7 +60,7 @@ config = lib.mkIf config.hypr.enable {
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
       "$mod, Q, exec, $terminal"
-      "$mod, R, exec, $menu"
+      "$mod, exec, rofi -show run"
 
       # Move focus with mod + arrow keys
       "$mod, left, movefocus, l"
