@@ -59,7 +59,8 @@ config = lib.mkIf config.hypr.enable {
     allow_tearing = false;
 
     layout = "dwindle";
-  };
+    };
+    monitor = "eDP-1, 1920x1080@144, 0x0, 1";
 
     "exec-once" = "waybar"; #autostart
 
