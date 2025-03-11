@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
 
@@ -13,7 +13,8 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  gnome.enable = true;    #Dont forget to also disable it in configuration.nix
+  gnome.enable = false;    #Dont forget to also disable it in configuration.nix
+  hypr.enable = true;    #Same thing here
 
   home.packages = [
     pkgs.hello

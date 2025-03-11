@@ -6,6 +6,8 @@
       ./hardware-configuration.nix
       ./konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
+      ./system/boot.nix
+      ./system/desktop.nix
     ];
 
   home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
@@ -14,21 +16,10 @@
 
   };   
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-
-    plymouth = {
-      enable = true;
-      theme = "spinfinity";
-  };
-  };
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+ nix.settings = {       #This has to be enabled before installing hyprland
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };  
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
