@@ -20,15 +20,24 @@ config = lib.mkIf config.hypr.enable {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
-    #"$menu" = "rofi -show run";
+    "$menu" = "rofi -show drun";
     "$terminal" = "kitty";
     "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
 
     input = {
       kb_layout = "es";
 
-      follow_mouse = 1;
+      follow_mouse = 0; #Focuses where mouse is
+
+      touchpad = {
+        natural_scroll = false;
     };
+    };
+
+  misc = {
+    force_default_wallpaper = 0; # Set to -1 to enable the anime mascot wallpapers
+    disable_hyprland_logo = true;
+  };
   
   general = {
     gaps_in = 5;
@@ -58,7 +67,6 @@ config = lib.mkIf config.hypr.enable {
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
       "$mod, Q, exec, $terminal"
-      "$mod, exec, rofi -show run"
 
       # Move focus with mod + arrow keys
       "$mod, left, movefocus, l"
@@ -71,6 +79,10 @@ config = lib.mkIf config.hypr.enable {
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
       "$mod, 4, workspace, 4"
+    ];
+
+    bindr = [
+      "$SUPER, SUPER_L, exec, $menu"
     ];
 
   };
