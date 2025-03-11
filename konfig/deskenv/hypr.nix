@@ -30,7 +30,7 @@ config = lib.mkIf config.hypr.enable {
       follow_mouse = 0; #Focuses where mouse is
 
       touchpad = {
-        natural_scroll = false;
+        natural_scroll = true;
     };
     };
 
