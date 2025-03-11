@@ -39,7 +39,7 @@ config = lib.mkIf config.hypr.enable {
     };
 
   misc = {
-    force_default_wallpaper = 0; # Set to -1 to enable the anime mascot wallpapers
+    force_default_wallpaper = 0;
     disable_hyprland_logo = true;
   };
 
@@ -67,10 +67,13 @@ config = lib.mkIf config.hypr.enable {
     };
     monitor = "eDP-1, 1920x1080@144, 0x0, 1";
 
-    "exec-once" = [ "waybar" "swww" ]; #autostart
+    "exec-once" = [ "waybar" "swww img ./konfig/images/roadwp.jpg" ]; #autostart
 
     gestures = {
-      workspace_swipe = false;
+      workspace_swipe = true;
+      workspace_swipe_fingers = 2;
+      workspace_swipe_min_fingers = true;
+
     };
     
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
@@ -83,13 +86,19 @@ config = lib.mkIf config.hypr.enable {
       "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
 
+      "$mod SHIFT, left, swapwindow, l"
+      "$mod SHIFT, right, swapwindow, r"
+      "$mod SHIFT, up, swapwindow, u"
+      "$mod SHIFT, down, swapwindow, d"
+
+
       #Workspaces
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
       "$mod, 4, workspace, 4"
 
-      "$mod SHIFT, 1, movetoworkspace, 1"
+      "$mod SHIFT, 1, movetoworkspace, 1"   #movetoworkspacesilent to not switch when moving
       "$mod SHIFT, 2, movetoworkspace, 2"
       "$mod SHIFT, 3, movetoworkspace, 3"
       "$mod SHIFT, 4, movetoworkspace, 4"
@@ -109,6 +118,16 @@ config = lib.mkIf config.hypr.enable {
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
       ];
+
+    bindm = [
+      "SUPER, mouse:272, movewindow"
+      ];
+
+    layerrule = [     #Supposed to blur waybar, doesnt work
+      "blur, waybar"
+      "ignorezero, waybar"
+      "ignorealpha 0.5, waybar"
+    ];
   };
 };
 }

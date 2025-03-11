@@ -15,8 +15,8 @@
         "hyprland/workspaces" = {
             "format" = "{icon}";
             "format-icons" = {
-                "active" = "";
-                "default" = "";
+                "active" = ""; #snowflake
+                "default" = "";
                 "empty" = "";
             };
             "persistent-workspaces" = {
@@ -76,7 +76,7 @@
             "format-plugged" = "{capacity}% 󰂄 ";
             "format-alt" = "{time} {icon}";
             "format-icons" = [
-                "󰁻"
+                ""
             "󰁼"
             "󰁾"
             "󰂀"

@@ -16,9 +16,10 @@
   gnome.enable = false;    #Dont forget to also disable it in configuration.nix
   hypr.enable = true;    #Same thing here
 
-  home.packages = [
+  home.packages = with pkgs; [
     pkgs.hello
   ];
+  fonts.fontconfig.enable = true;
 
   home.file = {
 
