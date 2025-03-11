@@ -19,18 +19,19 @@ config = lib.mkIf config.hypr.enable {
       pkgs.rofi-wayland
       pkgs.dunst
       pkgs.libnotify
+      pkgs.swww
   ];
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
-    "$menu" = "rofi -show drun";
+    "$menu" = "rofi -show drun -show-icons";
     "$terminal" = "kitty";
     "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
 
     input = {
       kb_layout = "es";
 
-      follow_mouse = 0; #Focuses where mouse is
+      follow_mouse = 1; #Focuses where mouse is
 
       touchpad = {
         natural_scroll = true;
@@ -40,6 +41,10 @@ config = lib.mkIf config.hypr.enable {
   misc = {
     force_default_wallpaper = 0; # Set to -1 to enable the anime mascot wallpapers
     disable_hyprland_logo = true;
+  };
+
+  master = {
+    new_status = "master";
   };
   
   general = {
@@ -62,12 +67,12 @@ config = lib.mkIf config.hypr.enable {
     };
     monitor = "eDP-1, 1920x1080@144, 0x0, 1";
 
-    "exec-once" = "waybar"; #autostart
+    "exec-once" = [ "waybar" "swww" ]; #autostart
 
     gestures = {
       workspace_swipe = false;
     };
-
+    
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
       "$mod, Q, exec, $terminal"
@@ -83,12 +88,27 @@ config = lib.mkIf config.hypr.enable {
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
       "$mod, 4, workspace, 4"
+
+      "$mod SHIFT, 1, movetoworkspace, 1"
+      "$mod SHIFT, 2, movetoworkspace, 2"
+      "$mod SHIFT, 3, movetoworkspace, 3"
+      "$mod SHIFT, 4, movetoworkspace, 4"
+      
     ];
 
     bindr = [
       "$SUPER, SUPER_L, exec, $menu"
     ];
 
+    # Laptop multimedia keys for volume and LCD brightness
+    bindel = [
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+      ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
   };
 };
 }

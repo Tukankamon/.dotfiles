@@ -48,8 +48,8 @@
     shellInit =  "fastfetch";
 
     shellAbbrs = {
-      nxs  = "sudo nixos-rebuild switch --flake .";
-      hms = "home-manager switch --flake .";
+      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+      hms = "home-manager switch --flake ~/.dotfiles";
 
       nix-clean =  "sudo nix-collect-garbage -d";
       home-clean = "home-manager expire-generations -d";
