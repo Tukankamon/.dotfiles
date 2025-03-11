@@ -13,8 +13,10 @@ options ={
 config = lib.mkIf config.hypr.enable {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
-    inputs = {
+    input = {
       kb_layout = "es";
+
+      follow_mouse = 1;
     };
   
   };
@@ -25,6 +27,54 @@ config = lib.mkIf config.hypr.enable {
       pkgs.dunst
       pkgs.libnotify
   ];
+
+  general = {
+    gaps_in = 5;
+    gaps_out = 10;
+
+    border_size = 2;
+
+    # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+    "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+    "col.inactive_border" = "rgba(595959aa)";
+
+    # Set to true enable resizing windows by clicking and dragging on borders and gaps
+    resize_on_border = false;
+
+    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+    allow_tearing = false;
+
+    layout = "dwindle";
+
+    "$menu" = "rofi -show run";
+    "$terminal" = "kitty";
+    "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
+
+    "exec-once" = "waybar"; #autostart
+
+    gestures = {
+      workspace_swipe = false;
+    };
+
+    #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
+    bind = [
+      "$mainMod, Q, exec, $terminal"
+      "$mainMod, R, exec, $menu"
+
+      # Move focus with mainMod + arrow keys
+      "$mainMod, left, movefocus, l"
+      "$mainMod, right, movefocus, r"
+      "$mainMod, up, movefocus, u"
+      "$mainMod, down, movefocus, d"
+
+      #Workspaces
+      "$mainmod, 1, workspace, 1"
+      "$mainmod, 2, workspace, 2"
+      "$mainmod, 3, workspace, 3"
+      "$mainmod, 4, workspace, 4"
+    ];
+
+}
 
 };
 }
