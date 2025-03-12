@@ -8,11 +8,11 @@
 
     nvf.url = "github:notashelf/nvf";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";      
@@ -33,14 +33,14 @@
       aved = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
     	  modules = [ ./home.nix 
-          {
+          /*{
           wayland.windowManager.hyprland = {
             enable = true;
             # set the flake package
             package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
             portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
           };
-          } 
+          } */
         
         ];
       };

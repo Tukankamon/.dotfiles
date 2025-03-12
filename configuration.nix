@@ -115,7 +115,7 @@
    neovim
    gnomeExtensions.blur-my-shell
    gnomeExtensions.tiling-shell
-   gnomeExtensions.search-light
+   #gnomeExtensions.search-light
    vscodium		#Vscodium
    vscode 
    brave
