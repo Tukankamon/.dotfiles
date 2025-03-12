@@ -65,6 +65,11 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  #hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

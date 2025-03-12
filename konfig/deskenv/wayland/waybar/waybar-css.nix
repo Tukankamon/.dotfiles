@@ -46,13 +46,12 @@ programs.waybar.style =  ''
         transition: all .3s ease;
         color:@color7;
     }
-    #clock{
+    #clock {
         padding: 0px 5px;
         color:@color7;
         transition: all .3s ease;
     }
 
-    }
     #workspaces {
         padding: 0px 5px;
     }

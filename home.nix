@@ -46,7 +46,7 @@
 
     '';
 
-    shellInit =  "fastfetch";
+    #shellInit =  "fastfetch";
 
     shellAbbrs = {
       nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles";
