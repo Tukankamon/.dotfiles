@@ -4,7 +4,7 @@
 imports = [ ./../hardware-configuration.nix ];
 
 programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
@@ -19,7 +19,7 @@ environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
-  services.xserver.desktopManager.gnome.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
 }

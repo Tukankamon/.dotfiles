@@ -71,7 +71,7 @@ config = lib.mkIf config.hypr.enable {
 
     gestures = {
       workspace_swipe = true;
-      workspace_swipe_fingers = 2;
+      workspace_swipe_fingers = 3;
       workspace_swipe_min_fingers = true;
 
     };
