@@ -23,10 +23,12 @@ config = lib.mkIf config.gnome.enable {
       
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [
-          "blur-my-shell@aunetx"
-          "tiling-shell"
+
+        enabled-extensions = with pkgs.gnomeExtensions; [
+          blur-my-shell.extensionUuid
+          tiling-shell.extensionUuid
         ];
+
       };
 
       "org/gnome/shell/extensions/blur-my-shell" = {
