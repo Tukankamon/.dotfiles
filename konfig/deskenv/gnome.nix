@@ -26,7 +26,7 @@ config = lib.mkIf config.gnome.enable {
 
         enabled-extensions = with pkgs.gnomeExtensions; [
           blur-my-shell.extensionUuid
-          tiling-shell.extensionUuid
+          #tiling-shell.extensionUuid
         ];
 
       };
