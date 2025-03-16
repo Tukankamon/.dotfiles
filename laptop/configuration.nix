@@ -3,8 +3,8 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
-      ./konfig/nvf.nix
+      /etc/nixos/hardware-configuration.nix
+      ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
       ./system/boot.nix
       ./system/desktop.nix

@@ -3,9 +3,9 @@
 {
 
   imports = [ 
-    ./konfig/kitty.nix 
-    ./konfig/fastfetch.nix
-    ./konfig/deskenv/desk-module.nix
+    ./../konfig/kitty.nix 
+    ./../konfig/fastfetch.nix
+    ./../konfig/deskenv/desk-module.nix
   ];
 
   home.username = "aved";
