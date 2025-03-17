@@ -3,11 +3,11 @@
 {
   imports =
     [ 
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
-      ./system/boot.nix
-      ./system/desktop.nix
+      ./boot.nix
+      ./../konfig/system/desktop.nix
     ];
 
   home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
@@ -193,6 +193,18 @@
   options = "--delete-older-than 10d";
  };
 
+services.libinput = {
+  enable = true;
+  # disabling mouse acceleration
+  mouse = {
+    accelProfile = "flat";
+  };
+
+  # disabling touchpad acceleration
+  touchpad = {
+    accelProfile = "flat";
+  };
+  };
  nixpkgs.config.allowUnfree = true;
  nix.settings.experimental-features = ["nix-command" "flakes"];
 
