@@ -7,7 +7,7 @@
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
       ./boot.nix
-      ./../konfig/system/desktop.nix
+      ./desktop.nix
     ];
 
   home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
