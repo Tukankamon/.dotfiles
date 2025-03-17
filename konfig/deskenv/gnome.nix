@@ -65,7 +65,7 @@ config = lib.mkIf config.gnome.enable {
 
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
-      speed = 0.5;
+      speed = 0.4;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
