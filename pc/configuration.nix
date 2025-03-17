@@ -101,6 +101,13 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
   environment.systemPackages = with pkgs; [
    vim
    home-manager
@@ -122,7 +129,8 @@
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk
-  #  wget
+   mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
+   discord
   ];
 
   environment.gnome.excludePackages = with pkgs; [

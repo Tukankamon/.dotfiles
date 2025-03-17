@@ -49,8 +49,8 @@
     #shellInit =  "fastfetch";
 
     shellAbbrs = {
-      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-      hms = "home-manager switch --flake ~/.dotfiles";
+      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
+      hms = "home-manager switch --flake ~/.dotfiles/laptop";
 
       nix-clean =  "sudo nix-collect-garbage -d";
       home-clean = "home-manager expire-generations -d";
