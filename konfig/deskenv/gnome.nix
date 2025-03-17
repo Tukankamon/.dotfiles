@@ -62,6 +62,15 @@ config = lib.mkIf config.gnome.enable {
     move-to-workspace-3 = ["<Alt><Shift>3"];
     move-to-workspace-4 = ["<Alt><Shift>4"];
     };
+
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+    };
+
+    "org/gnome/desktop/peripherals/touchpad" = {
+      #accel-profile = "flat";
+      speed = 0.25;
+    };
       
     };
   };

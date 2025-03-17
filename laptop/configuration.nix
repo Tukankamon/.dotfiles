@@ -193,7 +193,7 @@
   options = "--delete-older-than 10d";
  };
 
-services.libinput = {
+/*services.libinput = {
   enable = true;
   # disabling mouse acceleration
   mouse = {
@@ -205,6 +205,7 @@ services.libinput = {
     accelProfile = "flat";
   };
   };
+  */
  nixpkgs.config.allowUnfree = true;
  nix.settings.experimental-features = ["nix-command" "flakes"];
 
