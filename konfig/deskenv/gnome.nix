@@ -27,6 +27,7 @@ config = lib.mkIf config.gnome.enable {
         enabled-extensions = with pkgs.gnomeExtensions; [
           blur-my-shell.extensionUuid
           #tiling-shell.extensionUuid
+          auto-move-windows.extensionUuid
         ];
 
       };
@@ -65,7 +66,7 @@ config = lib.mkIf config.gnome.enable {
 
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
-      speed = 0.4;
+      speed = 0.35;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {

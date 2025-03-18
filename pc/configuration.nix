@@ -6,9 +6,11 @@
       ./hardware-configuration.nix
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
-      ./boot.nix
+      ./../konfig/system/boot.nix
       ./desktop.nix
     ];
+
+  pc-boot.enable = true;
 
   home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
     extraSpecialArgs = { inherit inputs; };
