@@ -51,15 +51,8 @@
     shellAbbrs = {
       nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
       hms = "home-manager switch --flake ~/.dotfiles/laptop";
-      nxg = "sudo nix-collect garbage -d && nix-collect garbage -d && nix-collect garbage"
-
-      nix-clean =  "sudo nix-collect-garbage -d";
-      home-clean = "home-manager expire-generations -d";
-      nix-orphans = "nix store gc &&  sudo nix store optimize";
-      nix-wipe  = "sudo nix profile wipe-history";
-      hm-clean-old = "home-manager remove-generations old";
-      nix-system-clean = "nix-clean && home-clean && nix-orphans && nix-wipe && hm-clean-old && nix-collect-garbage -d";
-    };
+      nxgc = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-collect-garbage";
+  };
 };
   
    programs.git = {
