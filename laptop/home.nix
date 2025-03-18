@@ -51,6 +51,7 @@
     shellAbbrs = {
       nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
       hms = "home-manager switch --flake ~/.dotfiles/laptop";
+      nxg = "sudo nix-collect garbage -d && nix-collect garbage -d && nix-collect garbage"
 
       nix-clean =  "sudo nix-collect-garbage -d";
       home-clean = "home-manager expire-generations -d";
