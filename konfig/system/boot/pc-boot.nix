@@ -1,6 +1,8 @@
 { inputs, config, pkgs, lib, ... }:
-
 {
+
+imports = [ ./../../../pc/hardware-configuration.nix ];
+
 options ={
   pc-boot.enable = lib.mkOption {
     type = lib.types.bool;
@@ -12,7 +14,6 @@ options ={
 
 config = lib.mkIf config.pc-boot.enable {
 
-  imports = [ ./../.../../pc/hardware-configuration.nix ];
 
   boot = {
     loader = {

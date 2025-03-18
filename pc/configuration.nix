@@ -6,8 +6,7 @@
       ./hardware-configuration.nix
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
-      ./../konfig/system/boot.nix
-      ./desktop.nix
+      ./../konfig/system/pc.nix
     ];
 
   pc-boot.enable = true;

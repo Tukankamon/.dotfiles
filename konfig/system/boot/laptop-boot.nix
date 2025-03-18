@@ -1,18 +1,19 @@
 { inputs, config, pkgs, lib, ... }:
 
 {
+
+imports = [ ./../../../laptop/hardware-configuration.nix ];
+
 options ={
   laptop-boot.enable = lib.mkOption {
     type = lib.types.bool;
-    default = false;
-    example = true;
-    description = "sets the boot config for the pc";
+    default = true;
+    example = false;
+    description = "sets the boot config for the laptop";
   };
 };
 
 config = lib.mkIf config.laptop-boot.enable {
-
-  imports = [ ./../.../../laptop/hardware-configuration.nix ];
 
   boot = {
     loader = {
