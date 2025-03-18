@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
-      ./boot.nix
+      ./../konfig/system/boot/boot.nix
       ./desktop.nix
     ];
 
