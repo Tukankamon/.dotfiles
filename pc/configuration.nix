@@ -134,6 +134,7 @@
    mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
    discord
    gimp
+   signal-desktop
   ];
 
   environment.gnome.excludePackages = with pkgs; [
