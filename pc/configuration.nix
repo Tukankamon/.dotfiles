@@ -7,6 +7,7 @@
       ./../konfig/nvf.nix
       inputs.home-manager.nixosModules.home-manager
       ./../konfig/system/pc.nix
+      ./../konfig/system/global.nix
     ];
 
   pc-boot.enable = true;
@@ -31,24 +32,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Madrid";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "es_ES.UTF-8";
-    LC_IDENTIFICATION = "es_ES.UTF-8";
-    LC_MEASUREMENT = "es_ES.UTF-8";
-    LC_MONETARY = "es_ES.UTF-8";
-    LC_NAME = "es_ES.UTF-8";
-    LC_NUMERIC = "es_ES.UTF-8";
-    LC_PAPER = "es_ES.UTF-8";
-    LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -111,26 +94,12 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-   vim
-   home-manager
-   fastfetch
-   pipes
-   cbonsai
-   neo-cowsay
-   lf
-   git
-   kitty
-   fzf
-   neovim
    gnomeExtensions.blur-my-shell
    gnomeExtensions.tiling-shell
    #gnomeExtensions.search-light
    vscodium		#Vscodium
    vscode 
    brave
-   asciiquarium-transparent
-   parted                       #scan partitions
-   testdisk
    mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
    discord
    gimp
@@ -207,8 +176,6 @@
  };
 
  nixpkgs.config.allowUnfree = true;
- nix.settings.experimental-features = ["nix-command" "flakes"];
-
 }
  
  /*stylix.base16Scheme = {
