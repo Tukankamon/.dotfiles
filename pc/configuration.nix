@@ -135,6 +135,7 @@
    discord
    gimp
    signal-desktop
+   sops
   ];
 
   environment.gnome.excludePackages = with pkgs; [

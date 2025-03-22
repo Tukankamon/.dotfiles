@@ -123,6 +123,7 @@
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk
+   sops
   #  wget
   ];
 
