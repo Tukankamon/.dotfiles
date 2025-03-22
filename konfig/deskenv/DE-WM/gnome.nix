@@ -51,7 +51,7 @@ config = lib.mkIf config.gnome.enable {
 	};
 
   "org/gnome/desktop/wm/keybindings" = {
-    close = ["<Alt>w"];
+    close = ["<Alt>p"];
 
     switch-to-workspace-1 = ["<Alt>1"];
     switch-to-workspace-2 = ["<Alt>2"];
