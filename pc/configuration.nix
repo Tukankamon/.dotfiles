@@ -4,7 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./../konfig/nvf.nix
+      ./../konfig/home/nvf.nix
       inputs.home-manager.nixosModules.home-manager
       ./../konfig/system/pc.nix
       ./../konfig/system/global.nix
