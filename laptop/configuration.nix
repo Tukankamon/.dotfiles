@@ -124,6 +124,7 @@
    parted                       #scan partitions
    testdisk
    gimp
+   spotify
    sops
   #  wget
   ];
