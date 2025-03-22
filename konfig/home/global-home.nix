@@ -28,6 +28,8 @@
     shellAbbrs = {
       nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
       hms = "home-manager switch --flake ~/.dotfiles/laptop";
+      nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
+
       nxgc = "nix-collect-garbage -d && nix-collect-garbage && sudo nix-collect-garbage -d";
   };
 };
