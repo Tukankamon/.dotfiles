@@ -1,7 +1,11 @@
 { inputs, config, pkgs, lib, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./kitty.nix 
+    ./fastfetch.nix
+    ./../deskenv/desk-module.nix
+  ];
 
   programs.bash = {
     enable = false;

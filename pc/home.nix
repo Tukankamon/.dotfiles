@@ -3,9 +3,6 @@
 {
 
   imports = [ 
-    ./../konfig/kitty.nix 
-    ./../konfig/fastfetch.nix
-    ./../konfig/deskenv/desk-module.nix
     ./../konfig/home/global.nix
   ];
 

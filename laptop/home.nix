@@ -2,10 +2,7 @@
 
 {
 
-  imports = [ 
-    ./../konfig/kitty.nix 
-    ./../konfig/fastfetch.nix
-    ./../konfig/deskenv/desk-module.nix
+  imports = [
     ./../konfig/home/global.nix
   ];
 
