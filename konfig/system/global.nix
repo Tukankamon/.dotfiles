@@ -40,6 +40,6 @@
    asciiquarium-transparent
    parted                       #scan partitions
    testdisk
-
+   ffmpeg
   ];
 }
