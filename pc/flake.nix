@@ -3,10 +3,16 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";	#release-24.11
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
+    
+    home-manager = {
+      url = "github:nix-community/home-manager/master";	#release-24.11
+      inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
+    };
 
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #hyprland.url = "github:hyprwm/Hyprland";
     
