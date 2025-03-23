@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    home-mannager = {
+    home-manager = {
       url = "github:nix-community/home-manager/master";	#release-24.11 (syntax for stable branch)
       inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
     };
