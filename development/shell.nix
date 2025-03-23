@@ -4,7 +4,21 @@
 
 pkgs.mkShell {
   #General nix shell
-  packages = [
+  packages = with pkgs; [
+    #Cpp
+    clang-tools
+    cmake
+    codespell
+    conan
+    cppcheck
+    doxygen
+    gtest
+    lcov
+    vcpkg
+    vcpkg-tool
+    libgcc
+
+    #Python
     pkgs.texliveFull
     (pkgs.python3.withPackages(pypkgs: with pypkgs; [
       #All the python libraries

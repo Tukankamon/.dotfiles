@@ -3,16 +3,25 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";	#release-24.11
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
 
-    nvf.url = "github:notashelf/nvf";
+    home-mannager = {
+      url = "github:nix-community/home-manager/master";	#release-24.11 (syntax for stable branch)
+      inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
+    };
 
-    #hyprland.url = "github:hyprwm/Hyprland";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    /*hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };*/
     
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:   #If not inside the curly brackets you need to put inputs. e.g: inputs.nixpkgs...
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";      

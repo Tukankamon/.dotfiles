@@ -41,5 +41,7 @@
    parted                       #scan partitions
    testdisk
    ffmpeg
-  ];
+   qbittorrent
+   tor-browser
+];
 }
