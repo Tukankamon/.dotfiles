@@ -97,9 +97,6 @@
    gnomeExtensions.blur-my-shell
    gnomeExtensions.tiling-shell
    #gnomeExtensions.search-light
-   vscodium		#Vscodium
-   vscode 
-   brave
    mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
    discord
    gimp

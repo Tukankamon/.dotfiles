@@ -43,5 +43,9 @@
    ffmpeg
    qbittorrent
    tor-browser
+   spotify
+   brave
+   vscodium		#Vscodium
+   vscode 
 ];
 }

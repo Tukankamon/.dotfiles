@@ -89,11 +89,7 @@
    gnomeExtensions.blur-my-shell
    gnomeExtensions.tiling-shell
    #gnomeExtensions.search-light
-   vscodium		#Vscodium
-   vscode 
-   brave
    gimp
-   spotify
    sops
   #  wget
   ];
