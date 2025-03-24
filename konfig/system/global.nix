@@ -46,6 +46,7 @@
    spotify
    brave
    vscodium		#Vscodium
-   vscode 
+   vscode
+   protonmail-desktop
 ];
 }
