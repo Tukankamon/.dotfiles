@@ -43,8 +43,10 @@
    ffmpeg
    qbittorrent
    tor-browser
-   librewolf
+   spotify
+   brave
+   vscodium		#Vscodium
+   vscode
    protonmail-desktop
-   protonvpn-gui
 ];
 }
