@@ -47,6 +47,8 @@
    brave
    vscodium		#Vscodium
    vscode
+   librewolf
    protonmail-desktop
+   protonvpn-gui
 ];
 }
