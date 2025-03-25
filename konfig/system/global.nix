@@ -43,5 +43,8 @@
    ffmpeg
    qbittorrent
    tor-browser
+   librewolf
+   protonmail-desktop
+   protonvpn-gui
 ];
 }
