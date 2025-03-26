@@ -48,7 +48,7 @@
    vscodium		#Vscodium
    vscode
    librewolf
-   protonmail-desktop
+   protonmail-bridge
    protonvpn-gui
 ];
 }
