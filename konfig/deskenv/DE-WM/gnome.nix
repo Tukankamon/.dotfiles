@@ -45,10 +45,13 @@ config = lib.mkIf config.gnome.enable {
       };
 
   "org/gnome/shell/app-switcher".current-workspace-only = true;
+  "org/gnome/desktop/interface".enable-hot-corners =  false;
 
  	"org/gnome/shell/extensions/tiling-shell" = {
       "enable-autotiling"=true;
 	};
+
+  "org/gnome/mutter".dynamic-workspaces = false;
 
   "org/gnome/desktop/wm/keybindings" = {
     close = ["<Alt>p"];
