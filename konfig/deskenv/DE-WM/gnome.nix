@@ -52,7 +52,7 @@ config = lib.mkIf config.gnome.enable {
 	};
 
   "org/gnome/mutter".dynamic-workspaces = false;
-
+  "org/gnome/desktop/wm/preferences".num-workspaces = 5;
   "org/gnome/desktop/wm/keybindings" = {
     close = ["<Alt>p"];
 
