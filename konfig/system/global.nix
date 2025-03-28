@@ -55,5 +55,6 @@
    protonmail-bridge
    protonvpn-gui
    dconf-editor
+   signal-desktop
 ];
 }
