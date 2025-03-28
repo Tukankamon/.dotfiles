@@ -27,4 +27,22 @@
     #EDITOR = "vscodium";
   };
   
+  programs.fish = {
+    enable = true;
+
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+
+    '';
+
+    #shellInit =  "fastfetch";
+
+    shellAbbrs = {
+      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
+      hms = "home-manager switch --flake ~/.dotfiles/laptop";
+      nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
+
+      nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+  };
+};
 }
