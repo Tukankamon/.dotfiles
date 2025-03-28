@@ -56,5 +56,6 @@
    protonvpn-gui
    dconf-editor
    signal-desktop
+   mullvad-browser
 ];
 }
