@@ -97,11 +97,6 @@
   #  wget
   ];
 
-  environment.gnome.excludePackages = with pkgs; [
-	gnome-tour
-
-  ];
-
   fonts.packages = with pkgs; [
     font-awesome
     font-awesome_5

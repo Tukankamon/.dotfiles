@@ -58,4 +58,10 @@
    signal-desktop
    mullvad-browser
 ];
+
+  environment.gnome.excludePackages = with pkgs; [
+	gnome-tour
+  epiphany
+
+  ];
 }
