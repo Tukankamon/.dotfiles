@@ -51,6 +51,13 @@ config = lib.mkIf config.gnome.enable {
       "enable-autotiling"=true;
 	};
 
+  "org/gnome/shell/extensions/auto-move-windows" = {
+    "application-list" = ["discord.desktop:4"
+                          "brave-browser.desktop:1"
+                          "codium.desktop:3"
+                          "spotify.desktop:5"];
+  };
+
   "org/gnome/mutter".dynamic-workspaces = false;
   "org/gnome/desktop/wm/preferences".num-workspaces = 5;
   "org/gnome/desktop/wm/keybindings" = {
