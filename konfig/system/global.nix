@@ -62,6 +62,7 @@
   environment.gnome.excludePackages = with pkgs; [
 	gnome-tour
   epiphany
+  geary
 
   ];
 }
