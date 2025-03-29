@@ -56,7 +56,7 @@
    protonvpn-gui
    dconf-editor
    signal-desktop
-   mullvad-browser
+   mullvad-browser   #(recommended pretty much only if you have the vpn)
 ];
 
   environment.gnome.excludePackages = with pkgs; [
