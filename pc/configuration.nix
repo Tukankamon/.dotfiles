@@ -100,6 +100,7 @@
    gimp
    signal-desktop
    sops
+   #element-desktop
   ];
 
   fonts.packages = with pkgs; [
