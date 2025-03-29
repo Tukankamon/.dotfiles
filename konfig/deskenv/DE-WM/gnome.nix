@@ -52,9 +52,10 @@ config = lib.mkIf config.gnome.enable {
 	};
 
   "org/gnome/shell/extensions/auto-move-windows" = {
-    "application-list" = ["discord.desktop:4"
-                          "brave-browser.desktop:1"
+    "application-list" = ["brave-browser.desktop:1"
+                          "librewolf.desktop:2"
                           "codium.desktop:3"
+                          "discord.desktop:4"
                           "spotify.desktop:5"];
   };
 
