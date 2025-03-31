@@ -103,6 +103,8 @@
    #element-desktop
    darktable
    davinci-resolve
+   tokei    #Count lines of code per language
+   #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
   ];
 
   fonts.packages = with pkgs; [

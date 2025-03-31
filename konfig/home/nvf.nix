@@ -1,7 +1,9 @@
-{ pkgs, lib, ...}:
 
+{ pkgs, lib, ...}:
+{}      #<-- Remove these if reenabling nvf
+/*
 {
-  programs.nvf.enable = true;
+  programs.nvf.enable = false;
 
   programs.nvf.settings.vim = {
     theme = {
@@ -47,13 +49,10 @@ languages = {
 };
 dashboard.dashboard-nvim = {
         enable = true;
-        /*setupOpts = {
-                "theme" = "doom";
-
-        };*/
 };
 };
 }
+*/
 
 /*
 base00 = "1f262d";

@@ -9,16 +9,17 @@
       inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
     };
 
-    nvf = {
+    #Just some Nvim config stuff
+    /*nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
+    };*/
 
     #hyprland.url = "github:hyprwm/Hyprland";
     
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, /*nvf,*/ /*hyprland,*/ ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";      
@@ -30,7 +31,7 @@
       nixos = lib.nixosSystem {
         specialArgs = {inherit inputs system;};
     	  modules = [ ./configuration.nix
-		      nvf.nixosModules.default
+		      #nvf.nixosModules.default
 		      ];
       };
     };
