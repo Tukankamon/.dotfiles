@@ -16,7 +16,9 @@ pkgs.mkShell {
     lcov
     vcpkg
     vcpkg-tool
-    libgcc
+    libgcc    #Compiler
+    gcc
+    gdb
 
     #Python
     pkgs.texliveFull

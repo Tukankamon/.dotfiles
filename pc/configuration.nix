@@ -101,6 +101,8 @@
    signal-desktop
    sops
    #element-desktop
+   darktable
+   davinci-resolve
   ];
 
   fonts.packages = with pkgs; [
