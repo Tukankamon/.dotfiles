@@ -33,7 +33,7 @@
 
   programs.neovim = {
     enable = false;
-    defaultEditor = true;
+    defaultEditor = false;
     viAlias = true;
     vimAlias = true;
     extraConfig = ''
@@ -43,13 +43,13 @@
       		set mouse=a
       		colorscheme slate
       	  '';
-    plugins = with pkgs.vimPlugins; [
+    /*plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       vim-nerdtree-tabs
       nvim-treesitter.withAllGrammars
       plenary-nvim
       mini-nvim
-    ];
+    ];*/
 
   };
 

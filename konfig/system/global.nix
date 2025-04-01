@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  configuration,
+  #configuration,
   ...
 }:
 
@@ -14,6 +14,8 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Set your time zone.
   time = {
@@ -67,6 +69,7 @@
     mullvad-browser # (recommended pretty much only if you have the vpn)
     #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
+    nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
   ];
 
   environment.gnome.excludePackages = with pkgs; [
