@@ -105,6 +105,11 @@
    davinci-resolve
    tokei    #Count lines of code per language
    #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
+   (pkgs.writeShellScriptBin "deploy" ''
+        nohup brave &
+        nohup codium &
+        nohup discord &
+      '')   #Custom bash script to open programs
   ];
 
   fonts.packages = with pkgs; [
