@@ -70,6 +70,7 @@
     #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
+    obs-studio
   ];
 
   environment.gnome.excludePackages = with pkgs; [
