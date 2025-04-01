@@ -94,13 +94,11 @@
   environment.systemPackages = with pkgs; [
    gnomeExtensions.blur-my-shell
    gnomeExtensions.tiling-shell
-   #gnomeExtensions.search-light
    mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
    discord
    gimp
    signal-desktop
    sops
-   #element-desktop
    darktable
    davinci-resolve
    tokei    #Count lines of code per language
