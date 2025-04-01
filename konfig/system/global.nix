@@ -1,13 +1,21 @@
-{ inputs, pkgs, configuration, ... }:
+{
+  inputs,
+  pkgs,
+  configuration,
+  ...
+}:
 
 {
   imports = [
 
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-    # Set your time zone.
+  # Set your time zone.
   time = {
     hardwareClockInLocalTime = true;
     timeZone = "Europe/Madrid";
@@ -29,40 +37,42 @@
   };
 
   environment.systemPackages = with pkgs; [
-   home-manager
-   fastfetch
-   pipes
-   cbonsai
-   neo-cowsay
-   vim
-   lf
-   git
-   kitty
-   fzf
-   neovim
-   asciiquarium-transparent
-   parted                       #scan partitions
-   testdisk
-   ffmpeg
-   qbittorrent
-   tor-browser
-   spotify
-   brave
-   vscodium		#Vscodium
-   vscode
-   librewolf
-   protonmail-desktop
-   protonmail-bridge
-   protonvpn-gui
-   dconf-editor
-   signal-desktop
-   mullvad-browser   #(recommended pretty much only if you have the vpn)
-];
+    home-manager
+    fastfetch
+    pipes
+    cbonsai
+    neo-cowsay
+    vim
+    lf
+    git
+    kitty
+    fzf
+    neovim
+    asciiquarium-transparent
+    parted # scan partitions
+    testdisk
+    ffmpeg
+    qbittorrent
+    tor-browser
+    spotify
+    brave
+    vscodium # Vscodium
+    vscode
+    librewolf
+    protonmail-desktop
+    protonmail-bridge
+    protonvpn-gui
+    dconf-editor
+    signal-desktop
+    mullvad-browser # (recommended pretty much only if you have the vpn)
+    #alejandra  #Nix formatter
+    nixfmt-rfc-style # Nix formatter (official)
+  ];
 
   environment.gnome.excludePackages = with pkgs; [
-	gnome-tour
-  epiphany
-  geary
+    gnome-tour
+    epiphany
+    geary
 
   ];
 }
