@@ -8,10 +8,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../konfig/home/nvf.nix
     inputs.home-manager.nixosModules.home-manager
     ./../konfig/system/pc.nix
     ./../konfig/system/global.nix
+    ./../development/script.nix
   ];
 
   pc-boot.enable = true;
@@ -115,7 +115,7 @@
     obs-studio
     librewolf
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
-    (pkgs.writeShellScriptBin "deploy" ''
+    (writeShellScriptBin "deploy" ''
       nohup brave &
       nohup codium &
       nohup discord &
