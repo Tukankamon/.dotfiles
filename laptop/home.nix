@@ -47,7 +47,8 @@
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
 
-      gitdo = "git add * && git commit -a -m automated-commit && git push origin main";
+      gitdo = "git add * && git commit -a -m automated-commit && git push origin main"; 
+      #Maybe find a way to index e.g: automated-commit-1
     };
   };
 }
