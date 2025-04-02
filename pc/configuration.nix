@@ -58,7 +58,7 @@
 
   # Enable sound with pipewire.
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

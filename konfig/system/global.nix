@@ -71,6 +71,7 @@
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     gimp
     tokei # Count lines of code per language
+    at
   ];
 
   environment.gnome.excludePackages = with pkgs; [
