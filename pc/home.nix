@@ -46,7 +46,8 @@
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-      "git do" = "git commit -a ";
+      
+      gitdo = "git add * && git commit -a -m test && git push origin main";
     };
   };
 }
