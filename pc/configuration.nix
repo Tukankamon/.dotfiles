@@ -1,27 +1,34 @@
-{ inputs, pkgs, configuration, ... }:	#add inputs
+{
+  inputs,
+  pkgs,
+  /*configuration,*/
+  ...
+}: # add inputs
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ./../konfig/home/nvf.nix
-      inputs.home-manager.nixosModules.home-manager
-      ./../konfig/system/pc.nix
-      ./../konfig/system/global.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./../konfig/home/nvf.nix
+    inputs.home-manager.nixosModules.home-manager
+    ./../konfig/system/pc.nix
+    ./../konfig/system/global.nix
+  ];
 
   pc-boot.enable = true;
 
-  home-manager = {        #Not necesary but now hm also rebuilds with nixos-rebuild
+  home-manager = {
+    # Not necesary but now hm also rebuilds with nixos-rebuild
     extraSpecialArgs = { inherit inputs; };
     users.aved = import ./home.nix;
 
-  };   
+  };
 
- /*nix.settings = {       #This has to be enabled before installing hyprland
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };  */
+  /*
+    nix.settings = {       #This has to be enabled before installing hyprland
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    };
+  */
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -35,7 +42,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -71,16 +78,19 @@
   users.users.aved = {
     isNormalUser = true;
     description = "aved";
-    extraGroups = [ "networkmanager" "wheel" ];
-    password = "aved";
-    packages = with pkgs; [
-    #  thunderbird
+    extraGroups = [
+      "networkmanager"
+      "wheel"
     ];
+    password = "aved";
+    /*packages = with pkgs; [
+      #  thunderbird
+    ];*/
   };
 
   programs.firefox.enable = false;
-  
-  environment.shells = with pkgs; [ fish];	#Following a video
+
+  environment.shells = with pkgs; [ fish ]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
@@ -92,29 +102,30 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-   gnomeExtensions.blur-my-shell
-   gnomeExtensions.tiling-shell
-   mangohud     #Fps overlay (add mangohud %command% to steam launch options in the game)
-   discord
-   gimp
-   signal-desktop
-   sops
-   darktable
-   davinci-resolve
-   tokei    #Count lines of code per language
-   #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
-   (pkgs.writeShellScriptBin "deploy" ''
-        nohup brave &
-        nohup codium &
-        nohup discord &
-      '')   #Custom bash script to open programs
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.tiling-shell
+    mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
+    discord
+    gimp
+    signal-desktop
+    sops
+    darktable
+    davinci-resolve
+    obs-studio
+    librewolf
+    #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
+    (pkgs.writeShellScriptBin "deploy" ''
+      nohup brave &
+      nohup codium &
+      nohup discord &
+    '') # Custom bash script to open programs
   ];
 
   fonts.packages = with pkgs; [
     font-awesome
     font-awesome_5
     font-awesome_6
-    
+
     nerd-fonts.code-new-roman
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.nerd-fonts.fira-code
@@ -144,54 +155,56 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
- 
+
   services.power-profiles-daemon.enable = false;
-  
-  powerManagement.enable = true;      #laptop battery
+
+  powerManagement.enable = true; # laptop battery
   services.thermald.enable = true;
 
- services.tlp = {
-  enable = true;
-  settings= {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-    CPU_ENERGY_PERF_POLICY_ON_BAT= "power";
-    CPU_ENERGY_PERF_POLICY_ON_AC= "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-    CPU_MIN_PERF_ON_AC = 0;
-    CPU_MAX_PERF_ON_AC = 100;
-    CPU_MIN_PERF_ON_BAT = 0;
-    CPU_MAX_PERF_ON_BAT = 20;
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+
+    };
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 10d";
+  };
+
+  nixpkgs.config.allowUnfree = true;
+}
+
+/*
+  stylix.base16Scheme = {
+   base00 = "1f262d";  #terminal bg (defualt is #485867) (brush trees dark)
+   base01 = "5A6D7A";
+   base02 = "6D828E";
+   base03 = "8299A1";
+   base04 = "98AFB5";
+   base05 = "B0C5C8";
+   base06 = "C9DBDC";
+   base07 = "E3EFEF";
+   base08 = "b38686";
+   base09 = "d8bba2";
+   base0A = "aab386";
+   base0B = "87b386";
+   base0C = "86b3b3";
+   base0D = "868cb3";
+   base0E = "b386b2";
+   base0F = "b39f9f";
 
   };
- };
-
- nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 10d";
- };
-
- nixpkgs.config.allowUnfree = true;
-}
- 
- /*stylix.base16Scheme = {
-  base00 = "1f262d";  #terminal bg (defualt is #485867) (brush trees dark)
-  base01 = "5A6D7A";
-  base02 = "6D828E";
-  base03 = "8299A1";
-  base04 = "98AFB5";
-  base05 = "B0C5C8";
-  base06 = "C9DBDC";
-  base07 = "E3EFEF";
-  base08 = "b38686";
-  base09 = "d8bba2";
-  base0A = "aab386";
-  base0B = "87b386";
-  base0C = "86b3b3";
-  base0D = "868cb3";
-  base0E = "b386b2";
-  base0F = "b39f9f";
-
- };*/
+*/

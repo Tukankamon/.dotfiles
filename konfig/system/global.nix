@@ -60,7 +60,6 @@
     brave
     vscodium # Vscodium
     vscode
-    librewolf
     protonmail-desktop
     protonmail-bridge
     protonvpn-gui
@@ -70,7 +69,7 @@
     #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
-    obs-studio
+    tokei    #Count lines of code per language
   ];
 
   environment.gnome.excludePackages = with pkgs; [
