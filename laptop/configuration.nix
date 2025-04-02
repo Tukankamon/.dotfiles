@@ -86,6 +86,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      #"input"
     ];
     password = "aved";
     /*
