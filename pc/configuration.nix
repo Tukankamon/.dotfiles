@@ -115,6 +115,7 @@
     obs-studio
     librewolf
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
+    nix-output-monitor  #eye candy for nix develop and shell
     (writeShellScriptBin "deploy" ''
       nohup brave &
       nohup codium &

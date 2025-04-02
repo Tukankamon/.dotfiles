@@ -1,4 +1,7 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
 
@@ -11,11 +14,11 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  gnome.enable = true;    #Dont forget to also disable it in configuration.nix
-  hypr.enable = false;    #Same thing here
+  gnome.enable = true; # Dont forget to also disable it in configuration.nix
+  hypr.enable = false; # Same thing here
 
   home.packages = with pkgs; [
-    pkgs.hello
+    hello
   ];
   fonts.fontconfig.enable = true;
 
@@ -26,7 +29,7 @@
   home.sessionVariables = {
     #EDITOR = "vscodium";
   };
-  
+
   programs.fish = {
     enable = true;
 
@@ -38,11 +41,11 @@
     #shellInit =  "fastfetch";
 
     shellAbbrs = {
-      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
+      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop";
       hms = "home-manager switch --flake ~/.dotfiles/laptop";
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+    };
   };
-};
 }

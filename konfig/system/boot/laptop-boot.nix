@@ -1,30 +1,34 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 {
 
-imports = [ ./../../../laptop/hardware-configuration.nix ];
+  imports = [ ./../../../laptop/hardware-configuration.nix ];
 
-options ={
-  laptop-boot.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = true;
-    example = false;
-    description = "sets the boot config for the laptop";
-  };
-};
-
-config = lib.mkIf config.laptop-boot.enable {
-
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+  options = {
+    laptop-boot.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      example = false;
+      description = "sets the boot config for the laptop";
     };
+  };
 
-    plymouth = {
-      enable = true;
-      theme = "spinfinity";
+  config = lib.mkIf config.laptop-boot.enable {
+
+    boot = {
+      loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+      };
+
+      plymouth = {
+        enable = true;
+        theme = "spinfinity";
+      };
+    };
   };
-  };
-};
 }

@@ -1,8 +1,10 @@
-{ config, libs, pkgs, ... }:
+{
+  ...
+}:
 {
 
-#@define-color color9 #cd7fff;
-programs.waybar.style =  ''
+  #@define-color color9 #cd7fff;
+  programs.waybar.style = ''
     @define-color background #71665b;
 
     * {
@@ -162,6 +164,6 @@ programs.waybar.style =  ''
         padding: 0px 5px;
         transition: all .3s ease; 
     }
-    '';
+  '';
 
 }
