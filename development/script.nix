@@ -2,20 +2,21 @@
   pkgs,
   ...
 }:
-#Exposed from the flake for custom scripts
+#Make bash scripts and use as pkgs
 
 {
   environment.systemPackages = with pkgs; [
     (writeShellApplication {
-      name = "cv-turn-in";
+      name = "test-script";
+
+      runtimeInputs = with pkgs; [
+        cowsay
+        #lolcat     #Used to make it colorfull
+      ]; # Specify pkgs in the script
 
       text = ''
-      echo "Entregando al campus virtual"
-      xdg-open https://campusvirtual.cv.uma.es/
-      sleep 3
-      xdotool key q
-
-    '';
+        cowsay "this is a test"
+      '';
     })
   ];
 }
