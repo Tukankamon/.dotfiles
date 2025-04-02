@@ -1,8 +1,8 @@
 {
-  inputs,
-  config,
-  pkgs,
-  lib,
+  # inputs,
+  # config,
+  # pkgs,
+  # lib,
   ...
 }:
 
@@ -43,13 +43,15 @@
       		set mouse=a
       		colorscheme slate
       	  '';
-    /*plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-      vim-nerdtree-tabs
-      nvim-treesitter.withAllGrammars
-      plenary-nvim
-      mini-nvim
-    ];*/
+    /*
+      plugins = with pkgs.vimPlugins; [
+        nvim-lspconfig
+        vim-nerdtree-tabs
+        nvim-treesitter.withAllGrammars
+        plenary-nvim
+        mini-nvim
+      ];
+    */
 
   };
 

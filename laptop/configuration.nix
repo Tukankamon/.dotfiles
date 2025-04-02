@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  configuration,
+  # configuration,
   ...
 }: # add inputs
 
@@ -105,8 +105,7 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.tiling-shell
     #gnomeExtensions.search-light
-    gimp
-    sops
+    #sops
     #  wget
   ];
 

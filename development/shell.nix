@@ -21,12 +21,12 @@ pkgs.mkShell {
     gdb
 
     #Python
-    pkgs.texliveFull
+    #texliveFull
     (pkgs.python3.withPackages(pypkgs: with pypkgs; [
       #All the python libraries
       numpy
       requests
-      manim
+      #manim
     ]))
   ];
 
