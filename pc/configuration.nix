@@ -8,10 +8,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../konfig/home/nvf.nix
     inputs.home-manager.nixosModules.home-manager
     ./../konfig/system/pc.nix
     ./../konfig/system/global.nix
+    ./../development/script.nix
   ];
 
   pc-boot.enable = true;
@@ -58,7 +58,7 @@
 
   # Enable sound with pipewire.
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -115,7 +115,8 @@
     obs-studio
     librewolf
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
-    (pkgs.writeShellScriptBin "deploy" ''
+    nix-output-monitor  #eye candy for nix develop and shell
+    (writeShellScriptBin "deploy" ''
       nohup brave &
       nohup codium &
       nohup discord &

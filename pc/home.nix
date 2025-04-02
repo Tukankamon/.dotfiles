@@ -1,8 +1,11 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
 
-  imports = [ 
+  imports = [
     ./../konfig/home/global-home.nix
   ];
 
@@ -11,11 +14,11 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  gnome.enable = true;    #Dont forget to also disable it in configuration.nix
-  hypr.enable = false;    #Same thing here
+  gnome.enable = true; # Dont forget to also disable it in configuration.nix
+  hypr.enable = false; # Same thing here
 
   home.packages = with pkgs; [
-    pkgs.hello
+    hello
   ];
   fonts.fontconfig.enable = true;
 
@@ -38,11 +41,14 @@
     #shellInit =  "fastfetch";
 
     shellAbbrs = {
-      nxs  = "sudo nixos-rebuild switch --flake ~/.dotfiles/pc";
+      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/pc";
       hms = "home-manager switch --flake ~/.dotfiles/pc";
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+
+      gitdo = "git add * && git commit -a -m automated-commit && git push origin main";
+      #Maybe find a way to index e.g: automated-commit-1
+    };
   };
-};
 }

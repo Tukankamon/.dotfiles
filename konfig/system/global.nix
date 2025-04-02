@@ -60,8 +60,8 @@
     brave
     vscodium # Vscodium
     vscode
-    protonmail-desktop
-    protonmail-bridge
+    #protonmail-desktop
+    #protonmail-bridge
     protonvpn-gui
     dconf-editor
     signal-desktop
@@ -71,6 +71,7 @@
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     gimp
     tokei # Count lines of code per language
+    nvd #Check the pkg difference between generations
   ];
 
   environment.gnome.excludePackages = with pkgs; [

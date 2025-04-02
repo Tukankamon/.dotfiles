@@ -8,10 +8,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../konfig/home/nvf.nix
     inputs.home-manager.nixosModules.home-manager
     ./../konfig/system/laptop.nix
     ./../konfig/system/global.nix
+    ./../development/script.nix
   ];
 
   laptop-boot.enable = true;

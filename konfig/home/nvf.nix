@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 { } # <-- Remove these if reenabling nvf
 /*
   {
