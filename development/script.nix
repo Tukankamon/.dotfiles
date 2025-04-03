@@ -20,7 +20,7 @@
       '';
     })
 
-    (writeShellApplication {
+    (writeShellApplication {    #Git add, commit and push with a message
       name = "gitdo";
 
       runtimeInputs = with pkgs; [ git ];
