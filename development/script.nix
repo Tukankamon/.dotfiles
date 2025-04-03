@@ -16,7 +16,7 @@
       ]; # Specify pkgs in the script
 
       text = ''
-        cowsay --rainbow --random "this is a test"
+        cowsay --random --rainbow "this is a test"
       '';
     })
   ];
