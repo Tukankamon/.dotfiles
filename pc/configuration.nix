@@ -122,6 +122,7 @@
       nohup discord &
     '') # Custom bash script to open programs
     libreoffice
+    audacity
   ];
 
   fonts.packages = with pkgs; [
