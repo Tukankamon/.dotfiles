@@ -121,6 +121,7 @@
       nohup codium &
       nohup discord &
     '') # Custom bash script to open programs
+    libreoffice
   ];
 
   fonts.packages = with pkgs; [
