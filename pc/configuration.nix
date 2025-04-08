@@ -42,7 +42,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu-pro" ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -92,6 +92,10 @@
 
   programs.firefox.enable = false;
 
+  /*environment.variables = {   #For amd stuff
+    ROC_ENABLE_PRE_VEGA = "1";
+};*/
+
   environment.shells = with pkgs; [ fish ]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -123,6 +127,8 @@
     '') # Custom bash script to open programs
     libreoffice
     audacity
+    #jetbrains.idea-community   #for developing in kotlin
+    kdePackages.kdenlive
   ];
 
   fonts.packages = with pkgs; [

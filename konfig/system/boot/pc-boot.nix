@@ -24,6 +24,8 @@
         efi.canTouchEfiVariables = true;
       };
 
+      #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
+
       plymouth = {
         enable = true;
         theme = "spinfinity";
