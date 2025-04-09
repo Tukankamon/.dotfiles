@@ -129,6 +129,7 @@
     audacity
     #jetbrains.idea-community   #for developing in kotlin
     kdePackages.kdenlive
+    android-studio
   ];
 
   fonts.packages = with pkgs; [
