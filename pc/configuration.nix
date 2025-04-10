@@ -121,9 +121,9 @@
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
     nix-output-monitor  #eye candy for nix develop and shell
     (writeShellScriptBin "deploy" ''
-      nohup brave /dev/null 2>&1&
-      nohup codium /dev/null 2>&1&
-      nohup discord /dev/null 2>&1&
+      nohup brave &
+      nohup codium &
+      nohup discord &
     '') # Custom bash script to open programs
     libreoffice
     audacity
