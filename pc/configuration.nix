@@ -130,6 +130,7 @@
     #jetbrains.idea-community   #for developing in kotlin
     kdePackages.kdenlive
     android-studio
+    #distrobox #Distro containers
   ];
 
   fonts.packages = with pkgs; [
