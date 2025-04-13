@@ -72,6 +72,7 @@
     gimp
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
+    anki
   ];
 
   environment.gnome.excludePackages = with pkgs; [
