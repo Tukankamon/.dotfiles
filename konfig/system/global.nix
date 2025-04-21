@@ -39,6 +39,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.tiling-shell
+    gnomeExtensions.grand-theft-focus #Cant get this to work, makes the apps not start in background
+
     home-manager
     fastfetch
     pipes

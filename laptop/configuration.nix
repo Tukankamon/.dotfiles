@@ -103,8 +103,6 @@
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.tiling-shell
     #gnomeExtensions.search-light
     #sops
     #  wget

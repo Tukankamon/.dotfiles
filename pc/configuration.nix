@@ -108,8 +108,6 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.tiling-shell
     mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
     discord
     signal-desktop
