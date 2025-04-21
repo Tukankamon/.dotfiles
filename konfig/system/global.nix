@@ -73,6 +73,7 @@
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
     anki
+    obsidian  #Notes and "mini essays" (Odysseas on YT)
   ];
 
   environment.gnome.excludePackages = with pkgs; [
