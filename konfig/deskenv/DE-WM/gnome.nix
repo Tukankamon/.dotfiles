@@ -53,8 +53,8 @@ config = lib.mkIf config.gnome.enable {
 
   "org/gnome/shell/extensions/auto-move-windows" = {
     "application-list" = ["brave-browser.desktop:1"
-                          "librewolf.desktop:2
-                          obsidian.desktop:2"
+                          "librewolf.desktop:2"
+                          "obsidian.desktop:2"
                           "mullvad-browser.desktop:2"
                           "codium.desktop:3"
                           "discord.desktop:4"
