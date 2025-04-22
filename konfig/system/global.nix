@@ -41,7 +41,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.tiling-shell
-    gnomeExtensions.grand-theft-focus #Cant get this to work, makes the apps not start in background
+    gnomeExtensions.grand-theft-focus
 
     home-manager
     fastfetch
@@ -63,7 +63,7 @@
     tor-browser
     spotify
     brave
-    vscodium # Vscodium
+    vscodium
     vscode
     #protonmail-desktop
     #protonmail-bridge
