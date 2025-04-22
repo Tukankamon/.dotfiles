@@ -58,6 +58,7 @@
     parted # scan partitions
     testdisk
     ffmpeg
+    ack   #Finds words in codebases
     qbittorrent
     tor-browser
     spotify
