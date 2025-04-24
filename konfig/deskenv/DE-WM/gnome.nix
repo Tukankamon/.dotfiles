@@ -55,10 +55,10 @@ config = lib.mkIf config.gnome.enable {
     "application-list" = ["brave-browser.desktop:1"
                           "librewolf.desktop:2"
                           "obsidian.desktop:2"
-                          "mullvad-browser.desktop:2"
                           "codium.desktop:3"
                           "discord.desktop:4"
-                          "spotify.desktop:5"];
+                          "spotify.desktop:5"
+                          "mullvad-browser.desktop:5"];
   };
 
   "org/gnome/mutter".dynamic-workspaces = false;
