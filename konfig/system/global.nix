@@ -43,6 +43,7 @@
     gnomeExtensions.tiling-shell
     gnomeExtensions.grand-theft-focus
 
+    /* Terminal and config */
     home-manager
     fastfetch
     pipes
@@ -59,6 +60,11 @@
     testdisk
     ffmpeg
     ack   #Finds words in codebases
+      #alejandra  #Nix formatter
+    nixfmt-rfc-style # Nix formatter (official)
+    nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
+
+    /*  GUIS */
     qbittorrent
     tor-browser
     spotify
@@ -71,9 +77,6 @@
     dconf-editor
     signal-desktop
     mullvad-browser # (recommended pretty much only if you have the vpn)
-    #alejandra  #Nix formatter
-    nixfmt-rfc-style # Nix formatter (official)
-    nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     gimp
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
