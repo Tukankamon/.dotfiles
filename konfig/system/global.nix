@@ -38,6 +38,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
+
   environment.systemPackages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.tiling-shell
