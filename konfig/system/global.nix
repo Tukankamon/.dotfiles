@@ -38,7 +38,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  #services.xserver.wacom.enable = true; #Dont think this is necessary (keeping it for now)
+  services.xserver.wacom.enable = true; #Dont think this is necessary (works iffy without it)
 
   environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
@@ -67,7 +67,8 @@
     #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
-
+    libinput #Idk if necessary for wacom tablet
+    libwacom #Wacom specifically
     /*  GUIS */
     qbittorrent
     tor-browser
@@ -86,6 +87,11 @@
     nvd #Check the pkg difference between generations
     anki
     obsidian  #Notes and "mini essays" (Odysseas on YT)
+    #logseq #Similar to obisidian, keep an eye on it
+    #zettlr #Another FOSS markdown editor to keep an eye on
+    rnote #To use with the wacom
+    #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
+
   ];
 
   environment.gnome.excludePackages = with pkgs; [
