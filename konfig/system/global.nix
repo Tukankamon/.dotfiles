@@ -38,6 +38,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  #services.xserver.wacom.enable = true; #Dont think this is necessary (keeping it for now)
+
   environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
   environment.systemPackages = with pkgs; [
@@ -62,7 +64,7 @@
     testdisk
     ffmpeg
     ack   #Finds words in codebases
-      #alejandra  #Nix formatter
+    #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
 
