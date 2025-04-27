@@ -43,9 +43,6 @@
   environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.tiling-shell
-    gnomeExtensions.grand-theft-focus
 
     /* Terminal and config */
     home-manager

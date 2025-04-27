@@ -1,10 +1,10 @@
-{ inputs, pkgs, configuration, ... }:	#There is also a home manager for this to manage them
+{ inputs, pkgs, ... }:	#There is also a home manager for this to manage them
 
 {
 imports = [ ./../../../pc/hardware-configuration.nix ];
 
 programs.hyprland = {
-    enable = false;
+    enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
@@ -19,7 +19,7 @@ environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
 
 }
