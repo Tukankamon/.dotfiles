@@ -7,8 +7,8 @@ imports = [ ./../wayland/waybar/waybar.nix ];
 options ={
   hypr.enable = lib.mkOption {
     type = lib.types.bool;
-    default = false;
-    example = true;
+    default = true;
+    example = false;
     description = "enables hyprland (need to also enable it in config)";
   };
 };
