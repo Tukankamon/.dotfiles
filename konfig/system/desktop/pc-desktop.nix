@@ -4,9 +4,9 @@
 imports = [ ./../../../pc/hardware-configuration.nix ];
 
 programs.hyprland = {
-    enable = false;
+    enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;  #Only when using the flake
   };
 
 xdg.portal = {			#This and nix settings is for hyprland
@@ -18,8 +18,8 @@ environment.sessionVariables.NIXOS_OZONE_WL = "1";
 #Forces wayland
 
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+# Enable the GNOME Desktop Environment.
+services.xserver.displayManager.gdm.enable = false;
+services.xserver.desktopManager.gnome.enable = false;
 
 }
