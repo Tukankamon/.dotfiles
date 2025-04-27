@@ -14,13 +14,28 @@ options ={
 };
 
 config = lib.mkIf config.hypr.enable {
-  home.packages = [
+  home.packages = with pkgs; [
       pkgs.waybar
       pkgs.rofi-wayland
       pkgs.dunst
       pkgs.libnotify
       pkgs.swww
+      hyprpaper
   ];
+
+  /*services.hyprpaper.settings = {
+    ipc = "on";
+    splash = false;
+    splash_offset = 2.0;
+
+    preload =
+      [ home/aved/.dotfiles/konfig/images/roadwp.jpg ];
+
+    wallpaper = [
+      ", home/aved/.dotfiles/konfig/images/roadwp.jpg"
+    ];
+  };*/
+
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
@@ -67,7 +82,7 @@ config = lib.mkIf config.hypr.enable {
     };
     monitor = "eDP-1, 1920x1080@144, 0x0, 1";
 
-    "exec-once" = [ "waybar" "swww-daemon" ]; #autostart
+    "exec-once" = [ "waybar" "swww-daemon" "./wayland/swww.sh"]; #autostart
 
     gestures = {
       workspace_swipe = true;
@@ -79,6 +94,7 @@ config = lib.mkIf config.hypr.enable {
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
       "$mod, Q, exec, $terminal"
+      "CTRL, P, killactive"
 
       # Move focus with mod + arrow keys
       "$mod, left, movefocus, l"
@@ -93,17 +109,17 @@ config = lib.mkIf config.hypr.enable {
 
 
       #Workspaces
-      "$mod, 1, workspace, 1"
-      "$mod, 2, workspace, 2"
-      "$mod, 3, workspace, 3"
-      "$mod, 4, workspace, 4"
-      "$mod, 5, workspace, 5"
+      "ALT, 1, workspace, 1"
+      "ALT, 2, workspace, 2"
+      "ALT, 3, workspace, 3"
+      "ALT, 4, workspace, 4"
+      "ALT, 5, workspace, 5"
 
-      "$mod SHIFT, 1, movetoworkspace, 1"   #movetoworkspacesilent to not switch when moving
-      "$mod SHIFT, 2, movetoworkspace, 2"
-      "$mod SHIFT, 3, movetoworkspace, 3"
-      "$mod SHIFT, 4, movetoworkspace, 4"
-      "$mod SHIFT, 5, movetoworkspace, 5"
+      "ALT SHIFT, 1, movetoworkspace, 1"   #movetoworkspacesilent to not switch when moving
+      "ALT SHIFT, 2, movetoworkspace, 2"
+      "ALT SHIFT, 3, movetoworkspace, 3"
+      "ALT SHIFT, 4, movetoworkspace, 4"
+      "ALT SHIFT, 5, movetoworkspace, 5"
 
       
     ];
