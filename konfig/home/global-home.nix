@@ -10,7 +10,6 @@
   imports = [
     ./kitty.nix
     ./fastfetch.nix
-    ./../deskenv/desk-module.nix
   ];
 
   programs.bash = {
