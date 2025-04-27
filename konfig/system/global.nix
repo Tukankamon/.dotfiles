@@ -40,7 +40,7 @@
 
   services.xserver.wacom.enable = true; #Dont think this is necessary (works iffy without it)
 
-  environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
+  #environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
   environment.systemPackages = with pkgs; [
 
@@ -91,10 +91,10 @@
 
   ];
 
-  environment.gnome.excludePackages = with pkgs; [
+  /*environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     epiphany
     geary
 
-  ];
+  ];*/
 }

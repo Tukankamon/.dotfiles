@@ -27,7 +27,7 @@
       #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
 
       plymouth = {
-        enable = true;
+        enable = false;
         theme = "spinfinity";
       };
     };

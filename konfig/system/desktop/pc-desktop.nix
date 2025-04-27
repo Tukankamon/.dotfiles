@@ -6,7 +6,7 @@ imports = [ ./../../../pc/hardware-configuration.nix ];
 programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;  #Only when using the flake
   };
 
 xdg.portal = {			#This and nix settings is for hyprland
