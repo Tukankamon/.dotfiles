@@ -12,6 +12,19 @@ options ={
 
 config = lib.mkIf config.gnome.enable {
 
+  home.packages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.tiling-shell
+    gnomeExtensions.grand-theft-focus
+  ];
+
+  home.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    epiphany
+    geary
+
+  ];
+
   dconf = {
     enable = true;
     settings = {

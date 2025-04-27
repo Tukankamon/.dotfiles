@@ -66,6 +66,7 @@
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     libinput #Idk if necessary for wacom tablet
     libwacom #Wacom specifically
+
     /*  GUIS */
     qbittorrent
     tor-browser
@@ -91,11 +92,4 @@
 
   ];
 
-
-  /*environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    epiphany
-    geary
-
-  ];*/
 }
