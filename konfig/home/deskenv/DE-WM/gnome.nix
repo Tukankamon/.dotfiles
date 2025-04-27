@@ -21,14 +21,16 @@ config = lib.mkIf config.gnome.enable {
     gnomeExtensions.grand-theft-focus
   ];
 
-  /*home.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    epiphany
-    geary
-
-  ];*/
 
   #home.file.".background-image".source = ./../../../images/roadwp.jpg; #In combination with the dconf config
+
+  #home.sessionVariables.GTK_THEME = "Adwaita:dark";
+
+  gtk = { #IDK if this works
+    enable = true;
+    #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+  };
 
   dconf = {
     enable = true;

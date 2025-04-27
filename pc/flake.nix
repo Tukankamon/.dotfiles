@@ -15,14 +15,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };*/
 
-    hyprland = {
+    /*hyprland = {
       url = "github:hyprwm/Hyprland";
       #inputs.hyprland.follows = 
-    };
+    };*/
     
   };
 
-  outputs = { self, nixpkgs, home-manager, /*nvf,*/ hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, /*nvf,*/ /*hyprland,*/ ... }@inputs:
 
     let
       lib = nixpkgs.lib;
