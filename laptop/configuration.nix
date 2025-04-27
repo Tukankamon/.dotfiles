@@ -103,10 +103,10 @@
   programs.fish.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
+
+    gnomeExtensions.blur-my-shell     # Cant put this into gnome.nix
     gnomeExtensions.tiling-shell
     gnomeExtensions.grand-theft-focus
-
     #gnomeExtensions.search-light
     #sops
     #  wget

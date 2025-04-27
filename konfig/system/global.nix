@@ -43,6 +43,7 @@
   #environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
   environment.systemPackages = with pkgs; [
+
     /* Terminal and config */
     home-manager
     fastfetch

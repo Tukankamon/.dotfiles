@@ -1,4 +1,4 @@
-{ inputs, pkgs, configuration, ... }:	#There is also a home manager for this to manage them
+{ inputs, pkgs, ... }:	#There is also a home manager for this to manage them
 
 {
 imports = [ ./../../../pc/hardware-configuration.nix ];
@@ -18,8 +18,8 @@ environment.sessionVariables.NIXOS_OZONE_WL = "1";
 #Forces wayland
 
 
-# Enable the GNOME Desktop Environment.
-services.xserver.displayManager.gdm.enable = false;
-services.xserver.desktopManager.gnome.enable = false;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
 
 }

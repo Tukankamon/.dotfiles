@@ -7,6 +7,7 @@
 
   imports = [
     ./../konfig/home/global-home.nix
+    ./../konfig/deskenv/desk-module.nix
   ];
 
   home.username = "aved";
@@ -14,7 +15,9 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  gnome.enable = false; # Dont forget to also disable it in configuration.nix
+
+  gnome.enable = false; # Dont forget to also disable it in pc-desktop.nix
+
   hypr.enable = true; # Same thing here
 
   home.packages = with pkgs; [
