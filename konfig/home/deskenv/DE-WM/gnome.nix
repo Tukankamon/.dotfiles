@@ -13,17 +13,22 @@ options ={
 config = lib.mkIf config.gnome.enable {
 
   home.packages = with pkgs; [
+
+    dconf-editor
+
     gnomeExtensions.blur-my-shell
     gnomeExtensions.tiling-shell
     gnomeExtensions.grand-theft-focus
   ];
 
-  home.gnome.excludePackages = with pkgs; [
+  /*home.gnome.excludePackages = with pkgs; [
     gnome-tour
     epiphany
     geary
 
-  ];
+  ];*/
+
+  home.file.".background-image".source = home/aved/.dotfiles/konfig/images/roadwp.jpg; #In combination with the dconf config
 
   dconf = {
     enable = true;
@@ -31,7 +36,7 @@ config = lib.mkIf config.gnome.enable {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
       "org/gnome/desktop/background" = {
-        picture-uri = "~/.dotfiles/konfig/images/roadwp.jpg";
+        picture-uri = "home/aved/.dotfiles/konfig/images/roadwp.jpg";
       };
       
       "org/gnome/shell" = {

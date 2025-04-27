@@ -77,7 +77,6 @@
     #protonmail-desktop
     #protonmail-bridge
     protonvpn-gui
-    dconf-editor
     signal-desktop
     mullvad-browser # (recommended pretty much only if you have the vpn)
     gimp

@@ -7,7 +7,6 @@
 
   imports = [
     ./../konfig/home/global-home.nix
-    ./../konfig/deskenv/desk-module.nix
   ];
 
   home.username = "aved";
