@@ -15,9 +15,8 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
 
-  gnome.enable = false; # Dont forget to also disable it in pc-desktop.nix
-
-  hypr.enable = true; # Same thing here
+  gnome.enable = true; # This doesnt enable/disable gnome/hyprland just allows home manager to configure them, both can be true :) (unless you want to specifically disable customizations)
+  hypr.enable = true;
 
   home.packages = with pkgs; [
     hello

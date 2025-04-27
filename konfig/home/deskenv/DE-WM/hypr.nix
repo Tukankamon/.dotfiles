@@ -94,7 +94,7 @@ config = lib.mkIf config.hypr.enable {
     #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
     bind = [
       "$mod, Q, exec, $terminal"
-      "CTRL, P, killactive"
+      "ALT, P, killactive"
 
       # Move focus with mod + arrow keys
       "$mod, left, movefocus, l"

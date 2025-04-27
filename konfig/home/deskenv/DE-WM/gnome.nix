@@ -28,7 +28,7 @@ config = lib.mkIf config.gnome.enable {
 
   ];*/
 
-  home.file.".background-image".source = home/aved/.dotfiles/konfig/images/roadwp.jpg; #In combination with the dconf config
+  #home.file.".background-image".source = ./../../../images/roadwp.jpg; #In combination with the dconf config
 
   dconf = {
     enable = true;
@@ -36,7 +36,7 @@ config = lib.mkIf config.gnome.enable {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
       "org/gnome/desktop/background" = {
-        picture-uri = "home/aved/.dotfiles/konfig/images/roadwp.jpg";
+        picture-uri-dark = "file://" + ./../../../images/roadwp.jpg;
       };
       
       "org/gnome/shell" = {
