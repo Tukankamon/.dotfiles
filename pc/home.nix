@@ -42,8 +42,8 @@
     #shellInit =  "fastfetch";
 
     shellAbbrs = {
-      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/pc";
-      hms = "home-manager switch --flake ~/.dotfiles/pc";
+      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/pc#yamask";
+      hms = "home-manager switch --flake ~/.dotfiles/pc#yamask";
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";

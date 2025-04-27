@@ -24,7 +24,7 @@
   };
 
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "yamask"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -50,15 +50,16 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
 
+  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
+    alsa.enable = false;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;

@@ -32,7 +32,7 @@
     in {
 
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      yamask = lib.nixosSystem {
         specialArgs = {inherit inputs system;};
     	  modules = [ ./configuration.nix
 		      #nvf.nixosModules.default
@@ -45,12 +45,12 @@
         inherit pkgs;
     	  modules = [ ./home.nix 
           {
-          wayland.windowManager.hyprland = {
+          /*wayland.windowManager.hyprland = {
             enable = true;
             # set the flake package
             package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
             portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-          };
+          };*/
           }
         
         ];
