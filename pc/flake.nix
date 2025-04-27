@@ -18,7 +18,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
       #inputs.hyprland.follows = 
-    }
+    };
     
   };
 

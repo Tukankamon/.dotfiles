@@ -91,6 +91,10 @@
 
   ];
 
+  /*vscodeExtensions = with pkgs.vscode-extensions; [
+    jnoortheen.nix-ide
+  ];*/
+
   /*environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     epiphany
