@@ -47,6 +47,7 @@
     gnome-tour
     epiphany
     geary
+    yelp
 
   ];
 

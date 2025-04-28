@@ -30,7 +30,7 @@
     };
   */
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "dwebble"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -102,7 +102,7 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = /*with pkgs; */[
 
     #gnomeExtensions.search-light
     #sops
