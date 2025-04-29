@@ -99,6 +99,9 @@
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
     kiwix
+    caligula  #Burning flash drives
+    ventoy
+    gnome-network-displays #For sharing to a tv
 
   ];
 
