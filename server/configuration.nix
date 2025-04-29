@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ /*config,*/ pkgs, ... }:
 
 {
   imports =
@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "ekko"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -56,7 +56,7 @@
     isNormalUser = true;
     description = "ekko";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = /*with pkgs;*/ [];
   };
 
   # Allow unfree packages
@@ -69,6 +69,12 @@
   #  wget
   home-manager
   git
+  fzf
+  parted # scan partitions
+  testdisk
+  ack   #Finds words in codebases
+  fastfetch
+  lf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

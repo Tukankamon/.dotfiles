@@ -98,6 +98,7 @@
     #zettlr #Another FOSS markdown editor to keep an eye on
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
+    kiwix
 
   ];
 
