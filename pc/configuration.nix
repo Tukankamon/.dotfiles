@@ -124,6 +124,7 @@
     #kdePackages.kdenlive
     android-studio
     #distrobox #Distro containers
+    pavucontrol #better audio control
   ];
 
   fonts.packages = with pkgs; [
