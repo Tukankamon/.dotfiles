@@ -125,6 +125,7 @@
     android-studio
     #distrobox #Distro containers
     pavucontrol #better audio control
+    #revolt-desktop discord alternative
   ];
 
   fonts.packages = with pkgs; [
