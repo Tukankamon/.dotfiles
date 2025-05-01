@@ -126,6 +126,7 @@
     #distrobox #Distro containers
     pavucontrol #better audio control
     #revolt-desktop discord alternative
+    nurl #Fetching urls
   ];
 
   fonts.packages = with pkgs; [
