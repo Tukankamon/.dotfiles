@@ -89,7 +89,7 @@
     protonvpn-gui
     signal-desktop
     mullvad-browser # (recommended pretty much only if you have the vpn)
-    gimp
+    gimp3
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
     anki
