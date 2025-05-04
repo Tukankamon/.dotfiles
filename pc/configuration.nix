@@ -127,6 +127,7 @@
     pavucontrol #better audio control
     #revolt-desktop discord alternative
     nurl #Fetching urls
+    inputs.zen-browser.packages."x86_64-linux".default   #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
   ];
 
   fonts.packages = with pkgs; [

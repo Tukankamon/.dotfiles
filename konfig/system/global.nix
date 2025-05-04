@@ -42,8 +42,19 @@
 
   environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
+  /*
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+      wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      '';
+    };
+    */
 
   environment.gnome.excludePackages = with pkgs; [
+    gnome-software    #Gui install flatkpak
     gnome-tour
     epiphany
     geary
