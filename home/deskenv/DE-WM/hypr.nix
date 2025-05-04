@@ -2,7 +2,7 @@
 
 {
 
-imports = [ ./../wayland/waybar/waybar.nix ];
+imports = [ ./../wayland/waybar.nix ];
 
 options ={
   hypr.enable = lib.mkOption {
