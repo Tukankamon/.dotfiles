@@ -1,7 +1,7 @@
 { pkgs, ... }:	#There is also a home manager for this to manage them
 
 {
-imports = [ ./../../hosts/laptop/hardware-configuration.nix ];
+imports = [ ./../../laptop/hardware-configuration.nix ];
 
 programs.hyprland = {
     enable = false;
