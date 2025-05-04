@@ -6,7 +6,7 @@
 {
 
   imports = [
-    ./../konfig/home/global-home.nix
+    ./../home/global-home.nix
   ];
 
   home.username = "aved";

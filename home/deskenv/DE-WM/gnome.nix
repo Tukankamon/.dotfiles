@@ -22,8 +22,6 @@ config = lib.mkIf config.gnome.enable {
   ];
 
 
-  #home.file.".background-image".source = ./../../../images/roadwp.jpg; #In combination with the dconf config
-
   #home.sessionVariables.GTK_THEME = "Adwaita:dark";
 
   gtk = { #IDK if this works
@@ -38,7 +36,7 @@ config = lib.mkIf config.gnome.enable {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
       "org/gnome/desktop/background" = {
-        picture-uri-dark = "file://" + ./../../../images/roadwp.jpg;
+        picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;
       };
       
       "org/gnome/shell" = {

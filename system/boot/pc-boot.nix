@@ -29,7 +29,7 @@
           devices = [ "nodev"];
           efiSupport = true;
           useOSProber = true;   #To detect other operating systems
-          splashImage = ./../../images/matrix-options.png;
+          splashImage = ./../../other/images/matrix-options.png;
         };
       };
 

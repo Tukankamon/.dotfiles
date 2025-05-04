@@ -9,8 +9,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-    ./../konfig/system/pc.nix
-    ./../konfig/system/global.nix
+    ./../system/pc.nix
+    ./../system/global.nix
     ./../development/script.nix
   ];
 

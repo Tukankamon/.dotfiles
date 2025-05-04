@@ -29,10 +29,10 @@ config = lib.mkIf config.hypr.enable {
     splash_offset = 2.0;
 
     preload =
-      [ home/aved/.dotfiles/konfig/images/roadwp.jpg ];
+      [ home/aved/.dotfiles/other/images/roadwp.jpg ];
 
     wallpaper = [
-      ", home/aved/.dotfiles/konfig/images/roadwp.jpg"
+      ", home/aved/.dotfiles/other/images/roadwp.jpg"
     ];
   };*/
 
