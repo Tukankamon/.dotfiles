@@ -3,7 +3,6 @@
   lib,
   ...
 }:
-
 {
 
   imports = [ ./../../laptop/hardware-configuration.nix ];
