@@ -5,7 +5,7 @@
 }:
 {
 
-  imports = [ ./../../../pc/hardware-configuration.nix ];
+  imports = [ ./../../pc/hardware-configuration.nix ];
 
   options = {
     pc-boot.enable = lib.mkOption {

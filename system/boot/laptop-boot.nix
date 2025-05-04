@@ -6,7 +6,7 @@
 
 {
 
-  imports = [ ./../../../laptop/hardware-configuration.nix ];
+  imports = [ ./../../laptop/hardware-configuration.nix ];
 
   options = {
     laptop-boot.enable = lib.mkOption {
