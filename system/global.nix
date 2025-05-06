@@ -15,45 +15,9 @@
     "flakes"
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];    #Forgot what this does
 
-  # Set your time zone.
-  time = {
-    hardwareClockInLocalTime = true;
-    timeZone = "Europe/Madrid";
-  };
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "es_ES.UTF-8";
-    LC_IDENTIFICATION = "es_ES.UTF-8";
-    LC_MEASUREMENT = "es_ES.UTF-8";
-    LC_MONETARY = "es_ES.UTF-8";
-    LC_NAME = "es_ES.UTF-8";
-    LC_NUMERIC = "es_ES.UTF-8";
-    LC_PAPER = "es_ES.UTF-8";
-    LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  services.xserver.wacom.enable = true; #Dont think this is necessary (works iffy without it)
-
-  environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
-
-  /*
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-      wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.flatpak ];
-      script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
-    };
-    */
-
-  environment.gnome.excludePackages = with pkgs; [
+    environment.gnome.excludePackages = with pkgs; [
     gnome-software    #Gui install flatkpak
     gnome-tour
     epiphany
@@ -113,7 +77,44 @@
     caligula  #Burning flash drives
     ventoy
     gnome-network-displays #For sharing to a tv
+    inputs.zen-browser.packages."x86_64-linux".default   #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
 
   ];
+
+  # Set your time zone.
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = "Europe/Madrid";
+  };
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "es_ES.UTF-8";
+    LC_IDENTIFICATION = "es_ES.UTF-8";
+    LC_MEASUREMENT = "es_ES.UTF-8";
+    LC_MONETARY = "es_ES.UTF-8";
+    LC_NAME = "es_ES.UTF-8";
+    LC_NUMERIC = "es_ES.UTF-8";
+    LC_PAPER = "es_ES.UTF-8";
+    LC_TELEPHONE = "es_ES.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  services.xserver.wacom.enable = true; #Dont think this is necessary (works iffy without it)
+
+  environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
+
+  /*
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+      wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      '';
+    };
+    */
 
 }
