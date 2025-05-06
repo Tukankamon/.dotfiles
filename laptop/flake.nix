@@ -41,7 +41,7 @@
     {
 
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        dwebble = lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
             ./configuration.nix

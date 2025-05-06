@@ -26,7 +26,7 @@
       };
 
       plymouth = {
-        enable = true;
+        enable = false;
         theme = "spinfinity";
       };
     };
