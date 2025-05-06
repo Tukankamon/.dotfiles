@@ -19,6 +19,8 @@
   config = lib.mkIf config.pc-boot.enable {
 
     boot = {
+      #initrd.kernelModules = ["amdgpu"];  #davinci-resolve
+
       loader = {
         systemd-boot.enable = false;    #Change when using / not using grub
         
