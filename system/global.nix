@@ -42,8 +42,19 @@
 
   environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
 
+  /*
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+      wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      '';
+    };
+    */
 
   environment.gnome.excludePackages = with pkgs; [
+    gnome-software    #Gui install flatkpak
     gnome-tour
     epiphany
     geary
@@ -89,7 +100,7 @@
     protonvpn-gui
     signal-desktop
     mullvad-browser # (recommended pretty much only if you have the vpn)
-    gimp
+    gimp3
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
     anki
@@ -99,6 +110,9 @@
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
     kiwix
+    caligula  #Burning flash drives
+    ventoy
+    gnome-network-displays #For sharing to a tv
 
   ];
 

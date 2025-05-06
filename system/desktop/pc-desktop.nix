@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:	#There is also a home manager for this to manage them
+{ pkgs, ... }:	#There is also a home manager for this to manage them
 
 {
-imports = [ ./../../../pc/hardware-configuration.nix ];
+imports = [ ./../../pc/hardware-configuration.nix ];
 
 programs.hyprland = {
     enable = false;

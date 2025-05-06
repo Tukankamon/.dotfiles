@@ -5,7 +5,7 @@
 }:
 {
 
-  imports = [ ./../../../pc/hardware-configuration.nix ];
+  imports = [ ./../../pc/hardware-configuration.nix ];
 
   options = {
     pc-boot.enable = lib.mkOption {
@@ -20,9 +20,20 @@
 
     boot = {
       loader = {
-        systemd-boot.enable = true;
+        systemd-boot.enable = false;    #Change when using / not using grub
+        
         efi.canTouchEfiVariables = true;
+
+        grub = {
+          enable = true;
+          devices = [ "nodev"];
+          efiSupport = true;
+          useOSProber = true;   #To detect other operating systems
+          splashImage = ./../../other/images/matrix-options.png;
+        };
       };
+
+
 
       #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
 

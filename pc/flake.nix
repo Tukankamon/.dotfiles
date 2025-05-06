@@ -9,6 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input  
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #Just some Nvim config stuff
     /*nvf = {
       url = "github:notashelf/nvf";

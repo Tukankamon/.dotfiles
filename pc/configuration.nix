@@ -9,8 +9,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-    ./../konfig/system/pc.nix
-    ./../konfig/system/global.nix
+    ./../system/pc.nix
+    ./../system/global.nix
     ./../development/script.nix
   ];
 
@@ -124,6 +124,10 @@
     #kdePackages.kdenlive
     android-studio
     #distrobox #Distro containers
+    pavucontrol #better audio control
+    #revolt-desktop discord alternative
+    nurl #Fetching urls
+    inputs.zen-browser.packages."x86_64-linux".default   #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
   ];
 
   fonts.packages = with pkgs; [

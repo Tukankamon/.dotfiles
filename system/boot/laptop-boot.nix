@@ -3,10 +3,9 @@
   lib,
   ...
 }:
-
 {
 
-  imports = [ ./../../../laptop/hardware-configuration.nix ];
+  imports = [ ./../../laptop/hardware-configuration.nix ];
 
   options = {
     laptop-boot.enable = lib.mkOption {
@@ -21,8 +20,16 @@
 
     boot = {
       loader = {
-        systemd-boot.enable = true;
+        systemd-boot.enable = false;    #Change when using / not using grub
+        
         efi.canTouchEfiVariables = true;
+
+        grub = {
+          enable = true;
+          devices = [ "nodev"];
+          efiSupport = true;
+          useOSProber = true;   #To detect other operating systems
+        };
       };
 
       plymouth = {
