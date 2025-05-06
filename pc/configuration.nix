@@ -142,6 +142,14 @@
     pkgs.nerd-fonts.hack
 
   ];
+
+   hardware.graphics = {  #For davinci resolve
+   enable = true;
+   extraPackages = with pkgs; [
+     rocmPackages.clr.icd
+   ];
+ };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
