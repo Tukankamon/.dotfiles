@@ -51,6 +51,7 @@
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     libinput #Idk if necessary for wacom tablet
     libwacom #Wacom specifically
+    toybox  #CLI utilities
 
     /*  GUIS */
     qbittorrent

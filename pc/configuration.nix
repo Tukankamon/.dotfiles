@@ -35,8 +35,8 @@
   networking.networkmanager.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = false;
-  #services.xserver.videoDrivers = [ "amdgpu-pro" ];
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -87,9 +87,12 @@
 
   programs.firefox.enable = false;
 
-  /*environment.variables = {   #For amd stuff
+  environment.variables = {   #For amd stuff
     ROC_ENABLE_PRE_VEGA = "1";
-};*/
+    /*RUSTICL_ENABLE="amdgpu";
+    DRI_PRIME= "1";
+    QT_QPA_PLATFORM = "xcb davinci-resolve";*/
+  };
 
   environment.shells = with pkgs; [ fish ]; # Following a video
   users.defaultUserShell = pkgs.fish;
@@ -142,16 +145,25 @@
 
   ];
 
-   /*
    hardware = {  #For davinci resolve
+    enableRedistributableFirmware = true;  #ChatGPT recommendation
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
         rocmPackages.clr.icd
+        ocl-icd
+        amdvlk  # Optional: AMD's proprietary Vulkan driver
+        /*
+        mesa
+        libva
+        libvdpau-va-gl
+        vulkan-loader
+        vulkan-validation-layers
+        mesa.opencl  # Enables Rusticl (OpenCL) support
+        */
       ];
     };
    };
-   */
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
