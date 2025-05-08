@@ -58,7 +58,7 @@
       };
 
       homeConfigurations = {
-        aved = home-manager.lib.homeManagerConfiguration {
+        dwebble = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./home.nix
