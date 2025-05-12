@@ -11,6 +11,7 @@
     ./kitty.nix
     ./fastfetch.nix
     ./deskenv/desk-module.nix
+    ./nvim.nix
   ];
 
   programs.bash = {
@@ -31,29 +32,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = false;
-    defaultEditor = false;
-    viAlias = true;
-    vimAlias = true;
-    extraConfig = ''
-      		set number relativenumber
-      		set tabstop=8
-      		set autoindent
-      		set mouse=a
-      		colorscheme slate
-      	  '';
-    /*
-      plugins = with pkgs.vimPlugins; [
-        nvim-lspconfig
-        vim-nerdtree-tabs
-        nvim-treesitter.withAllGrammars
-        plenary-nvim
-        mini-nvim
-      ];
-    */
-
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
