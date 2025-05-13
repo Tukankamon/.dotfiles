@@ -17,10 +17,10 @@
     };
 
     #Just some Nvim config stuff
-    /*nvf = {
+    nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-    };*/
+    };
 
     /*hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -29,7 +29,7 @@
     
   };
 
-  outputs = { self, nixpkgs, home-manager, /*nvf,*/ /*hyprland,*/ ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:
 
     let
       lib = nixpkgs.lib;
@@ -42,7 +42,7 @@
       yamask = lib.nixosSystem {
         specialArgs = {inherit inputs system;};
     	  modules = [ ./configuration.nix
-		      #nvf.nixosModules.default
+		      nvf.nixosModules.default
 		      ];
       };
     };

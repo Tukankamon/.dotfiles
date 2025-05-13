@@ -16,12 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    /*
       nvf = {
         url = "github:notashelf/nvf";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-    */
 
     /*
       hyprland = {
@@ -37,6 +35,7 @@
       self,
       nixpkgs,
       home-manager, # hyprland,
+      nvf,
       ...
     }@inputs: # If not inside the curly brackets you need to put inputs. e.g: inputs.nixpkgs...
     let
@@ -52,7 +51,6 @@
           specialArgs = { inherit inputs system; };
           modules = [
             ./configuration.nix
-            # nvf.nixosModules.default
           ];
         };
       };
@@ -62,6 +60,7 @@
           inherit pkgs;
           modules = [
             ./home.nix
+	    nvf.homeManagerModules.default
             /*
               {
               wayland.windowManager.hyprland = {

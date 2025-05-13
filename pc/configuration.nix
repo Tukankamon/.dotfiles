@@ -16,12 +16,14 @@
 
   pc-boot.enable = true;
 
+  /*
   home-manager = {
     # Not necesary but now hm also rebuilds with nixos-rebuild
     extraSpecialArgs = { inherit inputs; };
     users.aved = import ./home.nix;
 
   };
+*/
 
 
   networking.hostName = "yamask"; # Define your hostname.

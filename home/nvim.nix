@@ -1,48 +1,57 @@
-{ config, pkgs, ...}:
+{ inputs, ...}:
 
 {
+  imports = [ inputs.nvf.homeManagerModules.default ];
+
   programs.neovim = {
     enable = true;
     
-    vialias = true;
-    vimalias = true;
-    vimdiffalias = true;
+    vimAlias = true;
+    viAlias = true;
+    vimdiffAlias = true;
 
     plugins = [];
 
     #vimrc config
-    extraconfig = ''
+    extraConfig = ''
       set relativenumber
-      set tabstop=8
+      set tabstop=1
       set autoindent
       set mouse=a
-
-      set clipboard=unnamed
-
-      exmap surround_wiki surround [[ ]]
-      exmap surround_double_quotes surround " "
-      exmap surround_single_quotes surround ' '
-      exmap surround_backticks surround ` `
-      exmap surround_brackets surround ( )
-      exmap surround_square_brackets surround [ ]
-      exmap surround_curly_brackets surround { }
-      exmap surround_equals surround == ==
-
-      map [[ :surround_wiki<cr>
-      nunmap s
-      vunmap s
-      map s" :surround_double_quotes<cr>
-      map s' :surround_single_quotes<cr>
-      map s` :surround_backticks<cr>
-      map sb :surround_brackets<cr>
-      map s( :surround_brackets<cr>
-      map s) :surround_brackets<cr>
-      map s[ :surround_square_brackets<cr>
-      map s] :surround_square_brackets<cr>
-      map s{ :surround_curly_brackets<cr>
-      map s} :surround_curly_brackets<cr>
-      map s= :surround_equals<cr>
     '';
+
+    extraLuaConfig = ''
+      vim.opt.tabstop = 4
+    '';
+  };
+  
+  programs.nvf = {
+    enable = true;
+
+    settings.vim = {
+      theme = {
+        enable = true;
+        name = "gruvbox";
+        style = "dark";
+      };
+
+
+    statusline.lualine.enable = true; #IDK what this does
+    telescope.enable = true;
+
+    lsp.enable = true;
+
+    languages = {
+      enableTreesitter = true;
+
+      nix = {
+        enable = true;
+        format.type = "alejandra";
+      };
+
+      python.enable = true;
+    };
+  };
   };
 
 }
