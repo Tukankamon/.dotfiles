@@ -42,7 +42,6 @@
       yamask = lib.nixosSystem {
         specialArgs = {inherit inputs system;};
     	  modules = [ ./configuration.nix
-		      nvf.nixosModules.default
 		      ];
       };
     };
@@ -51,15 +50,7 @@
       yamask = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
     	  modules = [ ./home.nix 
-          {
-          /*wayland.windowManager.hyprland = {
-            enable = true;
-            # set the flake package
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-            portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-          };*/
-          }
-        
+		      nvf.homeManagerModules.default
         ];
       };
     };

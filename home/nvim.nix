@@ -1,4 +1,4 @@
-{ inputs, ...}:
+{ inputs, pkgs, lib, config, ...}:
 
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
@@ -31,7 +31,7 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "gruvbox";
+        name = "nord";
         style = "dark";
       };
 
