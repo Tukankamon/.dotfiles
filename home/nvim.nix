@@ -49,6 +49,7 @@
       };
 
       python.enable = true;
+      cpp.enable = true;
     };
   };
   };
