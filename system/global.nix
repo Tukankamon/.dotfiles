@@ -35,7 +35,7 @@
     pipes
     cbonsai
     neo-cowsay
-    vim
+    vim-full
     lf
     git
     kitty

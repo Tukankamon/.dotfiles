@@ -15,7 +15,6 @@
     #vimrc config
     extraConfig = ''
       set relativenumber
-      set tabstop=1
       set autoindent
       set mouse=a
     '';

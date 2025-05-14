@@ -44,6 +44,9 @@
     variant = "";
   };
 
+  services.xserver.autoRepeatDelay = 0;
+  services.xserver.autoRepeatInterval = 50;
+
   # Configure console keymap
   console.keyMap = "es";
 
