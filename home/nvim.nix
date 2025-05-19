@@ -49,6 +49,8 @@
       };
 
       python.enable = true;
+
+      rust.enable = true;
     };
   };
   };
