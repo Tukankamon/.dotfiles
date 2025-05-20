@@ -49,6 +49,9 @@
       };
 
       python.enable = true;
+      
+      clang.enable = true;
+
     };
   };
   };
