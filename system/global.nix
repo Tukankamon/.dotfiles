@@ -7,7 +7,7 @@
 
 {
   imports = [
-
+        ./../development/programming.nix
   ];
 
   nix.settings.experimental-features = [
@@ -79,21 +79,7 @@
     #ventoy #Marked as insecure by NIX
     gnome-network-displays #For sharing to a tv
     inputs.zen-browser.packages."x86_64-linux".default   #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
-
-    /* CPP */
-    clang-tools
-    cmake
-    codespell
-    conan
-    cppcheck
-    doxygen
-    gtest
-    lcov
-    vcpkg
-    vcpkg-tool
-    libgcc # Compiler
-    gcc
-    gdb
+    obs-studio
 
   ];
 

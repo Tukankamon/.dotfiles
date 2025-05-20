@@ -115,7 +115,6 @@
     sops
     darktable
     davinci-resolve
-    obs-studio
     librewolf
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
     nix-output-monitor  #eye candy for nix develop and shell

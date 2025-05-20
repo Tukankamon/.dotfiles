@@ -1,0 +1,22 @@
+{inputs, pkgs, ...}:
+{
+
+
+environment.systemPackages = with pkgs; [
+
+    /* CPP */
+    clang-tools
+    cmake
+    codespell
+    conan
+    cppcheck
+    doxygen
+    gtest
+    lcov
+    vcpkg
+    vcpkg-tool
+    libgcc # Compiler
+    gcc
+    gdb
+];
+}
