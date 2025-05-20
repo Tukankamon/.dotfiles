@@ -49,9 +49,8 @@
       };
 
       python.enable = true;
-      
       clang.enable = true;
-
+      rust.enable = true;
     };
   };
   };
