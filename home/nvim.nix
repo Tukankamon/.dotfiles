@@ -17,6 +17,7 @@
       set relativenumber
       set autoindent
       set mouse=a
+      noremap <Ctrl-n> :Neotree<Cr>
     '';
 
     extraLuaConfig = ''
@@ -34,25 +35,33 @@
         style = "dark";
       };
 
-
+    filetree.neo-tree.enable = true;
     statusline.lualine.enable = true; #IDK what this does
     telescope.enable = true;
+    autocomplete.nvim-cmp.enable = true;
 
     lsp.enable = true;
+    lsp.servers = {};
 
     languages = {
+      enableFormat = true;
       enableTreesitter = true;
 
       nix = {
         enable = true;
+        lsp.enable = true;
+        lsp.server = "nixd";
+        format.enable = true;
         format.type = "alejandra";
       };
 
-      python.enable = true;
+      python = {
+        enable = true;
+        lsp.enable = true;
+      };
 
       rust.enable = true;
     };
   };
   };
-
 }
