@@ -15,6 +15,15 @@
     "flakes"
   ];
 
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target"];
+    path = [ pkgs.flatpak];
+    script = ''
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        '';
+  };
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];    #Forgot what this does
 
     environment.gnome.excludePackages = with pkgs; [
