@@ -5,6 +5,8 @@
 environment.systemPackages = with pkgs; [
     python3
 
+    cargo
+
     /* CPP */
     clang-tools
     cmake
