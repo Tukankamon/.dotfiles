@@ -7,6 +7,8 @@ environment.systemPackages = with pkgs; [
 
     cargo
 
+    go
+
     /* CPP */
     clang-tools
     cmake
