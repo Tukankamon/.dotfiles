@@ -5,6 +5,11 @@
 environment.systemPackages = with pkgs; [
     python3
 
+    rustc
+    cargo
+
+    go
+
     /* CPP */
     clang-tools
     cmake
@@ -19,5 +24,6 @@ environment.systemPackages = with pkgs; [
     libgcc # Compiler
     gcc
     gdb
+
 ];
 }

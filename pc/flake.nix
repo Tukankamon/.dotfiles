@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    vible = { #My own app
+        url = "github:Tukankamon/vible";
+        inputs.nixpkgs.follows = "nixpkgs";
+        };
+
     #Just some Nvim config stuff
     nvf = {
       url = "github:notashelf/nvf";
@@ -29,7 +34,7 @@
     
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, /*hyprland,*/ ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, vible, /*hyprland,*/ ... }@inputs:
 
     let
       lib = nixpkgs.lib;

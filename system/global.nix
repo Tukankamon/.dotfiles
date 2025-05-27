@@ -46,6 +46,7 @@
     neo-cowsay
     vim-full
     lf
+    yazi  # Better lf, keeping the old bc it is much more comortable to type
     git
     kitty
     fzf
@@ -54,7 +55,7 @@
     parted # scan partitions
     testdisk
     ffmpeg
-    ack   #Finds words in codebases
+    ripgrep
     #alejandra  #Nix formatter
     nixfmt-rfc-style # Nix formatter (official)
     nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
