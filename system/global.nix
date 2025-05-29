@@ -3,11 +3,9 @@
   pkgs,
   #configuration,
   ...
-}:
-
-{
+}: {
   imports = [
-        ./../development/programming.nix
+    ./../development/programming.nix
   ];
 
   nix.settings.experimental-features = [
@@ -17,28 +15,27 @@
 
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target"];
-    path = [ pkgs.flatpak];
+    wantedBy = ["multi-user.target"];
+    path = [pkgs.flatpak];
     script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        '';
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];    #Forgot what this does
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; #Forgot what this does
 
-    environment.gnome.excludePackages = with pkgs; [
-    gnome-software    #Gui install flatkpak
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-software #Gui install flatkpak
     gnome-tour
     epiphany
     geary
     yelp
-
   ];
 
-
   environment.systemPackages = with pkgs; [
-
-    /* Terminal and config */
+    /*
+    Terminal and config
+    */
     home-manager
     fastfetch
     pipes
@@ -46,7 +43,7 @@
     neo-cowsay
     vim-full
     lf
-    yazi  # Better lf, keeping the old bc it is much more comortable to type
+    yazi # Better lf, keeping the old bc it is much more comortable to type
     git
     kitty
     fzf
@@ -56,16 +53,15 @@
     testdisk
     ffmpeg
     ripgrep
-    #alejandra  #Nix formatter
-    nixfmt-rfc-style # Nix formatter (official)
-    nixd # Nix language server (highlighting and stuff) (Ctrl, shift I in vscode to apply to file)
     libinput #Idk if necessary for wacom tablet
     libwacom #Wacom specifically
-    toybox  #CLI utilities
+    toybox #CLI utilities
     hyperfine #command benchmark
     helix
 
-    /*  GUIS */
+    /*
+    GUIS
+    */
     qbittorrent
     tor-browser
     spotify
@@ -81,18 +77,17 @@
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
     anki
-    obsidian  #Notes and "mini essays" (Odysseas on YT)
+    obsidian #Notes and "mini essays" (Odysseas on YT)
     #logseq #Similar to obisidian, keep an eye on it
     #zettlr #Another FOSS markdown editor to keep an eye on
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
     kiwix
-    caligula  #Burning flash drives
+    caligula #Burning flash drives
     #ventoy #Marked as insecure by NIX
     gnome-network-displays #For sharing to a tv
-    inputs.zen-browser.packages."x86_64-linux".default   #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+    inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     obs-studio
-
   ];
 
   # Set your time zone.
@@ -129,6 +124,5 @@
         flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       '';
     };
-    */
-
+  */
 }

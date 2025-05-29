@@ -3,18 +3,16 @@
   #pkgs,
   #lib,
   ...
-}:
-
-{
+}: {
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
     #confirm_os_window_close = 0;
 
     /*
-      font = {
-        name = "JetBrainsMono Nerd Font";
-      };
+    font = {
+      name = "JetBrainsMono Nerd Font";
+    };
     */
 
     #look for wryan kitty theme or Base2Tone
@@ -23,6 +21,11 @@
       map ctrl+plus      increase_font_size
       map ctrl+minus    decrease_font_size
       map ctrl+0 restore_font_size
+
+      map ctrl+shift+h next_window
+      map ctrl+shift+l previous_window
+
+      map ctrl+shift+y next_layout
 
       font_family FiraCode Nerd Font Mono
 
@@ -66,7 +69,5 @@
       color15      #b7cff9
       #: white
     '';
-
   };
-
 }

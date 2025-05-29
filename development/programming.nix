@@ -1,18 +1,22 @@
-{inputs, pkgs, ...}:
-{
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    alejandra
+    nixfmt-rfc-style
+    nixd
 
-
-environment.systemPackages = with pkgs; [
     python3
 
     rustc
     cargo
+    rust-analyzer
 
     go
 
     ghc
 
-    /* CPP */
+    /*
+    CPP
+    */
     clang-tools
     cmake
     codespell
@@ -26,6 +30,5 @@ environment.systemPackages = with pkgs; [
     libgcc # Compiler
     gcc
     gdb
-
-];
+  ];
 }
