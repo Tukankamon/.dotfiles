@@ -12,7 +12,9 @@
 
     go
 
-    ghc
+    ghc #Haskell
+
+    nim-unwrapped-2_0
 
     /*
     CPP

@@ -22,10 +22,10 @@
       map ctrl+minus    decrease_font_size
       map ctrl+0 restore_font_size
 
-      map ctrl+shift+h next_window
-      map ctrl+shift+l previous_window
+      map ctrl+tab next_window
+      map ctrl+shift+tab previous_window
 
-      map ctrl+shift+y next_layout
+      map ctrl+shift+l next_layout
 
       font_family FiraCode Nerd Font Mono
 
