@@ -62,6 +62,8 @@
     libinput #Idk if necessary for wacom tablet
     libwacom #Wacom specifically
     toybox  #CLI utilities
+    hyperfine #command benchmark
+    helix
 
     /*  GUIS */
     qbittorrent

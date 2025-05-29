@@ -5,13 +5,12 @@
 environment.systemPackages = with pkgs; [
     python3
 
-<<<<<<< HEAD
     rustc
-=======
->>>>>>> b357a12ed88d95bfa0972a29942bf05cb7cb751a
     cargo
 
     go
+
+    ghc
 
     /* CPP */
     clang-tools
