@@ -16,9 +16,10 @@ config = lib.mkIf config.gnome.enable {
 
     dconf-editor
 
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.tiling-shell
+    gnomeExtensions.blur-my-shell  # doesnt work rn
     gnomeExtensions.grand-theft-focus
+    gnomeExtensions.gsconnect
+    gnomeExtensions.auto-move-windows
   ];
 
 
@@ -42,10 +43,11 @@ config = lib.mkIf config.gnome.enable {
       "org/gnome/shell" = {
         disable-user-extensions = false;
 
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell.extensionUuid
-          auto-move-windows.extensionUuid
-          grand-theft-focus.extensionUuid
+        enabled-extensions = [
+          "blur-my-shell@aunetx"
+          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+          "grand-theft-focus@zalckos.github.com"
+          "gsconnect@andyholmes.github.io"
         ];
 
       };
@@ -64,10 +66,6 @@ config = lib.mkIf config.gnome.enable {
 
   "org/gnome/shell/app-switcher".current-workspace-only = true;
   "org/gnome/desktop/interface".enable-hot-corners =  false;
-
- 	"org/gnome/shell/extensions/tiling-shell" = {
-      "enable-autotiling"=true;
-	};
 
   "org/gnome/shell/extensions/auto-move-windows" = {
     "application-list" = ["brave-browser.desktop:1"

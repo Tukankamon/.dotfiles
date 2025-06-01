@@ -16,14 +16,11 @@
 
   laptop-boot.enable = true;
 
-        /*
   home-manager = {
-    # Not necesary but now hm also rebuilds with nixos-rebuild
     extraSpecialArgs = { inherit inputs; };
     users.aved = import ./home.nix;
 
   };
-*/
 
   /*
     nix.settings = {       #This has to be enabled before installing hyprland

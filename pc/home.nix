@@ -65,6 +65,7 @@
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      lx = "hx";  #More comfortable
     };
   };
 }

@@ -2,10 +2,10 @@
   description = "Flake for Home-manager and shi";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master"; # release-24.11 (syntax for stable branch)
+      url = "github:nix-community/home-manager/release-25.05"; 
       inputs.nixpkgs.follows = "nixpkgs"; # Check if the versions are the same
     };
 
@@ -60,7 +60,7 @@
           inherit pkgs;
           modules = [
             ./home.nix
-	    nvf.homeManagerModules.default
+            #nvf.homeManagerModules.default
             /*
               {
               wayland.windowManager.hyprland = {
@@ -73,6 +73,7 @@
             */
 
           ];
+          extraSpecialArgs = {inherit inputs;};
         };
       };
 
