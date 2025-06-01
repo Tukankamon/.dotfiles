@@ -24,6 +24,19 @@
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; #Forgot what this does
 
+  programs.command-not-found.enable = true;
+  programs.nix-index = { #doesnt work
+    enable = true;
+    enableBashIntegration = false;
+    enableZshIntegration= false;
+  };
+
+  networking.firewall = {  # for gsconnect
+    enable = true;
+    allowedTCPPorts = [ 1716 ];
+    allowedUDPPorts = [ 1716 ];
+  };
+
   environment.gnome.excludePackages = with pkgs; [
     gnome-software #Gui install flatkpak
     gnome-tour

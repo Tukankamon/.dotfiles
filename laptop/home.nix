@@ -7,6 +7,7 @@
 
   imports = [
     ./../home/global-home.nix
+    ./../home/nvim.nix  #Doesnt seem to work if not
   ];
 
   home.username = "aved";
@@ -45,6 +46,7 @@
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      lx = "hx";
       #Maybe find a way to index e.g: automated-commit-1
     };
   };
