@@ -2,10 +2,11 @@
   description = "Flake for Home-manager and shi";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
+    # Find a way to add unstable aswell
     
     home-manager = {
-      url = "github:nix-community/home-manager/master";	#release-24.11
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
     };
 
