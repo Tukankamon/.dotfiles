@@ -91,7 +91,7 @@
       }
     ];
     themes = {
-      catpuccin_mocha = {
+      catppuccin_mocha = {
         "inherits" = "catpuccin_mocha";
         "ui.background" = {};
       };

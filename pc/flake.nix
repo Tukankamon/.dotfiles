@@ -55,9 +55,12 @@
     homeConfigurations = {
       yamask = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-    	  modules = [ ./home.nix 
-		      nvf.homeManagerModules.default
+    	modules = [ ./home.nix 
         ];
+
+        extraSpecialArgs = { 
+           inputs = builtins.removeAttrs inputs [ "self" ];
+        };
       };
     };
 	
