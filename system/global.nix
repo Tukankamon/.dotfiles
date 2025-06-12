@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   #configuration,
   ...
 }: {
@@ -12,6 +13,13 @@
     "nix-command"
     "flakes"
   ];
+
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];  #For obs virtual camera
+    kernelModules = [ "snd-seq" "snd-rawmidi" "v4l2loopback" ];
+  };
+  security.polkit.enable = true;  # I think this is also needed
+
 
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
@@ -45,6 +53,8 @@
     yelp
   ];
 
+  programs.adb.enable = true;
+
   environment.systemPackages = with pkgs; [
     /*
     Terminal and config
@@ -71,6 +81,7 @@
     toybox #CLI utilities
     hyperfine #command benchmark
     helix
+    universal-android-debloater
 
     /*
     GUIS
@@ -101,6 +112,7 @@
     gnome-network-displays #For sharing to a tv
     inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     obs-studio
+    arduino-ide
   ];
 
   # Set your time zone.

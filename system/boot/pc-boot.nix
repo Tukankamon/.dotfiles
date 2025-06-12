@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 {
@@ -18,11 +17,6 @@
   };
 
   config = lib.mkIf config.pc-boot.enable {
-
-    environment.systemPackages = with pkgs; [ lact clinfo];   #AMD GPU controller
-    systemd.packages = with pkgs; [ lact ];
-    systemd.services.lactd.wantedBy = ["multi-user.target"];
-
 
     boot = {
       initrd.kernelModules = ["amdgpu"];  #davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough

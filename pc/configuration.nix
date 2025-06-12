@@ -79,6 +79,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "adbusers"
+      "dialout" #For arduino and stuff
     ];
     password = "aved";
     /*
