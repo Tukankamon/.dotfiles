@@ -138,7 +138,13 @@
 
   services.xserver.wacom.enable = true; #Dont think this is necessary (works iffy without it)
 
-  environment.variables.EDITOR = "gnome-text-editor"; #Gnome text editor
+  environment.variables = {
+    EDITOR = "gnome-text-editor"; #Gnome text editor
+    };
+
+  environment.sessionVariables = {
+    SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0;  #for fullscreen videogames
+  };
 
   /*
   services.flatpak.enable = true;
