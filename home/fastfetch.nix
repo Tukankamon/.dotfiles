@@ -46,6 +46,11 @@
           keyColor = "38;2;198;148;255";
         }
         {
+          type = "cpu";
+          key ="";
+          keyColor = "38;2;198;148;255";
+        }
+        {
           type = "packages";
           format = "{} (Nix)";
           key = "";
