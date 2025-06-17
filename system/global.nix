@@ -90,6 +90,7 @@
     tor-browser
     spotify
     brave
+    librewolf
     vscodium
     vscode
     #protonmail-desktop
