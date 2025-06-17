@@ -82,6 +82,7 @@
     hyperfine #command benchmark
     helix
     universal-android-debloater
+    zoxide
 
     /*
     GUIS

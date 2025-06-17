@@ -15,6 +15,7 @@ config = lib.mkIf config.gnome.enable {
   home.packages = with pkgs; [
 
     dconf-editor
+    gnome-tweaks
 
     gnomeExtensions.blur-my-shell  # doesnt work rn
     gnomeExtensions.grand-theft-focus
@@ -69,7 +70,7 @@ config = lib.mkIf config.gnome.enable {
 
   "org/gnome/shell/extensions/auto-move-windows" = {
     "application-list" = ["brave-browser.desktop:1"
-                          "librewolf.desktop:2"
+                          "librewolf.desktop:1"
                           "obsidian.desktop:2"
                           "codium.desktop:3"
                           "discord.desktop:4"
