@@ -32,6 +32,11 @@
     };
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = [ "--cmd cd" ]; #changes the cd to zoxide
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

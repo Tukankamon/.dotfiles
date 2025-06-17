@@ -64,25 +64,24 @@
     pipes
     cbonsai
     neo-cowsay
-    vim-full
     lf
     yazi # Better lf, keeping the old bc it is much more comortable to type
     git
     kitty
-    fzf
+    fzf  #fuzzy file search, needed for zoxide
     neovim
     asciiquarium-transparent
     parted # scan partitions
     testdisk
     ffmpeg
-    ripgrep
-    libinput #Idk if necessary for wacom tablet
+    ripgrep #better grep
+    #libinput #Idk if necessary for wacom tablet
     libwacom #Wacom specifically
     toybox #CLI utilities
     hyperfine #command benchmark
-    helix
+    #helix  #nvim with better defaults
     universal-android-debloater
-    zoxide
+    zoxide  # better cd
 
     /*
     GUIS
