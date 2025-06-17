@@ -69,7 +69,7 @@
   };
 
   programs.helix = {
-    enable = true;
+    enable = false;   #messes up muscle memory
     settings = {
       theme = "catppuccin_mocha";
       editor = {
