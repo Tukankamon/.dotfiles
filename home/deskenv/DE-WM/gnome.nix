@@ -30,6 +30,7 @@ config = lib.mkIf config.gnome.enable {
     enable = true;
     #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
     #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    cursorTheme.name = "Future-cyan-cursors";  #folder needs to be in .local/share/icons
   };
 
   dconf = {

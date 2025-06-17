@@ -82,6 +82,7 @@
     #helix  #nvim with better defaults
     universal-android-debloater
     zoxide  # better cd
+    dysk
 
     /*
     GUIS
