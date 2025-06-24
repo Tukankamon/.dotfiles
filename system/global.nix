@@ -83,6 +83,7 @@
     universal-android-debloater
     zoxide  # better cd
     dysk
+    exiftool   #Metadata image scanner
 
     /*
     GUIS

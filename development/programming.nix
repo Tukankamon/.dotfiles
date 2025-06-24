@@ -29,8 +29,9 @@
     lcov
     vcpkg
     vcpkg-tool
-    libgcc # Compiler
+    libgcc
     gcc
     gdb
+    gmp # GNU multiple precision arithmetic library
   ];
 }
