@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -20,7 +21,6 @@
 
     boot = {
       initrd.kernelModules = ["amdgpu"];  #davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
-
 
       loader = {
         systemd-boot.enable = false;    #Change when using / not using grub

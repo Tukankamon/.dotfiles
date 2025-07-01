@@ -15,8 +15,7 @@
   ];
 
   boot = {
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];  #For obs virtual camera
-    kernelModules = [ "snd-seq" "snd-rawmidi" "v4l2loopback" ];
+    kernelModules = [ "snd-seq" "snd-rawmidi" ];
   };
   security.polkit.enable = true;  # I think this is also needed
 
@@ -98,7 +97,7 @@
     #protonmail-desktop
     #protonmail-bridge
     protonvpn-gui
-    signal-desktop
+    #signal-desktop  # Build error
     mullvad-browser # (recommended pretty much only if you have the vpn)
     gimp3
     tokei # Count lines of code per language
@@ -144,6 +143,8 @@
   environment.variables = {
     EDITOR = "gnome-text-editor"; #Gnome text editor
     };
+
+  programs.obs-studio.enableVirtualCamera = true;
 
   environment.sessionVariables = {
     SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0;  #for fullscreen videogames

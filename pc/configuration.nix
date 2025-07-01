@@ -114,7 +114,6 @@
     inputs.vible.packages.x86_64-linux.default
     mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
     discord
-    signal-desktop
     sops
     darktable
     davinci-resolve
@@ -194,11 +193,10 @@
 
   services.power-profiles-daemon.enable = false;
 
-  powerManagement.enable = true; # laptop battery
   services.thermald.enable = true;
 
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
