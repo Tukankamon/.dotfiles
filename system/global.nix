@@ -150,15 +150,4 @@
   environment.sessionVariables = {
     SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0;  #for fullscreen videogames
   };
-
-  /*
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-      wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.flatpak ];
-      script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
-    };
-  */
 }

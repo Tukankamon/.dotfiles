@@ -111,7 +111,7 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
-    inputs.vible.packages.x86_64-linux.default
+    #inputs.vible.packages.x86_64-linux.default
     mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
     discord
     sops
@@ -148,6 +148,8 @@
 
   ];
 
+   systemd.packages = with pkgs; [ lact ];
+   systemd.services.lactd.wantedBy = ["multi-user.target"];
    hardware = {  #For davinci resolve
     enableRedistributableFirmware = true;  #ChatGPT recommendation
     graphics = {
