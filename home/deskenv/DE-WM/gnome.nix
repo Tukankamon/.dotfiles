@@ -47,7 +47,7 @@ config = lib.mkIf config.gnome.enable {
 
         enabled-extensions = [
           "blur-my-shell@aunetx"
-          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+          #"auto-move-windows@gnome-shell-extensions.gcampax.github.com"
           "grand-theft-focus@zalckos.github.com"
           "gsconnect@andyholmes.github.io"
         ];
@@ -81,7 +81,7 @@ config = lib.mkIf config.gnome.enable {
   };
 
   "org/gnome/mutter".dynamic-workspaces = false;
-  "org/gnome/desktop/wm/preferences".num-workspaces = 5;
+  "org/gnome/desktop/wm/preferences".num-workspaces = 7;
   "org/gnome/desktop/wm/keybindings" = {
     close = ["<Alt>p"];
 
@@ -91,6 +91,7 @@ config = lib.mkIf config.gnome.enable {
     switch-to-workspace-4 = ["<Alt>4"];
     switch-to-workspace-5 = ["<Alt>5"];
     switch-to-workspace-6 = ["<Alt>6"];
+    switch-to-workspace-7 = ["<Alt>7"];
 
     move-to-workspace-1 = ["<Alt><Shift>1"];
     move-to-workspace-2 = ["<Alt><Shift>2"];
@@ -98,6 +99,7 @@ config = lib.mkIf config.gnome.enable {
     move-to-workspace-4 = ["<Alt><Shift>4"];
     move-to-workspace-5 = ["<Alt><Shift>5"];
     move-to-workspace-6 = ["<Alt><Shift>6"];
+    move-to-workspace-7 = ["<Alt><Shift>7"];
     };
 
     "org/gnome/desktop/peripherals/mouse" = {
