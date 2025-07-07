@@ -18,7 +18,7 @@ config = lib.mkIf config.gnome.enable {
     gnome-tweaks
 
     gnomeExtensions.blur-my-shell  # doesnt work rn
-    gnomeExtensions.grand-theft-focus
+    #gnomeExtensions.grand-theft-focus
     gnomeExtensions.gsconnect
     gnomeExtensions.auto-move-windows
   ];
@@ -47,8 +47,8 @@ config = lib.mkIf config.gnome.enable {
 
         enabled-extensions = [
           "blur-my-shell@aunetx"
-          #"auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-          "grand-theft-focus@zalckos.github.com"
+          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+          #"grand-theft-focus@zalckos.github.com"
           "gsconnect@andyholmes.github.io"
         ];
 
