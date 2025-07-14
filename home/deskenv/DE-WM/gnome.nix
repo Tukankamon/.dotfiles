@@ -21,6 +21,7 @@ config = lib.mkIf config.gnome.enable {
     #gnomeExtensions.grand-theft-focus
     gnomeExtensions.gsconnect
     gnomeExtensions.auto-move-windows
+    gnomeExtensions.appindicator
   ];
 
 
@@ -48,8 +49,8 @@ config = lib.mkIf config.gnome.enable {
         enabled-extensions = [
           "blur-my-shell@aunetx"
           "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-          #"grand-theft-focus@zalckos.github.com"
           "gsconnect@andyholmes.github.io"
+          "appindicator@ubuntu.github.com"  #Dont know if this is right
         ];
 
       };

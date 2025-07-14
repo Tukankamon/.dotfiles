@@ -83,10 +83,17 @@
     zoxide  # better cd
     dysk
     exiftool   #Metadata image scanner
+    tokei # Count lines of code per language
+    nvd #Check the pkg difference between generations
+    caligula #Burning flash drives
+    #ventoy #Marked as insecure by NIX
+    efibootmgr
 
     /*
     GUIS
     */
+    bottles
+    virtualbox
     qbittorrent
     tor-browser
     spotify
@@ -100,8 +107,6 @@
     #signal-desktop  # Build error
     mullvad-browser # (recommended pretty much only if you have the vpn)
     gimp3
-    tokei # Count lines of code per language
-    nvd #Check the pkg difference between generations
     anki
     obsidian #Notes and "mini essays" (Odysseas on YT)
     #logseq #Similar to obisidian, keep an eye on it
@@ -109,14 +114,14 @@
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
     kiwix
-    caligula #Burning flash drives
-    #ventoy #Marked as insecure by NIX
     gnome-network-displays #For sharing to a tv
     inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     obs-studio
     arduino-ide
     lact
   ];
+
+  virtualisation.virtualbox.host.enable = true;
 
   # Set your time zone.
   time = {
@@ -143,6 +148,7 @@
 
   environment.variables = {
     EDITOR = "gnome-text-editor"; #Gnome text editor
+    TERM = "xterm-256color"; #to be able to clear in ssh
     };
 
   programs.obs-studio.enableVirtualCamera = true;

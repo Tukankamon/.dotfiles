@@ -81,6 +81,7 @@
       "wheel"
       "adbusers"
       "dialout" #For arduino and stuff
+      "vboxsf"
     ];
     password = "aved";
     /*
@@ -133,6 +134,7 @@
     pavucontrol #better audio control
     #revolt-desktop discord alternative
     nurl #Fetching urls
+    rpi-imager
   ];
 
   fonts.packages = with pkgs; [
@@ -148,8 +150,8 @@
 
   ];
 
-   systemd.packages = with pkgs; [ lact ];
-   systemd.services.lactd.wantedBy = ["multi-user.target"];
+   #systemd.packages = with pkgs; [ lact ];
+   #systemd.services.lactd.wantedBy = ["multi-user.target"];
    hardware = {  #For davinci resolve
     enableRedistributableFirmware = true;  #ChatGPT recommendation
     graphics = {
