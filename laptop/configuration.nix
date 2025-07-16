@@ -23,6 +23,7 @@
   };
 
   /*
+
     nix.settings = {       #This has to be enabled before installing hyprland
       substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
@@ -88,11 +89,11 @@
       #"input"
     ];
     password = "aved";
-    /*
+
       packages = with pkgs; [
       #  thunderbird
+      inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
       ];
-    */
   };
 
   programs.firefox.enable = false;

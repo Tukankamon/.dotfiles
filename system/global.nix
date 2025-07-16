@@ -115,7 +115,6 @@
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
     kiwix
     gnome-network-displays #For sharing to a tv
-    inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     obs-studio
     arduino-ide
     lact

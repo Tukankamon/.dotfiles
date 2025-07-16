@@ -10,13 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";	#Check if the versions are the same
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-      # to have it up-to-date or simply don't specify the nixpkgs input  
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     vible = { #My own app
         url = "github:Tukankamon/vible";
         inputs.nixpkgs.follows = "nixpkgs";
