@@ -19,7 +19,7 @@
   };
   security.polkit.enable = true;  # I think this is also needed
 
-
+/*
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];
@@ -28,6 +28,7 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
+*/
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; #Forgot what this does
 
