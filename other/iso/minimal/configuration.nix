@@ -1,7 +1,11 @@
 
-{ config, pkgs, ... }:
-
+{ modulesPath, pkgs, ... }:
 {
+
+  imports = [
+        "${modulesPath}/instsaller/cd-dvd/installation-cd-minimal.nix" ];
+
+  nixpkgs.hostPlatform = "x86_64-linux";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # ISO image settings (from minimal installer)
