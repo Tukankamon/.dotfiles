@@ -8,7 +8,6 @@
 
   imports = [
     ./../home/global-home.nix
-    inputs.zen-browser.homeModules.beta
   ];
 
   home.username = "aved";
@@ -31,22 +30,6 @@
 
   home.sessionVariables = {
     #EDITOR = "vscodium";
-  };
-
-  programs.zen-browser = {  #https://github.com/luisnquin/nixos-config/blob/main/home/modules/browser.nix
-    enable = true;
-    policies = {
-      AutofillAddressEnabled = false;
-      AutofillCreditCardEnabled = false;
-      DisableAppUpdate = true;
-      DisableFeedbackCommands = true;
-      DisableFirefoxStudies = true;
-      DisablePocket = true; # save webs for later reading
-      DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
-      NoDefaultBookmarks = true;
-      OfferToSaveLogins = false;
-    };
   };
 
   programs.fish = {

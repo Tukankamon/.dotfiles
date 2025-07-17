@@ -81,9 +81,10 @@
       "wheel"
       "adbusers"
       "dialout" #For arduino and stuff
-      "vboxsf"
     ];
-    password = "aved";
+
+    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];   password = "aved";
+
     /*
       packages = with pkgs; [
         #  thunderbird
