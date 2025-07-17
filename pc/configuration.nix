@@ -83,7 +83,7 @@
       "dialout" #For arduino and stuff
     ];
 
-    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];   password = "aved";
+    password = "aved";
 
     /*
       packages = with pkgs; [
@@ -91,6 +91,8 @@
       ];
     */
   };
+
+  users.extraGroups.vboxusers.members = [ "aved" ];
 
   programs.firefox.enable = false;
 
