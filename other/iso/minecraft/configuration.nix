@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./minecraft
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -60,6 +61,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    lf
   ];
 
   services.openssh.enable = true;
