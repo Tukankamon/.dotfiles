@@ -5,7 +5,7 @@
         enable = true;
         eula = true;
         declarative = true;
-        package = pkgs.minecraft-server_1_16;
+        package = pkgs.minecraftServers.vanilla-1-16;
 
         serverProperties = {
           gamemode = "survival";
