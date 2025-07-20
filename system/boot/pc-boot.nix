@@ -21,7 +21,6 @@
     environment.systemPackages = with pkgs; [
         vulkan-tools
         vulkan-loader
-        mesa
     ];  #Had issues with wayland gamescope
 
     boot = {

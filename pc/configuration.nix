@@ -36,7 +36,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  #services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -97,7 +97,7 @@
   programs.firefox.enable = false;
 
   environment.variables = {   #For amd stuff
-    ROC_ENABLE_PRE_VEGA = "1";
+    #ROC_ENABLE_PRE_VEGA = "1";
     /*RUSTICL_ENABLE="amdgpu";
     DRI_PRIME= "1";
     QT_QPA_PLATFORM = "xcb davinci-resolve";*/
@@ -119,15 +119,10 @@
     mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
     discord
     sops
-    darktable
+    #darktable  # Breaks in unstable
     davinci-resolve
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
     nix-output-monitor  #eye candy for nix develop and shell
-    (writeShellScriptBin "deploy" ''
-      nohup brave &
-      nohup codium &
-      nohup discord &
-    '') # Custom bash script to open programs
     libreoffice
     audacity
     #jetbrains.idea-community   #for developing in kotlin
@@ -138,6 +133,8 @@
     #revolt-desktop discord alternative
     nurl #Fetching urls
     rpi-imager
+    prismlauncher
+    heroic
   ];
 
   fonts.packages = with pkgs; [
@@ -159,19 +156,10 @@
     enableRedistributableFirmware = true;  #ChatGPT recommendation
     graphics = {
       enable = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [
-        rocmPackages.clr.icd
-        ocl-icd
-        amdvlk  # Optional: AMD's proprietary Vulkan driver
-        /*
-        mesa
-        libva
-        libvdpau-va-gl
-        vulkan-loader
-        vulkan-validation-layers
-        mesa.opencl  # Enables Rusticl (OpenCL) support
-        */
-      ];
+        amdvlk
+        ];
     };
    };
 
@@ -201,23 +189,6 @@
   services.power-profiles-daemon.enable = false;
 
   services.thermald.enable = true;
-
-  services.tlp = {
-    enable = false;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 20;
-
-    };
-  };
 
   nix.gc = {
     automatic = true;
