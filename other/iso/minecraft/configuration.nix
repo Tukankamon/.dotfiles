@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./minecraft.nix
+      ./script.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

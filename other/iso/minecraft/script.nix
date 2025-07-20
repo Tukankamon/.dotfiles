@@ -9,6 +9,13 @@
   environment.systemPackages = with pkgs; [
 
   (writeShellApplication {
+      name = "logs";
+      text = ''
+        sudo journalctl -u minecraft-server -f
+      '';
+    })
+
+  (writeShellApplication {
       name = "nxs";
       text = ''
         sudo nixos-rebuild switch --flake ~/.dotfiles/other/iso/minecraft
