@@ -40,7 +40,7 @@ config = lib.mkIf config.gnome.enable {
       #"org/gnome/desktop/interface".color-scheme = "prefer-dark";  # Already set with stylix
 
       "org/gnome/desktop/background" = {
-        picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;
+        #picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;   # Set with stylix
       };
       
       "org/gnome/shell" = {

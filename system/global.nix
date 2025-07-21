@@ -160,9 +160,9 @@
 
   stylix = {
     enable = true;
-    image = ./../other/images/roadwp.jpg;
+    image = ./../other/images/astronaut.jpg;
     targets.grub.enable = false;
-
+/*
     base16Scheme = {
     base00 = "1f262d";  #terminal bg (defualt is #485867) (brush trees dark)
     base01 = "5A6D7A";
@@ -181,7 +181,7 @@
     base0E = "b386b2";
     base0F = "b39f9f";
     };
-
+*/
   };
 
 }
