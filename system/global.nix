@@ -170,7 +170,7 @@
       #fish.enable = false;
     };
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-moon.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
 /*
     #Blue / purple theme
