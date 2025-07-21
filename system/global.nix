@@ -160,16 +160,19 @@
 
 
   stylix = {
-    enable = false;
+    enable = true;
     polarity = "dark";
     image = ./../other/images/roadwp.jpg;
     targets = {
       grub.enable = false;
       #kitty.enable = false;  #Is disabled in the kitty conf
       # Gnome is also disabled in its own page
-      fish.enable = false;
+      #fish.enable = false;
     };
 
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-moon.yaml";
+
+/*
     #Blue / purple theme
     base16Scheme = {
       base00 = "2f4657";  #Background and top bar for other applications out of focus
@@ -204,6 +207,7 @@
       base0F = "b7cff9";
       #: white
     };
+*/
 
 /*  From stylix
     Default background: base00
