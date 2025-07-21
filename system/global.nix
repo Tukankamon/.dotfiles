@@ -160,7 +160,7 @@
 
   stylix = {
     enable = true;
-    image = ./../other/images/astronaut.jpg;
+    image = ./../other/images/matrix-options.png;
     targets.grub.enable = false;
 /*
     base16Scheme = {

@@ -12,7 +12,7 @@
     ./programs/fastfetch.nix
     ./deskenv/desk-module.nix
     ./programs/nvim.nix
-    ./programs/vscode.nix
+    ./programs/misc.nix
   ];
 
   programs.bash = {

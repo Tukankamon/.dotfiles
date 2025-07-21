@@ -50,7 +50,7 @@ config = lib.mkIf config.gnome.enable {
           "blur-my-shell@aunetx"
           "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
           "gsconnect@andyholmes.github.io"
-          "appindicator@ubuntu.github.com"  #Dont know if this is right
+          "appindicatorsupport@rgcjonas.gmail.com"  #Dont know if this is right
         ];
 
       };
