@@ -36,7 +36,11 @@
 
       background_opacity 0.8
       background_blur 1
+    '';
+  };
+}
 
+/*  Already set with stylix, add to extraConfig if needed
       color0       #00384d
       color8       #517f8d
       #: black
@@ -68,6 +72,4 @@
       color7       #77929e
       color15      #b7cff9
       #: white
-    '';
-  };
-}
+  */

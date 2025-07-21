@@ -31,11 +31,11 @@
     enable = true;
 
     settings.vim = {
-      theme = {
-        enable = true;
+      /*theme = {     #Already set with stylix
+        enable = true; 
         name = "nord";
         style = "dark";
-      };
+      };*/
 
       filetree.neo-tree.enable = true;
       statusline.lualine.enable = true; #IDK what this does

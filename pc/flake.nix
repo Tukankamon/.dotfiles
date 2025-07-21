@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     /*hyprland = {
       url = "github:hyprwm/Hyprland";
       #inputs.hyprland.follows = 
@@ -43,6 +48,7 @@
       yamask = lib.nixosSystem {
         specialArgs = {inherit inputs system;};
     	  modules = [ ./configuration.nix
+                    inputs.stylix.nixosModules.stylix
 		      ];
       };
     };

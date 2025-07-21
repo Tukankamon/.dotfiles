@@ -37,7 +37,7 @@ config = lib.mkIf config.gnome.enable {
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      #"org/gnome/desktop/interface".color-scheme = "prefer-dark";  # Already set with stylix
 
       "org/gnome/desktop/background" = {
         picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;

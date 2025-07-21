@@ -16,10 +16,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-      nvf = {
-        url = "github:notashelf/nvf";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     /*
       hyprland = {
@@ -51,6 +56,7 @@
           specialArgs = { inherit inputs system; };
           modules = [
             ./configuration.nix
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };

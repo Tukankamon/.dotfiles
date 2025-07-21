@@ -30,14 +30,14 @@
         systemd-boot.enable = false;    #Change when using / not using grub
         
         efi.canTouchEfiVariables = true;
-
+        
+        timeout = 1;
         grub = {
           enable = true;
           devices = [ "nodev"];
           efiSupport = true;
           useOSProber = true;   #To detect other operating systems
           splashImage = ./../../other/images/matrix-options.png;
-          timeout = 1;
         };
       };
 

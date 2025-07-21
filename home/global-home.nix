@@ -8,10 +8,11 @@
 
 {
   imports = [
-    ./kitty.nix
-    ./fastfetch.nix
+    ./programs/kitty.nix
+    ./programs/fastfetch.nix
     ./deskenv/desk-module.nix
-    ./nvim.nix
+    ./programs/nvim.nix
+    ./programs/vscode.nix
   ];
 
   programs.bash = {
