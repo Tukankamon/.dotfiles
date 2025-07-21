@@ -5,11 +5,9 @@
     enable = false; 
   };
 
+# Neither of these work
+
   programs.obsidian = {
     enable = false; 
-  };
-
-  programs.spotify-player = {
-    enable = true;
   };
 }

@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  config,
+  #config,
   #configuration,
   ...
 }: {
@@ -119,6 +119,7 @@
     obs-studio
     arduino-ide
     lact
+    gcolor3
   ];
 
   virtualisation.virtualbox.host.enable = true;
@@ -159,28 +160,60 @@
 
 
   stylix = {
-    enable = true;
-    image = ./../other/images/pandemonium.jpg;
-    targets.grub.enable = false;
-/*
-    base16Scheme = {
-    base00 = "1f262d";  #terminal bg (defualt is #485867) (brush trees dark)
-    base01 = "5A6D7A";
-    base02 = "6D828E";
-    base03 = "8299A1";
-    base04 = "98AFB5";
-    base05 = "B0C5C8";
-    base06 = "C9DBDC";
-    base07 = "E3EFEF";
-    base08 = "b38686";
-    base09 = "d8bba2";
-    base0A = "aab386";
-    base0B = "87b386";
-    base0C = "86b3b3";
-    base0D = "868cb3";
-    base0E = "b386b2";
-    base0F = "b39f9f";
+    enable = false;
+    polarity = "dark";
+    image = ./../other/images/roadwp.jpg;
+    targets = {
+      grub.enable = false;
+      #kitty.enable = false;  #Is disabled in the kitty conf
+      # Gnome is also disabled in its own page
+      fish.enable = false;
     };
+
+    #Blue / purple theme
+    base16Scheme = {
+      base00 = "2f4657";  #Background and top bar for other applications out of focus
+      base08 = "517f8d";  #Errors
+      #: black
+
+      base01 = "386d93";  # Title bar for apps in focus and also alternate background color for gnome apps
+      base09 = "ff5a67";
+      #: red
+
+      base02 = "7fc06e";
+      base0A = "9cf087";
+      #: green
+
+      base03 = "f08e48";
+      base0B = "ffffff";  # Prompt and some command colors
+      #: yellow
+
+      base04 = "1c8db2";  # Might be username, path and some commands. Mostly text
+      base0C = "7eb2dd";
+      #: blue
+
+      base05 = "a5f3f2";  # Hostname and output text
+      base0D = "fb94ff";  # Accent color
+      #: magenta
+
+      base06 = "00cccc";
+      base0E = "00ffff";
+      #: cyan
+
+      base07 = "ffffff";
+      base0F = "b7cff9";
+      #: white
+    };
+
+/*  From stylix
+    Default background: base00
+    Alternate background: base01
+    Selection background: base02
+    Default text: base05
+    Alternate text: base04
+    Warning: base0A
+    Urgent: base09
+    Error: base08
 */
   };
 

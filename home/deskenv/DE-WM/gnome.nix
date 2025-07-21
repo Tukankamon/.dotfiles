@@ -12,20 +12,18 @@ options ={
 
 config = lib.mkIf config.gnome.enable {
 
+  #stylix.targets.gnome.enable = false;  #Dont like how the custom gnome shell looks
+
   home.packages = with pkgs; [
 
     dconf-editor
     gnome-tweaks
 
     gnomeExtensions.blur-my-shell  # doesnt work rn
-    #gnomeExtensions.grand-theft-focus
     gnomeExtensions.gsconnect
     gnomeExtensions.auto-move-windows
     gnomeExtensions.appindicator
   ];
-
-
-  #home.sessionVariables.GTK_THEME = "Adwaita:dark";
 
   gtk = { #IDK if this works
     enable = true;
@@ -37,10 +35,10 @@ config = lib.mkIf config.gnome.enable {
   dconf = {
     enable = true;
     settings = {
-      #"org/gnome/desktop/interface".color-scheme = "prefer-dark";  # Already set with stylix
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";  # Already set with stylix
 
       "org/gnome/desktop/background" = {
-        #picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;   # Set with stylix
+        picture-uri-dark = "file://" + ./../../../other/images/roadwp.jpg;   # Set with stylix
       };
       
       "org/gnome/shell" = {

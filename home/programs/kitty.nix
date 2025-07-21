@@ -4,6 +4,9 @@
   #lib,
   ...
 }: {
+
+  #stylix.targets.kitty.enable = false;
+
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
@@ -31,16 +34,13 @@
 
       foreground #f8f8f2
       background #1f262d
+      wayland_titlebar_color #1f262d
       url_color #0087bd
       url_style curly
 
       background_opacity 0.8
       background_blur 1
-    '';
-  };
-}
 
-/*  Already set with stylix, add to extraConfig if needed
       color0       #00384d
       color8       #517f8d
       #: black
@@ -72,4 +72,7 @@
       color7       #77929e
       color15      #b7cff9
       #: white
-  */
+    '';
+  };
+  # The colors are being managed by stylix1
+}
