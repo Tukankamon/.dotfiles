@@ -9,7 +9,7 @@
     enable = false; 
   };
 
-  programs.spotify = {
+  programs.spotify-player = {
     enable = true;
   };
 }

@@ -160,7 +160,7 @@
 
   stylix = {
     enable = true;
-    image = ./../other/images/matrix-options.png;
+    image = ./../other/images/pandemonium.jpg;
     targets.grub.enable = false;
 /*
     base16Scheme = {
