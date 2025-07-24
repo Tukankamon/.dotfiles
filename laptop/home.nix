@@ -7,7 +7,6 @@
 
   imports = [
     ./../home/global-home.nix
-    ./../home/nvim.nix  #Doesnt seem to work if not
   ];
 
   home.username = "aved";
