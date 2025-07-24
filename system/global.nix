@@ -51,6 +51,7 @@
     epiphany
     geary
     yelp
+    totem
   ];
 
   programs.adb.enable = true;
@@ -93,6 +94,7 @@
     /*
     GUIS
     */
+    vlc
     bottles
     virtualbox
     qbittorrent
@@ -160,7 +162,7 @@
 
 
   stylix = {
-    enable = true;
+    enable = false;
     polarity = "dark";
     image = ./../other/images/roadwp.jpg;
     targets = {
