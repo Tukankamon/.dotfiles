@@ -16,6 +16,7 @@
 
   boot = {
     kernelModules = [ "snd-seq" "snd-rawmidi" ];
+    kernelParams = [ "kvm.enable_virt_at_load=0" ];  # For virtualbox
   };
   security.polkit.enable = true;  # I think this is also needed
 
@@ -96,7 +97,6 @@
     */
     vlc
     bottles
-    virtualbox
     qbittorrent
     tor-browser
     spotify
