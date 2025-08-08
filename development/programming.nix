@@ -16,6 +16,8 @@
 
     nim-unwrapped-2_0
 
+    nodejs_24
+
     /*
     CPP
     */
