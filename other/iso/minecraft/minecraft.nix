@@ -12,6 +12,8 @@
           difficulty = "hard";
           simulation-distance = 10;  #I think this is chunk render distance
           motd = "Minecraft TuKa";
+	  online-mode = false;
+	  #"server-icon" = ....   #Idk if this works
         };
   };
 }
