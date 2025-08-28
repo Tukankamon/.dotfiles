@@ -125,7 +125,7 @@
     discord
     sops
     #darktable  # Breaks in unstable
-    davinci-resolve
+    #davinci-resolve
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
     nix-output-monitor  #eye candy for nix develop and shell
     libreoffice
