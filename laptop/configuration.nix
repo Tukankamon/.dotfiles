@@ -96,8 +96,6 @@
       ];
   };
 
-  programs.firefox.enable = false;
-
   environment.shells = with pkgs; [ fish ]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;

@@ -94,8 +94,6 @@
 
   users.extraGroups.vboxusers.members = [ "aved" ];
 
-  programs.firefox.enable = false;
-
   environment.variables = {   #For amd stuff
     #ROC_ENABLE_PRE_VEGA = "1";
     /*RUSTICL_ENABLE="amdgpu";
@@ -194,12 +192,6 @@
   services.power-profiles-daemon.enable = false;
 
   services.thermald.enable = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 10d";
-  };
 
   nixpkgs.config.allowUnfree = true;
 }

@@ -7,12 +7,18 @@
 }: {
   imports = [
     ./../development/programming.nix
+    ./programs/autofirma.nix
   ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 30d";
+};
 
   boot = {
     kernelModules = [ "snd-seq" "snd-rawmidi" ];
@@ -110,13 +116,13 @@
     #signal-desktop  # Build error
     mullvad-browser # (recommended pretty much only if you have the vpn)
     gimp3
-    anki
+    #anki   #Build error
     obsidian #Notes and "mini essays" (Odysseas on YT)
     #logseq #Similar to obisidian, keep an eye on it
     #zettlr #Another FOSS markdown editor to keep an eye on
     rnote #To use with the wacom
     #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
-    kiwix
+    #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
     gnome-network-displays #For sharing to a tv
     obs-studio
     arduino-ide

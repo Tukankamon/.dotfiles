@@ -1,5 +1,6 @@
 {pkgs,
-config}:
+config,
+...}:
 {
 programs.autofirma = {
         enable = true;
