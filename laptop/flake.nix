@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    autofirma-nix = {
+        url = "github:nix-community/autofirma-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+     };
+
     /*
       hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -57,6 +62,7 @@
           modules = [
             ./configuration.nix
             inputs.stylix.nixosModules.stylix
+            inputs.autofirma-nix.nixosModules.default
           ];
         };
       };
