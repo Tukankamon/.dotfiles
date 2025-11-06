@@ -129,15 +129,16 @@
     libreoffice
     audacity
     #jetbrains.idea-community   #for developing in kotlin
-    #kdePackages.kdenlive
+    kdePackages.kdenlive
     android-studio
     #distrobox #Distro containers
     pavucontrol #better audio control
     #revolt-desktop discord alternative
     nurl #Fetching urls
-    rpi-imager
+    #rpi-imager #broken
     prismlauncher
     heroic
+    macchanger
   ];
 
   fonts.packages = with pkgs; [

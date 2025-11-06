@@ -101,6 +101,7 @@
     /*
     GUIS
     */
+    kooha  #Gif recorder but also ss and normal recordings
     vlc
     bottles
     qbittorrent

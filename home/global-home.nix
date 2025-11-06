@@ -25,10 +25,10 @@
 
   programs.git = {
     enable = true;
-    userName = "TuKankamon";
-    userEmail = "antovedaros@gmail.com";
-    extraConfig = {
+    settings = {
       init.defaultBranch = "main";
+      user.name = "TuKankamon";
+      user.email = "antovedaros@gmail.com";
       #safe.directory = "/etc/nixos";
     };
   };
