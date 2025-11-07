@@ -4,7 +4,6 @@
     pkgs,
     ...
 }: {
-    imports = [./../../pc/hardware-configuration.nix];
 
     options = {
         grub-boot.enable = lib.mkOption {
