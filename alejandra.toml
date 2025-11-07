@@ -1,0 +1,4 @@
+#experimental, no way to do this declaratively afaik
+
+indentation = "FourSpaces"
+

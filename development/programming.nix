@@ -1,39 +1,43 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    alejandra
-    nixfmt-rfc-style
-    nixd
+{
+    pkgs,
+    inputs,
+    ...
+}: {
+    environment.systemPackages = with pkgs; [
+        alejandra
+        nixfmt-rfc-style
+        nixd
 
-    python3
+        python3
 
-    rustc
-    cargo
-    rust-analyzer
+        rustc
+        cargo
+        rust-analyzer
 
-    go
+        go
 
-    ghc #Haskell
+        ghc # Haskell
 
-    nim-unwrapped-2_0
+        nim-unwrapped-2_0
 
-    nodejs_24
+        nodejs_24
 
-    /*
-    CPP
-    */
-    clang-tools
-    cmake
-    codespell
-    conan
-    cppcheck
-    doxygen
-    gtest
-    lcov
-    vcpkg
-    vcpkg-tool
-    libgcc
-    gcc
-    gdb
-    gmp # GNU multiple precision arithmetic library
-  ];
+        # CPP
+        clang-tools
+        cmake
+        codespell
+        conan
+        cppcheck
+        doxygen
+        gtest
+        lcov
+        vcpkg
+        vcpkg-tool
+        libgcc
+        gcc
+        gdb
+        gmp # GNU multiple precision arithmetic library
+    ];
+
+    nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Vimjoyer says I need it for the flake
 }

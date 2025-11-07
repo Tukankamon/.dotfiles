@@ -1,6 +1,6 @@
 {...}: {
-  imports = [
-    ./boot/pc-boot.nix
-    ./desktop/pc-desktop.nix
-  ];
+    imports = [
+        ./boot/pc-boot.nix
+        ./desktop/pc-desktop.nix
+    ];
 }
