@@ -2,7 +2,8 @@
     description = "Flake for Home-manager and shi";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-25.05";
+        nixpkgs.url = "nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "nixpkgs/nixos-25.05";
 
         home-manager = {
             url = "github:nix-community/home-manager/release-25.05";

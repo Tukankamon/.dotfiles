@@ -9,12 +9,12 @@
     imports = [
         ./hardware-configuration.nix
         inputs.home-manager.nixosModules.home-manager
-        ./../system/laptop.nix
         ./../system/global.nix
         ./../development/script.nix
     ];
 
-    laptop-boot.enable = true;
+    grub-boot.enable = true;
+    desktop = "gnome";
 
     home-manager = {
         extraSpecialArgs = {inherit inputs;};
