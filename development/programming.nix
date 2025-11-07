@@ -5,7 +5,6 @@
     nixd
 
     python3
-    python313Packages.networkx
 
     rustc
     cargo

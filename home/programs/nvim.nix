@@ -6,7 +6,7 @@
   imports = [inputs.nvf.homeManagerModules.default];
 
   programs.neovim = {
-    enable = true;
+    enable = false; #nvf does the work
 
     vimAlias = true;
     viAlias = true;
@@ -31,6 +31,8 @@
     enable = true;
 
     settings.vim = {
+      options.tabstop = 4;
+      options.shiftwidth = 0; #Uses tabstop value
       theme = {     #Already set with stylix
         enable = true; 
         name = "nord";
