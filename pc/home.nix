@@ -2,10 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
-
+}: {
   imports = [
     ./../home/global-home.nix
   ];
@@ -15,8 +12,7 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-
-  gnome.enable = true; 
+  gnome.enable = true;
   hypr.enable = false;
 
   home.packages = with pkgs; [
@@ -25,7 +21,6 @@
   fonts.fontconfig.enable = true;
 
   home.file = {
-
   };
 
   home.sessionVariables = {
@@ -48,7 +43,7 @@
       nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-      lx = "hx";  #More comfortable
+      lx = "hx"; #More comfortable
     };
   };
 }

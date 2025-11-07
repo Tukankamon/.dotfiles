@@ -33,8 +33,9 @@
     settings.vim = {
       options.tabstop = 4;
       options.shiftwidth = 0; #Uses tabstop value
-      theme = {     #Already set with stylix
-        enable = true; 
+      theme = {
+        #Already set with stylix
+        enable = true;
         name = "nord";
         style = "dark";
       };
@@ -71,7 +72,7 @@
   };
 
   programs.helix = {
-    enable = false;   #messes up muscle memory
+    enable = false; #messes up muscle memory
     settings = {
       theme = "catppuccin_mocha";
       editor = {

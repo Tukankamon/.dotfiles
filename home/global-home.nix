@@ -4,9 +4,7 @@
   # pkgs,
   # lib,
   ...
-}:
-
-{
+}: {
   imports = [
     ./programs/kitty.nix
     ./programs/fastfetch.nix
@@ -36,7 +34,7 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
-    options = [ "--cmd cd" ]; #changes the cd to zoxide
+    options = ["--cmd cd"]; #changes the cd to zoxide
   };
 
   # Let Home Manager install and manage itself.

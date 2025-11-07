@@ -1,9 +1,7 @@
-{
-  ...
-}:
+{...}:
 #From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
 {
-  imports = [ ./waybar-css.nix ];
+  imports = [./waybar-css.nix];
 
   programs.waybar.enable = true;
   programs.waybar.settings = {
@@ -16,7 +14,7 @@
         "clock"
         "tray"
       ];
-      "modules-center" = [ "hyprland/workspaces" ];
+      "modules-center" = ["hyprland/workspaces"];
       "modules-right" = [
         "group/expand"
         "bluetooth"
@@ -77,11 +75,9 @@
         "format-connected-battery" = "{device_battery_percentage}% 󰂯";
         "format-alt" = "{device_alias} 󰂯";
         "tooltip-format" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-        "tooltip-format-connected" =
-          "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+        "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
         "tooltip-format-enumerate-connected" = "{device_alias}\n{device_address}";
-        "tooltip-format-enumerate-connected-battery" =
-          "{device_alias}\n{device_address}\n{device_battery_percentage}%";
+        "tooltip-format-enumerate-connected-battery" = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
         "on-click-right" = "blueman-manager";
       };
       "battery" = {
@@ -106,15 +102,15 @@
       };
 
       /*
-        "custom/pacman" = {
-            "format" = "󰅢 {}";
-            "interval" = 30;
-            "exec" = "checkupdates | wc -l";
-            "exec-if" = "exit 0";
-            "on-click"= "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-            "signal"= 8;
-            "tooltip"= false;
-        };
+      "custom/pacman" = {
+          "format" = "󰅢 {}";
+          "interval" = 30;
+          "exec" = "checkupdates | wc -l";
+          "exec-if" = "exit 0";
+          "on-click"= "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+          "signal"= 8;
+          "tooltip"= false;
+      };
       */
 
       "custom/expand" = {

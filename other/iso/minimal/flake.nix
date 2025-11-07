@@ -5,15 +5,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
   };
 
-outputs = { nixpkgs, ...}@inputs:
-{
-  nixosConfigurations = {
-  
-    nixIso = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./configuration.nix ];
-    };
+  outputs = {nixpkgs, ...} @ inputs: {
+    nixosConfigurations = {
+      nixIso = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [./configuration.nix];
+      };
     };
   };
 }
-

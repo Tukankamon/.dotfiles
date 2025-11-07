@@ -18,15 +18,15 @@
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 30d";
-};
+  };
 
   boot = {
-    kernelModules = [ "snd-seq" "snd-rawmidi" ];
-    kernelParams = [ "kvm.enable_virt_at_load=0" ];  # For virtualbox
+    kernelModules = ["snd-seq" "snd-rawmidi"];
+    kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
   };
-  security.polkit.enable = true;  # I think this is also needed
+  security.polkit.enable = true; # I think this is also needed
 
-/*
+  /*
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];
@@ -35,21 +35,23 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-*/
+  */
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; #Forgot what this does
 
   programs.command-not-found.enable = true;
-  programs.nix-index = { #doesnt work
+  programs.nix-index = {
+    #doesnt work
     enable = true;
     enableBashIntegration = false;
-    enableZshIntegration= false;
+    enableZshIntegration = false;
   };
 
-  networking.firewall = {  # for gsconnect
+  networking.firewall = {
+    # for gsconnect
     enable = true;
-    allowedTCPPorts = [ 1716 ];
-    allowedUDPPorts = [ 1716 ];
+    allowedTCPPorts = [1716];
+    allowedUDPPorts = [1716];
   };
 
   environment.gnome.excludePackages = with pkgs; [
@@ -76,7 +78,7 @@
     yazi # Better lf, keeping the old bc it is much more comortable to type
     git
     kitty
-    fzf  #fuzzy file search, needed for zoxide
+    fzf #fuzzy file search, needed for zoxide
     neovim
     asciiquarium-transparent
     parted # scan partitions
@@ -89,9 +91,9 @@
     hyperfine #command benchmark
     #helix  #nvim with better defaults
     universal-android-debloater
-    zoxide  # better cd
+    zoxide # better cd
     dysk
-    exiftool   #Metadata image scanner
+    exiftool #Metadata image scanner
     tokei # Count lines of code per language
     nvd #Check the pkg difference between generations
     caligula #Burning flash drives
@@ -101,7 +103,7 @@
     /*
     GUIS
     */
-    kooha  #Gif recorder but also ss and normal recordings
+    kooha #Gif recorder but also ss and normal recordings
     vlc
     bottles
     qbittorrent
@@ -159,14 +161,13 @@
   environment.variables = {
     EDITOR = "gnome-text-editor"; #Gnome text editor
     TERM = "xterm-256color"; #to be able to clear in ssh
-    };
+  };
 
   programs.obs-studio.enableVirtualCamera = true;
 
   environment.sessionVariables = {
-    SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0;  #for fullscreen videogames
+    SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0; #for fullscreen videogames
   };
-
 
   stylix = {
     enable = false;
@@ -181,7 +182,7 @@
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
-/*
+    /*
     #Blue / purple theme
     base16Scheme = {
       base00 = "2f4657";  #Background and top bar for other applications out of focus
@@ -216,9 +217,10 @@
       base0F = "b7cff9";
       #: white
     };
-*/
+    */
 
-/*  From stylix
+    /*
+    From stylix
     Default background: base00
     Alternate background: base01
     Selection background: base02
@@ -227,7 +229,6 @@
     Warning: base0A
     Urgent: base09
     Error: base08
-*/
+    */
   };
-
 }

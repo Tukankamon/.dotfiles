@@ -3,8 +3,8 @@
   pkgs,
   # configuration,
   ...
-}: # add inputs
-
+}:
+# add inputs
 {
   imports = [
     ./hardware-configuration.nix
@@ -18,11 +18,9 @@
 
   home-manager = {
     # Not necesary but now hm also rebuilds with nixos-rebuild
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users.aved = import ./home.nix;
-
   };
-
 
   networking.hostName = "yamask"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -53,7 +51,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
 
@@ -66,7 +63,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -86,22 +82,25 @@
     password = "aved";
 
     /*
-      packages = with pkgs; [
-        #  thunderbird
-      ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
     */
   };
 
-  users.extraGroups.vboxusers.members = [ "aved" ];
+  users.extraGroups.vboxusers.members = ["aved"];
 
-  environment.variables = {   #For amd stuff
+  environment.variables = {
+    #For amd stuff
     #ROC_ENABLE_PRE_VEGA = "1";
-    /*RUSTICL_ENABLE="amdgpu";
+    /*
+      RUSTICL_ENABLE="amdgpu";
     DRI_PRIME= "1";
-    QT_QPA_PLATFORM = "xcb davinci-resolve";*/
+    QT_QPA_PLATFORM = "xcb davinci-resolve";
+    */
   };
 
-  environment.shells = with pkgs; [ fish ]; # Following a video
+  environment.shells = with pkgs; [fish]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
@@ -125,7 +124,7 @@
     #darktable  # Breaks in unstable
     #davinci-resolve
     #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
-    nix-output-monitor  #eye candy for nix develop and shell
+    nix-output-monitor #eye candy for nix develop and shell
     libreoffice
     audacity
     #jetbrains.idea-community   #for developing in kotlin
@@ -151,20 +150,20 @@
     pkgs.nerd-fonts.fira-code
     pkgs.nerd-fonts.droid-sans-mono
     pkgs.nerd-fonts.hack
-
   ];
 
-   #systemd.packages = with pkgs; [ lact ];
-   #systemd.services.lactd.wantedBy = ["multi-user.target"];
-   hardware = {  #For davinci resolve
-    enableRedistributableFirmware = true;  #ChatGPT recommendation
+  #systemd.packages = with pkgs; [ lact ];
+  #systemd.services.lactd.wantedBy = ["multi-user.target"];
+  hardware = {
+    #For davinci resolve
+    enableRedistributableFirmware = true; #ChatGPT recommendation
     graphics = {
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        ];
+      ];
     };
-   };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

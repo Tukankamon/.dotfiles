@@ -1,10 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-
-{
-
+{pkgs, ...}: {
   imports = [
     ./../home/global-home.nix
   ];
@@ -23,7 +17,6 @@
   fonts.fontconfig.enable = true;
 
   home.file = {
-
   };
 
   home.sessionVariables = {

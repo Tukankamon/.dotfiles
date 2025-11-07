@@ -1,10 +1,6 @@
-{
-  pkgs,
-  ...
-}:
+{pkgs, ...}:
 #Make bash scripts and use as pkgs
 #If the command is too long you can just execute a bash script from the "text" section
-
 {
   environment.systemPackages = with pkgs; [
     (writeShellApplication {
@@ -20,10 +16,11 @@
       '';
     })
 
-    (writeShellApplication {    #Git add, commit and push with a message
+    (writeShellApplication {
+      #Git add, commit and push with a message
       name = "gitdo";
 
-      runtimeInputs = with pkgs; [ git ];
+      runtimeInputs = with pkgs; [git];
 
       text = ''
         Help()

@@ -3,10 +3,8 @@
   lib,
   pkgs,
   ...
-}:
-{
-
-  imports = [ ./../../pc/hardware-configuration.nix ];
+}: {
+  imports = [./../../pc/hardware-configuration.nix];
 
   options = {
     pc-boot.enable = lib.mkOption {
@@ -19,29 +17,27 @@
 
   config = lib.mkIf config.pc-boot.enable {
     environment.systemPackages = with pkgs; [
-        vulkan-tools
-        vulkan-loader
-    ];  #Had issues with wayland gamescope
+      vulkan-tools
+      vulkan-loader
+    ]; #Had issues with wayland gamescope
 
     boot = {
-      initrd.kernelModules = ["amdgpu"];  #davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
+      initrd.kernelModules = ["amdgpu"]; #davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
       loader = {
-        systemd-boot.enable = false;    #Change when using / not using grub
-        
+        systemd-boot.enable = false; #Change when using / not using grub
+
         efi.canTouchEfiVariables = true;
-        
+
         timeout = 1;
         grub = {
           enable = true;
-          devices = [ "nodev"];
+          devices = ["nodev"];
           efiSupport = true;
-          useOSProber = true;   #To detect other operating systems
+          useOSProber = true; #To detect other operating systems
           splashImage = ./../../other/images/matrix-options.png;
         };
       };
-
-
 
       #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
 

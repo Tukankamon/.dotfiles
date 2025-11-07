@@ -1,8 +1,4 @@
-{
-  ...
-}:
-{
-
+{...}: {
   #@define-color color9 #cd7fff;
   programs.waybar.style = ''
     @define-color background #71665b;
@@ -127,13 +123,13 @@
     }
     #group-expand{
         padding: 0px 5px;
-        transition: all .3s ease; 
+        transition: all .3s ease;
     }
     #custom-expand{
         padding: 0px 5px;
         color:alpha(@foreground,.2);
         text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-        transition: all .3s ease; 
+        transition: all .3s ease;
     }
     #custom-expand:hover{
         color:rgba(255,255,255,.2);
@@ -141,7 +137,7 @@
     }
     #cpu,#memory,#temperature{
         padding: 0px 5px;
-        transition: all .3s ease; 
+        transition: all .3s ease;
         color:@color7;
 
     }
@@ -152,18 +148,17 @@
     }
     #tray{
         padding: 0px 5px;
-        transition: all .3s ease; 
+        transition: all .3s ease;
 
     }
     #tray menu * {
         padding: 0px 5px;
-        transition: all .3s ease; 
+        transition: all .3s ease;
     }
 
     #tray menu separator {
         padding: 0px 5px;
-        transition: all .3s ease; 
+        transition: all .3s ease;
     }
   '';
-
 }

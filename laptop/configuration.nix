@@ -3,8 +3,8 @@
   pkgs,
   # configuration,
   ...
-}: # add inputs
-
+}:
+# add inputs
 {
   imports = [
     ./hardware-configuration.nix
@@ -17,17 +17,16 @@
   laptop-boot.enable = true;
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users.aved = import ./home.nix;
-
   };
 
   /*
 
-    nix.settings = {       #This has to be enabled before installing hyprland
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-    };
+  nix.settings = {       #This has to be enabled before installing hyprland
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   */
 
   networking.hostName = "dwebble"; # Define your hostname.
@@ -44,8 +43,8 @@
   services.xserver.enable = true;
 
   /*
-    services.xserver.wacom.enable = true;  #Wacom tablet
-    hardware.opentabletdriver.enable = true;
+  services.xserver.wacom.enable = true;  #Wacom tablet
+  hardware.opentabletdriver.enable = true;
   */
 
   # Configure keymap in X11
@@ -73,7 +72,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     #jack.enable = true;
-
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -90,35 +88,41 @@
     ];
     password = "aved";
 
-      packages = with pkgs; [
+    packages = with pkgs; [
       #  thunderbird
-        inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
-      ];
+      inputs.zen-browser.packages."x86_64-linux".default #https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+    ];
   };
 
-  environment.shells = with pkgs; [ fish ]; # Following a video
+  environment.shells = with pkgs; [fish]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  environment.systemPackages = /*with pkgs; */[
+  environment.systemPackages =
+    /*
+    with pkgs;
+    */
+    [
+      #gnomeExtensions.search-light
+      #sops
+      #  wget
+    ];
 
-    #gnomeExtensions.search-light
-    #sops
-    #  wget
-  ];
+  fonts.packages =
+    /*
+    with pkgs;
+    */
+    [
+      #font-awesome
+      #font-awesome_5
+      #font-awesome_6
 
-  fonts.packages = /*with pkgs;*/ [
-    #font-awesome
-    #font-awesome_5
-    #font-awesome_6
-
-    #nerd-fonts.code-new-roman
-    #pkgs.nerd-fonts.jetbrains-mono
-    #pkgs.nerd-fonts.fira-code
-    #pkgs.nerd-fonts.droid-sans-mono
-    #pkgs.nerd-fonts.hack
-
-  ];
+      #nerd-fonts.code-new-roman
+      #pkgs.nerd-fonts.jetbrains-mono
+      #pkgs.nerd-fonts.fira-code
+      #pkgs.nerd-fonts.droid-sans-mono
+      #pkgs.nerd-fonts.hack
+    ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -160,24 +164,22 @@
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
-
     };
   };
 
   /*
-    services.libinput = {
-    enable = true;
-    # disabling mouse acceleration
-    mouse = {
-      accelProfile = "flat";
-    };
+  services.libinput = {
+  enable = true;
+  # disabling mouse acceleration
+  mouse = {
+    accelProfile = "flat";
+  };
 
-    # disabling touchpad acceleration
-    touchpad = {
-      accelProfile = "flat";
-    };
-    };
+  # disabling touchpad acceleration
+  touchpad = {
+    accelProfile = "flat";
+  };
+  };
   */
   nixpkgs.config.allowUnfree = true;
-
 }

@@ -7,7 +7,7 @@
       logo = {
         source = ""; # default size
         color = {
-          "1" = "38;2;198;148;255";   # Change this if it messing with stylix
+          "1" = "38;2;198;148;255"; # Change this if it messing with stylix
         }; # (turns the dark blue to purpleish)
         #color = {"2" = "38;2;198;148;255";};  #(turns the light blue to purpleish)
         padding = {
@@ -47,7 +47,7 @@
         }
         {
           type = "cpu";
-          key ="";
+          key = "";
           keyColor = "38;2;198;148;255";
         }
         {

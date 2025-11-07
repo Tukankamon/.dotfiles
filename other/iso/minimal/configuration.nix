@@ -1,20 +1,22 @@
-
-{ modulesPath, pkgs, ... }:
 {
-
+  modulesPath,
+  pkgs,
+  ...
+}: {
   imports = [
-        "${modulesPath}/instsaller/cd-dvd/installation-cd-minimal.nix" ];
+    "${modulesPath}/instsaller/cd-dvd/installation-cd-minimal.nix"
+  ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # ISO image settings (from minimal installer)
   isoImage.edition = "custom";
 
   users.users.nixos = {
     isNormalUser = true;
-    password = "nixos";  
-    extraGroups = [ "wheel" "networkmanager" ];
+    password = "nixos";
+    extraGroups = ["wheel" "networkmanager"];
   };
 
   # Add your desired packages here
