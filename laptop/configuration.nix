@@ -21,13 +21,6 @@
         users.aved = import ./home.nix;
     };
 
-    /*
-  nix.settings = {       #This has to be enabled before installing hyprland
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-  */
-
     networking.hostName = "dwebble"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

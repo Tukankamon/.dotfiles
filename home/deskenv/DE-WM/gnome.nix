@@ -5,7 +5,7 @@
     ...
 }: {
     options = {
-        gnome.enable = lib.mkOption {
+        gnome-home.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             example = false;
@@ -13,7 +13,7 @@
         };
     };
 
-    config = lib.mkIf config.gnome.enable {
+    config = lib.mkIf config.gnome-home.enable {
         #stylix.targets.gnome.enable = false;  #Dont like how the custom gnome shell looks
 
         home.packages = with pkgs; [

@@ -12,8 +12,8 @@
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    gnome.enable = true;
-    hypr.enable = false;
+    gnome-home.enable = true;
+    hypr-home.enable = false;
 
     home.packages = with pkgs; [
         hello

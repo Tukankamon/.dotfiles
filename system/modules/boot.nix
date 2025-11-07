@@ -7,7 +7,7 @@
     imports = [./../../pc/hardware-configuration.nix];
 
     options = {
-        pc-boot.enable = lib.mkOption {
+        grub-boot.enable = lib.mkOption {
             type = lib.types.bool;
             default = false;
             example = true;
@@ -15,7 +15,7 @@
         };
     };
 
-    config = lib.mkIf config.pc-boot.enable {
+    config = lib.mkIf config.grub-boot.enable {
         environment.systemPackages = with pkgs; [
             vulkan-tools
             vulkan-loader
@@ -39,12 +39,21 @@
                 };
             };
 
-            #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
+            kernelModules = [
+                "snd-seq"
+                "snd-rawmidi"
+            ];
+        kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
 
             plymouth = {
                 enable = false;
                 theme = "spinfinity";
             };
         };
+
+        security.polkit.enable = true; # I think this is also needed
+            #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
+
+
     };
 }

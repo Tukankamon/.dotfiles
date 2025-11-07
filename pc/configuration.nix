@@ -4,17 +4,16 @@
     # configuration,
     ...
 }:
-# add inputs
 {
     imports = [
         ./hardware-configuration.nix
         inputs.home-manager.nixosModules.home-manager
-        ./../system/pc.nix
         ./../system/global.nix
         ./../development/script.nix
     ];
 
-    pc-boot.enable = true;
+    grub-boot.enable = true;
+    desktop = "gnome"; #default   #Remember to also enable in home manager or you will  get stuck
 
     home-manager = {
         # Not necesary but now hm also rebuilds with nixos-rebuild

@@ -9,7 +9,7 @@
     imports = [./../wayland/waybar.nix];
 
     options = {
-        hypr.enable = lib.mkOption {
+        hypr-home.enable = lib.mkOption {
             type = lib.types.bool;
             default = false;
             example = true;
@@ -17,7 +17,7 @@
         };
     };
 
-    config = lib.mkIf config.hypr.enable {
+    config = lib.mkIf config.hypr-home.enable {
         home.packages = with pkgs; [
             pkgs.waybar
             pkgs.rofi-wayland

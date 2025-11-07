@@ -7,7 +7,9 @@
 }: {
     imports = [
         ./../development/programming.nix
-        ./programs/autofirma.nix
+        ./modules/autofirma.nix
+        ./modules/desktop.nix
+        ./modules/boot.nix
     ];
 
     nix.settings.experimental-features = [
@@ -19,15 +21,6 @@
         automatic = true;
         options = "--delete-older-than 30d";
     };
-
-    boot = {
-        kernelModules = [
-            "snd-seq"
-            "snd-rawmidi"
-        ];
-        kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
-    };
-    security.polkit.enable = true; # I think this is also needed
 
     /*
   services.flatpak.enable = true;
