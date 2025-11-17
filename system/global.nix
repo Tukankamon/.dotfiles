@@ -123,6 +123,7 @@
         arduino-ide
         lact
         gcolor3
+        kicad
     ];
 
     virtualisation.virtualbox.host.enable = true;
