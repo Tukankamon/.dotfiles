@@ -35,6 +35,7 @@
         vcpkg-tool
         libgcc
         gcc
+        gnumake
         gdb
         gmp # GNU multiple precision arithmetic library
     ];

@@ -22,7 +22,6 @@
 
             gnomeExtensions.blur-my-shell # doesnt work rn
             gnomeExtensions.gsconnect
-            gnomeExtensions.auto-move-windows
             gnomeExtensions.appindicator
         ];
 
@@ -48,7 +47,6 @@
 
                     enabled-extensions = [
                         "blur-my-shell@aunetx"
-                        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
                         "gsconnect@andyholmes.github.io"
                         "appindicatorsupport@rgcjonas.gmail.com" # Dont know if this is right
                     ];
@@ -69,7 +67,7 @@
                 "org/gnome/shell/app-switcher".current-workspace-only = true;
                 "org/gnome/desktop/interface".enable-hot-corners = false;
 
-                "org/gnome/shell/extensions/auto-move-windows" = {
+                /*"org/gnome/shell/extensions/auto-move-windows" = {
                     "application-list" = [
                         "brave-browser.desktop:1"
                         "librewolf.desktop:1"
@@ -80,7 +78,7 @@
                         "spotify.desktop:5"
                         "mullvad-browser.desktop:5"
                     ];
-                };
+                }; */
 
                 "org/gnome/mutter".dynamic-workspaces = false;
                 "org/gnome/desktop/wm/preferences".num-workspaces = 7;

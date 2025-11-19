@@ -73,6 +73,7 @@
         git
         kitty
         fzf # fuzzy file search, needed for zoxide
+        kew #music player
         neovim
         asciiquarium-transparent
         parted # scan partitions
