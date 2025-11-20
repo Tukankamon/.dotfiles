@@ -37,8 +37,8 @@
             url_color #0087bd
             url_style curly
 
-            background_opacity 0.8
-            background_blur 1
+            background_opacity 0.9
+            background_blur 10
 
             color0       #00384d
             color8       #517f8d
