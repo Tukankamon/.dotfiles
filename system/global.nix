@@ -99,6 +99,7 @@
         kooha # Gif recorder but also ss and normal recordings
         vlc
         bottles
+        audacity
         qbittorrent
         tor-browser
         spotify
