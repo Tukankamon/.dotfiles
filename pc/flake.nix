@@ -45,6 +45,7 @@
     outputs = {
         self,
         nixpkgs,
+        nixpkgs-stable,
         home-manager,
         nvf,
         vible,
@@ -54,10 +55,11 @@
         lib = nixpkgs.lib;
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
+        pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in {
         nixosConfigurations = {
             yamask = lib.nixosSystem {
-                specialArgs = {inherit inputs system;};
+                specialArgs = {inherit inputs system pkgs-stable;};
                 modules = [
                     ./configuration.nix
                     inputs.stylix.nixosModules.stylix

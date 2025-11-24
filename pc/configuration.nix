@@ -1,6 +1,7 @@
 {
     inputs,
     pkgs,
+    pkgs-stable,
     # configuration,
     ...
 }:
@@ -115,7 +116,9 @@
 
     programs.gamemode.enable = true;
 
-    environment.systemPackages = with pkgs; [
+
+    environment.systemPackages =
+    (with pkgs; [
         #inputs.vible.packages.x86_64-linux.default
         mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
         discord
@@ -125,7 +128,6 @@
         #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
         nix-output-monitor # eye candy for nix develop and shell
         libreoffice
-        audacity
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
         android-studio
@@ -137,7 +139,13 @@
         prismlauncher
         heroic
         macchanger
-    ];
+    ])
+
+    ++
+
+    (with pkgs-stable; [
+        audacity
+    ]);
 
     fonts.packages = with pkgs; [
         font-awesome
