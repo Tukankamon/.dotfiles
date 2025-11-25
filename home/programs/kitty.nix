@@ -4,18 +4,10 @@
     #lib,
     ...
 }: {
-    #stylix.targets.kitty.enable = false;
 
     programs.kitty = {
         enable = true;
         shellIntegration.enableFishIntegration = true;
-        #confirm_os_window_close = 0;
-
-        /*
-    font = {
-      name = "JetBrainsMono Nerd Font";
-    };
-    */
 
         #look for wryan kitty theme or Base2Tone
         extraConfig = ''

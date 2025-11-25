@@ -62,7 +62,7 @@
                 specialArgs = {inherit inputs system pkgs-stable;};
                 modules = [
                     ./configuration.nix
-                    inputs.stylix.nixosModules.stylix
+                    #inputs.stylix.nixosModules.stylix
                     inputs.autofirma-nix.nixosModules.default
                 ];
             };

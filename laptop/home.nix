@@ -35,11 +35,14 @@
         shellAbbrs = {
             nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/laptop#dwebble";
             hms = "home-manager switch --flake ~/.dotfiles/laptop#dwebble";
-            nxshell = "nix-shell ~/.dotfiles/development/shell.nix";
 
             nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-            lx = "hx";
             #Maybe find a way to index e.g: automated-commit-1
+        };
+
+        functions = {
+
+            #fish_prompt = "string join '' (set_color green) (prompt_pwd --full-length-dirs 3) (set_color normal) '~>'";
         };
     };
 }

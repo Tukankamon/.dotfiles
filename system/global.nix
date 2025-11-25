@@ -164,6 +164,7 @@
         SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0; # for fullscreen videogames
     };
 
+/*
     stylix = {
         enable = false;
         polarity = "dark";
@@ -176,45 +177,9 @@
         };
 
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-        /*
-    #Blue / purple theme
-    base16Scheme = {
-      base00 = "2f4657";  #Background and top bar for other applications out of focus
-      base08 = "517f8d";  #Errors
-      #: black
-
-      base01 = "386d93";  # Title bar for apps in focus and also alternate background color for gnome apps
-      base09 = "ff5a67";
-      #: red
-
-      base02 = "7fc06e";
-      base0A = "9cf087";
-      #: green
-
-      base03 = "f08e48";
-      base0B = "ffffff";  # Prompt and some command colors
-      #: yellow
-
-      base04 = "1c8db2";  # Might be username, path and some commands. Mostly text
-      base0C = "7eb2dd";
-      #: blue
-
-      base05 = "a5f3f2";  # Hostname and output text
-      base0D = "fb94ff";  # Accent color
-      #: magenta
-
-      base06 = "00cccc";
-      base0E = "00ffff";
-      #: cyan
-
-      base07 = "ffffff";
-      base0F = "b7cff9";
-      #: white
-    };
-    */
-
-        /*
+        };
+        */
+         /*
     From stylix
     Default background: base00
     Alternate background: base01
@@ -225,5 +190,4 @@
     Urgent: base09
     Error: base08
     */
-    };
 }
