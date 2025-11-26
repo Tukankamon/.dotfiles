@@ -90,7 +90,7 @@
         parted # scan partitions
         testdisk
         ffmpeg
-        impala #Wifi tui
+        #bluetui #bluetooth tui
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
         libwacom # Wacom specifically

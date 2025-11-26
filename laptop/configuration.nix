@@ -14,7 +14,7 @@
     ];
 
     grub-boot.enable = true;
-    desktop = "niri";
+    desktop = "niri-gnome";
 
     home-manager = {
         extraSpecialArgs = {inherit inputs;};
@@ -109,12 +109,12 @@
         ];
 
     fonts.packages =
-        # with pkgs;
+        with pkgs;
         [
             #font-awesome
             #font-awesome_5
             #font-awesome_6
-
+            #nerdfonts #Broken
             #nerd-fonts.code-new-roman
             #pkgs.nerd-fonts.jetbrains-mono
             #pkgs.nerd-fonts.fira-code
