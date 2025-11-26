@@ -14,7 +14,7 @@
     ];
 
     grub-boot.enable = true;
-    desktop = "gnome";
+    desktop = "niri";
 
     home-manager = {
         extraSpecialArgs = {inherit inputs;};
@@ -84,6 +84,16 @@
             #  thunderbird
             inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
         ];
+    };
+
+    stylix = {
+        enable = false; #temporary
+        #polarity = "dark";
+        image = ./../other/images/roadwp.jpg;
+        targets = {
+            nvf.enable = false;
+            grub.enable = false;
+        };
     };
 
     environment.shells = with pkgs; [fish]; # Following a video

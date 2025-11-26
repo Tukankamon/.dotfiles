@@ -23,6 +23,7 @@
         home.packages = with pkgs; [
             alacritty
             fuzzel
+            swaybg
         ];
 
         programs.alacritty.enable = true; #Just in case, this is the default terminal

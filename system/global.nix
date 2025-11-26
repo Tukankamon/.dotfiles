@@ -84,6 +84,7 @@
         libwacom # Wacom specifically
         toybox # CLI utilities
         hyperfine # command benchmark
+        htop
         #helix  #nvim with better defaults
         universal-android-debloater
         zoxide # better cd
@@ -104,7 +105,7 @@
         tor-browser
         spotify
         brave
-        librewolf
+        #librewolf #BROKEN memory leak when building for nxs
         vscodium
         zed-editor
         vscode

@@ -34,12 +34,14 @@
             options.tabstop = 4;
             options.shiftwidth = 0; # Uses tabstop value
 
+            /*
             theme = {
                 #Already set with stylix
-                enable = true;
+                enable = false;
                 name = "nord";
                 style = "dark";
             };
+            */
 
             filetree.neo-tree.enable = true;
             statusline.lualine.enable = true; # IDK what this does

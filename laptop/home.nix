@@ -24,6 +24,7 @@
         #EDITOR = "vscodium";
     };
 
+
     programs.fish = {
         enable = true;
 
