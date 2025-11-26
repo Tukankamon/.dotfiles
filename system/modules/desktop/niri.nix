@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: #TODO
+{pkgs, lib, config, ...}:
 {
     options = {
         niriwm = lib.mkEnableOption {
@@ -12,9 +12,11 @@
     config = lib.mkIf config.niriwm {
         environment.sessionVariables.NIXOS_OZONE_WL = "1";
         programs.niri.enable = true;
-        #For noctalia shell you need it in a flake
 
-        programs.alacritty.enable = true; #Just in case, this is the default terminal
-        programs.fuzzel.enable = trueM #Same thing, JIC
+        #For noctalia shell you need it in a flake
+        environment.systemPackages = with pkgs; [
+            inputs.noctalia.packages.x86_64-linux.default
+        ];
+
     };
 }

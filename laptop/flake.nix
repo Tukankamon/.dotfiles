@@ -33,24 +33,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-
-        quickshell = { #I think this is needed for noctalia
-            url = "github:outfoxxed/quickshell";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         noctalia = { # Shell to use with a WM
             url = "github:noctalia-dev/noctalia-shell";
             inputs.nixpkgs.follows = "nixpkgs";
-            inputs.quickshell.follows "quickshell";
         };
 
-        /*
-    hyprland = {
-    url = "github:hyprwm/Hyprland";
-    inputs.nixpkgs.follows = "nixpkgs";
-    };
-    */
     };
 
     outputs = {

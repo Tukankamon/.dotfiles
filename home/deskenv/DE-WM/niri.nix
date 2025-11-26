@@ -3,7 +3,7 @@
     pkgs,
     lib,
     ...
-};
+}:
 
 {
     imports = [];
@@ -13,12 +13,19 @@
             type = lib.types.bool;
             default = false;
             example = true;
-            description = "Enables the customisation of niri and noctalia shell (if installed)"
+            description = "Enables the customisation of niri and noctalia shell (if installed)";
         };
     };
 
     config = lib.mkIf config.niri-home.enable {
         xdg.configFile."niri/config.kdl".source = ./configs/niri.kdl;
 
+        home.packages = with pkgs; [
+            alacritty
+            fuzzel
+        ];
+
+        programs.alacritty.enable = true; #Just in case, this is the default terminal
+        programs.fuzzel.enable = true; #Same thing, JIC
     };
 }

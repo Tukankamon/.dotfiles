@@ -4,5 +4,6 @@
     imports = [
         ./DE-WM/gnome.nix
         ./DE-WM/hypr.nix
+        ./DE-WM/niri.nix
     ];
 }
