@@ -47,7 +47,7 @@
             };
             */
             "clock" = {
-                "format" = "{:%I:%M:%S %p} ";
+                "format" = "{:%H:%M:%S %p} ";
                 "interval" = 1;
                 "tooltip-format" = "<tt>{calendar}</tt>";
                 "calendar" = {
