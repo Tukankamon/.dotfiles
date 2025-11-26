@@ -6,7 +6,7 @@
 }:
 
 {
-    imports = [];
+    imports = [./../wayland/waybar.nix];
 
     options = {
         niri-home.enable = lib.mkOption {

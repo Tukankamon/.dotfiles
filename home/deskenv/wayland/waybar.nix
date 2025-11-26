@@ -14,7 +14,7 @@
                 "clock"
                 "tray"
             ];
-            "modules-center" = ["hyprland/workspaces"];
+            "modules-center" = ["niri/workspaces"];
             "modules-right" = [
                 "group/expand"
                 "bluetooth"
@@ -22,29 +22,30 @@
                 "battery"
             ];
 
-            "hyprland/workspaces" = {
+            #Change to hyprland if needed
+            "niri/workspaces" = {
                 "format" = "{icon}";
                 "format-icons" = {
                     "active" = ""; # snowflake
-                    "default" = "";
-                    "empty" = "";
+                    "default" = "◯";
+                    #"empty" = "◯";
                 };
                 "persistent-workspaces" = {
                     "*" = [
                         1
                         2
                         3
-                        4
-                        5
                     ];
                 };
             };
+            /*
             "custom/notification" = {
                 "tooltip" = false;
                 "format" = "";
                 "on-click" = "swaync-client -t -sw";
                 "escape" = true;
             };
+            */
             "clock" = {
                 "format" = "{:%I:%M:%S %p} ";
                 "interval" = 1;
@@ -119,6 +120,7 @@
                 "format" = "|";
                 "tooltip" = false;
             };
+            # Todo separate these
             "group/expand" = {
                 "orientation" = "horizontal";
                 "drawer" = {

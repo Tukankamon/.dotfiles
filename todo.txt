@@ -1,0 +1,10 @@
+Waybar:
+
+    Reduce bottom padding
+    remove the arrow menu top right
+
+Sway:
+    Swaybg
+    Sway lock
+
+Stylix
