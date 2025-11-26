@@ -8,3 +8,5 @@ Sway:
     Sway lock
 
 Stylix
+
+Make kitty load faster
