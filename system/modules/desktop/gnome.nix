@@ -3,7 +3,7 @@
     options = {
         gnome = lib.mkEnableOption {
             type = lib.types.bool;
-            default = false;
+            default = true;
             description = "Aux option to enable gnome, use the desktop option to actually set it";
         };
     };

@@ -5,19 +5,20 @@
         desktop = lib.mkOption {
             # Use lib.types.nullOr to allow either null OR the following type.
             # Use lib.types.enum to restrict the string values to a specific list.
-            type = lib.types.nullOr (lib.types.enum [ "gnome" "hyprland" ]);
+            type = lib.types.nullOr (lib.types.enum [ "gnome" "hyprland" "niri" ]);
 
             default = "gnome";
 
             description = '' Selects the DE/WM, set to null for no graphical interface. Will probably crash tho'';
 
-            example = "hyprland";
+            example = "niri";
         };
     };
 
     imports = [
         ./desktop/gnome.nix
         ./desktop/hyprland.nix
+        ./desktop/niri.nix
     ];
 
     config = {
@@ -27,6 +28,7 @@
 
     gnome = lib.mkIf (config.desktop == "gnome") true;
     hyprland = lib.mkIf (config.desktop == "hyprland") true; 
+    niriwm = lib.mkIf (config.desktop == "niri") true;
     };
    
 

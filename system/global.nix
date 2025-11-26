@@ -106,6 +106,7 @@
         brave
         librewolf
         vscodium
+        zed-editor
         vscode
         #protonmail-desktop
         #protonmail-bridge

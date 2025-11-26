@@ -78,9 +78,7 @@
                 "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
                 "tooltip-format-enumerate-connected" = "{device_alias}\n{device_address}";
                 "tooltip-format-enumerate-connected-battery" = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-                "on-click-right" = "blueman-manager";
-            };
-            "battery" = {
+                "on-click-right" = "blueman-manager"; }; "battery" = {
                 "interval" = 30;
                 "states" = {
                     "good" = 95;

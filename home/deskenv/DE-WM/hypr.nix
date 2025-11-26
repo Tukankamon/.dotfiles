@@ -4,7 +4,7 @@
     lib,
     ...
 }:
-#Also need to enable it in configuration.nix
+# To enable this go to the hosts home file, there is an option there
 {
     imports = [./../wayland/waybar.nix];
 
@@ -26,21 +26,6 @@
             pkgs.swww
             hyprpaper
         ];
-
-        /*
-      services.hyprpaper.settings = {
-      ipc = "on";
-      splash = false;
-      splash_offset = 2.0;
-
-      preload =
-        [ home/aved/.dotfiles/other/images/roadwp.jpg ];
-
-      wallpaper = [
-        ", home/aved/.dotfiles/other/images/roadwp.jpg"
-      ];
-    };
-    */
 
         wayland.windowManager.hyprland.enable = true;
         wayland.windowManager.hyprland.settings = {
