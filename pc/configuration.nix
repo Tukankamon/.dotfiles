@@ -2,7 +2,8 @@
     inputs,
     pkgs,
     pkgs-stable,
-    # configuration,
+    config,
+    lib,
     ...
 }:
 {
@@ -116,6 +117,11 @@
 
     programs.gamemode.enable = true;
 
+    nixpkgs.config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+            "steam"
+        ];
+
 
     environment.systemPackages =
     (with pkgs; [
@@ -199,5 +205,4 @@
 
     services.thermald.enable = true;
 
-    nixpkgs.config.allowUnfree = true;
 }

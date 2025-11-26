@@ -1,7 +1,8 @@
 {
     inputs,
     pkgs,
-    #config,
+    config,
+    lib,
     #configuration,
     ...
 }: {
@@ -61,7 +62,17 @@
 
     programs.adb.enable = true;
 
+    nixpkgs.config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+            "obsidian"
+            "spotify"
+        ];
+
     environment.systemPackages = with pkgs; [
+        #Unfree 
+        obsidian 
+        spotify
+
         # Terminal and config
         home-manager
         fastfetch
@@ -79,6 +90,7 @@
         parted # scan partitions
         testdisk
         ffmpeg
+        impala #Wifi tui
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
         libwacom # Wacom specifically
@@ -103,12 +115,10 @@
         audacity
         qbittorrent
         tor-browser
-        spotify
         brave
         #librewolf #BROKEN memory leak when building for nxs
         vscodium
         zed-editor
-        vscode
         #protonmail-desktop
         #protonmail-bridge
         protonvpn-gui
@@ -116,7 +126,6 @@
         mullvad-browser # (recommended pretty much only if you have the vpn)
         gimp3
         #anki   #Build error
-        obsidian # Notes and "mini essays" (Odysseas on YT)
         #logseq #Similar to obisidian, keep an eye on it
         #zettlr #Another FOSS markdown editor to keep an eye on
         rnote # To use with the wacom

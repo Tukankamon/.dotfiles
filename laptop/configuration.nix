@@ -181,5 +181,4 @@
   };
   };
   */
-    nixpkgs.config.allowUnfree = true;
 }
