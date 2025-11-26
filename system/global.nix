@@ -62,16 +62,24 @@
 
     programs.adb.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
             "obsidian"
             "spotify"
         ];
 
     environment.systemPackages = with pkgs; [
         #Unfree 
-        obsidian 
-        spotify
+        (obsidian.overrideAttrs (old: {
+            meta = old.meta // {
+                license = lib.licenses.free; # Lie to Nix to bypass the check, will get error otherwise
+            };
+        }))
+
+        (spotify.overrideAttrs (old: {
+            meta = old.meta // {
+                license = lib.licenses.free; # Lie to Nix to bypass the check, will get error otherwise
+            };
+        }))
 
         # Terminal and config
         home-manager

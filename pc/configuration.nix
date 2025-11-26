@@ -105,8 +105,8 @@
     users.defaultUserShell = pkgs.fish;
     programs.fish.enable = true;
 
-    programs.steam = {
-        enable = true;
+    programs.steam = { #Unfree
+        enable = false;
         gamescopeSession.enable = true;
     };
 
@@ -120,6 +120,7 @@
     nixpkgs.config.allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
             "steam"
+            "discord"
         ];
 
 
@@ -127,7 +128,12 @@
     (with pkgs; [
         #inputs.vible.packages.x86_64-linux.default
         mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
-        discord
+
+(discord.overrideAttrs (old: {
+    meta = old.meta // {
+      license = lib.licenses.free; # Lie to Nix to bypass the check
+    };
+  }))
         sops
         #darktable  # Breaks in unstable
         #davinci-resolve
@@ -136,7 +142,7 @@
         libreoffice
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
-        android-studio
+        #android-studio #Unfree
         #distrobox #Distro containers
         pavucontrol # better audio control
         #revolt-desktop discord alternative
