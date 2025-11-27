@@ -45,8 +45,8 @@ input {
     mouse {
         // off
         // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+        accel-speed 0.2
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -111,6 +111,17 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
+}
+
+output "DP-1" { //main off-screen
+
+    mode "1920x1080@74.973"
+    position x=0 y=-155 //second monitor is a bit lower
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60.000"
+    position x=1920 y=0
 }
 
 // Settings that influence how windows are positioned and sized.

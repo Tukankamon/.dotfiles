@@ -15,7 +15,7 @@
     ];
 
     grub-boot.enable = true;
-    desktop = "gnome"; #default   #Remember to also enable in home manager or you will  get stuck
+    desktop = "niri"; #default   #Remember to also enable in home manager or you will  get stuck
 
     home-manager = {
         # Not necesary but now hm also rebuilds with nixos-rebuild
@@ -106,7 +106,7 @@
     programs.fish.enable = true;
 
     programs.steam = { #Unfree
-        enable = false;
+        enable = true;
         gamescopeSession.enable = true;
     };
 
@@ -117,15 +117,8 @@
 
     programs.gamemode.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-            "steam"
-            "discord"
-        ];
 
-
-    environment.systemPackages =
-    (with pkgs; [
+    environment.systemPackages = with pkgs; [
         #inputs.vible.packages.x86_64-linux.default
         mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
 
@@ -150,13 +143,8 @@
         prismlauncher
         heroic
         macchanger
-    ])
-
-    ++
-
-    (with pkgs-stable; [
         audacity
-    ]);
+    ];
 
     fonts.packages = with pkgs; [
         font-awesome

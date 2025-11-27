@@ -41,7 +41,7 @@
         #doesnt work
         enable = true;
         enableBashIntegration = false;
-        enableZshIntegration = false;
+    enableZshIntegration = false;
     };
 
     networking.firewall = {
@@ -62,9 +62,13 @@
 
     programs.adb.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    #Doesnt install, just allows
             "obsidian"
             "spotify"
+            "steam"
+            "steam-unwrapped-1.0.0.85"
+            "discord"
         ];
 
     environment.systemPackages = with pkgs; [

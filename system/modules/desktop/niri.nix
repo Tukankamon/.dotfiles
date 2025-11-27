@@ -15,7 +15,6 @@
 
         #For noctalia shell you need it in a flake
         environment.systemPackages = with pkgs; [
-            inputs.noctalia.packages.x86_64-linux.default
             waybar
         ];
 

@@ -14,6 +14,7 @@
 
     gnome-home.enable = true; #TODO make this an option with a string value like the one in configuration.nix
     hypr-home.enable = false;
+    niriHome.enable = true;
 
     home.packages = with pkgs; [
         hello
