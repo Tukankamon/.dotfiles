@@ -58,7 +58,7 @@
                 specialArgs = {inherit inputs system;};
                 modules = [
                     ./configuration.nix
-                    inputs.stylix.nixosModules.stylix
+                    #inputs.stylix.nixosModules.stylix
                     inputs.autofirma-nix.nixosModules.default
                 ];
             };
@@ -69,6 +69,7 @@
                 inherit pkgs;
                 modules = [
                     ./home.nix
+                    inputs.stylix.homeManagerModules.stylix #Some are not available in the nixos module
                 ];
 
                 extraSpecialArgs = {

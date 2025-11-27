@@ -1,3 +1,4 @@
+Fix home manager, it goes wonky with stylix
 Waybar:
 
     Reduce bottom padding
@@ -12,3 +13,5 @@ Make kitty load faster
     - Substitute it with foot (needs ricing)
 
 Cursor like it was in gnome
+
+Nightlight (gammastep maybe)

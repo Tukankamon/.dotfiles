@@ -188,21 +188,6 @@
         SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0; # for fullscreen videogames
     };
 
-/*
-    stylix = {
-        enable = false;
-        polarity = "dark";
-        image = ./../other/images/roadwp.jpg;
-        targets = {
-            grub.enable = false;
-            #kitty.enable = false;  #Is disabled in the kitty conf
-            # Gnome is also disabled in its own page
-            #fish.enable = false;
-        };
-
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-        };
-        */
          /*
     From stylix
     Default background: base00

@@ -349,7 +349,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -373,7 +373,7 @@ binds {
     Alt+Shift+Apostrophe { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+1 hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+1 hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; } // Just way faster than kitty
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 

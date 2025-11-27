@@ -10,7 +10,7 @@
 
     gnome-home.enable = true; # Dont forget to also disable it in configuration.nix
     hypr-home.enable = false; # Same thing here
-    niri-home.enable = true;
+    niriHome.enable = true;
 
     home.packages = with pkgs; [
         hello

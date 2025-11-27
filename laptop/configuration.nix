@@ -86,16 +86,6 @@
         ];
     };
 
-    stylix = {
-        enable = false; #temporary
-        #polarity = "dark";
-        image = ./../other/images/roadwp.jpg;
-        targets = {
-            nvf.enable = false;
-            grub.enable = false;
-        };
-    };
-
     environment.shells = with pkgs; [fish]; # Following a video
     users.defaultUserShell = pkgs.fish;
     programs.fish.enable = true;
