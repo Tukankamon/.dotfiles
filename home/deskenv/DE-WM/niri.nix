@@ -1,3 +1,4 @@
+# Niri.nix HOME
 {
     config,
     pkgs,
@@ -30,24 +31,46 @@
             mako #notification daemon
         ];
 
+        # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case)
         programs.alacritty.enable = true; #Just in case, this is the default terminal
         programs.fuzzel.enable = true; #Same thing, JIC
+        programs.foot.enable = true;
+        programs.swaylock.enable = true;
 
-        programs.foot.settings = { #Trying to remove window decorations
-            enable = true;
-            csd.prefered = "none";
-        };
+        /* #This would mess with my config over there
+        programs.obsidian.enable = true;
 
+        nixpkgs.config.allowUnfreePredicate = pkg: # This is set twice, once done in global.nix
+            builtins.elem (pkgs.lib.getName pkg) [
+                "obsidian"
+            ];
+        */
+    
         stylix = { #This is just half, the other is in the home module
             enable = true;
-            base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml"; #Could change this
+            base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
             image = ./../../../other/images/roadwp.jpg;
+            polarity = "dark";
             autoEnable = false;
+            fonts.sizes = {
+                terminal = 10;
+            };
+
+            opacity = {
+                terminal = 0.9;
+            };
+
             targets = {
+                /*
+                nvf.enable = false;
+                vim.enable = false;
+                */
+
                 fuzzel.enable = true;
                 foot.enable = true;
                 alacritty.enable = true;
                 swaylock.enable = true;
+                fish.enable = true;
                 #niri.enable = true; #Track issue: https://github.com/nix-community/stylix/issues/1746
             };
         };

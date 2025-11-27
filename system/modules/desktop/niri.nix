@@ -25,6 +25,7 @@
             autoEnable = false;
             targets = {
                 grub.enable = false;
+                chromium.enable = true;
             };
         };
 

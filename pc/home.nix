@@ -12,7 +12,7 @@
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    gnome-home.enable = true; #TODO make this an option with a string value like the one in configuration.nix
+    gnome-home.enable = false; #TODO make this an option with a string value like the one in configuration.nix
     hypr-home.enable = false;
     niriHome.enable = true;
 
