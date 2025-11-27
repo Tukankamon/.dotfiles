@@ -11,21 +11,21 @@
             all:unset;
         }
         .modules-left {
-            padding:7px;
+            padding:4px;
             margin:10 0 5 10;
             border-radius:10px;
             background: alpha(@background,.6);
             box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
         }
         .modules-center {
-            padding:7px;
+            padding:4px;
             margin:10 0 5 0;
             border-radius:10px;
             background: alpha(@background,.6);
             box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
         }
         .modules-right {
-            padding:7px;
+            padding:4px;
             margin: 10 10 5 0;
             border-radius:10px;
             background: alpha(@background,.6);

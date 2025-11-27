@@ -10,13 +10,16 @@
             "position" = "top";
             "reload_style_on_change" = true;
             "modules-left" = [
-                "custom/notification"
+                #"custom/notification"
                 "clock"
                 "tray"
             ];
             "modules-center" = ["niri/workspaces"];
             "modules-right" = [
-                "group/expand"
+                "pulseaudio"
+                "cpu"
+                "memory"
+                "temperature"
                 "bluetooth"
                 "network"
                 "battery"
@@ -47,7 +50,7 @@
             };
             */
             "clock" = {
-                "format" = "{:%H:%M:%S %p} ";
+                "format" = "{:%d/%m %H:%M} ";
                 "interval" = 1;
                 "tooltip-format" = "<tt>{calendar}</tt>";
                 "calendar" = {
@@ -61,9 +64,9 @@
                 };
             };
             "network" = {
-                "format-wifi" = "";
-                "format-ethernet" = "";
-                "format-disconnected" = "";
+                "format-wifi" = " ";
+                "format-ethernet" = " ";
+                "format-disconnected" = " ";
                 "tooltip-format-disconnected" = "Error";
                 "tooltip-format-wifi" = "{essid} ({signalStrength}%) ";
                 "tooltip-format-ethernet" = "{ifname} 🖧 ";
@@ -79,7 +82,9 @@
                 "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
                 "tooltip-format-enumerate-connected" = "{device_alias}\n{device_address}";
                 "tooltip-format-enumerate-connected-battery" = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-                "on-click-right" = "blueman-manager"; }; "battery" = {
+                "on-click-right" = "blueman-manager"; };
+
+                "battery" = {
                 "interval" = 30;
                 "states" = {
                     "good" = 95;
@@ -100,52 +105,25 @@
                 ];
             };
 
-            /*
-      "custom/pacman" = {
-          "format" = "󰅢 {}";
-          "interval" = 30;
-          "exec" = "checkupdates | wc -l";
-          "exec-if" = "exit 0";
-          "on-click"= "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-          "signal"= 8;
-          "tooltip"= false;
-      };
-      */
+            "pulseaudio" = { #TODO icons and shi
+                "format" = "vol:{volume}% ";
+                "format-bluetooth" = "blue-vol:{volume}%";
+                "format-muted" = "muted";
 
-            "custom/expand" = {
-                "format" = "";
-                "tooltip" = false;
+                "on-click" = "pavucontrol";
             };
-            "custom/endpoint" = {
-                "format" = "|";
-                "tooltip" = false;
-            };
-            # Todo separate these
-            "group/expand" = {
-                "orientation" = "horizontal";
-                "drawer" = {
-                    "transition-duration" = 600;
-                    "transition-to-left" = true;
-                    "click-to-reveal" = true;
-                };
-                "modules" = [
-                    "custom/expand"
-                    "cpu"
-                    "memory"
-                    "temperature"
-                    "custom/endpoint"
-                ];
-            };
+
             "cpu" = {
-                "format" = "󰻠";
+                "format" = "{usage:>2}% 󰻠";
                 "tooltip" = true;
             };
             "memory" = {
-                "format" = "";
+                "interval" = 30;
+                "format" = "{used:0.1f}%  ";
             };
             "temperature" = {
                 "critical-threshold" = 80;
-                "format" = "";
+                "format" = "{temperatureC}ºC  ";
             };
             "tray" = {
                 "icon-size" = 14;

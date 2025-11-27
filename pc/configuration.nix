@@ -144,7 +144,6 @@
         kdePackages.kdenlive
         #android-studio #Unfree
         #distrobox #Distro containers
-        pavucontrol # better audio control
         #revolt-desktop discord alternative
         nurl # Fetching urls
         #rpi-imager #broken

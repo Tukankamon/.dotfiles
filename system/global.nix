@@ -95,6 +95,7 @@
         kew #music player
         neovim
         asciiquarium-transparent
+        swaybg
         parted # scan partitions
         testdisk
         ffmpeg
@@ -115,6 +116,7 @@
         caligula # Burning flash drives
         #ventoy #Marked as insecure by NIX
         efibootmgr
+        impala #Wifi TUI like nmtui but better 
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings
@@ -125,6 +127,9 @@
         tor-browser
         brave
         #librewolf #BROKEN memory leak when building for nxs
+        pavucontrol #Audio control
+        zathura #PDF with vim binds
+        foot #Terminal on wayland, supposed to bet faster
         vscodium
         zed-editor
         #protonmail-desktop

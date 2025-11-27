@@ -1,7 +1,6 @@
 Waybar:
 
     Reduce bottom padding
-    remove the arrow menu top right
 
 Sway:
     Swaybg
@@ -10,3 +9,6 @@ Sway:
 Stylix
 
 Make kitty load faster
+    - Substitute it with foot (needs ricing)
+
+Cursor like it was in gnome
