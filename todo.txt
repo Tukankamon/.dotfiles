@@ -1,16 +1,9 @@
-Fix home manager, it goes wonky with stylix
 Waybar:
 
     Reduce bottom padding
 
-Sway:
-    Swaybg
-    Sway lock
-
 Stylix
-
-Make kitty load faster
-    - Substitute it with foot (needs ricing)
+    Fix foot terminal
 
 Cursor like it was in gnome
 

@@ -15,8 +15,18 @@
 
         #For noctalia shell you need it in a flake
         environment.systemPackages = with pkgs; [
-            waybar
+            #Installed in the user
         ];
+
+        stylix = { # This is just half, the other is in the home module
+            enable = true;
+            base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml"; #Could change this
+            image = ./../../../other/images/roadwp.jpg;
+            autoEnable = false;
+            targets = {
+                grub.enable = false;
+            };
+        };
 
 
     };

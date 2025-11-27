@@ -122,11 +122,7 @@
         #inputs.vible.packages.x86_64-linux.default
         mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
 
-(discord.overrideAttrs (old: {
-    meta = old.meta // {
-      license = lib.licenses.free; # Lie to Nix to bypass the check
-    };
-  }))
+        discord #Unfree
         sops
         #darktable  # Breaks in unstable
         #davinci-resolve

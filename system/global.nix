@@ -62,28 +62,20 @@
 
     programs.adb.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     #Doesnt install, just allows
             "obsidian"
             "spotify"
             "steam"
-            "steam-unwrapped-1.0.0.85"
+            "steam-unwrapped"
             "discord"
         ];
 
     environment.systemPackages = with pkgs; [
         #Unfree 
-        (obsidian.overrideAttrs (old: {
-            meta = old.meta // {
-                license = lib.licenses.free; # Lie to Nix to bypass the check, will get error otherwise
-            };
-        }))
+        obsidian
 
-        (spotify.overrideAttrs (old: {
-            meta = old.meta // {
-                license = lib.licenses.free; # Lie to Nix to bypass the check, will get error otherwise
-            };
-        }))
+        spotify #Unfree
 
         # Terminal and config
         home-manager
