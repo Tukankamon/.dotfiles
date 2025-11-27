@@ -25,11 +25,13 @@
             alacritty
             fuzzel
             swaybg
+            swaylock
         ];
 
         programs.alacritty.enable = true; #Just in case, this is the default terminal
         programs.fuzzel.enable = true; #Same thing, JIC
 
+/*
         stylix = {
             enable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml"; #Could change this
@@ -42,6 +44,7 @@
                 #niri.enable = true;
             };
         };
+        */
 
 
     };
