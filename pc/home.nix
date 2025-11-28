@@ -1,6 +1,8 @@
 {
     pkgs,
     inputs,
+    lib,
+    config,
     ...
 }: {
     imports = [
@@ -12,8 +14,14 @@
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    gnome-home.enable = false; #TODO make this an option with a string value like the one in configuration.nix
-    hypr-home.enable = false;
+    /*
+    specialisation.gnome.configuration = {
+        gnome-home.enable = true; #TODO make this an option with a string value like the one in configuration.nix
+    };
+    */ # Broken
+
+    # Will only build if not in the gnome specialisation
+    #niriHome.enable = config.specialisation == {};
     niriHome.enable = true;
 
     home.packages = with pkgs; [

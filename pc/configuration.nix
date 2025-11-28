@@ -14,8 +14,16 @@
         ./../development/script.nix
     ];
 
+    /*
+    specialisation.gnome.configuration = { # Builds a second boot entry for gnome
+        desktop = "gnome";
+    };
+    */
+
+    # To avoid getting niri conf in gnome
+    desktop = lib.mkIf (config.specialisation == {}) "niri";
+
     grub-boot.enable = true;
-    desktop = "niri"; #default   #Remember to also enable in home manager or you will  get stuck
 
     home-manager = {
         # Not necesary but now hm also rebuilds with nixos-rebuild
@@ -107,7 +115,11 @@
 
     programs.steam = { #Unfree
         enable = true;
-        gamescopeSession.enable = true;
+        package = pkgs.steam.override {
+            extraPkgs = pkgs: with pkgs; [
+                gamescope
+            ];
+        };
     };
 
     programs.gamescope = {

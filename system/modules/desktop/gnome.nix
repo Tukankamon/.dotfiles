@@ -1,4 +1,5 @@
-{pkgs, lib, config, ...}:
+{pkgs, lib, config, inputs, ...}:
+# INputs bc stylix will break even when not using it
 {
     options = {
         gnome = lib.mkEnableOption {

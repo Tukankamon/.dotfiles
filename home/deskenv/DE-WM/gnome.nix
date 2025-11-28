@@ -2,6 +2,7 @@
     config,
     pkgs,
     lib,
+    inputs, # Or else stylix will break
     ...
 }: {
     options = {

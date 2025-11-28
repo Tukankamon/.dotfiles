@@ -5,7 +5,7 @@
         desktop = lib.mkOption {
             # Use lib.types.nullOr to allow either null OR the following type.
             # Use lib.types.enum to restrict the string values to a specific list.
-            type = lib.types.nullOr (lib.types.enum [ "gnome" "hyprland" "niri" "niri-gnome" ]); #I think u can do 2 environments at the same time
+            type = lib.types.nullOr (lib.types.enum [ "gnome" "hyprland" "niri" ]); #I think u can do 2 environments at the same time
 
             default = "gnome";
 
@@ -26,9 +26,9 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     #Forces wayland
 
-    gnome = lib.mkIf (config.desktop == "gnome" || config.desktop == "niri-gnome") true;
+    gnome = lib.mkIf (config.desktop == "gnome") true;
     hyprland = lib.mkIf (config.desktop == "hyprland") true; 
-    niriwm = lib.mkIf (config.desktop == "niri" || config.desktop == "niri-gnome") true;
+    niriwm = lib.mkIf (config.desktop == "niri") true;
     };
    
 

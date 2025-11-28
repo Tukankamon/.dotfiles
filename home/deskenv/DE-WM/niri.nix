@@ -15,7 +15,7 @@
             type = lib.types.bool;
             default = false;
             example = true;
-            description = "Enables the customisation of niri";
+            description = "Enables the customisation of niri plus some packages";
         };
     };
 

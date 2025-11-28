@@ -20,6 +20,11 @@
             vulkan-loader
         ]; # Had issues with wayland gamescope
 
+        environment.variables = {
+            ROC_ENABLE_PRE_VEGA = "1";
+        };
+
+        hardware.graphics.enable = true;
         boot = {
             initrd.kernelModules = ["amdgpu"]; # davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
