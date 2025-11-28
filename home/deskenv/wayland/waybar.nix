@@ -114,16 +114,16 @@
             };
 
             "cpu" = {
-                "format" = "{usage:>2}% 󰻠";
+                "format" = "{usage:>2}% ";
                 "tooltip" = true;
             };
             "memory" = {
                 "interval" = 30;
-                "format" = "{used:0.1f}%  ";
+                "format" = "{used:0.1f}Gb ";
             };
             "temperature" = {
                 "critical-threshold" = 80;
-                "format" = "{temperatureC}ºC  ";
+                "format" = "{temperatureC}ºC ";
             };
             "tray" = {
                 "icon-size" = 14;
