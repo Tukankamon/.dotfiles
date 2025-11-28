@@ -1,10 +1,11 @@
 Waybar:
-
     Reduce bottom padding
-
-Stylix
-    Fix foot terminal
+    fix icons
 
 Cursor like it was in gnome
 
 Nightlight (gammastep maybe)
+
+Specialisations
+
+try to join home and system to not have separate modules
