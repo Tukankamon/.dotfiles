@@ -77,8 +77,9 @@ gestures {
 }
 
 cursor { //#TODO doesnt work
-    xcursor-theme "Future-cyan Cursors"
-    xcursor-size 48
+    xcursor-theme "Future Cursors"
+    xcursor-size 35
+    hide-when-typing
 }
 
 // You can configure outputs by their name, which you can find

@@ -14,7 +14,7 @@ stdenvNoCC.mkDerivation {
     owner = "yeyushengfan258";
     repo = "Future-cursors";
     rev = "587c14d2f5bd2dc34095a4efbb1a729eb72a1d36";
-    hash = "sha256-xzqX/Xa+SEJ6t5T6LMe4m0RBcwioX2B/DHUa6kigzm4=";
+    sha256 = "sha256-ziEgMasNVhfzqeURjYJK1l5BeIHk8GK6C4ONHQR7FyY=";
   };
 
   installPhase = ''
