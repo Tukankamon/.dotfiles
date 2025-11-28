@@ -5,7 +5,15 @@
     lib,
     #configuration,
     ...
-}: {
+}: 
+let 
+    futureCursors = import ./default.nix {
+        lib = pkgs.lib;
+        stdenvNoCC = pkgs.stdenv;
+        fetchFromGitHub = pkgs.fetchFromGitHub;
+    };
+in 
+{
     imports = [
         ./../development/programming.nix
         ./modules/autofirma.nix
@@ -22,17 +30,6 @@
         automatic = true;
         options = "--delete-older-than 30d";
     };
-
-    /*
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = ["multi-user.target"];
-    path = [pkgs.flatpak];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-  */
 
     nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Forgot what this does
 
@@ -76,6 +73,8 @@
         obsidian
 
         spotify #Unfree
+
+        futureCursors
 
         # Terminal and config
         home-manager

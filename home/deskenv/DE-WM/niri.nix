@@ -29,11 +29,20 @@
             swaybg
             swaylock
             mako #notification daemon
+            xwayland-satellite
         ];
 
         # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case)
         programs.alacritty.enable = true; #Just in case, this is the default terminal
-        programs.fuzzel.enable = true; #Same thing, JIC
+        programs.fuzzel = { # App launcher
+            enable = true;
+            settings = {
+                main = {
+                    dpi-aware = "no";
+                };
+            };
+        };
+
         programs.foot.enable = true;
         programs.swaylock.enable = true;
 

@@ -76,6 +76,11 @@ gestures {
     }
 }
 
+cursor { //#TODO doesnt work
+    xcursor-theme "Future-cyan Cursors"
+    xcursor-size 48
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -117,11 +122,13 @@ output "DP-1" { //main off-screen
 
     mode "1920x1080@74.973"
     position x=0 y=-155 //second monitor is a bit lower
+    scale 1
 }
 
 output "HDMI-A-1" {
     mode "1920x1080@60.000"
     position x=1920 y=0
+    scale 1
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -508,6 +515,7 @@ binds {
     Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Shift+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
+    // IDk waht Wheelscrollright is
     //Alt+WheelScrollRight      { focus-column-right; }
     //Alt+WheelScrollLeft       { focus-column-left; }
     Mod+Shift+WheelScrollRight { move-column-right; }
@@ -516,11 +524,10 @@ binds {
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.
 
-    // #TODO broken and wont parse
-    //Alt+Shift+WheelScrollDown      { focus-column-right; }
-    //Alt+Shift+WheelScrollUp        { focus-column-left; }
-    //Alt+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    //Alt+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+    Alt+WheelScrollDown      { focus-column-right; }
+    Alt+WheelScrollUp        { focus-column-left; }
+    Alt+Shift+WheelScrollDown { move-column-right; }
+    Alt+Shift+WheelScrollUp   { move-column-left; }
 
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into
