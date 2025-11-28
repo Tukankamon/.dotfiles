@@ -1,4 +1,8 @@
-{config, lib, ...}:
+{
+    config,
+    lib,
+    ...
+}:
 # Need to make it str not bool
 {
     imports = [

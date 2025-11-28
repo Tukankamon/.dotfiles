@@ -42,13 +42,13 @@
                 };
             };
             /*
-            "custom/notification" = {
-                "tooltip" = false;
-                "format" = "";
-                "on-click" = "swaync-client -t -sw";
-                "escape" = true;
-            };
-            */
+      "custom/notification" = {
+          "tooltip" = false;
+          "format" = "";
+          "on-click" = "swaync-client -t -sw";
+          "escape" = true;
+      };
+      */
             "clock" = {
                 "format" = "{:%d/%m %H:%M} ";
                 "interval" = 1;
@@ -82,9 +82,10 @@
                 "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
                 "tooltip-format-enumerate-connected" = "{device_alias}\n{device_address}";
                 "tooltip-format-enumerate-connected-battery" = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
-                "on-click-right" = "blueman-manager"; };
+                "on-click-right" = "blueman-manager";
+            };
 
-                "battery" = {
+            "battery" = {
                 "interval" = 30;
                 "states" = {
                     "good" = 95;
@@ -105,7 +106,8 @@
                 ];
             };
 
-            "pulseaudio" = { #TODO icons and shi
+            "pulseaudio" = {
+                #TODO icons and shi
                 "format" = "vol:{volume}% ";
                 "format-bluetooth" = "blue-vol:{volume}%";
                 "format-muted" = "muted";

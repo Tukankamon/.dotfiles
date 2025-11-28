@@ -15,10 +15,11 @@
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
     /*
-    specialisation.gnome.configuration = {
-        gnome-home.enable = true; #TODO make this an option with a string value like the one in configuration.nix
-    };
-    */ # Broken
+  specialisation.gnome.configuration = {
+      gnome-home.enable = true; #TODO make this an option with a string value like the one in configuration.nix
+  };
+  */
+    # Broken
 
     # Will only build if not in the gnome specialisation
     #niriHome.enable = config.specialisation == {};
@@ -45,8 +46,8 @@
         '';
 
         shellAbbrs = {
-            nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles/pc#yamask";
-            hms = "home-manager switch --flake ~/.dotfiles/pc#yamask";
+            nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles#yamask";
+            hms = "home-manager switch --flake ~/.dotfiles#yamask";
 
             nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
         };

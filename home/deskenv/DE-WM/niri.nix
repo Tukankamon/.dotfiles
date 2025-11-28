@@ -5,9 +5,7 @@
     lib,
     inputs,
     ...
-}:
-
-{
+}: {
     imports = [./../wayland/waybar.nix];
 
     options = {
@@ -34,7 +32,8 @@
 
         # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case)
         programs.alacritty.enable = true; #Just in case, this is the default terminal
-        programs.fuzzel = { # App launcher
+        programs.fuzzel = {
+            # App launcher
             enable = true;
             settings = {
                 main = {
@@ -46,16 +45,18 @@
         programs.foot.enable = true;
         programs.swaylock.enable = true;
 
-        /* #This would mess with my config over there
-        programs.obsidian.enable = true;
+        /*
+       #This would mess with my config over there
+    programs.obsidian.enable = true;
 
-        nixpkgs.config.allowUnfreePredicate = pkg: # This is set twice, once done in global.nix
-            builtins.elem (pkgs.lib.getName pkg) [
-                "obsidian"
-            ];
-        */
-    
-        stylix = { #This is just half, the other is in the home module
+    nixpkgs.config.allowUnfreePredicate = pkg: # This is set twice, once done in global.nix
+        builtins.elem (pkgs.lib.getName pkg) [
+            "obsidian"
+        ];
+    */
+
+        stylix = {
+            #This is just half, the other is in the home module
             enable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
             image = ./../../../other/images/roadwp.jpg;
@@ -71,9 +72,9 @@
 
             targets = {
                 /*
-                nvf.enable = false;
-                vim.enable = false;
-                */
+        nvf.enable = false;
+        vim.enable = false;
+        */
 
                 fuzzel.enable = true;
                 foot.enable = true;
@@ -83,6 +84,5 @@
                 #niri.enable = true; #Track issue: https://github.com/nix-community/stylix/issues/1746
             };
         };
-
     };
 }

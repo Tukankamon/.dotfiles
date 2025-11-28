@@ -4,7 +4,6 @@
     pkgs,
     ...
 }: {
-
     options = {
         grub-boot.enable = lib.mkOption {
             type = lib.types.bool;
@@ -47,7 +46,7 @@
                 "snd-seq"
                 "snd-rawmidi"
             ];
-        kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
+            kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
 
             plymouth = {
                 enable = false;
@@ -56,8 +55,6 @@
         };
 
         security.polkit.enable = true; # I think this is also needed
-            #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
-
-
+        #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
     };
 }

@@ -1,11 +1,15 @@
-{pkgs, lib, config, inputs, ...}:
 {
+    pkgs,
+    lib,
+    config,
+    inputs,
+    ...
+}: {
     options = {
         niriwm = lib.mkEnableOption {
             type = lib.types.bool;
             default = false;
             description = "Enable de niri scrolling WM";
-
         };
     };
 
@@ -18,7 +22,8 @@
             #Installed in the user
         ];
 
-        stylix = { # This is just half, the other is in the home module
+        stylix = {
+            # This is just half, the other is in the home module
             enable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml"; #Could change this
             image = ./../../../other/images/roadwp.jpg;
@@ -28,7 +33,5 @@
                 chromium.enable = true;
             };
         };
-
-
     };
 }

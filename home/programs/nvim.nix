@@ -40,7 +40,6 @@
                 name = "nord";
                 style = "dark";
             };
-            
 
             filetree.neo-tree.enable = true;
             statusline.lualine.enable = true; # IDK what this does

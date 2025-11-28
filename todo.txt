@@ -8,4 +8,4 @@ Nightlight (gammastep maybe)
 
 Specialisations
 
-try to join home and system to not have separate modules
+now that it is all on one flake I can start importing modules directly into the flake

@@ -5,15 +5,13 @@
     lib,
     #configuration,
     ...
-}: 
-let 
+}: let
     futureCursors = import ./default.nix {
         lib = pkgs.lib;
         stdenvNoCC = pkgs.stdenv;
         fetchFromGitHub = pkgs.fetchFromGitHub;
     };
-in 
-{
+in {
     imports = [
         ./../development/programming.nix
         ./modules/autofirma.nix
@@ -38,7 +36,7 @@ in
         #doesnt work
         enable = true;
         enableBashIntegration = false;
-    enableZshIntegration = false;
+        enableZshIntegration = false;
     };
 
     networking.firewall = {
@@ -59,8 +57,9 @@ in
 
     programs.adb.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    #Doesnt install, just allows
+    nixpkgs.config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+            #Doesnt install, just allows
             "obsidian"
             "spotify"
             "steam"
@@ -69,7 +68,7 @@ in
         ];
 
     environment.systemPackages = with pkgs; [
-        #Unfree 
+        #Unfree
         obsidian
 
         spotify #Unfree
@@ -184,15 +183,15 @@ in
         SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0; # for fullscreen videogames
     };
 
-         /*
-    From stylix
-    Default background: base00
-    Alternate background: base01
-    Selection background: base02
-    Default text: base05
-    Alternate text: base04
-    Warning: base0A
-    Urgent: base09
-    Error: base08
-    */
+    /*
+  From stylix
+  Default background: base00
+  Alternate background: base01
+  Selection background: base02
+  Default text: base05
+  Alternate text: base04
+  Warning: base0A
+  Urgent: base09
+  Error: base08
+  */
 }

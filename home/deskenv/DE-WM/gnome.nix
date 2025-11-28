@@ -66,18 +66,20 @@
                 "org/gnome/shell/app-switcher".current-workspace-only = true;
                 "org/gnome/desktop/interface".enable-hot-corners = false;
 
-                /*"org/gnome/shell/extensions/auto-move-windows" = {
-                    "application-list" = [
-                        "brave-browser.desktop:1"
-                        "librewolf.desktop:1"
-                        "obsidian.desktop:2"
-                        "codium.desktop:3"
-                        "steam.desktop:3"
-                        "discord.desktop:4"
-                        "spotify.desktop:5"
-                        "mullvad-browser.desktop:5"
-                    ];
-                }; */
+                /*
+          "org/gnome/shell/extensions/auto-move-windows" = {
+            "application-list" = [
+                "brave-browser.desktop:1"
+                "librewolf.desktop:1"
+                "obsidian.desktop:2"
+                "codium.desktop:3"
+                "steam.desktop:3"
+                "discord.desktop:4"
+                "spotify.desktop:5"
+                "mullvad-browser.desktop:5"
+            ];
+        };
+        */
 
                 "org/gnome/mutter".dynamic-workspaces = false;
                 "org/gnome/desktop/wm/preferences".num-workspaces = 7;

@@ -5,8 +5,7 @@
     config,
     lib,
     ...
-}:
-{
+}: {
     imports = [
         ./hardware-configuration.nix
         inputs.home-manager.nixosModules.home-manager
@@ -15,10 +14,10 @@
     ];
 
     /*
-    specialisation.gnome.configuration = { # Builds a second boot entry for gnome
-        desktop = "gnome";
-    };
-    */
+  specialisation.gnome.configuration = { # Builds a second boot entry for gnome
+      desktop = "gnome";
+  };
+  */
 
     # To avoid getting niri conf in gnome
     desktop = lib.mkIf (config.specialisation == {}) "niri";
@@ -113,12 +112,14 @@
     users.defaultUserShell = pkgs.fish;
     programs.fish.enable = true;
 
-    programs.steam = { #Unfree
+    programs.steam = {
+        #Unfree
         enable = true;
         package = pkgs.steam.override {
-            extraPkgs = pkgs: with pkgs; [
-                gamescope
-            ];
+            extraPkgs = pkgs:
+                with pkgs; [
+                    gamescope
+                ];
         };
     };
 
@@ -128,7 +129,6 @@
     };
 
     programs.gamemode.enable = true;
-
 
     environment.systemPackages = with pkgs; [
         #inputs.vible.packages.x86_64-linux.default
@@ -205,5 +205,4 @@
     services.power-profiles-daemon.enable = false;
 
     services.thermald.enable = true;
-
 }

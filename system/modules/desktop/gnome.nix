@@ -1,4 +1,10 @@
-{pkgs, lib, config, inputs, ...}:
+{
+    pkgs,
+    lib,
+    config,
+    inputs,
+    ...
+}:
 # INputs bc stylix will break even when not using it
 {
     options = {
