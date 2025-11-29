@@ -27,10 +27,11 @@
             swaybg
             swaylock
             mako #notification daemon
-            xwayland-satellite
+            xwayland-satellite # Support for Xwayland (doesnt quite work)
+            wlogout # Logout menu, not update in over a year so be careful
         ];
 
-        # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case)
+        # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
         programs.alacritty.enable = true; #Just in case, this is the default terminal
         programs.fuzzel = {
             # App launcher
@@ -44,6 +45,43 @@
 
         programs.foot.enable = true;
         programs.swaylock.enable = true;
+        programs.wlogout = { # No stylix support yet
+            enable = true;
+            layout = [
+            # Logout option missing
+                {
+                    label = "lock";
+                    action = "swaylock";
+                    text = "Lock";
+                    keybind = "l";
+                }
+                {
+                    label = "hibernate";
+                    action = "systemctl hibernate";
+                    text = "Hibernate";
+                    keybind = "h";
+                }
+                {
+                    label = "shutdown";
+                    action = "systemctl poweroff";
+                    text = "Shutdown";
+                    keybind = "s";
+                }
+                {
+                    label = "suspend";
+                    action = "systemctl suspend";
+                    text = "Suspend";
+                    keybind = "u";
+                }
+                {
+                    label = "reboot";
+                    action = "systemctl reboot";
+                    text = "Reboot";
+                    keybind = "r";
+                }
+            ];
+        };
+
 
         /*
        #This would mess with my config over there

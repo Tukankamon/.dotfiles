@@ -50,7 +50,7 @@
       };
       */
             "clock" = {
-                "format" = "{:%d/%m %H:%M} ";
+                "format" = "{:%d/%b %H:%M} ";
                 "interval" = 1;
                 "tooltip-format" = "<tt>{calendar}</tt>";
                 "calendar" = {
@@ -108,9 +108,9 @@
 
             "pulseaudio" = {
                 #TODO icons and shi
-                "format" = "vol:{volume}% ";
-                "format-bluetooth" = "blue-vol:{volume}%";
-                "format-muted" = "muted";
+                "format" = "{volume}%🔊 ";
+                "format-bluetooth" = "{volume}%󰗾";
+                "format-muted" = "🔇";
 
                 "on-click" = "pavucontrol";
             };

@@ -26,8 +26,8 @@
         settings = {
             init.defaultBranch = "main";
             user.name = "TuKankamon";
-            user.email = "antovedaros@gmail.com";
-            #safe.directory = "/etc/nixos";
+            # Github private email
+            user.email = "198082906+Tukankamon@users.noreply.github.com";
         };
     };
 
