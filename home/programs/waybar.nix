@@ -10,7 +10,7 @@
             "position" = "top";
             "reload_style_on_change" = true;
             "modules-left" = [
-                #"custom/notification"
+                "custom/power"
                 "clock"
                 "tray"
             ];
@@ -41,14 +41,12 @@
                     ];
                 };
             };
-            /*
-      "custom/notification" = {
-          "tooltip" = false;
-          "format" = "";
-          "on-click" = "swaync-client -t -sw";
-          "escape" = true;
+
+      "custom/power" = {
+          "format" = " ⏻ ";
+          "on-click" = "wlogout";
       };
-      */
+      
             "clock" = {
                 "format" = "{:%d/%b %H:%M} ";
                 "interval" = 1;
@@ -107,7 +105,6 @@
             };
 
             "pulseaudio" = {
-                #TODO icons and shi
                 "format" = "{volume}%🔊 ";
                 "format-bluetooth" = "{volume}%󰗾";
                 "format-muted" = "🔇";
@@ -127,7 +124,7 @@
                 "critical-threshold" = 80;
                 "format" = "{temperatureC}ºC ";
             };
-            "tray" = {
+            "tray" = { # IDK what this is
                 "icon-size" = 14;
                 "spacing" = 10;
             };

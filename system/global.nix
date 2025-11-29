@@ -41,15 +41,6 @@
         allowedUDPPorts = [1716];
     };
 
-    environment.gnome.excludePackages = with pkgs; [
-        gnome-software # Gui install flatkpak
-        gnome-tour
-        epiphany
-        geary
-        yelp
-        totem
-    ];
-
     virtualisation.virtualbox.host.enable = true;
 
     # Set your time zone.
@@ -85,16 +76,4 @@
     environment.sessionVariables = {
         SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0; # for fullscreen videogames
     };
-
-    /*
-  From stylix
-  Default background: base00
-  Alternate background: base01
-  Selection background: base02
-  Default text: base05
-  Alternate text: base04
-  Warning: base0A
-  Urgent: base09
-  Error: base08
-  */
 }

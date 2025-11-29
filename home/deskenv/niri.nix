@@ -70,7 +70,7 @@
                 }
                 {
                     label = "suspend";
-                    action = "systemctl suspend";
+                    action = "swaylock --daemonize && systemctl suspend";
                     text = "Suspend";
                     keybind = "u";
                 }

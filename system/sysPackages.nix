@@ -17,9 +17,9 @@
     unstable = with pkgs; [
         #Unfree
         obsidian
+        spotify
 
-        spotify #Unfree
-
+        # Derivations
         futureCursors
 
         # Terminal and config
@@ -66,7 +66,7 @@
         qbittorrent
         tor-browser
         brave
-        #librewolf #BROKEN memory leak when building for nxs
+        librewolf
         pavucontrol #Audio control
         zathura #PDF with vim binds
         foot #Terminal on wayland, supposed to bet faster

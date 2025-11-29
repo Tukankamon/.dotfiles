@@ -19,5 +19,14 @@
         # Enable the GNOME Desktop Environment.
         services.displayManager.gdm.enable = true;
         services.desktopManager.gnome.enable = true;
+
+        environment.gnome.excludePackages = with pkgs; [
+            gnome-software # Gui install flatkpak
+            gnome-tour
+            epiphany
+            geary
+            yelp
+            totem
+        ];
     };
 }
