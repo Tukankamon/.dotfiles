@@ -77,8 +77,6 @@ gestures {
 }
 
 cursor { //#TODO doesnt work
-    xcursor-theme "Future Cursors"
-    xcursor-size 35
     hide-when-typing
 }
 

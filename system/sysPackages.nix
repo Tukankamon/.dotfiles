@@ -6,12 +6,6 @@
     inputs,
     ...
 }: let
-    futureCursors = import ./default.nix {
-        lib = pkgs.lib;
-        stdenvNoCC = pkgs.stdenv;
-        fetchFromGitHub = pkgs.fetchFromGitHub;
-    };
-
     stable = with stablePkgs; [];
 
     unstable = with pkgs; [
@@ -20,7 +14,8 @@
         spotify
 
         # Derivations
-        futureCursors
+        (callPackage ./default.nix {})
+        gruppled-white-cursors #TEMP
 
         # Terminal and config
         home-manager

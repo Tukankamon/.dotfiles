@@ -1,6 +1,5 @@
 Waybar:
-    Reduce bottom padding
-    fix icons
+    Reduce bottom padding (and top aswell so I can click topleft by smashing the mouse in the corner)
 
 Cursor like it was in gnome
 
