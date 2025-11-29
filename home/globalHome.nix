@@ -1,10 +1,4 @@
-{
-    # inputs,
-    # config,
-    # pkgs,
-    # lib,
-    ...
-}: {
+{...}: {
     imports = [
         ./programs/kitty.nix
         ./programs/fastfetch.nix

@@ -45,10 +45,11 @@
 
         programs.foot.enable = true;
         programs.swaylock.enable = true;
-        programs.wlogout = { # No stylix support yet
+        programs.wlogout = {
+            # No stylix support yet
             enable = true;
             layout = [
-            # Logout option missing
+                # Logout option missing
                 {
                     label = "lock";
                     action = "swaylock";
@@ -81,7 +82,6 @@
                 }
             ];
         };
-
 
         /*
        #This would mess with my config over there
