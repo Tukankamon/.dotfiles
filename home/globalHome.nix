@@ -1,7 +1,5 @@
-{pkgs, ...}:
-    let 
-        future-cursors = pkgs.callPackage ./../system/default.nix {};
-in {
+{pkgs, inputs, ...}:
+{
     imports = [
         ./programs/kitty.nix
         ./programs/fastfetch.nix
@@ -15,8 +13,8 @@ in {
     home.pointerCursor = {
         enable = true;
         gtk.enable = true;
-        package = future-cursors;
-        name = "Future-cursors";
+        package = inputs.futureCursors.packages."x86_64-linux".future-cursors;
+        name = "future-cursors";
     };
 
     programs.bash = {

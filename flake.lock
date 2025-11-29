@@ -239,6 +239,26 @@
         "type": "github"
       }
     },
+    "futureCursors": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764457527,
+        "narHash": "sha256-oysoOJz10iOWffGwFJtKHRQ28lBzHMe/L3LEk9PpaxM=",
+        "owner": "Tukankamon",
+        "repo": "Future-cursors",
+        "rev": "a813102337f34a5f97ffbb14f771b2a32a884600",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Tukankamon",
+        "repo": "Future-cursors",
+        "type": "github"
+      }
+    },
     "gnome-shell": {
       "flake": false,
       "locked": {
@@ -497,6 +517,7 @@
     "root": {
       "inputs": {
         "autofirma-nix": "autofirma-nix",
+        "futureCursors": "futureCursors",
         "home-manager": "home-manager_2",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",

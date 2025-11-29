@@ -19,6 +19,7 @@
 
         # Terminal and config
         home-manager
+        tree
         fastfetch
         pipes
         cbonsai

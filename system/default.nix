@@ -1,30 +1,44 @@
-# Attempt of a derivation for all 3 future cursors
 {
     lib,
     stdenvNoCC,
     fetchFromGitHub,
+    inkscape,
+    xcursorgen,
+    coreutils,
+    cursorColor ? "cyan"
 }:
 stdenvNoCC.mkDerivation {
     pname = "future-cursors";
-    version = "2016-07-16";
+    version = "2025-11-29";
 
     src = fetchFromGitHub {
-        owner = "yeyushengfan258";
+        owner = "Tukankamon";
         repo = "Future-cursors";
-        rev = "587c14d2f5bd2dc34095a4efbb1a729eb72a1d36";
-        sha256 = "sha256-ziEgMasNVhfzqeURjYJK1l5BeIHk8GK6C4ONHQR7FyY=";
+        rev = "b4a0bee046b312d908b22c308965a286efc3c63a";
+        sha256 = "sha256-1OxxSFBk0RaPeYyphscU+CXcJBjLnl38pQcdh1Jg7wk=";
     };
+
+    # Inkscape might take a while to do its thing and throw scary errors but it should be fine
+    buildInputs = [ inkscape xcursorgen coreutils ];
+
+    buildPhase = ''
+        patchShebangs ./build.sh
+        chmod +x build.sh
+        ./build.sh svg-${cursorColor}
+    '';
 
     installPhase = ''
         runHook preInstall
-        install -dm 755 $out/share/icons/Future-cursors
-        cp -r dist/* $out/share/icons/Future-cursors
+
+        install -dm 755 $out/share/icons/future-cursors
+        cp -r dist/* $out/share/icons/future-cursors
+
         runHook postInstall
     '';
 
     meta = {
-        description = "X-cursor theme inspired by macOS and based on capitaine-cursors";
-        homepage = "https://github.com/yeyushengfan258/Future-cursors";
+        description = "X-cursor theme inspired by macOS and based on capitaine-cursors. Options are yellow, cyan, dark (grey) or fully black";
+        homepage = "https://github.com/Tukankamon/Future-cursors";
         license = lib.licenses.gpl3Only;
         maintainers = with lib.maintainers; [Tukankamon];
         platforms = lib.platforms.linux;

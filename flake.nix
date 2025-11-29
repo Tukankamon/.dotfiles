@@ -44,6 +44,12 @@
             url = "github:nix-community/autofirma-nix";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        # The name you choose here doesnt have to have anything to do with pname
+        futureCursors = {
+            url = "github:Tukankamon/Future-cursors";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = {
