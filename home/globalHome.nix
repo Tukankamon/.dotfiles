@@ -24,6 +24,7 @@
     programs.git = {
         enable = true;
         settings = {
+            # Change this accordingly
             init.defaultBranch = "main";
             user.name = "TuKankamon";
             # Github private email
