@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: let
+{pkgs, stablePkgs, lib, config, inputs, ...}: let
 
   futureCursors = import ./default.nix {
     lib = pkgs.lib;
@@ -6,7 +6,7 @@
     fetchFromGitHub = pkgs.fetchFromGitHub;
   };
 
-  stable = [];
+  stable = with stablePkgs; [];
 
   unstable = with pkgs; [
     #Unfree
@@ -30,17 +30,15 @@
     kew #music player
     neovim
     asciiquarium-transparent
-    swaybg
     parted # scan partitions
     testdisk
     ffmpeg
-    #bluetui #bluetooth tui
     ripgrep # better grep
     #libinput #Idk if necessary for wacom tablet
     libwacom # Wacom specifically
     toybox # CLI utilities
     hyperfine # command benchmark
-    htop
+    htop # Task manager for the terminal
     mission-center #Gui task manager
     #helix  #nvim with better defaults
     universal-android-debloater
@@ -52,7 +50,7 @@
     caligula # Burning flash drives
     #ventoy #Marked as insecure by NIX
     efibootmgr
-    bluetui
+    bluetui #Bluetooth TUI
 
     # GUIS
     kooha # Gif recorder but also ss and normal recordings

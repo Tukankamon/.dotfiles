@@ -10,7 +10,7 @@
   imports = [
     ./../development/programming.nix
     ./modules/autofirma.nix
-    ./modules/desktop.nix
+    ./modules/desktopBundle.nix
     ./modules/boot.nix
     ./sysPackages.nix
   ];

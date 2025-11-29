@@ -6,18 +6,18 @@
 }:
 # To enable this go to the hosts home file, there is an option there
 {
-    imports = [./../wayland/waybar.nix];
+    imports = [./../programs/waybar.nix];
 
     options = {
-        hypr-home.enable = lib.mkOption {
+        hyprHome.enable = lib.mkOption {
             type = lib.types.bool;
             default = false;
             example = true;
-            description = "enables hyprland (need to also enable it in config)";
+            description = "enables hyprland home configurations";
         };
     };
 
-    config = lib.mkIf config.hypr-home.enable {
+    config = lib.mkIf config.hyprHome.enable {
         home.packages = with pkgs; [
             pkgs.waybar
             pkgs.rofi-wayland

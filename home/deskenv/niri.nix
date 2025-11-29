@@ -6,7 +6,7 @@
     inputs,
     ...
 }: {
-    imports = [./../wayland/waybar.nix];
+    imports = [./../programs/waybar.nix];
 
     options = {
         niriHome.enable = lib.mkOption {
@@ -59,7 +59,7 @@
             #This is just half, the other is in the home module
             enable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
-            image = ./../../../other/images/roadwp.jpg;
+            image = ./../../other/images/roadwp.jpg;
             polarity = "dark";
             autoEnable = false;
             fonts.sizes = {

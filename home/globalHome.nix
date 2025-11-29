@@ -8,7 +8,7 @@
     imports = [
         ./programs/kitty.nix
         ./programs/fastfetch.nix
-        ./deskenv/desk-module.nix
+        ./deskenv/desktopHomeBundle.nix
         ./programs/nvim.nix
         ./programs/misc.nix
     ];

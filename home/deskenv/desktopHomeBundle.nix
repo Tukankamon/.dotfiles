@@ -6,8 +6,8 @@
 # Need to make it str not bool
 {
     imports = [
-        ./DE-WM/gnome.nix
-        ./DE-WM/hypr.nix
-        ./DE-WM/niri.nix
+        ./gnome.nix
+        ./hypr.nix
+        ./niri.nix
     ];
 }

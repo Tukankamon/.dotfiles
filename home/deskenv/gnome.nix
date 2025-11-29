@@ -6,15 +6,15 @@
     ...
 }: {
     options = {
-        gnome-home.enable = lib.mkOption {
+        gnomeHome.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             example = false;
-            description = "enables gnome desktop (need to also enable it in config)";
+            description = "Enables the gnome desktop environment home configurations";
         };
     };
 
-    config = lib.mkIf config.gnome-home.enable {
+    config = lib.mkIf config.gnomeHome.enable {
         home.packages = with pkgs; [
             dconf-editor
             gnome-tweaks

@@ -58,7 +58,7 @@
         system = "x86_64-linux";
         lib = nixpkgs.lib;
         pkgs = nixpkgs.legacyPackages.${system};
-        pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+        stablePkgs = nixpkgs-stable.legacyPackages.${system};
 
         # Map for my hosts, any specific modules from one or the other go in extraXModules
         machines = {
@@ -82,7 +82,7 @@
         nixosConfigurations = builtins.mapAttrs (
             _: machine:
                 nixpkgs.lib.nixosSystem {
-                    specialArgs = {inherit inputs system;};
+                    specialArgs = {inherit inputs system stablePkgs;};
 
                     modules =
                         [
