@@ -1,6 +1,6 @@
 {...}: {
-    programs.vscode = {
-        # Just here for the stylix theme
-        enable = false;
-    };
+  programs.vscode = {
+    # Just here for the stylix theme
+    enable = false;
+  };
 }

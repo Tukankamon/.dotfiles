@@ -67,7 +67,7 @@
     services.xserver.wacom.enable = true; # Dont think this is necessary (works iffy without it)
 
     environment.variables = {
-        EDITOR = "gnome-text-editor"; # Gnome text editor
+        EDITOR = "vim"; # Gnome text editor
         TERM = "xterm-256color"; # to be able to clear in ssh
     };
 

@@ -152,6 +152,7 @@
         heroic
         macchanger
         audacity
+        inkscape
     ];
 
     fonts.packages = with pkgs; [
