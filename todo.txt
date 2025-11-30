@@ -7,3 +7,5 @@ Nightlight (gammastep maybe)
 Specialisations
 
 now that it is all on one flake I can start importing modules directly into the flake
+
+Stylix for niri

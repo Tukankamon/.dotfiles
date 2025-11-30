@@ -284,6 +284,8 @@ layout {
         // top 64
         // bottom 64
     }
+
+    background-color "transparent" // For the background image on overview
 }
 
 // Add lines like this to spawn processes at startup.
@@ -299,11 +301,16 @@ spawn-at-startup "mako" //Noti daemon
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 spawn-sh-at-startup "swaybg -i ~/.dotfiles/other/images/roadwp.jpg"
 
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 prefer-no-csd //Window decorations
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
