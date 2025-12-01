@@ -35,6 +35,7 @@
         parted # scan partitions
         testdisk
         ffmpeg
+        gnuplot_qt #2d and 3d plotting software
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
         libwacom # Wacom specifically
@@ -74,6 +75,7 @@
         #signal-desktop  # Build error
         mullvad-browser # (recommended pretty much only if you have the vpn)
         gimp3
+        pdftricks
         #anki   #Build error
         #logseq #Similar to obisidian, keep an eye on it
         #zettlr #Another FOSS markdown editor to keep an eye on

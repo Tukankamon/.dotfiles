@@ -9,6 +9,7 @@
         nixd
 
         python3
+        python313Packages.matplotlib
         go
 
         ghc # Haskell
