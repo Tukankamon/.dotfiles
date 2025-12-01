@@ -29,6 +29,7 @@
       mako #notification daemon
       xwayland-satellite # Support for Xwayland (doesnt quite work)
       wlogout # Logout menu, not update in over a year so be careful
+      gnome-system-monitor # I like it
     ];
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix

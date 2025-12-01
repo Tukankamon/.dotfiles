@@ -31,6 +31,8 @@
     enable = true;
 
     settings.vim = {
+
+      autopairs.nvim-autopairs.enable = true;
       options.tabstop = 4;
       options.shiftwidth = 0; # Uses tabstop value
 
@@ -46,29 +48,11 @@
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
 
-      languages.nix = {
-        format.type = "nixfmt";
-        lsp.enable = true;
-      };
-
-      lsp.servers = {
-        nix = {
-          enable = true;
-          /*
-            lsp.enable = true;
-          lsp.server = "nixd";
-          format.enable = true;
-          format.type = "nixfmt";
-          */
-        };
-
-        python = {
-          enable = true;
-          #lsp.enable = true;
-        };
-        clang.enable = true;
-        rust.enable = true;
-        go.enable = true;
+      languages = {
+        bash.lsp.enable = true;
+        clang.lsp.enable = true;
+        nix.lsp.enable = true;
+        python.lsp.enable = true;
       };
     };
   };

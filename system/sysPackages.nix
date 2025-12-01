@@ -42,7 +42,6 @@
         toybox # CLI utilities
         hyperfine # command benchmark
         htop # Task manager for the terminal
-        mission-center #Gui task manager
         #helix  #nvim with better defaults
         universal-android-debloater
         zoxide # better cd
