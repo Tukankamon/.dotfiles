@@ -31,6 +31,10 @@
     enable = true;
 
     settings.vim = {
+      globals = {
+        mapLeader = " ";
+        vim.globals.maplocalleader = " ";
+      };
 
       autopairs.nvim-autopairs.enable = true;
       options.tabstop = 4;

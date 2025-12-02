@@ -1,11 +1,8 @@
 Waybar:
     Reduce bottom padding (and top aswell so I can click topleft by smashing the mouse in the corner)
 
-
 Nightlight (gammastep maybe)
 
 Specialisations
 
-now that it is all on one flake I can start importing modules directly into the flake
-
-Stylix for niri
+sops nix and making repo public

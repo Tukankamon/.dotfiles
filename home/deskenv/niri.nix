@@ -40,6 +40,7 @@
       settings = {
         main = {
           dpi-aware = "no";
+          font= lib.mkForce "DejaVu Sans:size=20"; # Might interfere with stylix font
         };
       };
     };

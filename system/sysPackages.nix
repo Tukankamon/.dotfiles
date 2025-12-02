@@ -33,6 +33,7 @@
         neovim
         asciiquarium-transparent
         parted # scan partitions
+        gparted # Gui version of parted
         testdisk
         ffmpeg
         gnuplot_qt #2d and 3d plotting software
