@@ -28,13 +28,13 @@
             initrd.kernelModules = ["amdgpu"]; # davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
             loader = {
-                systemd-boot.enable = false; # Change when using / not using grub
+                systemd-boot.enable = true; # Change when using / not using grub
 
                 efi.canTouchEfiVariables = true;
 
-                timeout = 1;
+                timeout = 0;
                 grub = {
-                    enable = true;
+                    enable = false;
                     devices = ["nodev"];
                     efiSupport = true;
                     useOSProber = true; # To detect other operating systems
@@ -55,6 +55,5 @@
         };
 
         security.polkit.enable = true; # I think this is also needed
-        #initrd.kernelModules = [ "amdgpu" ];  #For amd stuff
     };
 }
