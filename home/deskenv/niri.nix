@@ -49,6 +49,9 @@
     services.udiskie = { # Needs udisks2 and gvfs services (they are in the other niri.nix)
         enable = true;
         automount = false;
+        settings = {
+            tray = true;
+        };
     };
 
     programs.foot.enable = true;
