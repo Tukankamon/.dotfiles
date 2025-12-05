@@ -30,6 +30,7 @@
       xwayland-satellite # Support for Xwayland (doesnt quite work)
       wlogout # Logout menu, not update in over a year so be careful
       gnome-system-monitor # I like it
+      udiskie # Auto mount (GUI), if not usb needs to be mounted manually
     ];
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
@@ -43,6 +44,11 @@
           font= lib.mkForce "DejaVu Sans:size=20"; # Might interfere with stylix font
         };
       };
+    };
+
+    services.udiskie = { # Needs udisks2 and gvfs services (they are in the other niri.nix)
+        enable = true;
+        automount = false;
     };
 
     programs.foot.enable = true;

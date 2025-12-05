@@ -22,6 +22,10 @@
             #Installed in the user
         ];
 
+        services = {
+            udisks2.enable = true; # Semi automounting usbs, use udiske (home-manager) for GUI and notis
+            gvfs.enable = true; # This aswell, polkit needs to be enabled aswell
+        };
         stylix = {
             # This is just half, the other is in the home module
             enable = true;
