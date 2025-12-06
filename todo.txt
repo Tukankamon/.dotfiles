@@ -6,3 +6,7 @@ Nightlight (gammastep maybe)
 Specialisations
 
 sops nix and making repo public
+
+fix udiskie not showng in tray
+
+fix udiskie not showng in tray

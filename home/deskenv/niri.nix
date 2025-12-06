@@ -33,6 +33,7 @@
       gnome-disk-utility # Very nice gui for disks
       gnome-disk-utility # Very nice gui for disks
       udiskie # Auto mount (GUI), if not usb needs to be mounted manually
+      nautilus # File manager
     ];
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
@@ -53,6 +54,7 @@
         automount = false;
         settings = {
             tray = true;
+            program_options.file_manager = "nautilus"; # Fixes xdg-open error
         };
     };
 
