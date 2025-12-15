@@ -147,7 +147,7 @@
         #distrobox #Distro containers
         #revolt-desktop discord alternative
         nurl # Fetching urls
-        #rpi-imager #broken
+        rpi-imager #broken
         prismlauncher
         heroic
         macchanger

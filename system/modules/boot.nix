@@ -32,7 +32,7 @@
 
                 efi.canTouchEfiVariables = true;
 
-                timeout = 0;
+                timeout = 1;
                 grub = {
                     enable = true;
                     devices = ["nodev"];
