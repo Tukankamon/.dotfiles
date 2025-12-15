@@ -64,6 +64,7 @@
         tor-browser
         brave
         librewolf
+        libreoffice
         pavucontrol #Audio control
         zathura #PDF with vim binds
         foot #Terminal on wayland, supposed to bet faster

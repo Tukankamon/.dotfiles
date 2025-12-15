@@ -140,7 +140,6 @@
         #davinci-resolve
         #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
         nix-output-monitor # eye candy for nix develop and shell
-        libreoffice
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
         #android-studio #Unfree
