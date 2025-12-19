@@ -15,7 +15,7 @@
         description = "Normal keyboard just changing the Alt Gr behaviour";
         languages = ["spa"];
 
-        symbolsFile = ./AltGreek.xkb;
+        symbolsFile = ./AltGreek;
       };
     };
 
