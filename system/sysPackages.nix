@@ -54,6 +54,7 @@
         #ventoy #Marked as insecure by NIX
         efibootmgr
         bluetui #Bluetooth TUI
+        typst # Turing complete latex alternative (easier)
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings
