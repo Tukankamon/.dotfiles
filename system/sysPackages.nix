@@ -54,6 +54,7 @@
         #ventoy #Marked as insecure by NIX
         efibootmgr
         bluetui #Bluetooth TUI
+        unipicker # Search for unicode characters in the terminal
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings

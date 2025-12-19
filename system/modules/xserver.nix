@@ -1,4 +1,6 @@
-{}: {
+{
+    ...
+}: {
   # Mainly for keyboard config
   imports = [];
 
@@ -12,7 +14,7 @@
         description = "Normal keyboard just changing the Alt Gr behaviour";
         languages = ["spa"];
 
-        symbolsFile = ''
+        symbolsFile = builtins.toFile "es-greek-altgr" ''
                   partial alphanumeric_keys
                   xkb_symbols "greek" {
                       include "es(basic)"
@@ -48,12 +50,12 @@
 
     #videoDrivers = ["amdgpu"]
 
-    autorepeatDelay = 0;
+    autoRepeatDelay = 0;
     autoRepeatInterval = 50;
   };
 
   # On the console
-  console.keymap = "es";
+  console.keyMap = "es";
 }
 /*
 services.xserver.wacom.enable = true;  #Wacom tablet
