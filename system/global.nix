@@ -65,6 +65,24 @@
     };
 
     services.xserver.wacom.enable = true; # Dont think this is necessary (works iffy without it)
+    # Enable the X11 windowing system.
+    #services.xserver.videoDrivers = [ "amdgpu" ];
+    services.xserver = {
+        enable = true;
+
+        # Configure keymap in X11
+        # https://man.archlinux.org/man/xkeyboard-config-2.7.en
+        xkb = {
+            layout = "es";
+            variant = "";
+            options = "swapescap";
+        };
+        autoRepeatInterval = 50;
+        autoRepeatDelay = 0;
+    };
+    # Configure console keymap
+    console.keyMap = "es";
+
 
     environment.variables = {
         EDITOR = "vim"; # Gnome text editor

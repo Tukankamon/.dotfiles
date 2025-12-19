@@ -13,8 +13,7 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "es, gr"
-            options "grp:alt_space_toggle"
+            //layout "es"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
