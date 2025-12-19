@@ -9,6 +9,7 @@
 
     xkb = {
       layout = "es";
+      variant = "AltGreek"; # Tells X to actually use it
 
       extraLayouts.AltGreek = {
         description = "Normal keyboard just changing the Alt Gr behaviour";
