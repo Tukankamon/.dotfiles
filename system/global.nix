@@ -75,7 +75,7 @@
         xkb = {
             layout = "es";
             variant = "";
-            options = "swapescap";
+            options = "caps:swapescape";
         };
         autoRepeatInterval = 50;
         autoRepeatDelay = 0;
