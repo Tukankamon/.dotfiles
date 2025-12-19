@@ -58,11 +58,12 @@
             runtimeInputs = with pkgs; [
                 zathura
                 typst
+                foot
+                neovim
             ];
 
-            # Add error handling and other options like pdf naming
             text = ''
-                bash ./scripts/ty.sh
+                bash ${./scripts/ty.sh}
             '';
         })
 
