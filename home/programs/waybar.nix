@@ -12,6 +12,7 @@
       "modules-left" = [
         "custom/power"
         "clock"
+        "niri/language"
         "tray"
       ];
       "modules-center" = ["niri/workspaces"];
@@ -61,6 +62,15 @@
           "on-click" = "shift_up";
         };
       };
+    
+      # Not working #BROKEN
+      "niri/language" = {
+        "tooltip" = "Alt + Space to swap";
+        "format" = "{long} ⌨️";
+        "format-es" = "es";
+        "format-gr" = "gr";
+      };
+
       "network" = {
         "format-wifi" = " ";
         "format-ethernet" = " ";
