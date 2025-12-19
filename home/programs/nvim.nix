@@ -36,7 +36,7 @@
         vim.globals.maplocalleader = " ";
       };
 
-      autopairs.nvim-autopairs.enable = true;
+      #autopairs.nvim-autopairs.enable = true;
       options.tabstop = 4;
       options.shiftwidth = 0; # Uses tabstop value
 

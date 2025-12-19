@@ -9,3 +9,5 @@ sops nix and making repo public
 
 custom keyboard layout to type greek and other wierd letters like the NN for natural numbers
 workaround with greek layout
+
+Make script to edit typst file, watch compile it and open zathura to view it

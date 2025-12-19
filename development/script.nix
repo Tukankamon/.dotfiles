@@ -51,5 +51,20 @@
                 git push origin main
             '';
         })
+
+        (writeShellApplication {
+            name = "ty";
+
+            runtimeInputs = with pkgs; [
+                zathura
+                typst
+            ];
+
+            # Add error handling and other options like pdf naming
+            text = ''
+                bash ./scripts/ty.sh
+            '';
+        })
+
     ];
 }
