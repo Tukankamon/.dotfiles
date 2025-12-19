@@ -12,6 +12,7 @@
         ./modules/desktopBundle.nix
         ./modules/boot.nix
         ./sysPackages.nix
+        ./modules/xserver.nix
     ];
 
     nix.settings.experimental-features = [

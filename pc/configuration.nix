@@ -40,22 +40,6 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-    #services.xserver.videoDrivers = [ "amdgpu" ];
-
-    # Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "es";
-        variant = "";
-    };
-
-    services.xserver.autoRepeatDelay = 0;
-    services.xserver.autoRepeatInterval = 50;
-
-    # Configure console keymap
-    console.keyMap = "es";
-
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
@@ -89,11 +73,11 @@
 
         password = "aved";
 
-        /*
     packages = with pkgs; [
       #  thunderbird
+
+      inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     ];
-    */
     };
 
     users.extraGroups.vboxusers.members = ["aved"];
