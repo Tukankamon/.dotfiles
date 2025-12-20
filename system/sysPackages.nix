@@ -13,10 +13,6 @@
         obsidian
         spotify
 
-        # Derivations
-        (callPackage ./default.nix {})
-        gruppled-white-cursors #TEMP
-
         # Terminal and config
         home-manager
         tree
@@ -39,8 +35,8 @@
         gnuplot_qt #2d and 3d plotting software
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
-        libwacom # Wacom specifically
-        toybox # CLI utilities
+        #libwacom # Wacom specifically
+        #toybox # CLI utilities
         hyperfine # command benchmark
         htop # Task manager for the terminal
         #helix  #nvim with better defaults
@@ -54,7 +50,7 @@
         #ventoy #Marked as insecure by NIX
         efibootmgr
         bluetui #Bluetooth TUI
-        typst # Turing complete latex alternative (easier)
+        #typst # Turing complete latex alternative (easier)
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings
@@ -70,10 +66,10 @@
         zathura #PDF with vim binds
         foot #Terminal on wayland, supposed to bet faster
         vscodium
-        zed-editor
+        #zed-editor # IDE
         #protonmail-desktop
         #protonmail-bridge
-        protonvpn-gui
+        #protonvpn-gui
         #signal-desktop  # Build error
         mullvad-browser # (recommended pretty much only if you have the vpn)
         gimp3
@@ -81,7 +77,7 @@
         #anki   #Build error
         #logseq #Similar to obisidian, keep an eye on it
         #zettlr #Another FOSS markdown editor to keep an eye on
-        rnote # To use with the wacom
+        #rnote # To use with the wacom
         #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
         #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
         gnome-network-displays # For sharing to a tv

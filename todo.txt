@@ -12,4 +12,4 @@ workaround with greek layout
 
 Make script to edit typst file, watch compile it and open zathura to view it
 
-make niri automatically go to the second monitor when there are no more windows left on the main one
+¿¿¿ DOne ?? make niri automatically go to the second monitor when there are no more windows left on the main one
