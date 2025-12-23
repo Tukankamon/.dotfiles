@@ -51,6 +51,7 @@
         efibootmgr
         bluetui #Bluetooth TUI
         #typst # Turing complete latex alternative (easier)
+        stress-ng
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings
@@ -86,6 +87,8 @@
         lact
         gcolor3
         kicad
+        emacs
+        fd # Alternative to find command, needed for emacs (doom atleast)
     ];
 in {
     nixpkgs.config.allowUnfreePredicate = pkg:

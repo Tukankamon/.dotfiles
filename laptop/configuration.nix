@@ -61,7 +61,8 @@
             "wheel"
             #"input"
         ];
-        password = "aved";
+
+       hashedPassword = "$y$j9T$V8fcqlSY6CKWRjX6fsffR.$Im1Sttp46CQIw9J/ZIf5x6LdaUziJxxLf5hyub8gIv1";
 
         packages = with pkgs; [
             #  thunderbird

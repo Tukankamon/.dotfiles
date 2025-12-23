@@ -5,7 +5,7 @@
     inkscape,
     xcursorgen,
     coreutils,
-    cursorColor ? "cyan"
+    cursorColor ? "cyan",
 }:
 stdenvNoCC.mkDerivation {
     pname = "future-cursors";
@@ -19,7 +19,7 @@ stdenvNoCC.mkDerivation {
     };
 
     # Inkscape might take a while to do its thing and throw scary errors but it should be fine
-    buildInputs = [ inkscape xcursorgen coreutils ];
+    buildInputs = [inkscape xcursorgen coreutils];
 
     buildPhase = ''
         patchShebangs ./build.sh

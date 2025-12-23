@@ -66,6 +66,5 @@
                 bash ${./scripts/ty.sh}
             '';
         })
-
     ];
 }
