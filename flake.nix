@@ -62,7 +62,7 @@
         ...
     } @ inputs: let
         system = "x86_64-linux";
-        lib = nixpkgs.lib;
+        #lib = nixpkgs.lib;
         pkgs = nixpkgs.legacyPackages.${system};
         stablePkgs = nixpkgs-stable.legacyPackages.${system};
 

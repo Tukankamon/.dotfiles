@@ -7,8 +7,8 @@
     options = {
         grub-boot.enable = lib.mkOption {
             type = lib.types.bool;
-            default = false;
-            example = true;
+            default = true;
+            example = false;
             description = "sets the boot config for the pc";
         };
     };

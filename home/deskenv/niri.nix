@@ -31,7 +31,6 @@
             wlogout # Logout menu, not update in over a year so be careful
             gnome-system-monitor # I like it
             gnome-disk-utility # Very nice gui for disks
-            gnome-disk-utility # Very nice gui for disks
             udiskie # Auto mount (GUI), if not usb needs to be mounted manually
             nautilus # File manager
         ];

@@ -8,7 +8,6 @@
         ./programs/fastfetch.nix
         ./deskenv/desktopHomeBundle.nix
         ./programs/nvim.nix
-        ./programs/misc.nix
     ];
 
     home.pointerCursor = {

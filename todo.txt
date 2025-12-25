@@ -7,9 +7,4 @@ Specialisations
 
 sops nix and making repo public
 
-custom keyboard layout to type greek and other wierd letters like the NN for natural numbers
-workaround with greek layout
-
-Make script to edit typst file, watch compile it and open zathura to view it
-
-¿¿¿ DOne ?? make niri automatically go to the second monitor when there are no more windows left on the main one
+Package the waybar config outside home manager (maybe other packages too)
