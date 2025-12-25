@@ -71,7 +71,7 @@
             "dialout" # For arduino and stuff
         ];
 
-       hashedPassword = "$y$j9T$V8fcqlSY6CKWRjX6fsffR.$Im1Sttp46CQIw9J/ZIf5x6LdaUziJxxLf5hyub8gIv1";
+        hashedPassword = "$y$j9T$V8fcqlSY6CKWRjX6fsffR.$Im1Sttp46CQIw9J/ZIf5x6LdaUziJxxLf5hyub8gIv1";
 
         packages = with pkgs; [
             inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file

@@ -1,8 +1,8 @@
 {
     inputs,
-    pkgs,
-    config,
-    lib,
+    #pkgs,
+    #onfig,
+    #ib,
     #configuration,
     ...
 }: {
@@ -75,7 +75,7 @@
         xkb = {
             layout = "es";
             variant = "";
-            options = "caps:swapescape";
+            options = "caps:nocaps";
         };
         autoRepeatInterval = 50;
         autoRepeatDelay = 0;
