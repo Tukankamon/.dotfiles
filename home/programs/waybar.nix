@@ -128,7 +128,7 @@
             };
             "memory" = {
                 "interval" = 30;
-                "format" = "{used:0.1f}Gb ";
+                "format" = "{used:0.1f}GB ";
             };
             "temperature" = {
                 "critical-threshold" = 80;

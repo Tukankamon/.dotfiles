@@ -68,17 +68,12 @@
         foot #Terminal on wayland, supposed to bet faster
         vscodium
         #zed-editor # IDE
-        #protonmail-desktop
-        #protonmail-bridge
         #protonvpn-gui
-        #signal-desktop  # Build error
-        mullvad-browser # (recommended pretty much only if you have the vpn)
+        signal-desktop
+        #mullvad-browser # (recommended pretty much only if you have the vpn)
         gimp3
         pdftricks
         #anki   #Build error
-        #logseq #Similar to obisidian, keep an eye on it
-        #zettlr #Another FOSS markdown editor to keep an eye on
-        #rnote # To use with the wacom
         #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
         #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
         gnome-network-displays # For sharing to a tv
@@ -87,8 +82,7 @@
         lact
         gcolor3
         kicad
-        emacs
-        fd # Alternative to find command, needed for emacs (doom atleast)
+        qdirstat # See how much storage space each folder uses, GUI
     ];
 in {
     nixpkgs.config.allowUnfreePredicate = pkg:

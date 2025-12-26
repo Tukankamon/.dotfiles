@@ -122,18 +122,17 @@
         sops
         #darktable  # Breaks in unstable
         #davinci-resolve
-        #deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
-        nix-output-monitor # eye candy for nix develop and shell
+        deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
         #android-studio #Unfree
         #distrobox #Distro containers
         #revolt-desktop discord alternative
-        nurl # Fetching urls
-        rpi-imager #broken
+        #nurl # Fetching urls
+        #rpi-imager #Broken
         prismlauncher
         heroic
-        macchanger
+        #macchanger # I forgot why I have this
         audacity
         inkscape
     ];
