@@ -1,7 +1,7 @@
 {
     inputs,
     pkgs,
-    pkgs-stable,
+    #pkgs-stable,
     config,
     lib,
     ...
@@ -71,7 +71,7 @@
             "dialout" # For arduino and stuff
         ];
 
-        hashedPassword = "$y$j9T$V8fcqlSY6CKWRjX6fsffR.$Im1Sttp46CQIw9J/ZIf5x6LdaUziJxxLf5hyub8gIv1";
+        hashedPassword = "$y$j9T$BKyT52NxG07O3DeBgfnmU1$Qs5BvA5OQ1V.PjepeuPOC/rc8rJ6xpURkCW81Ixgx2/";
 
         packages = with pkgs; [
             inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
