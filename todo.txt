@@ -5,8 +5,4 @@ Nightlight (gammastep maybe)
 
 Specialisations
 
-sops nix and making repo public
-
 Package the waybar config outside home manager (maybe other packages too like niri)
-
-Look into Cachix

@@ -12,7 +12,7 @@
         python313Packages.matplotlib
         go
 
-        ghc # Haskell
+        #ghc # Haskell
 
         nim-unwrapped-2_0
 
