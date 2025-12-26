@@ -1,5 +1,4 @@
 {
-    pkgs,
     config,
     lib,
     ...
@@ -12,11 +11,11 @@
             # Use lib.types.enum to restrict the string values to a specific list.
             type = lib.types.nullOr (lib.types.enum ["gnome" "hyprland" "niri"]); #I think u can do 2 environments at the same time
 
-            default = "gnome";
+            default = "niri";
 
             description = ''Selects the DE/WM, set to null for no graphical interface. Will probably crash tho'';
 
-            example = "niri";
+            example = "gnome";
         };
     };
 
@@ -32,7 +31,7 @@
 
         gnome = lib.mkIf (config.desktop == "gnome") true;
         hyprland = lib.mkIf (config.desktop == "hyprland") true;
-        niriwm = lib.mkIf (config.desktop == "niri") true;
+        niri = lib.mkIf (config.desktop == "niri") true;
     };
 }
 # --- PLEASE READ ---

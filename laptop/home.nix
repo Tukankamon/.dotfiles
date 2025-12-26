@@ -8,8 +8,7 @@
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
 
-    niriHome.enable = true;
-    gnomeHome.enable = true;
+    desktopHome = "niri";
 
     home.packages = with pkgs; [
         hello

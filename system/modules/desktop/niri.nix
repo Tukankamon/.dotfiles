@@ -6,14 +6,14 @@
     ...
 }: {
     options = {
-        niriwm = lib.mkEnableOption {
+        niri = lib.mkEnableOption {
             type = lib.types.bool;
             default = false;
             description = "Enable de niri scrolling WM";
         };
     };
 
-    config = lib.mkIf config.niriwm {
+    config = lib.mkIf config.niri {
         environment.sessionVariables.NIXOS_OZONE_WL = "1";
         programs.niri.enable = true;
 

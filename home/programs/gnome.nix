@@ -6,7 +6,7 @@
     ...
 }: {
     options = {
-        gnomeHome.enable = lib.mkOption {
+        gnomeHome = lib.mkOption {
             type = lib.types.bool;
             default = true;
             example = false;
@@ -14,7 +14,7 @@
         };
     };
 
-    config = lib.mkIf config.gnomeHome.enable {
+    config = lib.mkIf config.gnomeHome {
         home.packages = with pkgs; [
             dconf-editor
             gnome-tweaks

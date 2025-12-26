@@ -9,7 +9,7 @@
     imports = [./../programs/waybar.nix];
 
     options = {
-        niriHome.enable = lib.mkOption {
+        niriHome = lib.mkOption {
             type = lib.types.bool;
             default = false;
             example = true;
@@ -17,7 +17,7 @@
         };
     };
 
-    config = lib.mkIf config.niriHome.enable {
+    config = lib.mkIf config.niriHome {
         xdg.configFile."niri/config.kdl".source = ./configs/niri.kdl;
 
         home.packages = with pkgs; [
@@ -98,18 +98,8 @@
             ];
         };
 
-        /*
-       #This would mess with my config over there
-    programs.obsidian.enable = true;
-
-    nixpkgs.config.allowUnfreePredicate = pkg: # This is set twice, once done in global.nix
-        builtins.elem (pkgs.lib.getName pkg) [
-            "obsidian"
-        ];
-    */
-
         stylix = {
-            #This is just half, the other is in the home module
+            #This is just half, the other is in the sys module
             enable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
             image = ./../../other/images/roadwp.jpg;

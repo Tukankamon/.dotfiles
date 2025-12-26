@@ -1,22 +1,14 @@
-{
-    pkgs,
-    inputs,
-    lib,
-    config,
-    ...
-}: {
+{pkgs, ...}: {
     imports = [
         ./../home/globalHome.nix
     ];
-
-    niriHome.enable = true;
-    gnomeHome.enable = false;
-    hyprHome.enable = false;
 
     home.username = "aved";
     home.homeDirectory = "/home/aved";
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
+
+    desktopHome = "niri";
 
     home.packages = with pkgs; [
         hello

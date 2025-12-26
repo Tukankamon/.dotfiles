@@ -122,7 +122,7 @@
         sops
         #darktable  # Breaks in unstable
         #davinci-resolve
-        deadnix  #Scan for unused nix code   (https://github.com/astro/deadnix)
+        deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
         #android-studio #Unfree
