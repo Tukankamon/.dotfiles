@@ -62,7 +62,9 @@
             #"input"
         ];
 
-        hashedPassword = "$y$j9T$b8y4kvjxHbKJ2eyDRBMVJ.$gwOzHjB/WqPidnWWRL7qZKwYEEhzHZn2uraUu3f5f0/";
+        # Set the password using the passwd command. That way it is not stored inside of the config file
+        # If you still want it to be declarative, has it with mkpasswd and set it below
+        #hashedPassword = "";
 
         packages = with pkgs; [
             #  thunderbird

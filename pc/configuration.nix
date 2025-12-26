@@ -71,7 +71,9 @@
             "dialout" # For arduino and stuff
         ];
 
-        hashedPassword = "$y$j9T$BKyT52NxG07O3DeBgfnmU1$Qs5BvA5OQ1V.PjepeuPOC/rc8rJ6xpURkCW81Ixgx2/";
+        # Set the password using the passwd command. That way it is not stored inside of the config file
+        # If you still want it to be declarative, has it with mkpasswd and set it below
+        #hashedPassword = "";
 
         packages = with pkgs; [
             inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
