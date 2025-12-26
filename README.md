@@ -15,7 +15,7 @@ Currently niri is enabled but can be changed for gnome or hyprland (not customiz
 
 Run 
 ```bash
-sudo nixos-rebuild switch --flake https://github.com/Tukankamon/.dotfiles#yamask
+sudo nixos-rebuild switch --flake github:Tukankamon/.dotfiles#yamask
 ```
 
 "yamask" is the pc host while "dwebble" is the laptop one
