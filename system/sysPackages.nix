@@ -2,8 +2,6 @@
     pkgs,
     stablePkgs,
     lib,
-    config,
-    inputs,
     ...
 }: let
     stable = with stablePkgs; [];
@@ -11,7 +9,7 @@
     unstable = with pkgs; [
         #Unfree
         obsidian
-        spotify
+        #spotify
 
         # Terminal and config
         home-manager
@@ -29,29 +27,28 @@
         neovim
         asciiquarium-transparent
         parted # scan partitions
-        gparted # Gui version of parted
-        testdisk
+        #gparted # Gui version of parted # BROKEN permission error
+        #testdisk # Only really usable with live boots
+        #efibootmgr # Same as above
         ffmpeg
         gnuplot_qt #2d and 3d plotting software
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
         #libwacom # Wacom specifically
-        #toybox # CLI utilities
         hyperfine # command benchmark
         htop # Task manager for the terminal
         #helix  #nvim with better defaults
         universal-android-debloater
         zoxide # better cd
-        dysk
+        dysk # See disk usage
         exiftool # Metadata image scanner
         tokei # Count lines of code per language
         nvd # Check the pkg difference between generations
         caligula # Burning flash drives
         #ventoy #Marked as insecure by NIX
-        efibootmgr
         bluetui #Bluetooth TUI
         #typst # Turing complete latex alternative (easier)
-        stress-ng
+        #stress-ng # Stress test CPU
 
         # GUIS
         kooha # Gif recorder but also ss and normal recordings
@@ -62,7 +59,7 @@
         tor-browser
         brave
         librewolf
-        libreoffice
+        #libreoffice
         pavucontrol #Audio control
         zathura #PDF with vim binds
         foot #Terminal on wayland, supposed to bet faster
@@ -76,9 +73,9 @@
         #anki   #Build error
         #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
         #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
-        gnome-network-displays # For sharing to a tv
+        #gnome-network-displays # For sharing to a tv
         obs-studio
-        arduino-ide
+        #arduino-ide
         lact
         gcolor3
         kicad
@@ -89,7 +86,7 @@ in {
         builtins.elem (lib.getName pkg) [
             #Doesnt install, just allows
             "obsidian"
-            "spotify"
+            #"spotify"
             "steam"
             "steam-unwrapped"
             "discord"

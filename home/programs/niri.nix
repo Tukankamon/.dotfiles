@@ -22,7 +22,7 @@
 
         home.packages = with pkgs; [
             waybar
-            alacritty
+            #alacritty
             fuzzel
             swaybg
             swaylock
@@ -36,7 +36,6 @@
         ];
 
         # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
-        programs.alacritty.enable = true; #Just in case, this is the default terminal
         programs.fuzzel = {
             # App launcher
             enable = true;
@@ -114,14 +113,9 @@
             };
 
             targets = {
-                /*
-        nvf.enable = false;
-        vim.enable = false;
-        */
 
                 fuzzel.enable = true;
                 foot.enable = true;
-                alacritty.enable = true;
                 swaylock.enable = true;
                 fish.enable = true;
                 #niri.enable = true; #Track issue: https://github.com/nix-community/stylix/issues/1746

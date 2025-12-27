@@ -2,8 +2,6 @@
     inputs,
     pkgs,
     #pkgs-stable,
-    config,
-    lib,
     ...
 }: {
     imports = [
@@ -20,7 +18,9 @@
   */
 
     # To avoid getting niri conf in gnome
-    desktop = lib.mkIf (config.specialisation == {}) "niri";
+    #desktop = lib.mkIf (config.specialisation == {}) "niri";
+
+    desktop = "niri";
 
     custom-boot.enable = true;
 
@@ -76,7 +76,8 @@
         #hashedPassword = "";
 
         packages = with pkgs; [
-            inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+            # Zen browser add like 400 package dependencies and my OCD doesnt like that
+            #inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
         ];
     };
 
@@ -112,7 +113,6 @@
         mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
 
         discord #Unfree
-        sops
         #darktable  # Breaks in unstable
         #davinci-resolve
         deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
@@ -124,22 +124,23 @@
         #nurl # Fetching urls
         #rpi-imager #Broken
         prismlauncher
-        heroic
+        #heroic
         #macchanger # I forgot why I have this
         audacity
         inkscape
     ];
 
     fonts.packages = with pkgs; [
-        font-awesome
-        font-awesome_5
-        font-awesome_6
+        # I dont remember why I have so many
+        #font-awesome
+        #font-awesome_5
+        #font-awesome_6
 
-        nerd-fonts.code-new-roman
-        pkgs.nerd-fonts.jetbrains-mono
-        pkgs.nerd-fonts.fira-code
-        pkgs.nerd-fonts.droid-sans-mono
-        pkgs.nerd-fonts.hack
+        #nerd-fonts.code-new-roman
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.droid-sans-mono
+        nerd-fonts.hack
     ];
 
     #systemd.packages = with pkgs; [ lact ];

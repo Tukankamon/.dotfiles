@@ -5,18 +5,18 @@
 }: {
     environment.systemPackages = with pkgs; [
         alejandra
-        nixfmt-rfc-style
-        nixd
+        #nixfmt-rfc-style
+        #nixd
 
         python3
-        python313Packages.matplotlib
+        #python313Packages.matplotlib
         go
 
         #ghc # Haskell
 
-        nim-unwrapped-2_0
+        #nim-unwrapped-2_0
 
-        nodejs_24
+        #nodejs_24
 
         # CPP
         clang-tools

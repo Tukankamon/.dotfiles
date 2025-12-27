@@ -84,7 +84,7 @@
     console.keyMap = "es";
 
     environment.variables = {
-        EDITOR = "vim"; # Gnome text editor
+        EDITOR = "vim"; 
         TERM = "xterm-256color"; # to be able to clear in ssh
     };
 
