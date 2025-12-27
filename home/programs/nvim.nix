@@ -51,9 +51,8 @@
             telescope.enable = true;
             autocomplete.nvim-cmp.enable = true;
 
+            lsp.enable = true;
             languages = {
-                # Doesnt do jackshit
-                enableLSP = true;
                 enableTreesitter = true;
                 enableFormat = true;
 
