@@ -9,7 +9,7 @@
             type = lib.types.bool;
             default = true;
             example = false;
-            description = "sets the boot config for the pc, setting false will use systemd-boot";
+            description = "sets the boot config for the pc";
         };
     };
 
@@ -28,7 +28,7 @@
             initrd.kernelModules = ["amdgpu"]; # davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
             loader = {
-                systemd-boot.enable = true; # Change when using / not using grub
+                systemd-boot.enable = false; # Change when using / not using grub
 
                 efi.canTouchEfiVariables = true;
 
@@ -39,6 +39,11 @@
                     efiSupport = true;
                     useOSProber = true; #Detects other operating systems, doesnt detect windows on other drive
                     splashImage = ./../../other/images/matrix-options.png;
+                    extraEntries = ''
+                        menuentry "Reboot" {
+                            reboot
+                        }
+                    '';
                 };
             };
 
