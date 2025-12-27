@@ -77,7 +77,7 @@
 
         packages = with pkgs; [
             # Zen browser add like 400 package dependencies and my OCD doesnt like that
-            #inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+            inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
         ];
     };
 
@@ -120,14 +120,12 @@
         kdePackages.kdenlive
         #android-studio #Unfree
         #distrobox #Distro containers
-        #revolt-desktop discord alternative
         #nurl # Fetching urls
         #rpi-imager #Broken
         prismlauncher
         #heroic
         #macchanger # I forgot why I have this
         audacity
-        inkscape
     ];
 
     fonts.packages = with pkgs; [
