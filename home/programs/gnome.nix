@@ -8,8 +8,8 @@
     options = {
         gnomeHome = lib.mkOption {
             type = lib.types.bool;
-            default = true;
-            example = false;
+            default = false;
+            example = true;
             description = "Enables the gnome desktop environment home configurations";
         };
     };
