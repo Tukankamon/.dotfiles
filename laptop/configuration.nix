@@ -13,7 +13,7 @@
         ./../development/script.nix
     ];
 
-    grub-boot.enable = true;
+    custom-boot.enable = true;
     desktop = "niri";
 
     home-manager = {

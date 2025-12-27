@@ -22,7 +22,7 @@
     # To avoid getting niri conf in gnome
     desktop = lib.mkIf (config.specialisation == {}) "niri";
 
-    grub-boot.enable = true;
+    custom-boot.enable = true;
 
     home-manager = {
         # Not necesary but now hm also rebuilds with nixos-rebuild
@@ -83,13 +83,6 @@
     users.extraGroups.vboxusers.members = ["aved"];
 
     environment.variables = {
-        #For amd stuff
-        #ROC_ENABLE_PRE_VEGA = "1";
-        /*
-      RUSTICL_ENABLE="amdgpu";
-    DRI_PRIME= "1";
-    QT_QPA_PLATFORM = "xcb davinci-resolve";
-    */
     };
 
     environment.shells = with pkgs; [fish]; # Following a video

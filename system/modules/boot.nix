@@ -5,15 +5,15 @@
     ...
 }: {
     options = {
-        grub-boot.enable = lib.mkOption {
+        custom-boot.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             example = false;
-            description = "sets the boot config for the pc";
+            description = "sets the boot config for the pc, setting false will use systemd-boot";
         };
     };
 
-    config = lib.mkIf config.grub-boot.enable {
+    config = lib.mkIf config.custom-boot.enable {
         environment.systemPackages = with pkgs; [
             vulkan-tools
             vulkan-loader
@@ -28,16 +28,16 @@
             initrd.kernelModules = ["amdgpu"]; # davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
             loader = {
-                systemd-boot.enable = false; # Change when using / not using grub
+                systemd-boot.enable = true; # Change when using / not using grub
 
                 efi.canTouchEfiVariables = true;
 
                 timeout = 1;
                 grub = {
-                    enable = true;
+                    enable = !config.boot.loader.systemd-boot.enable;
                     devices = ["nodev"];
                     efiSupport = true;
-                    useOSProber = true; # To detect other operating systems
+                    useOSProber = true; #Detects other operating systems, doesnt detect windows on other drive
                     splashImage = ./../../other/images/matrix-options.png;
                 };
             };
