@@ -4,7 +4,9 @@
     lib,
     ...
 }: let
-    stable = with stablePkgs; [];
+    stable = with stablePkgs; [
+        kicad # Very often will try to build from source on unstable
+    ];
 
     unstable = with pkgs; [
         #Unfree
@@ -78,7 +80,6 @@
         #arduino-ide
         lact
         gcolor3
-        kicad
         qdirstat # See how much storage space each folder uses, GUI
     ];
 in {
