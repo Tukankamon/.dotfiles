@@ -11,11 +11,9 @@
         ./../development/script.nix
     ];
 
-    /*
   specialisation.gnome.configuration = { # Builds a second boot entry for gnome
       desktop = "gnome";
   };
-  */
 
     # To avoid getting niri conf in gnome
     #desktop = lib.mkIf (config.specialisation == {}) "niri";
