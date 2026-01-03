@@ -113,7 +113,6 @@
             };
 
             targets = {
-
                 fuzzel.enable = true;
                 foot.enable = true;
                 swaylock.enable = true;

@@ -2,6 +2,8 @@
     inputs,
     pkgs,
     #pkgs-stable,
+    config,
+    lib,
     ...
 }: {
     imports = [
@@ -11,14 +13,15 @@
         ./../development/script.nix
     ];
 
-  specialisation.gnome.configuration = { # Builds a second boot entry for gnome
-      desktop = "gnome";
-  };
+    specialisation = {
+        gnome.configuration = {
+            # Builds a second boot entry for gnome
+            desktop = "gnome";
+        };
+    };
 
-    # To avoid getting niri conf in gnome
-    #desktop = lib.mkIf (config.specialisation == {}) "niri";
-
-    desktop = "niri";
+    # ONly applies to the default system
+    desktop = lib.mkIf (config.specialisation != {}) "niri";
 
     custom-boot.enable = true;
 

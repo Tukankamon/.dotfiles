@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+    pkgs,
+    config,
+    ...
+}: {
     imports = [
         ./../home/globalHome.nix
     ];
@@ -7,8 +11,6 @@
     home.homeDirectory = "/home/aved";
 
     home.stateVersion = "24.11"; # Please read the comment before changing.
-
-    desktopHome = "niri";
 
     home.packages = with pkgs; [
         hello

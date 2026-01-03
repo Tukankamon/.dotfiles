@@ -20,6 +20,7 @@
         ./programs/gnome.nix
         ./programs/hypr.nix
         ./programs/niri.nix
+        #../system/modules/desktopBundle.nix # To be able to set options depending on it
     ];
 
     config = {
