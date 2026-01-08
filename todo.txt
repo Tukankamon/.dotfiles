@@ -3,6 +3,4 @@ Waybar:
 
 Nightlight (gammastep maybe)
 
-Specialisations
-
 Package the waybar config outside home manager (maybe other packages too like niri)

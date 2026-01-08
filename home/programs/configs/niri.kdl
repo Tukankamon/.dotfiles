@@ -122,6 +122,7 @@ output "DP-1" { //main off-screen
     mode "1920x1080@74.973"
     position x=0 y=-155 //second monitor is a bit lower
     scale 1
+    focus-at-startup
 }
 
 output "HDMI-A-1" {
