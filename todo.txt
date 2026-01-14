@@ -1,6 +1,3 @@
-Waybar:
-    Reduce bottom padding (and top aswell so I can click topleft by smashing the mouse in the corner)
-
 Nightlight (gammastep maybe)
 
 Package the waybar config outside home manager (maybe other packages too like niri)
