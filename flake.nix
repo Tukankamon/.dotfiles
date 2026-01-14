@@ -110,7 +110,7 @@
                     modules =
                         [
                             machine.homeConfig
-                            inputs.stylix.homeManagerModules.stylix
+                            inputs.stylix.homeModules.stylix
                         ]
                         ++ machine.extraHomeModules;
 

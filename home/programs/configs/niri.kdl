@@ -300,7 +300,7 @@ spawn-at-startup "mako" //Noti daemon
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-spawn-sh-at-startup "swaybg -i ~/.dotfiles/other/images/roadwp.jpg"
+spawn-sh-at-startup "swaybg -i ~/.dotfiles/other/images/adam.jpg"
 
 layer-rule {
     match namespace="^wallpaper$"
@@ -355,6 +355,7 @@ window-rule {
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
+/*
 window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
@@ -362,6 +363,7 @@ window-rule {
     match app-id=r#"firefox"# title="^Picture-in-Picture$"
     open-floating true
 }
+*/
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
@@ -378,8 +380,9 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 8
     clip-to-geometry true
+    open-maximized true
 }
 
 binds {
