@@ -96,6 +96,6 @@ in {
     environment.systemPackages = stable ++ unstable;
 
     programs = {
-        adb.enable = true;
+        #adb.enable = true;
     };
 }
