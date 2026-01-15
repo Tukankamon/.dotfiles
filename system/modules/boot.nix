@@ -38,7 +38,18 @@
                     devices = ["nodev"];
                     efiSupport = true;
                     useOSProber = true; #Detects other operating systems, doesnt detect windows on other drive
-                    splashImage = ./../../other/images/matrix-options.png;
+                    #splashImage = ./../../other/images/matrix-options.png;
+                    theme = pkgs.stdenv.mkDerivation {
+                        pname = "bsol";
+                        version = "1.0";
+                        src = pkgs.fetchFromGitHub {
+                            owner = "harishnkr";
+                            repo = "bsol";
+                            rev = "afcc66069d104e4c02bc962e6bebd9c453c0f163";
+                            hash = "sha256-sUvlue+AXW6VkVYy3WOUuSt548b6LoDpJmQPbgcZDQw=";
+                        };
+                        installPhase = "cp -r bsol \$out";
+                    };
                     extraEntries = ''
                         menuentry "Reboot" {
                             reboot
