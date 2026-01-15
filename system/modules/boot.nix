@@ -42,7 +42,7 @@
                     theme = pkgs.stdenv.mkDerivation {
                         pname = "bsol";
                         version = "1.0";
-                        src = pkgs.fetchFromGitHub {
+                        src = pkgs.fetchFromGitHub { # Windows blue screen theme, default font is ugly af. Too cumbersome to change
                             owner = "harishnkr";
                             repo = "bsol";
                             rev = "afcc66069d104e4c02bc962e6bebd9c453c0f163";
