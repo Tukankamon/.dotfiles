@@ -79,6 +79,7 @@
         packages = with pkgs; [
             # Zen browser add like 400 package dependencies and my OCD doesnt like that
             inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+            xonotic # FOSS quake-like game
         ];
     };
 

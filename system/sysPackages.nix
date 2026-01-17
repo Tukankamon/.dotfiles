@@ -81,7 +81,6 @@
         lact
         gcolor3
         qdirstat # See how much storage space each folder uses, GUI
-        xonotic # FOSS quake-like game
     ];
 in {
     nixpkgs.config.allowUnfreePredicate = pkg:
