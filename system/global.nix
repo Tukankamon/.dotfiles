@@ -21,7 +21,7 @@
 
     nix.gc = {
         automatic = true;
-        options = "--delete-older-than 30d";
+        options = "--delete-older-than 14d";
     };
 
     nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Forgot what this does
