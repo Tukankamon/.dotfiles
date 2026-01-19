@@ -8,7 +8,7 @@
 }: {
     imports = [
         ./../development/programming.nix
-        ./modules/autofirma.nix
+        #./modules/autofirma.nix # Enable if needed
         ./modules/desktopBundle.nix
         ./modules/boot.nix
         ./sysPackages.nix
