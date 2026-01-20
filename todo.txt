@@ -1,3 +1,5 @@
 Nightlight (gammastep maybe)
 
 Package the waybar config outside home manager (maybe other packages too like niri)
+
+Figure out a way to sort Home manager standalone, I have spread out files for the same program and two places where modified programs could be (home/programs and system/modules)

@@ -39,7 +39,6 @@
         #libwacom # Wacom specifically
         hyperfine # command benchmark
         htop # Task manager for the terminal
-        #helix  #nvim with better defaults
         universal-android-debloater
         zoxide # better cd
         dysk # See disk usage
@@ -66,14 +65,12 @@
         zathura #PDF with vim binds
         foot #Terminal on wayland, supposed to bet faster
         vscodium
-        #zed-editor # IDE
         #protonvpn-gui
         signal-desktop
         #mullvad-browser # (recommended pretty much only if you have the vpn)
         gimp3
         pdftricks
         #anki   #Build error
-        #wacomtablet #self explanatory, from KDE (doesnt work) (Could also try pkgs.libwacom)
         #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
         #gnome-network-displays # For sharing to a tv
         obs-studio
@@ -83,6 +80,11 @@
         qdirstat # See how much storage space each folder uses, GUI
     ];
 in {
+    # Add self-wrapped packages here
+    nixpkgs.overlays = [
+        (import ./modules/alejandra)
+    ];
+
     nixpkgs.config.allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
             #Doesnt install, just allows
