@@ -11,6 +11,7 @@
         inputs.home-manager.nixosModules.home-manager
         ./../system/global.nix
         ./../development/script.nix
+        ./ollama
     ];
 
     specialisation = {

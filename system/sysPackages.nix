@@ -22,6 +22,7 @@
         neo-cowsay
         lf
         yazi # Better lf, keeping the old bc it is much more comortable to type
+        bat # Better cat
         git
         kitty
         fzf # fuzzy file search, needed for zoxide

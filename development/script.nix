@@ -3,18 +3,6 @@
 #If the command is too long you can just execute a bash script from the "text" section
 {
     environment.systemPackages = with pkgs; [
-        (writeShellApplication {
-            name = "test-script";
-
-            runtimeInputs = with pkgs; [
-                cowsay
-                #lolcat     #Used to make it colorfull
-            ]; # Specify pkgs in the script
-
-            text = ''
-                cowsay --random --rainbow "this is a test"
-            '';
-        })
 
         (writeShellApplication {
             #Git add, commit and push with a message
@@ -22,34 +10,8 @@
 
             runtimeInputs = with pkgs; [git];
 
-            text = ''
-                Help()
-                {
-                  # Display Help
-                  echo "Add commit message later in the script"
-                  echo
-                  echo "-h for help"
-                }
-
-                while getopts ":h" option; do
-                  case $option in
-                      h) # display Help
-                        Help
-                        exit;;
-                      \?) # Invalid option
-                        echo "Error: Invalid option"
-                        exit;;
-
-                  esac
-                done
-
-                echo "Commit description: "
-                read -r message
-
-                git add -A && \
-                git commit -m "$message" && \
-                git push origin main
-            '';
+            # Allows reading from a file instead of an inline string
+            text = builtins.readFile ./scripts/gitdo.sh;
         })
 
         (writeShellApplication {
@@ -62,9 +24,7 @@
                 neovim
             ];
 
-            text = ''
-                bash ${./scripts/ty.sh}
-            '';
+            text = builtins.readFile ./scripts/ty.sh;
         })
     ];
 }
