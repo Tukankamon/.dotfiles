@@ -3,3 +3,9 @@ Nightlight (gammastep maybe)
 Package the waybar config outside home manager (maybe other packages too like niri)
 
 Figure out a way to sort Home manager standalone, I have spread out files for the same program and two places where modified programs could be (home/programs and system/modules)
+
+Make the config independent of hardware-configuration.nix so that it can be rebuilt directly from github
+
+Possibly move away from home manager. For example, in the case of niri, the home manager file configures the kdl file (can be wrapped directly into the binary) and other programs like foot and fuzzel that it uses so that they are
+affected by stylix but I should probably ditch stylix at least on niri. It only affects the terminal and fuzzel. Those I can rice manually and avoid the pain of having two stylix, one for home manager and the other for the base
+system (they both have to be enabled or it wont build)
