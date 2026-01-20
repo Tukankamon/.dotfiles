@@ -75,7 +75,7 @@
       #startPlugins = [ "obsidian-nvim" ];
 
       #autopairs.nvim-autopairs.enable = true;
-      options.tabstop = 4;
+      options.tabstop = 2;
       options.shiftwidth = 0; # Uses tabstop value
 
       theme = {
