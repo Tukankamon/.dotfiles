@@ -20,9 +20,9 @@
     };
 
     imports = [
-        ./desktop/gnome.nix
-        ./desktop/hyprland.nix
-        ./desktop/niri.nix
+        ./gnome.nix
+        ./hyprland.nix
+        ./niri.nix
     ];
 
     config = {

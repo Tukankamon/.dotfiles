@@ -11,7 +11,6 @@
         inputs.home-manager.nixosModules.home-manager
         ./../system/global.nix
         ./../development/script.nix
-        ./ollama
     ];
 
     specialisation = {
@@ -24,7 +23,11 @@
     # ONly applies to the default system
     desktop = lib.mkIf (config.specialisation != {}) "niri";
 
-    custom-boot.enable = true;
+    modules = {
+        ollama.enable = true;
+        boot.enable = true;
+        autofirma.enable = false;
+    };
 
     home-manager = {
         # Not necesary but now hm also rebuilds with nixos-rebuild
@@ -59,6 +62,9 @@
         jack.enable = true;
     };
 
+    services.power-profiles-daemon.enable = false;
+    services.thermald.enable = true;
+
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
 
@@ -79,7 +85,9 @@
 
         packages = with pkgs; [
             # Zen browser add like 400 package dependencies and my OCD doesnt like that
-            inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+            # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+            inputs.zen-browser.packages."x86_64-linux".default
+
             xonotic # FOSS quake-like game
         ];
     };
@@ -121,13 +129,9 @@
         deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
         #jetbrains.idea-community   #for developing in kotlin
         kdePackages.kdenlive
-        #android-studio #Unfree
-        #distrobox #Distro containers
-        #nurl # Fetching urls
         #rpi-imager #Broken
         prismlauncher
         #heroic
-        #macchanger # I forgot why I have this
         audacity
     ];
 
@@ -157,30 +161,8 @@
         };
     };
 
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-
-    # List services that you want to enable:
-
-    # Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
-
-    # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
-
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.11"; # Did you read the comment?
 
-    services.power-profiles-daemon.enable = false;
-
-    services.thermald.enable = true;
 }

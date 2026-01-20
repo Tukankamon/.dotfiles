@@ -13,12 +13,15 @@
         ./../development/script.nix
     ];
 
-    custom-boot.enable = true;
     desktop = "niri";
 
     home-manager = {
         extraSpecialArgs = {inherit inputs;};
         users.aved = import ./home.nix;
+    };
+
+    modules = {
+        boot.enable = true;
     };
 
     networking.hostName = "dwebble"; # Define your hostname.

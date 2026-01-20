@@ -83,7 +83,7 @@
 in {
     # Add self-wrapped packages here
     nixpkgs.overlays = [
-        (import ./modules/alejandra)
+        (import ./packages/alejandra)
     ];
 
     nixpkgs.config.allowUnfreePredicate = pkg:

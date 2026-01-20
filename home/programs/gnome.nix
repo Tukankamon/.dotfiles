@@ -5,13 +5,11 @@
     inputs, # Or else stylix will break
     ...
 }: {
-    options = {
-        gnomeHome = lib.mkOption {
+    options.gnomeHome = lib.mkOption {
             type = lib.types.bool;
             default = false;
             example = true;
             description = "Enables the gnome desktop environment home configurations";
-        };
     };
 
     config = lib.mkIf config.gnomeHome {

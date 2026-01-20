@@ -8,10 +8,12 @@
 }: {
     imports = [
         ./../development/programming.nix
-        #./modules/autofirma.nix # Enable if needed
-        ./modules/desktopBundle.nix
-        ./modules/boot.nix
         ./sysPackages.nix
+
+        ./modules/desktop
+        ./modules/ollama
+        ./modules/boot.nix
+        ./modules/autofirma.nix
     ];
 
     nix.settings.experimental-features = [

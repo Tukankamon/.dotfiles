@@ -4,16 +4,14 @@
     pkgs,
     ...
 }: {
-    options = {
-        custom-boot.enable = lib.mkOption {
+    options.modules.boot.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             example = false;
             description = "sets the boot config for the pc";
-        };
     };
 
-    config = lib.mkIf config.custom-boot.enable {
+    config = lib.mkIf config.modules.boot.enable {
         environment.systemPackages = with pkgs; [
             vulkan-tools
             vulkan-loader
