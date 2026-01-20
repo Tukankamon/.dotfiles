@@ -23,10 +23,12 @@ bash <(curl -S https://raw.githubusercontent.com/Tukankamon/.dotfiles/main/setup
 Set the HOSTNAME parameter to either yamask or dwebble.
 "yamask" is the pc host while "dwebble" is the laptop one
 
+RepoName is optional is the name of your cloned repo. It is used when running: git clone www.url... RepoName
+
 If you have cloned the repo locally you can do the following only after having copied /etc/nixos/hardware-configuration.nix into either .dotfiles/pc or .dotfiles/laptop
 
 Failure to do so will most likely crash your system
-```
+```bash
 sudo nixos-rebuild switch --flake .#<HOSTNAME>
 ```
 
