@@ -37,7 +37,7 @@
         ripgrep # better grep
         #libinput #Idk if necessary for wacom tablet
         #libwacom # Wacom specifically
-        hyperfine # command benchmark
+        #hyperfine # command benchmark
         htop # Task manager for the terminal
         universal-android-debloater
         zoxide # better cd
@@ -76,7 +76,7 @@
         obs-studio
         #arduino-ide
         lact
-        gcolor3
+        #gcolor3 # Screen color picker
         qdirstat # See how much storage space each folder uses, GUI
     ];
 in {
