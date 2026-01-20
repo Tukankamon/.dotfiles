@@ -6,7 +6,7 @@
     inputs,
     ...
 }: {
-    imports = [./../programs/waybar.nix];
+    imports = [./../waybar.nix];
 
     options = {
         niriHome = lib.mkOption {
@@ -18,7 +18,7 @@
     };
 
     config = lib.mkIf config.niriHome {
-        xdg.configFile."niri/config.kdl".source = ./configs/niri.kdl;
+        xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
         home.packages = with pkgs; [
             waybar
