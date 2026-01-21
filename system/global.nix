@@ -1,6 +1,6 @@
 {
   inputs,
-  #pkgs,
+  pkgs,
   #onfig,
   #ib,
   #configuration,
@@ -88,6 +88,7 @@
     EDITOR = "vim";
     TERM = "xterm-256color"; # to be able to clear in ssh
   };
+  environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf"; #Doesnt worK
 
   programs.obs-studio.enableVirtualCamera = true;
 
