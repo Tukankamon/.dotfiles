@@ -13,11 +13,13 @@
       inputs.nixpkgs.follows = "nixpkgs"; # Check if the versions are the same
     };
 
+    /*
     vible = {
       #My own app
       url = "github:Tukankamon/vible";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    */
 
     # Check to see if this is in nixpkgs
     zen-browser = {
@@ -25,6 +27,7 @@
       # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     # Neovim configuration
@@ -43,6 +46,7 @@
     autofirma-nix = {
       url = "github:nix-community/autofirma-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     # The name you choose here doesnt have to have anything to do with pname
@@ -57,7 +61,6 @@
     nixpkgs,
     home-manager,
     nvf,
-    vible,
     nixpkgs-stable,
     ...
   } @ inputs: let
@@ -89,6 +92,8 @@
       builtins.mapAttrs (
         _: machine:
           nixpkgs.lib.nixosSystem {
+            # Special Args allows you to use inputs, system and stablePkgs inside every mmodules
+            # This is used for example when installing zen browser: inputs.zen-browser.x86.....
             specialArgs = {inherit inputs system stablePkgs;};
 
             modules =

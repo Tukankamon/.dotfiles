@@ -12,6 +12,7 @@ Help() {
 
 MAIN="main"
 PULL=0
+MSG=" "
 
 while getopts ":hpr:m:" option; do
 	case $option in

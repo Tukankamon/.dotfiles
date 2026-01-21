@@ -6,6 +6,7 @@
 }: let
   stable = with stablePkgs; [
     kicad # Very often will try to build from source on unstable
+    librewolf # Same as kicad
   ];
 
   unstable = with pkgs; [
@@ -60,7 +61,6 @@
     qbittorrent
     tor-browser
     brave
-    librewolf
     #libreoffice
     pavucontrol #Audio control
     zathura #PDF with vim binds
