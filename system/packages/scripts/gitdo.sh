@@ -47,7 +47,7 @@ fi
 git add -A
 git commit -m "$MSG"
 
-if [[ -n "$PULL" ]]; then
+if [[ $PULL != 1 ]]; then
 	git push origin "$MAIN"
 else
 	git pull origin "$MAIN" && git push origin "$MAIN"
