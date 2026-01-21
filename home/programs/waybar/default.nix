@@ -1,7 +1,6 @@
 {...}:
 #From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
 {
-
   programs.waybar = {
     enable = true;
     style = builtins.readFile ./waybar.css;

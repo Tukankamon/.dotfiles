@@ -37,3 +37,4 @@
 # --- PLEASE READ ---
 # When trying to install hyprland/Gnome these are the only things to change
 # (Unless changing things in the flake)
+

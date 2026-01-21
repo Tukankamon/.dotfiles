@@ -31,6 +31,7 @@
       gnome-disk-utility # Very nice gui for disks
       udiskie # Auto mount (GUI), if not usb needs to be mounted manually
       nautilus # File manager
+      foot #Terminal on wayland, supposed to bet faster
     ];
 
     services = {

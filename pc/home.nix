@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   imports = [
     ./../home/globalHome.nix
   ];
@@ -10,7 +8,7 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  desktopHome = [ "niri" "gnome" ];
+  desktopHome = ["niri" "gnome"];
 
   fonts.fontconfig.enable = true;
 

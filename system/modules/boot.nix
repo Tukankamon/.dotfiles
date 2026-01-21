@@ -13,8 +13,8 @@
 
   config = lib.mkIf config.modules.boot.enable {
     environment.systemPackages = with pkgs; [
-      vulkan-tools
-      vulkan-loader
+      #vulkan-tools
+      #vulkan-loader
     ]; # Had issues with wayland gamescope
 
     environment.variables = {

@@ -64,7 +64,6 @@
     #libreoffice
     pavucontrol #Audio control
     zathura #PDF with vim binds
-    foot #Terminal on wayland, supposed to bet faster
     vscodium
     #protonvpn-gui
     signal-desktop

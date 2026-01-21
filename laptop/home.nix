@@ -10,7 +10,7 @@
 
   # List of home configurations, they dont interfere with eatch other
   # Choose from niri, gnome, hyprland or none
-  desktopHome = [ "niri" "gnome" ];
+  desktopHome = ["niri" "gnome"];
 
   home.packages = with pkgs; [
     hello

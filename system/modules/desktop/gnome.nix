@@ -27,6 +27,9 @@
       geary
       yelp
       totem
+      gnome-weather
+      gnome-text-editor
+      decibels
     ];
 
     environment.systemPackages = with pkgs; [
