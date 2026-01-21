@@ -13,7 +13,7 @@ Help()
 
 MAIN="main"
 
-while getopts ":hp:r:m:" option; do
+while getopts ":hpr:m:" option; do
   case $option in
       h) # display Help
         Help
