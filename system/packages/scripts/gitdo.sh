@@ -3,32 +3,49 @@
 Help()
 {
   # Display Help
-  echo "Add commit message later in the script"
+  echo "Runs git add, commit and push and prompts you for a git message"
   echo
+  echo "-m to add a commit message inline"
+  echo "-p to pull before pushing"
+  echo "-r to change the remote (default is main)"
   echo "-h for help"
 }
 
-while getopts ":h" option; do
+MAIN="main"
+
+while getopts ":hp:r:m:" option; do
   case $option in
       h) # display Help
         Help
         exit;;
+
+      p)
+        PULL=1;;
+
+      r)
+        MAIN="$OPTARG";;
+
+      m)
+        MSG="$OPTARG";;
+
       \?) # Invalid option
-        echo "Error: Invalid option"
-        exit;;
+        echo "Error: Invalid option -$OPTARG"
+        exit 1;;
 
   esac
 done
 
-if [[ -z "$1" ]]; then
+if [[ -z "$MSG" ]]; then
   echo "Commit description: "
-  read -r message;
-
-else message="$1";
-
+  read -r MSG
 fi
 
 
-git add -A && \
-git commit -m "$message" && \
-git push origin main
+git add -A
+git commit -m "$MSG" || exit 1
+
+if [[ -n "$PULL" ]]; then
+  git pull origin "$MAIN" && git push origin "$MAIN";
+
+else git push origin "$MAIN"
+fi
