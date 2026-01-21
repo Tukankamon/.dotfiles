@@ -20,8 +20,14 @@ while getopts ":h" option; do
   esac
 done
 
-echo "Commit description: "
-read -r message
+if [[ -z "$1" ]]; then
+  echo "Commit description: "
+  read -r message;
+
+else message="$1";
+
+fi
+
 
 git add -A && \
 git commit -m "$message" && \
