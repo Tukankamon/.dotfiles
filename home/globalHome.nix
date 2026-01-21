@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./programs/kitty.nix
+    ./programs/kitty
     ./programs/fastfetch.nix
     ./desktopHomeBundle.nix
     ./programs/nvim.nix
