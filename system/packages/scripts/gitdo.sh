@@ -15,7 +15,7 @@ MAIN="main"
 
 while getopts ":hpr:m:" option; do
   case $option in
-      h) # display Help
+      h)
         Help
         exit;;
 
@@ -28,7 +28,7 @@ while getopts ":hpr:m:" option; do
       m)
         MSG="$OPTARG";;
 
-      \?) # Invalid option
+      \?) 
         echo "Error: Invalid option -$OPTARG"
         exit 1;;
 
