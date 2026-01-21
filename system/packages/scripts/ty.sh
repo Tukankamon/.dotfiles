@@ -2,9 +2,8 @@
 # BROKEN
 # Works normally by chmod but doesnt trhough nix
 
-
 if [ -z "$1" ]; then
-    echo "Usage: $0 file.typ"
+	echo "Usage: $0 file.typ"
 fi
 
 # Maybe needs core utils
