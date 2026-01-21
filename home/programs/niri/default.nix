@@ -6,7 +6,7 @@
   inputs,
   ...
 }: {
-  imports = [./../waybar.nix];
+  imports = [./../waybar];
 
   options = {
     niriHome = lib.mkOption {
