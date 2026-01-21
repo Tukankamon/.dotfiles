@@ -13,13 +13,8 @@
   };
 
   config = lib.mkIf config.gnomeHome {
-    home.packages = with pkgs; [
-      dconf-editor
-      gnome-tweaks
-
-      gnomeExtensions.blur-my-shell # doesnt work rn
-      gnomeExtensions.gsconnect
-      gnomeExtensions.appindicator
+    home.packages = [
+      # Installed on system level (extensions too)
     ];
 
     gtk = {

@@ -5,15 +5,16 @@
 }: {
   options = {
     desktopHome = lib.mkOption {
-      # Use lib.types.nullOr to allow either null OR the following type.
       # Use lib.types.enum to restrict the string values to a specific list.
-      type = lib.types.nullOr (lib.types.enum ["gnome" "hyprland" "niri"]); #I think u can do 2 environments at the same time
+      #I think u can do 2 environments at the same time
+      type = lib.types.listOf (lib.types.enum ["gnome" "hyprland" "niri" "none"]);
 
-      default = "niri";
+
+      default = [ "niri" ]; # Value is a list, not a string
 
       description = ''Selects the DE/WM home manager config'';
 
-      example = "gnome";
+      example = [ "gnome" ];
     };
   };
   imports = [
@@ -24,8 +25,8 @@
   ];
 
   config = {
-    gnomeHome = lib.mkIf (config.desktopHome == "gnome") true;
-    hyprHome = lib.mkIf (config.desktopHome == "hyprland") true;
-    niriHome = lib.mkIf (config.desktopHome == "niri") true;
+    gnomeHome = lib.mkIf (lib.elem "gnome" config.desktopHome) true;
+    hyprHome  = lib.mkIf (lib.elem "hyprland" config.desktopHome) true;
+    niriHome  = lib.mkIf (lib.elem "niri" config.desktopHome) true;
   };
 }

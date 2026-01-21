@@ -29,6 +29,16 @@
       totem
     ];
 
+    environment.systemPackages = with pkgs; [
+      dconf-editor
+      gnome-tweaks
+
+      # Extensions are customized in the home settings
+      gnomeExtensions.blur-my-shell # doesnt work rn
+      gnomeExtensions.gsconnect
+      gnomeExtensions.appindicator
+    ];
+
     stylix = {
       # This is just half, the other is in the home module
       enable = true;

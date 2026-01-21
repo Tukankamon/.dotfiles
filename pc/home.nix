@@ -1,6 +1,4 @@
 {
-  pkgs,
-  config,
   ...
 }: {
   imports = [
@@ -12,9 +10,7 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
-    hello
-  ];
+  desktopHome = [ "niri" "gnome" ];
 
   fonts.fontconfig.enable = true;
 
