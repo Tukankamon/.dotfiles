@@ -6,7 +6,10 @@
   inputs,
   ...
 }: {
-  imports = [./../waybar];
+  imports = [
+    ./../waybar
+    ./../foot
+  ];
 
   options = {
     niriHome = lib.mkOption {
@@ -46,7 +49,6 @@
       };
     };
 
-    programs.foot.enable = true;
     programs.swaylock.enable = true;
     programs.wlogout = {
       # No stylix support yet

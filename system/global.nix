@@ -88,7 +88,7 @@
     EDITOR = "vim";
     TERM = "xterm-256color"; # to be able to clear in ssh
   };
-  environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf"; #Doesnt worK
+  #environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf"; #Doesnt worK and sometimes messes if the main package is from stable
 
   programs.obs-studio.enableVirtualCamera = true;
 

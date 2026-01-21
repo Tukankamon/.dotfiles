@@ -131,19 +131,6 @@
     audacity
   ];
 
-  fonts.packages = with pkgs; [
-    # I dont remember why I have so many
-    #font-awesome
-    #font-awesome_5
-    #font-awesome_6
-
-    #nerd-fonts.code-new-roman
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.hack
-  ];
-
   #systemd.packages = with pkgs; [ lact ];
   #systemd.services.lactd.wantedBy = ["multi-user.target"];
   hardware = {

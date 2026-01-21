@@ -13,14 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; # Check if the versions are the same
     };
 
-    /*
-    vible = {
-      #My own app
-      url = "github:Tukankamon/vible";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    */
-
     # Check to see if this is in nixpkgs
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

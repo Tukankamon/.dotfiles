@@ -86,16 +86,6 @@
       #  wget
     ];
 
-  fonts.packages = with pkgs; [
-    #font-awesome
-    #font-awesome_5
-    #font-awesome_6
-    #nerd-fonts.code-new-roman
-    nerd-fonts.jetbrains-mono
-    #pkgs.nerd-fonts.fira-code
-    #pkgs.nerd-fonts.droid-sans-mono
-    #pkgs.nerd-fonts.hack
-  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -82,6 +82,10 @@
 in {
   imports = [./packages];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       #Doesnt install, just allows
