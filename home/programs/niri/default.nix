@@ -3,7 +3,6 @@
   config,
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   imports = [
@@ -33,7 +32,8 @@
       enable = true;
       settings = {
         main = {
-          dpi-aware = "no";
+          dpi-aware = "yes";
+          minimal-lines = true;
           font = lib.mkForce "DejaVu Sans:size=20"; # Might interfere with stylix font
         };
       };
@@ -103,6 +103,19 @@
         terminal = 0.9;
       };
 
+      sizes = {
+        terminal = 14; # Default for foot is 10
+      };
+
+      fonts = {
+        monospace = {
+          #package = pkgs.nerd-fonts.jetbrains-mono;
+          name = "JetBrainsMono Nerd Font Mono";
+        };
+        sansSerif = {};
+        serif = {};
+      };
+     
       targets = {
         fuzzel.enable = true;
         foot.enable = true;

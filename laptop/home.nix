@@ -38,7 +38,9 @@
       hms = "home-manager switch --flake ~/.dotfiles#dwebble";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-      #Maybe find a way to index e.g: automated-commit-1
+
+      # Lists all installed packages (including dependencies
+      nxls = "nix-store --query --requisites /run/current-system";
     };
 
     functions = {

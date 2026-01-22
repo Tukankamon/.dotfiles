@@ -31,6 +31,9 @@
       hms = "home-manager switch --flake ~/.dotfiles#yamask";
 
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+
+      # Lists all installed packages (including dependencies
+      nxls = "nix-store --query --requisites /run/current-system";
     };
 
     functions = {

@@ -1,6 +1,7 @@
 final: prev: let
   config = ./alejandra.toml;
 in {
+  alejandra-unwrapped = prev.alejandra;
   alejandra = prev.symlinkJoin {
     name = "alejandra";
     paths = [prev.alejandra];
