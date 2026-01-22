@@ -12,6 +12,7 @@
     ./modules/ollama
     ./modules/boot.nix
     ./modules/autofirma.nix
+    ./modules/gaming.nix
   ];
 
   nix.settings.experimental-features = [

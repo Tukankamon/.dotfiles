@@ -26,6 +26,7 @@
     ollama.enable = true;
     boot.enable = true;
     autofirma.enable = false;
+    gaming.enable = true;
   };
 
   home-manager = {
@@ -76,6 +77,7 @@
       "wheel"
       "adbusers"
       "dialout" # For arduino and stuff
+      "vboxusers"
     ];
 
     # Set the password using the passwd command. That way it is not stored inside of the config file
@@ -87,38 +89,15 @@
       # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
       inputs.zen-browser.packages."x86_64-linux".default
 
-      xonotic # FOSS quake-like game
     ];
   };
-
-  users.extraGroups.vboxusers.members = ["aved"];
 
   environment.shells = with pkgs; [fish]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  programs.steam = {
-    #Unfree
-    enable = true;
-    package = pkgs.steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
-          gamescope
-        ];
-    };
-  };
-
-  programs.gamescope = {
-    enable = true;
-    capSysNice = true;
-  };
-
-  programs.gamemode.enable = true;
-
   environment.systemPackages = with pkgs; [
     #inputs.vible.packages.x86_64-linux.default
-    mangohud # Fps overlay (add mangohud %command% to steam launch options in the game)
-
     discord #Unfree
     #darktable  # Breaks in unstable
     #davinci-resolve
@@ -127,7 +106,6 @@
     kdePackages.kdenlive
     #rpi-imager #Broken
     prismlauncher
-    #heroic
     audacity
   ];
 

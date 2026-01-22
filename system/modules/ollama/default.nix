@@ -7,7 +7,7 @@
   # Ollama allows you to run different local AI models by running "ollama run <model>"
 
   options.modules.ollama = {
-    enable = lib.mkEnableOption " Enable or disable ollama and accesories";
+    enable = lib.mkEnableOption "Enable or disable ollama and accesories";
     # Maybe make option to add or not additional scripts
   };
 

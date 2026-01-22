@@ -95,19 +95,15 @@
       image = ./../../../other/images/roadwp.jpg;
       polarity = "dark";
       autoEnable = false;
-      fonts.sizes = {
-        terminal = 10;
-      };
 
       opacity = {
         terminal = 0.9;
       };
-
-      sizes = {
-        terminal = 14; # Default for foot is 10
-      };
-
       fonts = {
+        sizes = {
+          terminal = 12; # Default on foot is 10
+        };
+
         monospace = {
           #package = pkgs.nerd-fonts.jetbrains-mono;
           name = "JetBrainsMono Nerd Font Mono";
