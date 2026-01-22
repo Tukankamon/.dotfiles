@@ -40,7 +40,7 @@
     #libinput #Idk if necessary for wacom tablet
     #libwacom # Wacom specifically
     #hyperfine # command benchmark
-    htop # Task manager for the terminal
+    btop # Task manager for the terminal
     universal-android-debloater
     zoxide # better cd
     dysk # See disk usage
@@ -91,10 +91,6 @@ in {
       "steam-unwrapped"
       "discord"
     ];
-
-  programs = {
-    #adb.enable = true;
-  };
 
   environment.systemPackages = stable ++ unstable;
 }

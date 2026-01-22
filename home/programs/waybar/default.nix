@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 #From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
 {
   programs.waybar = {
@@ -57,9 +57,12 @@
               "today" = "<span color='#fAfBfC'><b>{}</b></span>";
             };
           };
+
+          "on-click" = "${pkgs.gnome-calendar}/bin/gnome-calendar";
+
           "actions" = {
-            "on-click-right" = "shift_down";
-            "on-click" = "shift_up";
+            #"on-click-right" = "shift_down";
+            #"on-click" = "shift_up";
           };
         };
 
