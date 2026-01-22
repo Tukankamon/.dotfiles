@@ -2,6 +2,7 @@
   imports = [
     ./scripts
     ./programming.nix
+    ./fonts.nix
   ];
 
   # Add self-wrapped packages here
