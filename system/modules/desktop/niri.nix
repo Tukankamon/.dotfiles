@@ -37,16 +37,5 @@
       udisks2.enable = true; # Semi automounting usbs, use udiske (home-manager) for GUI and notis
       gvfs.enable = true; # This aswell, polkit needs to be enabled aswell
     };
-    stylix = {
-      # This is just half, the other is in the home module
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml"; #Could change this
-      image = ./../../../other/images/roadwp.jpg;
-      autoEnable = false;
-      targets = {
-        grub.enable = false;
-        chromium.enable = true;
-      };
-    };
   };
 }

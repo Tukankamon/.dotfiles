@@ -91,8 +91,10 @@
             modules =
               [
                 machine.nixosConfig
-                inputs.stylix.nixosModules.stylix
                 inputs.autofirma-nix.nixosModules.default
+
+                # Enable this for grub and chromium theming
+                #inputs.stylix.nixosModules.stylix
               ]
               ++ machine.extraNixosModules;
           }
@@ -109,7 +111,8 @@
             modules =
               [
                 machine.homeConfig
-                inputs.stylix.homeModules.stylix
+
+                # No need to import stylix here., already imported in stylix.nix (home)
               ]
               ++ machine.extraHomeModules;
 

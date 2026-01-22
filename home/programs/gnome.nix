@@ -1,8 +1,6 @@
 {
   config,
-  pkgs,
   lib,
-  inputs, # Or else stylix will break
   ...
 }: {
   options.gnomeHome = lib.mkOption {

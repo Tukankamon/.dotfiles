@@ -1,6 +1,7 @@
-{ lib, pkgs, config, ... }: let
+{ lib, pkgs, config, inputs, ... }: let
   cfg = config.modulesHome.stylix;
 
+# To enable grub and chromium theming you need the nixosModule not the home one
 in {
   options.modulesHome.stylix = {
     enable = lib.mkEnableOption "Enable stylix config";
@@ -14,6 +15,8 @@ in {
     };
     */
   };
+
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   config = lib.mkIf cfg.enable {
 
