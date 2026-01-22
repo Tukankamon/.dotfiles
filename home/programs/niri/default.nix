@@ -6,8 +6,9 @@
   ...
 }: {
   imports = [
-    ./../waybar
-    ./../foot
+    ../waybar
+    ../foot
+    ../stylix.nix
   ];
 
   options = {
@@ -22,9 +23,7 @@
   config = lib.mkIf config.niriHome {
     xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
-    home.packages = with pkgs; [
-      # Installed on system level
-    ];
+    modulesHome.stylix.enable = true;
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
     programs.fuzzel = {
@@ -86,39 +85,6 @@
           keybind = "r";
         }
       ];
-    };
-
-    stylix = {
-      #This is just half, the other is in the sys module
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
-      image = ./../../../other/images/roadwp.jpg;
-      polarity = "dark";
-      autoEnable = false;
-
-      opacity = {
-        terminal = 0.9;
-      };
-      fonts = {
-        sizes = {
-          terminal = 12; # Default on foot is 10
-        };
-
-        monospace = {
-          #package = pkgs.nerd-fonts.jetbrains-mono;
-          name = "JetBrainsMono Nerd Font Mono";
-        };
-        sansSerif = {};
-        serif = {};
-      };
-     
-      targets = {
-        fuzzel.enable = true;
-        foot.enable = true;
-        swaylock.enable = true;
-        fish.enable = true;
-        #niri.enable = true; #Track issue: https://github.com/nix-community/stylix/issues/1746
-      };
     };
   };
 }
