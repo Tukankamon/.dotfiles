@@ -62,8 +62,8 @@
     jack.enable = true;
   };
 
-  services.power-profiles-daemon.enable = false;
-  services.thermald.enable = true;
+  #services.power-profiles-daemon.enable = false;
+  #services.thermald.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -88,7 +88,6 @@
       # Zen browser add like 400 package dependencies and my OCD doesnt like that
       # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
       inputs.zen-browser.packages."x86_64-linux".default
-
     ];
   };
 
@@ -108,19 +107,6 @@
     prismlauncher
     audacity
   ];
-
-  #systemd.packages = with pkgs; [ lact ];
-  #systemd.services.lactd.wantedBy = ["multi-user.target"];
-  hardware = {
-    #For davinci resolve
-    enableRedistributableFirmware = true; # ChatGPT recommendation
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-      ];
-    };
-  };
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

@@ -21,9 +21,22 @@
       ROC_ENABLE_PRE_VEGA = "1";
     };
 
-    hardware.graphics.enable = true;
+    #systemd.packages = with pkgs; [ lact ];
+    #systemd.services.lactd.wantedBy = ["multi-user.target"];
+    hardware = {
+      #For davinci resolve
+      enableRedistributableFirmware = true; # ChatGPT recommendation
+      graphics = {
+        enable = true;
+        enable32Bit = true;
+        extraPackages = with pkgs; [
+        ];
+      };
+    };
+
     boot = {
-      initrd.kernelModules = ["amdgpu"]; # davinci-resolve  Might not be able to use amdgpu-pro bc the kernel is not up to date enough
+      initrd.kernelModules = ["amdgpu"];
+      # davinci-resolve, Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
       loader = {
         systemd-boot.enable = false; # Change when using / not using grub

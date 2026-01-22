@@ -1,6 +1,6 @@
 {
   inputs,
-  #onfig,
+  pkgs,
   #ib,
   #configuration,
   ...
@@ -65,22 +65,27 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.wacom.enable = true; # Dont think this is necessary (works iffy without it)
-  # Enable the X11 windowing system.
-  #services.xserver.videoDrivers = [ "amdgpu" ];
-  services.xserver = {
-    enable = true;
 
-    # Configure keymap in X11
-    # https://man.archlinux.org/man/xkeyboard-config-2.7.en
-    xkb = {
-      layout = "es";
-      variant = "";
-      options = "caps:escape";
+  # Enable the X11 windowing system.
+  services = {
+    xserver = {
+      enable = true;
+      wacom.enable = true;
+      #videoDrivers = [ "amdgpu" ];
+
+      # Configure keymap in X11
+      # https://man.archlinux.org/man/xkeyboard-config-2.7.en
+      xkb = {
+        layout = "es";
+        variant = "";
+        options = "caps:escape";
+      };
+      autoRepeatInterval = 50;
+      autoRepeatDelay = 0;
     };
-    autoRepeatInterval = 50;
-    autoRepeatDelay = 0;
+
   };
+
   # Configure console keymap
   console.keyMap = "es";
 
