@@ -22,11 +22,9 @@ nix run github.com/Tukankamon/.dotfiles <HOSTNAME> <RepoName>
 ```
 Both options are optional and they default to "yamask" (that being the pc config) and .dotfiles respectively
 
-Set the HOSTNAME parameter to either yamask or dwebble.
-"yamask" is the pc host while "dwebble" is the laptop one
+Set the HOSTNAME parameter to either yamask or dwebble, "yamask" is the pc host while "dwebble" is the laptop one
 
-RepoName is optional is the name of your cloned repo
-It is used when running: git clone https://github.com/Tukankamon/.dotfiles.git RepoName
+RepoName is optional and is the name of your cloned repo and therefore the folder on your system, it is used when running git clone https://github.com/Tukankamon/.dotfiles.git <RepoName>
 
 ## Manual install
 If not, you can always curl the script
@@ -45,4 +43,5 @@ sudo nixos-rebuild switch --flake .#<HOSTNAME>
 ```
 
 You must set the user password with the passwd command
+
 There is an explanation for this in pc/configuration.nix or laptop/configuration.nix in the user configuration
