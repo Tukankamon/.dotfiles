@@ -19,6 +19,9 @@ The pc host specifically comes with a specialisation for gnome, meaning for ever
 If you have flakes already enabled in your system you can run:
 ```nix
 nix run github.com/Tukankamon/.dotfiles <HOSTNAME> <RepoName>
+
+# Without flakes in configuration.nix, this enables them temporarily
+nix run --extra-experimental-features "flakes nix-command" github.com/Tukankamon/.dotfiles <HOSTNAME> <RepoName>
 ```
 Both options are optional and they default to "yamask" (that being the pc config) and .dotfiles respectively
 

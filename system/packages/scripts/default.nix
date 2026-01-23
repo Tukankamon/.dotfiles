@@ -1,6 +1,9 @@
 {pkgs, ...}:
 #Make bash scripts and use as pkgs
 #If the command is too long you can just execute a bash script from the "text" section
+let
+  duplicatePy = pkgs.writeShellScriptBin "duplicate-temp" ./duplicate.py;
+in
 {
   environment.systemPackages = with pkgs; [
     (writeShellApplication {
@@ -12,6 +15,11 @@
       # Allows reading from a file instead of an inline string
       text = builtins.readFile ./gitdo.sh;
     })
+
+    # The $@ makes it so that it passes the flags through
+    (writeShellScriptBin "duplicate" ''
+      nix-store-query --requisites /run/current-system | ${duplicatePy} "$@"
+      '')
 
     /*
     (writeShellApplication {
