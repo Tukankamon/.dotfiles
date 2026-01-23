@@ -13,7 +13,7 @@
     ./modules/boot.nix
     ./modules/autofirma.nix
     ./modules/gaming.nix
-    .modules/amd.nix
+    ./modules/amd.nix
   ];
 
   nix.settings.experimental-features = [

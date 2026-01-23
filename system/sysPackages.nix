@@ -7,11 +7,13 @@
   stable = with stablePkgs; [
     kicad # Very often will try to build from source on unstable
     librewolf # Same as kicad
+
+    # Unfree
+    obsidian
   ];
 
   unstable = with pkgs; [
     #Unfree
-    obsidian
     #spotify
 
     # Terminal and config
