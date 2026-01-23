@@ -39,7 +39,6 @@
     #jetbrains.idea-community   #for developing in kotlin
     kdePackages.kdenlive
     #rpi-imager #Broken
-    prismlauncher
     audacity
 
     # Zen browser add like 400 package dependencies and my OCD doesnt like that
