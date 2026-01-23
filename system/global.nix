@@ -33,7 +33,7 @@
   services.openssh = {
     enable = true;
     settings = {
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       KbdInteractiveAuthentication = false; # Only SSH connection, no passwd
       AllowUsers = [ "aved" ];
     };
