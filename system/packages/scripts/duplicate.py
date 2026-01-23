@@ -6,7 +6,10 @@ import argparse
 
 def parse_store_paths(file_path):
     packages = []
-    if file_path == "-":
+    if file_path is None:
+        if sys.stdin.isatty():
+            print("ERROR: No input detected")
+            sys.exit(1)
         lines = [line.strip() for line in sys.stdin if line.strip()]
     else:
         with open(file_path, 'r') as f:
@@ -91,7 +94,7 @@ def print_tree(tree, v):
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze nix-store --query --requisites output")
-    parser.add_argument("file", help="File or '-' for stdin")
+    parser.add_argument("file", nargs="?", help="File or empty for stdin")
     parser.add_argument("-n", type=int, default=1, help="Minimum occurrences to display")
     parser.add_argument("-v", type=int, choices=[0,1], default=0, help="Verbose mode")
     args = parser.parse_args()
