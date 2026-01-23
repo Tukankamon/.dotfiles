@@ -28,6 +28,9 @@
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Forgot what this does
 
+  # SSH daemon is on for the system recieving files
+  # So activating for both will give a two way connection
+  services.openssh.enable = true;
   networking.firewall = {
     # for gsconnect
     enable = true;
