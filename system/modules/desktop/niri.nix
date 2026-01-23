@@ -30,7 +30,6 @@
       foot #Terminal on wayland, supposed to bet faster
 
       # Gnome stuff
-      gnome-calendar
       nautilus # File manager
       gnome-disk-utility # Very nice gui for disks
     ];
