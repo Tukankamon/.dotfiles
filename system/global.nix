@@ -30,7 +30,14 @@
 
   # SSH daemon is on for the system recieving files
   # So activating for both will give a two way connection
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false; # Only SSH connection, no passwd
+      AllowUsers = [ "aved" ];
+    };
+  };
   networking.firewall = {
     # for gsconnect
     enable = true;
