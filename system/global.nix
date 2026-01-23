@@ -38,6 +38,11 @@
       AllowUsers = [ "aved" ];
     };
   };
+  networking.extraHosts = ''
+    192.168.0.185 dwebble
+    192.168.0.186 yamask
+    '';
+
   networking.firewall = {
     # for gsconnect
     enable = true;
