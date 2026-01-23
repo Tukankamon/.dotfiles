@@ -15,10 +15,12 @@ The pc host specifically comes with a specialisation for gnome, meaning for ever
 
 # Setup
 
-Run 
-```bash
-bash <(curl -S https://raw.githubusercontent.com/Tukankamon/.dotfiles/main/setup.sh) <HOSTNAME> <RepoName> (Optional)
+## Nix flake
+If you have flakes already enabled in your system you can run:
+```nix
+nix run github.com/Tukankamon/.dotfiles <HOSTNAME> <RepoName>
 ```
+Both options are optional and they default to "yamask" (that being the pc config) and .dotfiles respectively
 
 Set the HOSTNAME parameter to either yamask or dwebble.
 "yamask" is the pc host while "dwebble" is the laptop one
@@ -26,9 +28,18 @@ Set the HOSTNAME parameter to either yamask or dwebble.
 RepoName is optional is the name of your cloned repo
 It is used when running: git clone https://github.com/Tukankamon/.dotfiles.git RepoName
 
+## Manual install
+If not, you can always curl the script
+```bash
+bash <(curl -S https://raw.githubusercontent.com/Tukankamon/.dotfiles/main/setup.sh) <HOSTNAME> <RepoName>
+```
+
+## hardware-configuration.nix
 If you have cloned the repo locally you can do the following only after having copied /etc/nixos/hardware-configuration.nix into either .dotfiles/pc or .dotfiles/laptop
 
-Failure to do so will most likely crash your system
+Failure to do so will most likely crash your system (the script does it automatically)
+
+Finally you can:
 ```bash
 sudo nixos-rebuild switch --flake .#<HOSTNAME>
 ```

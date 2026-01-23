@@ -79,15 +79,17 @@
       };
     };
   in {
+    packages.${system}.default = # Run with nix run path/or/link/to/flake
+        pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
+
     # Applies the machines map from before as a general configuration
     nixosConfigurations =
       builtins.mapAttrs (
         _: machine:
           nixpkgs.lib.nixosSystem {
-            # Special Args allows you to use inputs, system and stablePkgs inside every mmodules
-            # This is used for example when installing zen browser: inputs.zen-browser.x86.....
+            # Special Args allows you to use inputs, system and stablePkgs inside every module
+            # This is used for example when installing zen browser: inputs.zen-browser.
             specialArgs = {inherit inputs system stablePkgs;};
-
             modules =
               [
                 machine.nixosConfig

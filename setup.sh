@@ -7,7 +7,10 @@
 HOST="$1"
 
 if [ -z "$HOST" ]; then
-	echo "Usage: bash setup.sh <HOSTNAME> <RepoName> (Optional)"
+  echo "Usage: bash setup.sh <HOSTNAME> (Optional) <RepoName> (Optional)"
+  echo "<HOSTNAME> is to be chosen for 'yamask' or 'dwebble'. Default is 'yamask'"
+  echo "RepoName is the name of the cloned git repo. Default is '.dotfiles'"
+  echo 
 fi
 
 if [ "$HOST" != "dwebble" ] && [ "$HOST" != "yamask" ]; then

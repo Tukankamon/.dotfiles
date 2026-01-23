@@ -35,6 +35,7 @@
     };
 
     boot = {
+
       initrd.kernelModules = ["amdgpu"];
       # davinci-resolve, Might not be able to use amdgpu-pro bc the kernel is not up to date enough
 
