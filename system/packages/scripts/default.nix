@@ -13,8 +13,10 @@
       text = builtins.readFile ./gitdo.sh;
     })
 
-    # The $@ makes it so that it passes the flags through
-    (writeShellScriptBin "duplicate" (builtins.readFile ./duplicate.py)
+    # Without flakeIgnore you get trivial errors (like missing space) while building
+    (writers.writePython3Bin "duplicate" {
+      flakeIgnore = [ "E501" "E305" "E231" "E302" "E226" "E265" ]; }
+        ./duplicate.py)
 
     /*
     (writeShellApplication {
