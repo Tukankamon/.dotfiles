@@ -27,7 +27,25 @@
     boot.enable = true;
     autofirma.enable = false;
     gaming.enable = true;
+    amd.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    #inputs.vible.packages.x86_64-linux.default
+    discord #Unfree
+    #darktable  # Breaks in unstable
+    #davinci-resolve
+    deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
+    #jetbrains.idea-community   #for developing in kotlin
+    kdePackages.kdenlive
+    #rpi-imager #Broken
+    prismlauncher
+    audacity
+
+    # Zen browser add like 400 package dependencies and my OCD doesnt like that
+    # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+    inputs.zen-browser.packages."x86_64-linux".default
+  ];
 
   home-manager = {
     # Not necesary but now hm also rebuilds with nixos-rebuild
@@ -68,7 +86,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Set the password using the passwd command. That way it is not stored inside of the config file
+  # If you still want it to be declarative, has it with mkpasswd and set it below
+  #hashedPassword = "";
   users.users.aved = {
     isNormalUser = true;
     description = "aved";
@@ -79,34 +99,12 @@
       "dialout" # For arduino and stuff
       "vboxusers"
     ];
-
-    # Set the password using the passwd command. That way it is not stored inside of the config file
-    # If you still want it to be declarative, has it with mkpasswd and set it below
-    #hashedPassword = "";
-
-    packages = with pkgs; [
-      # Zen browser add like 400 package dependencies and my OCD doesnt like that
-      # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
-      inputs.zen-browser.packages."x86_64-linux".default
-    ];
   };
 
   environment.shells = with pkgs; [fish]; # Following a video
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    #inputs.vible.packages.x86_64-linux.default
-    discord #Unfree
-    #darktable  # Breaks in unstable
-    #davinci-resolve
-    deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
-    #jetbrains.idea-community   #for developing in kotlin
-    kdePackages.kdenlive
-    #rpi-imager #Broken
-    prismlauncher
-    audacity
-  ];
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

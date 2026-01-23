@@ -42,6 +42,7 @@ Finally you can:
 sudo nixos-rebuild switch --flake .#<HOSTNAME>
 ```
 
+# Post setup considerations
 You must set the user password with the passwd command
 
 There is an explanation for this in pc/configuration.nix or laptop/configuration.nix in the user configuration

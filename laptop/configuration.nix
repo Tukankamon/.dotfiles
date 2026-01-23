@@ -23,6 +23,10 @@
     boot.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+  ];
+
   networking.hostName = "dwebble"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -54,23 +58,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Set the password using the passwd command. That way it is not stored inside of the config file
+  # If you still want it to be declarative, has it with mkpasswd and set it below
+  #hashedPassword = "";
   users.users.aved = {
     isNormalUser = true;
     description = "aved";
     extraGroups = [
       "networkmanager"
       "wheel"
-      #"input"
-    ];
-
-    # Set the password using the passwd command. That way it is not stored inside of the config file
-    # If you still want it to be declarative, has it with mkpasswd and set it below
-    #hashedPassword = "";
-
-    packages = with pkgs; [
-      #  thunderbird
-      inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     ];
   };
 
@@ -78,13 +74,6 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-  environment.systemPackages =
-    # with pkgs;
-    [
-      #gnomeExtensions.search-light
-      #sops
-      #  wget
-    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

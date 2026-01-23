@@ -12,33 +12,7 @@
   };
 
   config = lib.mkIf config.modules.boot.enable {
-    environment.systemPackages = with pkgs; [
-      #vulkan-tools
-      #vulkan-loader
-    ]; # Had issues with wayland gamescope
-
-    environment.variables = {
-      ROC_ENABLE_PRE_VEGA = "1";
-    };
-
-    #systemd.packages = with pkgs; [ lact ];
-    #systemd.services.lactd.wantedBy = ["multi-user.target"];
-    hardware = {
-      #For davinci resolve
-      enableRedistributableFirmware = true; # ChatGPT recommendation
-      graphics = {
-        enable = true;
-        enable32Bit = true;
-        extraPackages = with pkgs; [
-        ];
-      };
-    };
-
     boot = {
-
-      initrd.kernelModules = ["amdgpu"];
-      # davinci-resolve, Might not be able to use amdgpu-pro bc the kernel is not up to date enough
-
       loader = {
         systemd-boot.enable = false; # Change when using / not using grub
 
@@ -46,7 +20,7 @@
 
         timeout = 1;
         grub = {
-          enable = !config.boot.loader.systemd-boot.enable;
+          enable = true;
           devices = ["nodev"];
           efiSupport = true;
           useOSProber = true; #Detects other operating systems, doesnt detect windows on other drive
@@ -72,7 +46,7 @@
       };
 
       kernelModules = [
-        "snd-seq"
+        "snd-seq" # Forgot what this is for, seems like an ALSA driver
         "snd-rawmidi"
       ];
       kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox

@@ -13,6 +13,7 @@
     ./modules/boot.nix
     ./modules/autofirma.nix
     ./modules/gaming.nix
+    .modules/amd.nix
   ];
 
   nix.settings.experimental-features = [
@@ -63,8 +64,6 @@
     xserver = {
       enable = true;
       wacom.enable = true;
-      #videoDrivers = [ "amdgpu" ];
-
       # Configure keymap in X11
       # https://man.archlinux.org/man/xkeyboard-config-2.7.en
       xkb = {

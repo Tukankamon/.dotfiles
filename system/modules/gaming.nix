@@ -27,7 +27,7 @@
 
       gamemode = {
         enable = true;
-        settings = {
+        settings = { # Find a way to enable this only if modules.amd.enable is true
           #gpu.amd_performance_level = "high"; # Haven't tested this
         };
       };
