@@ -5,3 +5,7 @@ Figure out a way to sort Home manager standalone, I have spread out files for th
 nvf: map gj to j, gk to k and default clipboard to the system one
 
 maybe nushell?????
+
+Screen brightness on laptop
+
+configure browsers to declare extensions
