@@ -24,6 +24,7 @@
     lf
     yazi # Better lf, keeping the old bc it is much more comortable to type
     bat # Better cat
+    tealdeer # Less extensive man pages for quicker understanding (tldr)
     git
     kitty
     fzf # fuzzy file search, needed for zoxide

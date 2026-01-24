@@ -91,11 +91,30 @@
     };
 
     # Kills processes when RAM usage is too much so it doesn't hang
-    # Useful if nix tries to build from source something like a browser
+    # Useful if nix tries to build from source something like a browser (actually works)
     earlyoom = {
       enable = true;
-    };
+      
+      # WARNING: enabling this option (while convenient) should not be done
+      # on a machine where you do not trust the other users as it allows
+      # any other local user to DoS your session by spamming notifications.
+      #enableNotifications = true; # BROKEN
 
+      # Default is 3600s, seems to long to me
+      #reportInterval = 3600;
+
+      killHook = pkgs.writeShellScript "earlyoom-kill-hook" ''
+        echo "========================="
+        echo -e "Process $EARLYOOM_NAME was killed (owned by $EARLYOOM_UID)" 
+        echo "========================="
+      '';
+
+      # Kills browser before compilers so this doesnt really work
+      extraArgs = [
+        "--prefer"
+        "'^(gcc|clang|clang\+\+|rustc)$'"
+      ];
+    };
   };
 
   # Configure console keymap
