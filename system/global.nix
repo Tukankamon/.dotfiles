@@ -90,6 +90,12 @@
       autoRepeatDelay = 0;
     };
 
+    # Kills processes when RAM usage is too much so it doesn't hang
+    # Useful if nix tries to build from source something like a browser
+    earlyoom = {
+      enable = true;
+    };
+
   };
 
   # Configure console keymap

@@ -53,7 +53,7 @@
     #typst # Turing complete latex alternative (easier)
     #stress-ng # Stress test CPU
 
-    # GUIS
+    # --- GUIS --- 
     kooha # Gif recorder but also ss and normal recordings
     vlc
     bottles
