@@ -8,6 +8,7 @@
     ./programs/fastfetch.nix
     ./desktopHomeBundle.nix
     ./programs/nvim.nix
+    ./programs/fish.nix
   ];
 
   home.pointerCursor = {
@@ -30,14 +31,6 @@
     latitude = 40.2;
     longitude = -3.7;
     tray = true;
-  };
-
-  programs.bash = {
-    enable = false;
-    shellAliases = {
-      ll = "ls -l";
-      ".." = "cd .."; # Shortcuts
-    };
   };
 
   programs.git = {

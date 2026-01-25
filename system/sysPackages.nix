@@ -44,6 +44,7 @@
     btop # Task manager for the terminal
     universal-android-debloater
     zoxide # better cd
+    eza # ls improved
     dysk # See disk usage
     exiftool # Metadata image scanner
     tokei # Count lines of code per language

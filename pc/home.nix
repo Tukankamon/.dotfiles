@@ -12,28 +12,11 @@
 
   fonts.fontconfig.enable = true;
 
-  home.file = {
-  };
-
-  home.sessionVariables = {
-  };
-
   programs.fish = {
     enable = true;
-
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-
-    '';
-
     shellAbbrs = {
       nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles#yamask";
       hms = "home-manager switch --flake ~/.dotfiles#yamask";
-
-      nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-
-      # Lists all installed packages (including dependencies
-      nxls = "nix-store --query --requisites /run/current-system";
     };
   };
 }
