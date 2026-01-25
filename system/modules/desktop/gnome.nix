@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options = {
     gnome = lib.mkEnableOption {
       type = lib.types.bool;

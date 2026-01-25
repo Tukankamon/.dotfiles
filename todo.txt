@@ -2,8 +2,6 @@ Package the waybar config outside home manager (maybe other packages too like ni
 
 Figure out a way to sort Home manager standalone, I have spread out files for the same program and two places where modified programs could be (home/programs and system/modules)
 
-nvf: map gj to j, gk to k and default clipboard to the system one
-
 maybe nushell?????
 
 Screen brightness on laptop

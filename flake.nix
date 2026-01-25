@@ -79,8 +79,9 @@
       };
     };
   in {
-    packages.${system}.default = # Run with nix run path/or/link/to/flake
-        pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
+    packages.${system}.default =
+      # Run with nix run path/or/link/to/flake
+      pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
 
     # Applies the machines map from before as a general configuration
     nixosConfigurations =

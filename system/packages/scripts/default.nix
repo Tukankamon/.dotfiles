@@ -16,8 +16,9 @@
     # Script takes a list from the nix store and returns which ones are duplicated
     # Without flakeIgnore you get trivial errors (like missing space) while building
     (writers.writePython3Bin "duplicate" {
-      flakeIgnore = [ "E501" "E305" "E231" "E302" "E226" "E265" ]; }
-        ./duplicate.py)
+        flakeIgnore = ["E501" "E305" "E231" "E302" "E226" "E265"];
+      }
+      ./duplicate.py)
 
     # Uses ripgrep and fzf to jump to where a nixos option is declared
     # Only searches through nix files

@@ -1,10 +1,8 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   # Ideas for configuration: https://github.com/NotAShelf/nvf (in configuration.nix)
   imports = [inputs.nvf.homeManagerModules.default];
 
+  # Nvim configuration
   programs.nvf = {
     enable = true;
 
@@ -15,12 +13,31 @@
         vim_markdown_folding_disable = 1; # For the obsidian plugins
       };
 
+      keymaps = [
+        {
+          key = "j";
+          mode = "n";
+          action = "gj";
+          silent = true;
+        }
+        {
+          key = "k";
+          mode = "n";
+          action = "gk";
+          silent = true;
+        }
+      ];
       # Needs to be downloaded from the flake
       #startPlugins = [ "obsidian-nvim" ];
 
       #autopairs.nvim-autopairs.enable = true;
       options.tabstop = 2;
       options.shiftwidth = 0; # Uses tabstop value
+      clipboard = {
+      	enable = true;
+	providers.wl-copy.enable = true;
+	registers = "unnamedplus";
+      };
 
       theme = {
         enable = true;
@@ -35,7 +52,8 @@
         gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
 
-      /* BROKEN
+      /*
+         BROKEN
       notes.obsidian = {
         enable = true;
       };
@@ -59,5 +77,4 @@
       };
     };
   };
-
 }

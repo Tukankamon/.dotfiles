@@ -1,12 +1,18 @@
-{ lib, pkgs, config, inputs, ... }: let
+{
+  lib,
+  pkgs,
+  config,
+  inputs,
+  ...
+}: let
   cfg = config.modulesHome.stylix;
-
-# To enable grub and chromium theming you need the nixosModule not the home one
+  # To enable grub and chromium theming you need the nixosModule not the home one
 in {
   options.modulesHome.stylix = {
     enable = lib.mkEnableOption "Enable stylix config";
 
-    /* Cant get this to work
+    /*
+       Cant get this to work
     image = {
       type = lib.types.nullOr lib.types.path;
       default = null;
@@ -16,10 +22,9 @@ in {
     */
   };
 
-  imports = [ inputs.stylix.homeModules.stylix ];
+  imports = [inputs.stylix.homeModules.stylix];
 
   config = lib.mkIf cfg.enable {
-
     stylix = {
       #This is just half, the other is in the sys module
       enable = true;
@@ -43,7 +48,7 @@ in {
         sansSerif = {};
         serif = {};
       };
-     
+
       targets = {
         fuzzel.enable = true;
         foot.enable = true;

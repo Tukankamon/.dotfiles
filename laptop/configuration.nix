@@ -74,7 +74,6 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -84,7 +83,6 @@
   # };
 
   # List services that you want to enable:
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

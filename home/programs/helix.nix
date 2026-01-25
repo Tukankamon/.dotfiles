@@ -1,6 +1,5 @@
 # Currently not imported anywhere
-{ pkgs, ...}:{
-
+{pkgs, ...}: {
   programs.helix = {
     enable = false; # messes up muscle memory
     settings = {

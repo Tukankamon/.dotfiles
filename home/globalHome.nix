@@ -21,9 +21,10 @@
     name = "future-cursors";
   };
 
-  services.gammastep = { # Gamma control for night light
+  services.gammastep = {
+    # Gamma control for night light
     enable = true;
-    package = pkgs.gammastep.override { withGeolocation = false; };
+    package = pkgs.gammastep.override {withGeolocation = false;};
 
     # Not real coords. Just capital of spain
     latitude = 40.2;

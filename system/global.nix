@@ -35,13 +35,13 @@
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false; # Only SSH connection, no passwd
-      AllowUsers = [ "aved" ];
+      AllowUsers = ["aved"];
     };
   };
   networking.extraHosts = ''
     192.168.0.185 dwebble
     192.168.0.186 yamask
-    '';
+  '';
 
   networking.firewall = {
     # for gsconnect
@@ -73,7 +73,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
   # Enable the X11 windowing system.
   services = {
     xserver = {
@@ -94,7 +93,7 @@
     # Useful if nix tries to build from source something like a browser (actually works)
     earlyoom = {
       enable = true;
-      
+
       # WARNING: enabling this option (while convenient) should not be done
       # on a machine where you do not trust the other users as it allows
       # any other local user to DoS your session by spamming notifications.
@@ -105,7 +104,7 @@
 
       killHook = pkgs.writeShellScript "earlyoom-kill-hook" ''
         echo "========================="
-        echo -e "Process $EARLYOOM_NAME was killed (owned by $EARLYOOM_UID)" 
+        echo -e "Process $EARLYOOM_NAME was killed (owned by $EARLYOOM_UID)"
         echo "========================="
       '';
 
