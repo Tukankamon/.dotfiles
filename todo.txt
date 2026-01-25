@@ -3,3 +3,5 @@ Screen brightness on laptop
 configure browsers to declare extensions
 
 declutter home niri and spread out its components into modules
+
+Lightweight image viewers (not browser) check out feh and qimgv (or even zathura)
