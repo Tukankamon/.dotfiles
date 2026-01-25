@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  #pkgs-stable,
+  stablePkgs,
   config,
   lib,
   ...
@@ -30,16 +30,16 @@
     amd.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages =[
     #inputs.vible.packages.x86_64-linux.default
-    discord #Unfree
+    pkgs.discord #Unfree
     #darktable  # Breaks in unstable
     #davinci-resolve
-    deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
+    pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
     #jetbrains.idea-community   #for developing in kotlin
-    kdePackages.kdenlive
+    stablePkgs.kdePackages.kdenlive
     #rpi-imager #Broken
-    audacity
+    pkgs.audacity
 
     # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     inputs.zen-browser.packages."x86_64-linux".default
