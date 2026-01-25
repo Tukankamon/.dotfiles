@@ -40,7 +40,7 @@
     ripgrep # better grep
     #libinput #Idk if necessary for wacom tablet
     #libwacom # Wacom specifically
-    #hyperfine # command benchmark
+    hyperfine # command benchmark
     btop # Task manager for the terminal
     universal-android-debloater
     zoxide # better cd

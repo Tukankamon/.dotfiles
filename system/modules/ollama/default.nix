@@ -20,7 +20,7 @@
     ];
 
     services.ollama = {
-      enable = true;
+      enable = false;
       loadModels = [];
     };
   };

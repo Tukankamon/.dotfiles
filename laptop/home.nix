@@ -42,9 +42,5 @@
       # Lists all installed packages (including dependencies
       nxls = "nix-store --query --requisites /run/current-system";
     };
-
-    functions = {
-      #fish_prompt = "string join '' (set_color green) (prompt_pwd --full-length-dirs 3) (set_color normal) '~>'";
-    };
   };
 }
