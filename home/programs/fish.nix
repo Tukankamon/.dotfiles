@@ -32,9 +32,6 @@
     # More in host/home.nix
     shellAbbrs = {
       nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
-
-      # Lists all installed packages (including dependencies
-      nxls = "nix-store --query --requisites /run/current-system";
     };
 
     shellAliases = {
@@ -43,6 +40,9 @@
       ls = "eza --icons";
       ll = "eza -l --time-style=relative --no-permissions --no-user --icons";
       la = "eza -la --time-style=relative --no-permissions --no-user --icons";
+
+      # Lists all installed packages (including dependencies
+      nxls = "nix-store --query --requisites /run/current-system";
     };
   };
 }
