@@ -6,7 +6,7 @@
   imports = [
     ./programs/kitty
     ./programs/fastfetch.nix
-    ./desktopHomeBundle.nix
+    ./programs/desktop
     ./programs/nvim.nix
     ./programs/fish.nix
   ];

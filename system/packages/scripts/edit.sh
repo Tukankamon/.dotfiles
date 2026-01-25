@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # This script was vibecoded
 
-[[ $# -lt 1 ]] && echo "Usage: $0 <search term> <directory>" && exit 1
+if [ $# -lt 1 ]; then
+  find "$HOME"/.dotfiles -name '*.nix' |fzf | xargs nvim
+  exit 0
+fi
 
 term="$1"
 dir="${2:-$HOME/.dotfiles}"

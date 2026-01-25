@@ -4,6 +4,8 @@ import re
 from collections import defaultdict
 import argparse
 
+# This script was vibe coded, dont jump at me I know its bad
+
 def parse_store_paths(file_path):
     packages = []
     if file_path is None:
@@ -35,6 +37,9 @@ def parse_store_paths(file_path):
         if name.endswith("-unwrapped"):
             canonical_name = name[:-len("-unwrapped")]
             variant = "unwrapped"
+        elif name.endswith("-minimal"):
+            canonical_name = name[:-len("-minimal")]
+            variant = "minimal"
         else:
             canonical_name = name
             variant = "main"
@@ -96,7 +101,7 @@ def main():
     parser = argparse.ArgumentParser(description="Analyze nix-store --query --requisites output")
     parser.add_argument("file", nargs="?", help="File or empty for stdin")
     parser.add_argument("-n", type=int, default=1, help="Minimum occurrences to display")
-    parser.add_argument("-v", type=int, choices=[0,1], default=0, help="Verbose mode")
+    parser.add_argument("-v", action="store_true", help="Verbose mode")
     args = parser.parse_args()
 
     packages = parse_store_paths(args.file)

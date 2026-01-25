@@ -7,7 +7,7 @@
 }:
 # To enable this go to the hosts home file, there is an option there
 {
-  imports = [./../programs/waybar];
+  imports = [../waybar];
 
   options = {
     hyprHome = lib.mkOption {

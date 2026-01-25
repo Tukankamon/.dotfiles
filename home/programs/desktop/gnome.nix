@@ -29,7 +29,7 @@
         "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
         "org/gnome/desktop/background" = {
-          picture-uri-dark = "file://" + ./../../other/images/roadwp.jpg;
+          picture-uri-dark = "file://" + ../../../other/images/roadwp.jpg;
         };
 
         "org/gnome/shell" = {

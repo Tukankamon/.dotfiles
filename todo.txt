@@ -7,3 +7,5 @@ maybe nushell?????
 Screen brightness on laptop
 
 configure browsers to declare extensions
+
+fix wrapollama script

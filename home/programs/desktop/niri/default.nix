@@ -6,9 +6,9 @@
   ...
 }: {
   imports = [
-    ../waybar
-    ../foot
-    ../stylix.nix
+    ../../waybar
+    ../../foot
+    ../../stylix.nix
   ];
 
   options = {

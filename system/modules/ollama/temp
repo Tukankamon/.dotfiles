@@ -1,0 +1,955 @@
+==> /home/aved/.dotfiles/home/globalHome.nix <==
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./programs/kitty
+    ./programs/fastfetch.nix
+    ./programs/desktop
+    ./programs/nvim.nix
+    ./programs/fish.nix
+  ];
+
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    package =
+      inputs.futureCursors.packages."x86_64-linux".default.override
+      {
+        cursorColor = "cyan";
+      };
+    name = "future-cursors";
+  };
+
+  services.gammastep = {
+    # Gamma control for night light
+    enable = true;
+    package = pkgs.gammastep.override {withGeolocation = false;};
+
+    # Not real coords. Just capital of spain
+    latitude = 40.2;
+    longitude = -3.7;
+    tray = true;
+  };
+
+  programs.git = {
+    enable = true;
+    settings = {
+      # Change this accordingly
+      init.defaultBranch = "main";
+      user.name = "TuKankamon";
+      # Github private email
+      user.email = "198082906+Tukankamon@users.noreply.github.com";
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    options = ["--cmd cd"]; # changes the cd to zoxide
+  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+
+==> /home/aved/.dotfiles/home/programs/foot/default.nix <==
+{...}: {
+  programs.foot = {
+    enable = true;
+  };
+
+  # I dont like this workaround. Should probably wrap it
+  /*
+  home.file.".config/foot/foot.ini" = {
+    source = ./foot.ini;
+  };
+  */
+}
+
+==> /home/aved/.dotfiles/home/programs/fastfetch.nix <==
+{...}: {
+  programs.fastfetch = {
+    # Looks hella ugly now, gotta fix that
+    enable = true;
+    settings = {
+      schema = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
+      logo = {
+        source = ""; # default size
+        color = {
+          "1" = "38;2;198;148;255";
+        }; # (turns the dark blue to purpleish)
+        #color = {"2" = "38;2;198;148;255";};  #(turns the light blue to purpleish)
+        padding = {
+          top = 2;
+          right = 6;
+        };
+      };
+      display = {
+        #size = {
+        #binaryPrefix = "si";
+        #};
+        #color = "blue";
+        separator = " ";
+      };
+      modules = [
+        "break"
+        "break"
+        {
+          type = "title"; # types "host"@"user"
+          keyWidth = 10;
+        }
+        "break"
+        {
+          type = "os";
+          key = ""; # Uses "" but it doesnt seem to work
+          keyColor = "38;2;198;148;255"; # 33 is kinda orange
+        }
+        {
+          type = "kernel";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "gpu";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "cpu";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "packages";
+          format = "{} (Nix)";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "shell";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "terminal";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "wm";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "uptime";
+          key = "";
+          keyColor = "38;2;198;148;255";
+        }
+        {
+          type = "custom";
+          key = "Made ya look";
+          keyColor = "38;2;198;148;255";
+        }
+        "break"
+        {
+          type = "datetime";
+          key = "Date";
+          format = "{1}-{3}-{11}";
+        }
+        {
+          type = "datetime";
+          key = "Time";
+          format = "{14}:{17}:{20}";
+        }
+        "break"
+        "colors"
+        "break"
+        "break"
+
+        /*
+        "break"			(these came by default)
+        "player"
+        "media"
+        */
+      ];
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/nvim.nix <==
+{inputs, ...}: {
+  # Ideas for configuration: https://github.com/NotAShelf/nvf (in configuration.nix)
+  imports = [inputs.nvf.homeManagerModules.default];
+
+  # Nvim configuration
+  programs.nvf = {
+    enable = true;
+
+    settings.vim = {
+      globals = {
+        mapLeader = " ";
+        vim.globals.maplocalleader = " ";
+        vim_markdown_folding_disable = 1; # For the obsidian plugins
+      };
+
+      keymaps = [
+        {
+          key = "j";
+          mode = "n";
+          action = "gj";
+          silent = true;
+        }
+        {
+          key = "k";
+          mode = "n";
+          action = "gk";
+          silent = true;
+        }
+      ];
+      # Needs to be downloaded from the flake
+      #startPlugins = [ "obsidian-nvim" ];
+
+      #autopairs.nvim-autopairs.enable = true;
+      options.tabstop = 2;
+      options.shiftwidth = 0; # Uses tabstop value
+      clipboard = {
+      	enable = true;
+	providers.wl-copy.enable = true;
+	registers = "unnamedplus";
+      };
+
+      theme = {
+        enable = true;
+        name = "nord";
+        style = "dark";
+      };
+
+      # Installs some git related plugins
+      git = {
+        enable = true;
+        gitsigns.enable = true;
+        gitsigns.codeActions.enable = false; # throws an annoying debug message
+      };
+
+      /*
+         BROKEN
+      notes.obsidian = {
+        enable = true;
+      };
+      */
+
+      #filetree.neo-tree.enable = true;
+      telescope.enable = true;
+      autocomplete.nvim-cmp.enable = true;
+
+      lsp.enable = true;
+      languages = {
+        enableTreesitter = true;
+        enableFormat = true;
+
+        bash.enable = true;
+        clang.enable = true;
+        nix.enable = true;
+        python.enable = true;
+        markdown.enable = true;
+        #css.enable = true;
+      };
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/stylix.nix <==
+{
+  lib,
+  pkgs,
+  config,
+  inputs,
+  ...
+}: let
+  cfg = config.modulesHome.stylix;
+  # To enable grub and chromium theming you need the nixosModule not the home one
+in {
+  options.modulesHome.stylix = {
+    enable = lib.mkEnableOption "Enable stylix config";
+
+    /*
+       Cant get this to work
+    image = {
+      type = lib.types.nullOr lib.types.path;
+      default = null;
+      example = ./path.jpg;
+      description = "The image to be set with stylix.image";
+    };
+    */
+  };
+
+  imports = [inputs.stylix.homeModules.stylix];
+
+  config = lib.mkIf cfg.enable {
+    stylix = {
+      #This is just half, the other is in the sys module
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
+      polarity = "dark";
+      autoEnable = false;
+      image = ../../other/images/roadwp.jpg;
+
+      opacity = {
+        terminal = 0.9;
+      };
+      fonts = {
+        sizes = {
+          terminal = 12; # Default on foot is 10
+        };
+
+        monospace = {
+          #package = pkgs.nerd-fonts.jetbrains-mono;
+          name = "JetBrainsMono Nerd Font Mono";
+        };
+        sansSerif = {};
+        serif = {};
+      };
+
+      targets = {
+        fuzzel.enable = true;
+        foot.enable = true;
+        swaylock.enable = true;
+        fish.enable = true;
+
+        #Track issue: https://github.com/nix-community/stylix/issues/1746
+        #niri.enable = true;
+      };
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/desktop/gnome.nix <==
+{
+  config,
+  lib,
+  ...
+}: {
+  options.gnomeHome = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    example = true;
+    description = "Enables the gnome desktop environment home configurations";
+  };
+
+  config = lib.mkIf config.gnomeHome {
+    home.packages = [
+      # Installed on system level (extensions too)
+    ];
+
+    gtk = {
+      #IDK if this works
+      enable = true;
+      #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+      #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+      cursorTheme.name = "Future-cyan-cursors"; # folder needs to be in .local/share/icons
+    };
+
+    dconf = {
+      enable = true;
+      settings = {
+        "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
+        "org/gnome/desktop/background" = {
+          picture-uri-dark = "file://" + ../../../other/images/roadwp.jpg;
+        };
+
+        "org/gnome/shell" = {
+          disable-user-extensions = false;
+
+          enabled-extensions = [
+            "blur-my-shell@aunetx"
+            "gsconnect@andyholmes.github.io"
+            "appindicatorsupport@rgcjonas.gmail.com" # Dont know if this is right
+          ];
+        };
+
+        "org/gnome/shell/extensions/blur-my-shell" = {
+          #enabled = true;
+          "blacklist" = "@as []";
+          "blur-on-overview" = false;
+          "brightness" = "1.0";
+          "customize" = true;
+          "enable-all" = true;
+          "opacity" = "250";
+          "sigma" = "59";
+          "blur" = true;
+        };
+
+        "org/gnome/shell/app-switcher".current-workspace-only = true;
+        "org/gnome/desktop/interface".enable-hot-corners = false;
+
+        /*
+          "org/gnome/shell/extensions/auto-move-windows" = {
+            "application-list" = [
+                "brave-browser.desktop:1"
+                "librewolf.desktop:1"
+                "obsidian.desktop:2"
+                "codium.desktop:3"
+                "steam.desktop:3"
+                "discord.desktop:4"
+                "spotify.desktop:5"
+                "mullvad-browser.desktop:5"
+            ];
+        };
+        */
+
+        "org/gnome/mutter".dynamic-workspaces = false;
+        "org/gnome/desktop/wm/preferences".num-workspaces = 7;
+        "org/gnome/desktop/wm/keybindings" = {
+          close = ["<Alt>p"];
+
+          switch-to-workspace-1 = ["<Alt>1"];
+          switch-to-workspace-2 = ["<Alt>2"];
+          switch-to-workspace-3 = ["<Alt>3"];
+          switch-to-workspace-4 = ["<Alt>4"];
+          switch-to-workspace-5 = ["<Alt>5"];
+          switch-to-workspace-6 = ["<Alt>6"];
+          switch-to-workspace-7 = ["<Alt>7"];
+
+          move-to-workspace-1 = ["<Alt><Shift>1"];
+          move-to-workspace-2 = ["<Alt><Shift>2"];
+          move-to-workspace-3 = ["<Alt><Shift>3"];
+          move-to-workspace-4 = ["<Alt><Shift>4"];
+          move-to-workspace-5 = ["<Alt><Shift>5"];
+          move-to-workspace-6 = ["<Alt><Shift>6"];
+          move-to-workspace-7 = ["<Alt><Shift>7"];
+        };
+
+        "org/gnome/desktop/peripherals/mouse" = {
+          accel-profile = "flat";
+          speed = 0.20;
+        };
+
+        "org/gnome/desktop/peripherals/touchpad" = {
+          #accel-profile = "flat";
+          speed = 0.25;
+        };
+      };
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/desktop/hypr.nix <==
+# Not ready for actual use
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+# To enable this go to the hosts home file, there is an option there
+{
+  imports = [../../waybar];
+
+  options = {
+    hyprHome = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      example = true;
+      description = "enables hyprland home configurations";
+    };
+  };
+
+  config = lib.mkIf config.hyprHome {
+    home.packages = with pkgs; [
+      pkgs.waybar
+      pkgs.rofi-wayland
+      pkgs.dunst
+      pkgs.libnotify
+      pkgs.swww
+      hyprpaper
+    ];
+
+    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland.settings = {
+      "$menu" = "rofi -show drun -show-icons";
+      "$terminal" = "kitty";
+      "$mod" = "SUPER"; # Sets "Windows" key as main modifier (https://wiki.hyprland.org/Configuring/Keywords/)
+
+      input = {
+        kb_layout = "es";
+
+        follow_mouse = 1; # Focuses where mouse is
+
+        touchpad = {
+          natural_scroll = true;
+        };
+      };
+
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
+
+      master = {
+        new_status = "master";
+      };
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 10;
+
+        border_size = 2;
+
+        # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+
+        # Set to true enable resizing windows by clicking and dragging on borders and gaps
+        resize_on_border = false;
+
+        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        allow_tearing = false;
+
+        layout = "dwindle";
+      };
+      monitor = "eDP-1, 1920x1080@144, 0x0, 1";
+
+      "exec-once" = [
+        "waybar"
+        "swww-daemon"
+        "./wayland/swww.sh"
+      ]; # autostart
+
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
+        workspace_swipe_min_fingers = true;
+      };
+
+      #Checkout bind flags: https://wiki.hyprland.org/0.18.0beta/Configuring/Binds/
+      bind = [
+        "$mod, Q, exec, $terminal"
+        "ALT, P, killactive"
+
+        # Move focus with mod + arrow keys
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+
+        "$mod SHIFT, left, swapwindow, l"
+        "$mod SHIFT, right, swapwindow, r"
+        "$mod SHIFT, up, swapwindow, u"
+        "$mod SHIFT, down, swapwindow, d"
+
+        #Workspaces
+        "ALT, 1, workspace, 1"
+        "ALT, 2, workspace, 2"
+        "ALT, 3, workspace, 3"
+        "ALT, 4, workspace, 4"
+        "ALT, 5, workspace, 5"
+
+        "ALT SHIFT, 1, movetoworkspace, 1" # movetoworkspacesilent to not switch when moving
+        "ALT SHIFT, 2, movetoworkspace, 2"
+        "ALT SHIFT, 3, movetoworkspace, 3"
+        "ALT SHIFT, 4, movetoworkspace, 4"
+        "ALT SHIFT, 5, movetoworkspace, 5"
+      ];
+
+      bindr = [
+        "$SUPER, SUPER_L, exec, $menu"
+      ];
+
+      # Laptop multimedia keys for volume and LCD brightness
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
+
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+      ];
+
+      layerrule = [
+        #Supposed to blur waybar, doesnt work
+        "blur, waybar"
+        "ignorezero, waybar"
+        "ignorealpha 0.5, waybar"
+      ];
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/desktop/niri/default.nix <==
+# Niri.nix HOME
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ../../waybar
+    ../../foot
+    ../../stylix.nix
+  ];
+
+  options = {
+    niriHome = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      example = true;
+      description = "Enables the customisation of niri plus some packages";
+    };
+  };
+
+  config = lib.mkIf config.niriHome {
+    xdg.configFile."niri/config.kdl".source = ./niri.kdl;
+
+    modulesHome.stylix.enable = true;
+
+    # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
+    programs.fuzzel = {
+      # App launcher
+      enable = true;
+      settings = {
+        main = {
+          dpi-aware = "no";
+          minimal-lines = true;
+          font = lib.mkForce "DejaVu Sans:size=20"; # Might interfere with stylix font
+        };
+      };
+    };
+
+    services.udiskie = {
+      # Needs udisks2 and gvfs services (they are in the other niri.nix)
+      enable = true;
+      automount = false;
+      settings = {
+        tray = true;
+        program_options.file_manager = "nautilus"; # Fixes xdg-open error
+      };
+    };
+
+    programs.swaylock.enable = true;
+    programs.wlogout = {
+      # No stylix support yet
+      enable = true;
+      layout = [
+        # Logout option missing
+        {
+          label = "lock";
+          action = "swaylock";
+          text = "Lock";
+          keybind = "l";
+        }
+        {
+          label = "hibernate";
+          action = "systemctl hibernate";
+          text = "Hibernate";
+          keybind = "h";
+        }
+        {
+          label = "shutdown";
+          action = "systemctl poweroff";
+          text = "Shutdown";
+          keybind = "s";
+        }
+        {
+          label = "suspend";
+          action = "swaylock --daemonize && systemctl suspend";
+          text = "Suspend";
+          keybind = "u";
+        }
+        {
+          label = "reboot";
+          action = "systemctl reboot";
+          text = "Reboot";
+          keybind = "r";
+        }
+      ];
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/desktop/default.nix <==
+{
+  config,
+  lib,
+  ...
+}: {
+  options = {
+    desktopHome = lib.mkOption {
+      # Use lib.types.enum to restrict the string values to a specific list.
+      #I think u can do 2 environments at the same time
+      type = lib.types.listOf (lib.types.enum ["gnome" "hyprland" "niri" "none"]);
+
+      default = ["niri"]; # Value is a list, not a string
+
+      description = ''Selects the DE/WM home manager config'';
+
+      example = ["gnome"];
+    };
+  };
+  imports = [
+    ./gnome.nix
+    ./hypr.nix
+    ./niri
+    #../system/modules/desktopBundle.nix # To be able to set options depending on it
+  ];
+
+  config = {
+    gnomeHome = lib.mkIf (lib.elem "gnome" config.desktopHome) true;
+    hyprHome = lib.mkIf (lib.elem "hyprland" config.desktopHome) true;
+    niriHome = lib.mkIf (lib.elem "niri" config.desktopHome) true;
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/helix.nix <==
+# Currently not imported anywhere
+{pkgs, ...}: {
+  programs.helix = {
+    enable = false; # messes up muscle memory
+    settings = {
+      theme = "catppuccin_mocha";
+      editor = {
+        line-number = "relative";
+        lsp.display-messages = true;
+
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+      };
+    };
+    languages.language = [
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "${pkgs.alejandra}/bin/alejandra";
+      }
+    ];
+    themes = {
+      catppuccin_mocha = {
+        "inherits" = "catpuccin_mocha";
+        "ui.background" = {};
+      };
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/waybar/default.nix <==
+{pkgs, ...}:
+#From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
+{
+  programs.waybar = {
+    enable = true;
+    style = builtins.readFile ./waybar.css;
+    settings = {
+      mainBar = {
+        "layer" = "top";
+        "position" = "top";
+        "reload_style_on_change" = true;
+        "modules-left" = [
+          "custom/power"
+          "clock"
+          "niri/language"
+          "tray"
+        ];
+        "modules-center" = ["niri/workspaces"];
+        "modules-right" = [
+          "pulseaudio"
+          "cpu"
+          "memory"
+          "temperature"
+          "bluetooth"
+          "network"
+          "battery"
+        ];
+
+        #Change to hyprland if needed
+        "niri/workspaces" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "active" = ""; # snowflake
+            "default" = "◯";
+            #"empty" = "◯";
+          };
+          "persistent-workspaces" = {
+            "*" = [
+              1
+              2
+              3
+            ];
+          };
+        };
+
+        "custom/power" = {
+          "format" = " ⏻ ";
+          "on-click" = "wlogout";
+        };
+
+        "clock" = {
+          "format" = "{:%d/%b %H:%M} ";
+          "interval" = 1;
+          "tooltip-format" = "<tt>{calendar}</tt>";
+          "calendar" = {
+            "format" = {
+              "today" = "<span color='#fAfBfC'><b>{}</b></span>";
+            };
+          };
+
+          "on-click" = "${pkgs.gnome-calendar}/bin/gnome-calendar";
+
+          "actions" = {
+            #"on-click-right" = "shift_down";
+            #"on-click" = "shift_up";
+          };
+        };
+
+        # Not working #BROKEN
+        "niri/language" = {
+          "tooltip" = "Alt + Space to swap";
+          "format" = "{long} ⌨️";
+          "format-es" = "es";
+          "format-gr" = "gr";
+        };
+
+        "network" = {
+          "format-wifi" = " ";
+          "format-ethernet" = " ";
+          "format-disconnected" = " ";
+          "tooltip-format-disconnected" = "Error";
+          "tooltip-format-wifi" = "{essid} ({signalStrength}%) ";
+          "tooltip-format-ethernet" = "{ifname} 🖧 ";
+          "on-click" = "kitty nmtui";
+        };
+        "bluetooth" = {
+          "format-on" = "󰂯";
+          "format-off" = "BT-off";
+          "format-disabled" = "󰂲";
+          "format-connected-battery" = "{device_battery_percentage}% 󰂯";
+          "format-alt" = "{device_alias} 󰂯";
+          "tooltip-format" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          "tooltip-format-enumerate-connected" = "{device_alias}\n{device_address}";
+          "tooltip-format-enumerate-connected-battery" = "{device_alias}\n{device_address}\n{device_battery_percentage}%";
+          "on-click-right" = "blueman-manager";
+        };
+
+        "battery" = {
+          "interval" = 30;
+          "states" = {
+            "good" = 95;
+            "warning" = 30;
+            "critical" = 20;
+          };
+          "format" = "{capacity}% {icon}";
+          "format-charging" = "{capacity}% 󰂄";
+          "format-plugged" = "{capacity}% 󰂄 ";
+          "format-alt" = "{time} {icon}";
+          "format-icons" = [
+            ""
+            "󰁼"
+            "󰁾"
+            "󰂀"
+            "󰂂"
+            "󰁹"
+          ];
+        };
+
+        "pulseaudio" = {
+          "format" = "{volume}%🔊 ";
+          "format-bluetooth" = "{volume}%󰗾";
+          "format-muted" = "🔇";
+
+          "on-click" = "pavucontrol";
+        };
+
+        "cpu" = {
+          "format" = "{usage:>2}% ";
+          "tooltip" = true;
+        };
+        "memory" = {
+          "interval" = 30;
+          "format" = "{used:0.1f}GB ";
+        };
+        "temperature" = {
+          "critical-threshold" = 80;
+          "format" = "{temperatureC}ºC ";
+        };
+        "tray" = {
+          # IDK what this is
+          "icon-size" = 14;
+          "spacing" = 10;
+        };
+      };
+    };
+  };
+}
+
+==> /home/aved/.dotfiles/home/programs/kitty/default.nix <==
+{...}: {
+  programs.kitty = {
+    enable = true;
+    shellIntegration.enableFishIntegration = true;
+
+    #look for wryan kitty theme or Base2Tone
+    extraConfig = builtins.readFile ./kitty.conf;
+  };
+  # The colors are being managed by stylix1
+}
+
+==> /home/aved/.dotfiles/home/programs/fish.nix <==
+{...}:
+{
+  # There are shell aliases that are dependent on the host so there is
+  # Another programs.fish in each host/home.nix
+  # This is also where the programs is enabled
+  programs.fish = {
+
+    /* Cntrl Delet doesnt work and that is a deal breaker
+    shellInit =  ''
+      fish_vi_key_bindings --no-erase
+    '';
+    */
+
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+
+    functions = {
+      # As seen in https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
+      y = {
+        body = ''
+          set tmp (mktemp -t "yazi-cwd.XXXXXX")
+          command yazi $argv --cwd-file="$tmp"
+          if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+            builtin cd -- "$cwd"
+          end
+          rm -f -- "$tmp"
+        '';
+      };
+    };
+
+    # More in host/home.nix
+    shellAbbrs = {
+      nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
+
+      # Lists all installed packages (including dependencies
+      nxls = "nix-store --query --requisites /run/current-system";
+    };
+
+    shellAliases = {
+
+      # Eza needs to be installed ofc
+      ls = "eza --icons";
+      ll = "eza -l --time-style=relative --no-permissions --no-user --icons";
+      la = "eza -la --time-style=relative --no-permissions --no-user --icons";
+    };
+  };
+}

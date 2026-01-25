@@ -6,10 +6,4 @@ if [ $# -eq 0 ]; then
 fi
 
 DIR="$1"
-
-for f in "$DIR"/*.nix; do
-	echo "$PWD"
-	echo "This is file $f"
-	cat "$f"
-	echo -e "\n=================\n"
-done
+find "$DIR"/ -type f -name '*.nix' | xargs tail -n +1 
