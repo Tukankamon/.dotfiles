@@ -34,9 +34,9 @@
       options.tabstop = 2;
       options.shiftwidth = 0; # Uses tabstop value
       clipboard = {
-      	enable = true;
-	providers.wl-copy.enable = true;
-	registers = "unnamedplus";
+        enable = true;
+        providers.wl-copy.enable = true;
+        registers = "unnamedplus";
       };
 
       theme = {
@@ -72,7 +72,10 @@
         clang.enable = true;
         nix.enable = true;
         python.enable = true;
-        markdown.enable = true;
+        markdown = {
+          enable = true;
+          extensions.render-markdown-nvim.enable = true;
+        };
         #css.enable = true;
       };
     };

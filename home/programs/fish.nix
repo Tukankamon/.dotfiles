@@ -1,11 +1,10 @@
-{...}:
-{
+{...}: {
   # There are shell aliases that are dependent on the host so there is
   # Another programs.fish in each host/home.nix
   # This is also where the programs is enabled
   programs.fish = {
-
-    /* Cntrl Delet doesnt work and that is a deal breaker
+    /*
+       Cntrl Delet doesnt work and that is a deal breaker
     shellInit =  ''
       fish_vi_key_bindings --no-erase
     '';
@@ -35,7 +34,6 @@
     };
 
     shellAliases = {
-
       # Eza needs to be installed ofc
       ls = "eza --icons";
       ll = "eza -l --time-style=relative --no-permissions --no-user --icons";

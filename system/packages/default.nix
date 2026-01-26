@@ -1,4 +1,4 @@
-{...}: {
+{ pkgs, ...}: {
   imports = [
     ./scripts
     ./programming.nix
@@ -11,4 +11,8 @@
   ];
 
   # Also add any derivations here
+  environment.systemPackages = with pkgs; [
+    #(callPackage ./gulag.nix { }) # BROKEN
+    (callPackage ./gulag/rust-lib.nix { }) #Just the library
+  ];
 }
