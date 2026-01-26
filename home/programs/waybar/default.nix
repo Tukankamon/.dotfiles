@@ -130,15 +130,16 @@
           "tooltip" = true;
         };
         "memory" = {
-          "interval" = 30;
+          "interval" = 20;
           "format" = "{used:0.1f}GB ";
+          "tooltip" = true;
+          "tooltip-format" = "Ram usage in gigabytes";
         };
         "temperature" = {
           "critical-threshold" = 80;
           "format" = "{temperatureC}ºC ";
         };
         "tray" = {
-          # IDK what this is
           "icon-size" = 14;
           "spacing" = 10;
         };
