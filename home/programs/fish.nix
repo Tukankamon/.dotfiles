@@ -30,7 +30,6 @@
 
     # More in host/home.nix
     shellAbbrs = {
-      nxgc = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
     };
 
     shellAliases = {
@@ -41,6 +40,7 @@
 
       # Lists all installed packages (including dependencies
       nxls = "nix-store --query --requisites /run/current-system";
+      nxgc = "nix-sotre --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d";
     };
   };
 }

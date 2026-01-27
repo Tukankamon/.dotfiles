@@ -58,7 +58,7 @@
             };
           };
 
-          "on-click" = "${pkgs.gnome-calendar}/bin/gnome-calendar";
+          #"on-click" = "${pkgs.gnome-calendar}/bin/gnome-calendar";
 
           "actions" = {
             #"on-click-right" = "shift_down";

@@ -71,6 +71,7 @@
         clang.enable = true;
         nix.enable = true;
         python.enable = true;
+        haskell.enable = true;
         markdown = {
           enable = true;
           extensions.render-markdown-nvim.enable = true;
