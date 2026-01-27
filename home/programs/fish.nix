@@ -40,7 +40,7 @@
 
       # Lists all installed packages (including dependencies
       nxls = "nix-store --query --requisites /run/current-system";
-      nxgc = "nix-sotre --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d";
+      nxgc = "nix-store --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d";
     };
   };
 }
