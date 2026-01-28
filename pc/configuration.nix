@@ -37,7 +37,7 @@
     #davinci-resolve
     pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
     #jetbrains.idea-community   #for developing in kotlin
-    stablePkgs.kdePackages.kdenlive
+    #stablePkgs.kdePackages.kdenlive
     #rpi-imager #Broken
     pkgs.audacity
 

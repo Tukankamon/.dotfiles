@@ -71,7 +71,7 @@
         clang.enable = true;
         nix.enable = true;
         python.enable = true;
-        haskell.enable = true;
+        haskell.enable = true; #BROKEN
         markdown = {
           enable = true;
           extensions.render-markdown-nvim.enable = true;
