@@ -26,6 +26,12 @@
           action = "gk";
           silent = true;
         }
+        {
+          key = "<C-BS>";
+          mode = "i";
+          action = "<C-w>";
+          silent = true;
+        }
       ];
       # Needs to be downloaded from the flake
       #startPlugins = [ "obsidian-nvim" ];
