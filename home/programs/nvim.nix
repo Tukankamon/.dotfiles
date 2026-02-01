@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{inputs, pkgs, ...}: {
   # Ideas for configuration: https://github.com/NotAShelf/nvf (in configuration.nix)
   imports = [inputs.nvf.homeManagerModules.default];
 
@@ -57,16 +57,28 @@
         gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
 
-      /*
-         BROKEN
       notes.obsidian = {
         enable = true;
+        setupOpts = {
+          legacy_commands = false;
+          dir = "~/obsidian/original_vault_name";
+          completion.nvim_cmp = true;
+        };
       };
-      */
 
       #filetree.neo-tree.enable = true;
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
+
+      treesitter = {
+        enable = true;
+        /*
+        grammars = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          markdown
+          latex
+        ];
+        */
+      };
 
       lsp.enable = true;
       languages = {
@@ -80,7 +92,10 @@
         haskell.enable = true; #BROKEN
         markdown = {
           enable = true;
-          extensions.render-markdown-nvim.enable = true;
+          extensions.render-markdown-nvim = {
+            enable = false;
+            setupOpts.latex.enabled = true;
+          };
         };
         #css.enable = true;
       };
