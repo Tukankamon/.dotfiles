@@ -15,10 +15,9 @@
     boot = {
       loader = {
         systemd-boot.enable = false; # Change when using / not using grub
-
         efi.canTouchEfiVariables = true;
 
-        timeout = 1;
+        timeout = 5;
         grub = {
           enable = true;
           devices = ["nodev"];
