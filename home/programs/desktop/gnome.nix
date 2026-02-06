@@ -32,6 +32,8 @@
           picture-uri-dark = "file://" + ../../../other/images/roadwp.jpg;
         };
 
+	      "org/gnome/desktop/input-sources".xkb-options = ["terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:escape" ];
+
         "org/gnome/shell" = {
           disable-user-extensions = false;
 

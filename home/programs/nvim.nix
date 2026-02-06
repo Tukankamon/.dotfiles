@@ -33,8 +33,6 @@
           silent = true;
         }
       ];
-      # Needs to be downloaded from the flake
-      #startPlugins = [ "obsidian-nvim" ];
 
       #autopairs.nvim-autopairs.enable = true;
       options.tabstop = 2;
@@ -46,8 +44,9 @@
 
       theme = {
         enable = true;
-        name = "nord";
-        style = "dark";
+        name = "everforest";
+        style = "hard";
+        transparent = false; # Too distracting
       };
 
       # Installs some git related plugins
@@ -57,8 +56,9 @@
         gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
 
+      # I like how render-markdown-nvim works
       notes.obsidian = {
-        enable = true;
+        enable = false;
         setupOpts = {
           legacy_commands = false;
           dir = "~/obsidian/original_vault_name";
@@ -93,7 +93,7 @@
         markdown = {
           enable = true;
           extensions.render-markdown-nvim = {
-            enable = false;
+            enable = true;
             setupOpts.latex.enabled = true;
           };
         };
