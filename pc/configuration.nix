@@ -13,7 +13,7 @@
   ];
 
   specialisation = {
-    gnome.configuration = {
+    niri.configuration = {
       # Builds a second boot entry for gnome
       desktop = "niri";
     };
