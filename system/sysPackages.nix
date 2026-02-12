@@ -80,6 +80,7 @@
     lact
     #gcolor3 # Screen color picker
     qdirstat # See how much storage space each folder uses, GUI
+    thunderbird # Email
   ];
 in {
   imports = [./packages];
