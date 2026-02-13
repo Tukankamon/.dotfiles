@@ -27,6 +27,12 @@
           silent = true;
         }
         {
+          key = "$";
+          mode = "n";
+          action = "g$";
+          silent = true;
+        }
+        {
           key = "<C-BS>";
           mode = "i";
           action = "<C-w>";
@@ -37,6 +43,7 @@
       #autopairs.nvim-autopairs.enable = true;
       options.tabstop = 2;
       options.shiftwidth = 0; # Uses tabstop value
+      options.linebreak = true; # Logical wrapping
       clipboard = {
         enable = true;
         providers.wl-copy.enable = true;
