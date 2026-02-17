@@ -33,6 +33,7 @@
   environment.systemPackages =[
     #inputs.vible.packages.x86_64-linux.default
     pkgs.discord #Unfree
+    pkgs.godot
     #darktable  # Breaks in unstable
     #davinci-resolve
     pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)

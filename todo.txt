@@ -2,6 +2,6 @@ Screen brightness on laptop
 
 configure browsers to declare extensions
 
-declutter home niri and spread out its components into modules
-
 Lightweight image viewers (not browser) check out feh and qimgv (or even zathura)
+
+Try to bind the script called z to a key on niri and gnome (make it a menu outside the terminal)

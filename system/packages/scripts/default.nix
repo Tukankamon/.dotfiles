@@ -6,7 +6,6 @@
     (writeShellApplication {
       #Git add, commit and push with a message
       name = "gitdo";
-
       runtimeInputs = with pkgs; [git];
 
       # Allows reading from a file instead of an inline string
@@ -24,7 +23,6 @@
     # Only searches through nix files
     (writeShellApplication {
       name = "e";
-
       runtimeInputs = with pkgs; [
         fzf
         ripgrep
@@ -34,10 +32,21 @@
       text = builtins.readFile ./edit.sh;
     })
 
+    # Bind this to a key, for example in niri.kdl
+    (writeShellApplication {
+      name = "z";
+      runtimeInputs = with pkgs; [
+        fzf
+        zathura
+      ];
+
+      # Could change -i for smart case
+      text = ''zathura "$(fzf -i -e)" &'';
+    })
+
     /*
     (writeShellApplication {
         name = "ty";
-
         runtimeInputs = with pkgs; [
             zathura
             typst
