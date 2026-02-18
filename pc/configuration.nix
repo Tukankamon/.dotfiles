@@ -12,15 +12,16 @@
     ./../system/global.nix
   ];
 
+  # Abstract this out and share with latop
   specialisation = {
-    niri.configuration = {
+    gnome.configuration = {
       # Builds a second boot entry for gnome
-      desktop = "niri";
+      desktop = "gnome";
     };
   };
 
   # ONly applies to the default system
-  desktop = lib.mkIf (config.specialisation != {}) "gnome";
+  desktop = lib.mkIf (config.specialisation != {}) "niri";
 
   modules = {
     ollama.enable = true;
@@ -37,9 +38,7 @@
     #darktable  # Breaks in unstable
     #davinci-resolve
     pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
-    #jetbrains.idea-community   #for developing in kotlin
     #stablePkgs.kdePackages.kdenlive
-    #rpi-imager #Broken
     pkgs.audacity
 
     # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
@@ -66,7 +65,7 @@
   services.printing.enable = true;
 
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = false;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -86,7 +85,7 @@
   # services.xserver.libinput.enable = true;
 
   # Set the password using the passwd command. That way it is not stored inside of the config file
-  # If you still want it to be declarative, has it with mkpasswd and set it below
+  # If you still want it to be declarative, hash it with mkpasswd and set it below
   #hashedPassword = "";
   users.users.aved = {
     isNormalUser = true;
