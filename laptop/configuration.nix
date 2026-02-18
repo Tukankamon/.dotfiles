@@ -1,7 +1,8 @@
 {
   inputs,
   pkgs,
-  # configuration,
+  lib,
+  config,
   ...
 }:
 # add inputs
@@ -12,7 +13,15 @@
     ./../system/global.nix
   ];
 
-  desktop = "niri";
+  specialisation = {
+    gnome.configuration = {
+      # Builds a second boot entry for gnome
+      desktop = "gnome";
+    };
+  };
+
+  # ONly applies to the default system
+  desktop = lib.mkIf (config.specialisation != {}) "niri";
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -24,7 +33,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.zen-browser.packages."x86_64-linux".default # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+    # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
+    inputs.zen-browser.packages."x86_64-linux".default
   ];
 
   networking.hostName = "dwebble"; # Define your hostname.
@@ -43,7 +53,7 @@
   # Enable sound with pipewire.
   #hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -52,14 +62,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Set the password using the passwd command. That way it is not stored inside of the config file
-  # If you still want it to be declarative, has it with mkpasswd and set it below
+  # If you still want it to be declarative, hash it with mkpasswd and set it below
   #hashedPassword = "";
   users.users.aved = {
     isNormalUser = true;
@@ -90,10 +99,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
-
   # setting this to false will break noctalia shell daemon
   services.power-profiles-daemon.enable = false;
   #services.upower.enable = true; #Same thing as above
@@ -116,4 +121,8 @@
       CPU_MAX_PERF_ON_BAT = 20;
     };
   };
+
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
