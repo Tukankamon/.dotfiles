@@ -22,7 +22,6 @@
     clang-tools
     cmake
     codespell
-    conan
     cppcheck
     doxygen
     gtest
