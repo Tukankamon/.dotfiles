@@ -72,6 +72,7 @@
     #mullvad-browser # (recommended pretty much only if you have the vpn)
     gimp3
     pdftricks
+    localsend #airdrop alternative
     #anki   #Build error
     #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
     #gnome-network-displays # For sharing to a tv

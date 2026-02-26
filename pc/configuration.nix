@@ -41,6 +41,7 @@
     pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
     #stablePkgs.kdePackages.kdenlive
     pkgs.audacity
+    pkgs.ardour #DAW
 
     # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     inputs.zen-browser.packages."x86_64-linux".default
