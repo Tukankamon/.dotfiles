@@ -90,7 +90,7 @@ in {
     builtins.elem (lib.getName pkg) [
       #Doesnt install, just allows
       "obsidian"
-      #"spotify"
+      "spotify"
       "steam"
       "steam-unwrapped"
       "discord"

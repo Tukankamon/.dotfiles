@@ -96,7 +96,10 @@
         clang.enable = true;
         nix.enable = true;
         python.enable = true;
-        haskell.enable = true; #BROKEN
+        haskell = {
+          enable = true;
+          lsp.enable = true;
+        };
         markdown = {
           enable = true;
           extensions.render-markdown-nvim = {
