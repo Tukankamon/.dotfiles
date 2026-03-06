@@ -21,9 +21,9 @@
       src = pkgs.fetchFromGitHub {
         owner = "Tukankamon";
         repo = "con";
-        rev = "main";
+        rev = "a9309146589db3814e7f7b2787c84a80b7075bdd";
         #rev = "v.${finalAttrs.version}";
-        hash = "sha256-zBg9qF43YLYK+KRC5ph3LOaCT//kl/PLV4ugr5AH5WE=";
+        hash = "sha256-JK3zCtqYpHdP2RYDkV3mvw5ehCiinqHSQWj646F9dGU=";
       };
       installPhase = ''
         mkdir -p $out/bin
