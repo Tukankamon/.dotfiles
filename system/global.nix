@@ -33,7 +33,7 @@
   services.openssh = {
     enable = true;
     settings = {
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
       KbdInteractiveAuthentication = false; # Only SSH connection, no passwd
       AllowUsers = ["aved"];
     };
@@ -41,6 +41,7 @@
   networking.extraHosts = ''
     192.168.0.185 dwebble
     192.168.0.186 yamask
+    192.168.0.133 ekko
   '';
 
   networking.firewall = {

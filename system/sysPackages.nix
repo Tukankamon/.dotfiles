@@ -49,10 +49,7 @@
     tokei # Count lines of code per language
     nvd # Check the pkg difference between generations
     caligula # Burning flash drives
-    #ventoy #Marked as insecure by NIX
     bluetui #Bluetooth TUI
-    #typst # Turing complete latex alternative (easier)
-    #stress-ng # Stress test CPU
 
     # --- GUIS ---
     kooha # Gif recorder but also ss and normal recordings
