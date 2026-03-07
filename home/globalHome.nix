@@ -40,7 +40,7 @@
       init.defaultBranch = "main";
       user.name = "TuKankamon";
       # Github private email
-      user.email = "198082906+Tukankamon@users.noreply.github.com";
+      user.email = "wigle.flick228@passinbox.com"; # Proton alias
     };
   };
 
