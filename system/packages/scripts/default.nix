@@ -43,6 +43,11 @@
       # Could change -i for smart case
       text = ''zathura "$(fzf -i -e)" &'';
     })
+    
+    (writeShellApplication {
+      name = "snow";
+      text = builtins.readFile ./snow;
+    })
 
     /*
     (writeShellApplication {

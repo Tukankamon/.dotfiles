@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+  echo "Incorrect usage, USAGE: 'snow language'"
+else
+  case $1 in
+    "show")
+      nix flake show templates;;
+    "rust")
+      nix flake init -t templates#rust;;
+    *)
+      echo "Incorrect usage"
+  esac
+fi
