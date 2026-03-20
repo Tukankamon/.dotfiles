@@ -30,5 +30,13 @@
         cp bin/con $out/bin/
       '';
     }))
+
+    (pkgs.haskellPackages.callCabal2nix "snow" (pkgs.fetchFromGitea {
+      domain = "codeberg.org";
+      owner = "Tukankamon";
+      repo = "snow";
+      rev = "e51bf38462";
+      sha256 = "sha256-AaCdOxLa7p9bAqCzL2lgM7afXNX7xYaBL2hVgYwP1I0=";
+    }) {})
   ];
 }
