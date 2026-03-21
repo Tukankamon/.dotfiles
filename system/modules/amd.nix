@@ -26,7 +26,7 @@
     #systemd.services.lactd.wantedBy = ["multi-user.target"];
     hardware = {
       #For davinci resolve
-      enableRedistributableFirmware = true; # ChatGPT recommendation
+      enableRedistributableFirmware = false;
       graphics = {
         enable = true;
         enable32Bit = true;
