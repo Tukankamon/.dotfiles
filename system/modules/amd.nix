@@ -26,7 +26,7 @@
     #systemd.services.lactd.wantedBy = ["multi-user.target"];
     hardware = {
       #For davinci resolve
-      enableRedistributableFirmware = false;
+      enableRedistributableFirmware = true; #proprietary firmware, needed
       graphics = {
         enable = true;
         enable32Bit = true;
