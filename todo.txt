@@ -4,4 +4,4 @@ configure browsers to declare extensions
 
 Lightweight image viewers (not browser) check out feh and qimgv (or even zathura)
 
-Try to bind the script called z to a key on niri and gnome (make it a menu outside the terminal)
+consider dendritic pattern

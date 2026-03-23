@@ -2,6 +2,7 @@
   imports = [
     ./scripts
     ./programming.nix
+    ./snow
     ./fonts.nix
   ];
 
@@ -11,7 +12,7 @@
   ];
 
   # Also add any derivations here
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     #(callPackage ./gulag/rust-lib.nix { }) #Just the library
 
     # Number basis calculation in terminal
@@ -30,13 +31,5 @@
         cp bin/con $out/bin/
       '';
     }))
-
-    (pkgs.haskellPackages.callCabal2nix "snow" (pkgs.fetchFromGitea {
-      domain = "codeberg.org";
-      owner = "Tukankamon";
-      repo = "snow";
-      rev = "e51bf38462";
-      sha256 = "sha256-AaCdOxLa7p9bAqCzL2lgM7afXNX7xYaBL2hVgYwP1I0=";
-    }) {})
   ];
 }

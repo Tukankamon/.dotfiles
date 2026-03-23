@@ -44,7 +44,7 @@
     pkgs.ardour #DAW
 
     # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
-    inputs.zen-browser.packages."x86_64-linux".default
+    #inputs.zen-browser.packages."x86_64-linux".default
   ];
 
   home-manager = {

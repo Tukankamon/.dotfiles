@@ -38,7 +38,7 @@
     settings = {
       # Change this accordingly
       init.defaultBranch = "main";
-      user.name = "TuKankamon";
+      user.name = "Tukankamon";
       # Github private email
       user.email = "wigle.flick228@passinbox.com"; # Proton alias
     };
