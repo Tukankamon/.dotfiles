@@ -26,7 +26,7 @@
       runtimeInputs = with pkgs; [
         fzf
         ripgrep
-        neovim
+        #nvim # uncommenting this will use default nvim not nvf
       ];
 
       text = builtins.readFile ./edit.sh;

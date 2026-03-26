@@ -1,7 +1,6 @@
 # Niri.nix HOME
 {
   config,
-  pkgs,
   lib,
   ...
 }: {
@@ -41,7 +40,7 @@
     services.udiskie = {
       # Needs udisks2 and gvfs services (they are in the other niri.nix)
       enable = true;
-      automount = false;
+      automount = true;
       settings = {
         tray = true;
         program_options.file_manager = "nautilus"; # Fixes xdg-open error

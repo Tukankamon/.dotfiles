@@ -7,7 +7,7 @@
     ./programs/kitty
     ./programs/fastfetch.nix
     ./programs/desktop
-    ./programs/nvim.nix
+    ./programs/nvim
     ./programs/fish.nix
   ];
 

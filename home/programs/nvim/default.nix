@@ -1,49 +1,17 @@
-{inputs, pkgs, ...}: {
+{inputs, ...}: {
   # Ideas for configuration: https://github.com/NotAShelf/nvf (in configuration.nix)
   imports = [inputs.nvf.homeManagerModules.default];
 
   # Nvim configuration
   programs.nvf = {
     enable = true;
-
     settings.vim = {
-      globals = {
-        mapLeader = " ";
-        vim.globals.maplocalleader = " ";
-        vim_markdown_folding_disable = 1; # For the obsidian plugins
-      };
-
-      keymaps = [
-        {
-          key = "j";
-          mode = "n";
-          action = "gj";
-          silent = true;
-        }
-        {
-          key = "k";
-          mode = "n";
-          action = "gk";
-          silent = true;
-        }
-        {
-          key = "$";
-          mode = "n";
-          action = "g$";
-          silent = true;
-        }
-        {
-          key = "<C-BS>";
-          mode = "i";
-          action = "<C-w>";
-          silent = true;
-        }
-      ];
+      
+      # Separate lua file to start migrating away from nvf and home manager
+      # to make the configuration more protable
+      luaConfigRC.myConfig = builtins.readFile ./init.lua;
 
       #autopairs.nvim-autopairs.enable = true;
-      options.tabstop = 2;
-      options.shiftwidth = 0; # Uses tabstop value
-      options.linebreak = true; # Logical wrapping
       clipboard = {
         enable = true;
         providers.wl-copy.enable = true;
@@ -73,7 +41,6 @@
         };
       };
 
-      #filetree.neo-tree.enable = true;
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
 
@@ -97,10 +64,8 @@
         nix.enable = true;
         python.enable = true;
         rust.enable = true;
-        haskell = {
-          enable = true;
-          lsp.enable = true;
-        };
+        haskell.enable = true;
+        lua.enable = true;
         markdown = {
           enable = true;
           extensions.render-markdown-nvim = {

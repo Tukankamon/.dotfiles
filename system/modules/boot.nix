@@ -22,7 +22,7 @@
           enable = true;
           devices = ["nodev"];
           efiSupport = true;
-          useOSProber = true; #Detects other operating systems, doesnt detect windows on other drive
+          useOSProber = true; #Detects other operating systems automatically
           #splashImage = ./../../other/images/matrix-options.png;
           theme = pkgs.stdenv.mkDerivation {
             pname = "bsol";

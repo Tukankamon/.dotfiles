@@ -7,17 +7,29 @@
     man-pages
     man-pages-posix
 
+    bash-language-server
+
+    rustc
+    cargo
+    rust-analyzer
+
     alejandra
+    nil
     #nixfmt-rfc-style
     #nixd
 
     python3
+    pyright
     #python313Packages.matplotlib
+
     go
 
-    #ghc # Haskell
+    ghc # Haskell
+    haskell-language-server
 
     #nim-unwrapped-2_0
+
+    lua-language-server
 
     #nodejs_24
 

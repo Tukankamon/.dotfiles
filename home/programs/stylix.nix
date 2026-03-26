@@ -33,25 +33,8 @@ in {
       autoEnable = false;
       image = ../../other/images/roadwp.jpg;
 
-      opacity = {
-        terminal = 0.9;
-      };
-      fonts = {
-        sizes = {
-          terminal = 12; # Default on foot is 10
-        };
-
-        monospace = {
-          #package = pkgs.nerd-fonts.jetbrains-mono;
-          name = "JetBrainsMono Nerd Font Mono";
-        };
-        sansSerif = {};
-        serif = {};
-      };
-
       targets = {
         fuzzel.enable = true;
-        foot.enable = true;
         swaylock.enable = true;
         fish.enable = true;
 

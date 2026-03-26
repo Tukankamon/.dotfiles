@@ -6,8 +6,8 @@
         domain = "codeberg.org";
         owner = "Tukankamon";
         repo = "snow";
-        rev = "17daf06ecd";
-        sha256 = "sha256-mC3/XLGkdW+iaclZ/N6IjtHmnHd/q9kdHO/JVmVJRrY=";
+        rev = "788470096c";
+        sha256 = "sha256-wXsBepFjd1UYuFbhpHVPSd2XKbm8EqHQRKZBMShlhdM=";
       };
       buildInputs = [ (pkgs.haskellPackages.ghcWithPackages (ps: [])) ];
       buildPhase = ''
