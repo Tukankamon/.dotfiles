@@ -5,3 +5,5 @@ configure browsers to declare extensions
 Lightweight image viewers (not browser) check out feh and qimgv (or even zathura)
 
 consider dendritic pattern
+
+set nord theme for fish

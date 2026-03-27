@@ -1,3 +1,4 @@
+# UNUSED to try to move away from home manager
 {
   lib,
   pkgs,
@@ -34,9 +35,9 @@ in {
       image = ../other/images/roadwp.jpg;
 
       targets = {
-        fuzzel.enable = true;
-        swaylock.enable = true;
-        fish.enable = true;
+        fuzzel.enable = false;
+        swaylock.enable = false;
+        fish.enable = false;
 
         #Track issue: https://github.com/nix-community/stylix/issues/1746
         #niri.enable = true;

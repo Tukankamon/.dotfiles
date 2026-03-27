@@ -1,8 +1,10 @@
 [symlinks]
 "foot/foot.ini" = "/home/aved/.config/foot/foot.ini"
+"fuzzel/fuzzel.ini" = "/home/aved/.config/fuzzel/fuzzel.ini"
 "kitty/kitty.conf" = "/home/aved/.config/kitty/kitty.conf"
 "niri/config.kdl" = "/home/aved/.config/niri/config.kdl"
 "nvim/init.lua" = "/home/aved/.config/nvim/init.lua"
 "nvim/lua/plugins.lua" = "/home/aved/.config/nvim/lua/plugins.lua"
+"swaylock/config" = "/home/aved/.config/swaylock/config"
 
 [templates]

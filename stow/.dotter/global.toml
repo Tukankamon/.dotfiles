@@ -8,6 +8,8 @@ depends = []
 "foot" = "~/.config/foot"
 "kitty" = "~/.config/kitty"
 "niri" = "~/.config/niri"
+"swaylock" = "~/.config/swaylock"
+"fuzzel" = "~/.config/fuzzel"
 
 [default.variables]
 

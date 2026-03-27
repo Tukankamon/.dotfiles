@@ -22,12 +22,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Sets colorschemes and other stuff for most programs easily
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Government stuff
     autofirma-nix = {
       url = "github:nix-community/autofirma-nix";

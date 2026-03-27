@@ -6,7 +6,7 @@
 }: {
   imports = [
     ../waybar
-    ../stylix.nix
+		#../stylix.nix
   ];
 
   options = {
@@ -23,21 +23,9 @@
 		# managed by dotter
 		#xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
-    modulesHome.stylix.enable = true;
+		#modulesHome.stylix.enable = true;
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
-    programs.fuzzel = {
-      # App launcher
-      enable = true;
-      settings = {
-        main = {
-          dpi-aware = "no";
-          minimal-lines = true;
-          font = lib.mkForce "DejaVu Sans:size=20"; # Might interfere with stylix font
-        };
-      };
-    };
-
     services.udiskie = {
       # Needs udisks2 and gvfs services (they are in the other niri.nix)
       enable = true;
@@ -48,7 +36,6 @@
       };
     };
 
-    programs.swaylock.enable = true;
     programs.wlogout = {
       # No stylix support yet
       enable = true;
