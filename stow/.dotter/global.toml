@@ -1,0 +1,12 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+"nvim" = "~/.config/nvim"
+
+[default.variables]
+
+[settings]
+default_target_type = "automatic"

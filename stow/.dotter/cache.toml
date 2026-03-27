@@ -1,0 +1,4 @@
+[symlinks]
+"nvim/init.lua" = "/home/aved/.config/nvim/init.lua"
+
+[templates]

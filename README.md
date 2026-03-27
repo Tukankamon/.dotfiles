@@ -12,7 +12,6 @@ The pc host specifically comes with a specialisation for gnome, meaning for ever
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/142b4461-6dfb-45d3-bdfb-dbda14f617f8" />
 
-
 # Setup
 
 ## Nix flake
@@ -49,3 +48,8 @@ sudo nixos-rebuild switch --flake .#<HOSTNAME>
 You must set the user password with the passwd command
 
 There is an explanation for this in pc/configuration.nix or laptop/configuration.nix in the user configuration
+
+# Home configuration
+Some dots (notably neovim) are configured directly with symlinks using [dotter](https://github.com/SuperCuber/dotter) in the [stow](./stow) folder (named like that so when running ```cd dot``` zoxide always goes to .dotfiles rather than a hypothetical dotter folder).
+
+To deploy these you need to install dotter (comes in the system configuration) and run dotter deploy from the stow folder

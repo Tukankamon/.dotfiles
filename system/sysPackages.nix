@@ -50,6 +50,7 @@
     nvd # Check the pkg difference between generations
     caligula # Burning flash drives
     bluetui #Bluetooth TUI
+    dotter # Dotfiles manager in combination with home manager, better than stow
 
     # --- GUIS ---
     kooha # Gif recorder but also ss and normal recordings

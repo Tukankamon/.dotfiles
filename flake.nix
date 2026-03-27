@@ -22,12 +22,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Neovim configuration
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Sets colorschemes and other stuff for most programs easily
     stylix = {
       url = "github:nix-community/stylix";
@@ -52,7 +46,6 @@
     self,
     nixpkgs,
     home-manager,
-    nvf,
     nixpkgs-stable,
     ...
   } @ inputs: let
