@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ../../waybar
-    ../../stylix.nix
+    ../waybar
+    ../stylix.nix
   ];
 
   options = {
@@ -19,7 +19,9 @@
   };
 
   config = lib.mkIf config.niriHome {
-    xdg.configFile."niri/config.kdl".source = ./niri.kdl;
+
+		# managed by dotter
+		#xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
     modulesHome.stylix.enable = true;
 

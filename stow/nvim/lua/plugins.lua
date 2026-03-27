@@ -37,7 +37,11 @@ local plugins = {
 		---@module 'render-markdown'
 		opts = {}
 	},
-	{ 'lewis6991/gitsigns.nvim' }
+	{
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true }
+	},
+	--{ 'lewis6991/gitsigns.nvim' }
 }
 
 local opts = {}
@@ -52,11 +56,10 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
-local lspconfig = require("lspconfig")
 vim.lsp.config("rust_analyzer", {})
 vim.lsp.config("clangd", {})
 vim.lsp.config("hls", {})
-vim.lsp.config("nil", {})
+vim.lsp.config("nil_ls", {})
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -71,12 +74,14 @@ vim.lsp.enable({
   "rust_analyzer",
   "clangd",
   "hls",
-  "nil",
+  "nil_ls",
 })
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+require("lualine").setup()
 
 require("nord").set()
 vim.cmd[[colorscheme nord]]

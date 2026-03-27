@@ -55,7 +55,7 @@
     # --- GUIS ---
     kooha # Gif recorder but also ss and normal recordings
     vlc
-    bottles
+		#bottles
     audacity
     qbittorrent
     tor-browser
@@ -63,7 +63,7 @@
     librewolf
     #libreoffice
     pavucontrol #Audio control
-    zathura #PDF with vim binds
+		#zathura #PDF with vim binds
     vscodium
     #protonvpn-gui
     signal-desktop
@@ -75,11 +75,10 @@
     #kiwix  #Uses Qt5 which is unmaintained and unsafe, will reinstall when maintained
     #gnome-network-displays # For sharing to a tv
     obs-studio
-    #arduino-ide
     lact
     #gcolor3 # Screen color picker
     qdirstat # See how much storage space each folder uses, GUI
-    thunderbird # Email
+		#thunderbird # Email
   ];
 in {
   imports = [./packages];

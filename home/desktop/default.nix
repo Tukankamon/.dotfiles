@@ -19,7 +19,7 @@
   imports = [
     ./gnome.nix
     ./hypr.nix
-    ./niri
+    ./niri.nix
     #../system/modules/desktopBundle.nix # To be able to set options depending on it
   ];
 

@@ -1,5 +1,3 @@
-require("plugins")
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.vim_markdown_folding_disable = 1
@@ -22,6 +20,15 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 -- Command to replace the word you are on in the whole file
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Pop a terminal on the bottom of the screen
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set("n", "<leader>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 15)
+end)
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
@@ -40,3 +47,5 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
 })
+
+require("plugins")
