@@ -2,5 +2,6 @@
 "foot/foot.ini" = "/home/aved/.config/foot/foot.ini"
 "kitty/kitty.conf" = "/home/aved/.config/kitty/kitty.conf"
 "nvim/init.lua" = "/home/aved/.config/nvim/init.lua"
+"nvim/lua/plugins.lua" = "/home/aved/.config/nvim/lua/plugins.lua"
 
 [templates]

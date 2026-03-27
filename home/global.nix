@@ -4,10 +4,10 @@
   ...
 }: {
   imports = [
-    ./programs/fastfetch.nix
-    ./programs/desktop
-    #./programs/nvf
-    ./programs/fish.nix
+    ./fastfetch.nix
+    ./desktop
+    #./nvf
+    ./fish.nix
   ];
 
   home.pointerCursor = {

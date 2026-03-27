@@ -31,7 +31,7 @@ in {
       base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml"; #Could change this
       polarity = "dark";
       autoEnable = false;
-      image = ../../other/images/roadwp.jpg;
+      image = ../other/images/roadwp.jpg;
 
       targets = {
         fuzzel.enable = true;

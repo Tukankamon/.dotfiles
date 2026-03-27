@@ -30,7 +30,7 @@
         "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
         "org/gnome/desktop/background" = {
-          picture-uri-dark = "file://" + ../../../other/images/roadwp.jpg;
+          picture-uri-dark = "file://" + ../../other/images/roadwp.jpg;
         };
 
 	      "org/gnome/desktop/input-sources".xkb-options = ["terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:escape" ];

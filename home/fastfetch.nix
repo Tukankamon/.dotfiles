@@ -8,7 +8,8 @@
         source = ""; # default size
         color = {
           "1" = "38;2;198;148;255";
-					#"2" = "38;2;198;148;255";
+          "3" = "38;2;198;148;255";
+          "5" = "38;2;198;148;255";
         }; # (turns the dark blue to purpleish)
         padding = {
           top = 2;
