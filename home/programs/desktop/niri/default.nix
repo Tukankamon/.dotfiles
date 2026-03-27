@@ -6,7 +6,6 @@
 }: {
   imports = [
     ../../waybar
-    ../../foot
     ../../stylix.nix
   ];
 

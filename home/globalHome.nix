@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./programs/kitty
     ./programs/fastfetch.nix
     ./programs/desktop
     #./programs/nvf
@@ -42,6 +41,7 @@
       # Github private email
       user.email = "wigle.flick228@passinbox.com"; # Proton alias
     };
+		signing.format = "openpgp"; # erorr popped up and said to set this
   };
 
   programs.zoxide = {

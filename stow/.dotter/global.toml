@@ -5,6 +5,8 @@ depends = []
 
 [default.files]
 "nvim" = "~/.config/nvim"
+"foot" = "~/.config/foot"
+"kitty" = "~/.config/kitty"
 
 [default.variables]
 

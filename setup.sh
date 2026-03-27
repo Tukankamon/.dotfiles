@@ -49,3 +49,12 @@ if [[ "$answer" =~ ^[Yy]([Ee][Ss])?$ ]]; then
 else
 	echo "Rebuild skipped"
 fi
+
+read -rp "Would you like to deploy parts of the home configuration that are not available through home manager? (dotter must be installed)" answer
+if [[ "$answer" =~ ^[Yy]([Ee][Ss])?$ ]]; then
+	cd "$REPO"
+	cd "stow"
+	dotter deploy
+else
+	echo "Home dots skipped"
+fi

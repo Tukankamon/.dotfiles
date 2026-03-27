@@ -41,6 +41,9 @@
       # Lists all installed packages (including dependencies
       nxls = "nix-store --query --requisites /run/current-system";
       nxgc = "nix-store --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d";
+
+			vim = "nvim";
+			vi = "nvim";
     };
   };
 }

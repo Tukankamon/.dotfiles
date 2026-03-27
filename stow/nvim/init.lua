@@ -99,7 +99,7 @@ local lspconfig = require("lspconfig")
 vim.lsp.config("rust_analyzer", {})
 vim.lsp.config("clangd", {})
 vim.lsp.config("hls", {})
-vim.lsp.config("nixd", {})
+vim.lsp.config("nil", {})
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -114,7 +114,7 @@ vim.lsp.enable({
   "rust_analyzer",
   "clangd",
   "hls",
-  "nixd",
+  "nil",
 })
 
 local builtin = require("telescope.builtin")
