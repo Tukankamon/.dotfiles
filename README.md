@@ -6,11 +6,11 @@ Currently niri is enabled but can be changed for gnome or hyprland (not customiz
 
 The pc host specifically comes with a specialisation for gnome, meaning for every rebuild you will get an extra one but instead of niri it will have gnome enabled
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/26d032db-2653-4ab4-b597-da14f3330cd1" />
+![ss1](other/images/screenShots/ss1.png)
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fd6e3775-8df6-4112-8590-1f0c20832c4c" />
+![ss2](other/images/screenShots/ss2.png)
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/142b4461-6dfb-45d3-bdfb-dbda14f617f8" />
+![ss3](other/images/screenShots/ss3.png)
 
 # Setup
 
