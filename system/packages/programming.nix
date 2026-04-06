@@ -20,7 +20,12 @@
 
     python3
     pyright
-    #python313Packages.matplotlib
+    (python313.withPackages (pypkgs: with pypkgs; [
+			matplotlib
+			numpy
+			pandas
+			scikit-learn
+		]))
 
     go
 
