@@ -44,6 +44,9 @@
 
 			vim = "nvim";
 			vi = "nvim";
+
+			ta = "tmux attach";
+			tl = "tmux ls";
     };
   };
 }

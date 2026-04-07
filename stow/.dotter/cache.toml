@@ -6,5 +6,6 @@
 "nvim/init.lua" = "/home/aved/.config/nvim/init.lua"
 "nvim/lua/plugins.lua" = "/home/aved/.config/nvim/lua/plugins.lua"
 "swaylock/config" = "/home/aved/.config/swaylock/config"
+"tmux/tmux.conf" = "/home/aved/.config/tmux/tmux.conf"
 
 [templates]

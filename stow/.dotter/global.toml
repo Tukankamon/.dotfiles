@@ -10,6 +10,7 @@ depends = []
 "niri" = "~/.config/niri"
 "swaylock" = "~/.config/swaylock"
 "fuzzel" = "~/.config/fuzzel"
+"tmux" = "~/.config/tmux"
 
 [default.variables]
 

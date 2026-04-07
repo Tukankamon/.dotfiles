@@ -14,6 +14,7 @@
     ./modules/autofirma.nix
     ./modules/gaming.nix
     ./modules/amd.nix
+		./modules/ardour.nix
   ];
 
   nix.settings.experimental-features = [

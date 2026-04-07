@@ -12,7 +12,7 @@
     ./../system/global.nix
   ];
 
-  # Abstract this out and share with latop
+  #TODO: Abstract this out and share with latop
   specialisation = {
     gnome.configuration = {
       # Builds a second boot entry for gnome
@@ -29,20 +29,19 @@
     autofirma.enable = false;
     gaming.enable = true;
     amd.enable = true;
+		ardour.enable = true;
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [ 
     #inputs.vible.packages.x86_64-linux.default
-    pkgs.discord #Unfree
+    discord #Unfree
 		#pkgs.godot
 		#pkgs.blender
     #darktable  # Breaks in unstable
     #davinci-resolve
-    pkgs.deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
+    deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
     #stablePkgs.kdePackages.kdenlive
-    pkgs.audacity
-		#pkgs.ardour #DAW
-
+    audacity
     # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     #inputs.zen-browser.packages."x86_64-linux".default
   ];
