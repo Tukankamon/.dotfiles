@@ -21,7 +21,7 @@
       #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
       #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
       cursorTheme.name = "Future-cyan-cursors"; # folder needs to be in .local/share/icons
-			gtk4.theme = config.gtk.theme;
+      gtk4.theme = config.gtk.theme;
     };
 
     dconf = {
@@ -33,7 +33,7 @@
           picture-uri-dark = "file://" + ../../other/images/roadwp.jpg;
         };
 
-	      "org/gnome/desktop/input-sources".xkb-options = ["terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:escape" ];
+        "org/gnome/desktop/input-sources".xkb-options = ["terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:escape"];
 
         "org/gnome/shell" = {
           disable-user-extensions = false;

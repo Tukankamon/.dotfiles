@@ -26,6 +26,12 @@
           rm -f -- "$tmp"
         '';
       };
+      /*
+         doesnt work
+      cd = {
+      	body = ''builtin cd $argv && ls'';
+      };
+      */
     };
 
     # More in host/home.nix
@@ -42,11 +48,11 @@
       nxls = "nix-store --query --requisites /run/current-system";
       nxgc = "nix-store --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d";
 
-			vim = "nvim";
-			vi = "nvim";
+      vim = "nvim";
+      vi = "nvim";
 
-			ta = "tmux attach";
-			tl = "tmux ls";
+      ta = "tmux attach";
+      tl = "tmux ls";
     };
   };
 }

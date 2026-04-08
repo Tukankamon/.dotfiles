@@ -6,7 +6,7 @@
 }: {
   imports = [
     ../waybar
-		#../stylix.nix
+    #../stylix.nix
   ];
 
   options = {
@@ -19,11 +19,10 @@
   };
 
   config = lib.mkIf config.niriHome {
+    # managed by dotter
+    #xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
-		# managed by dotter
-		#xdg.configFile."niri/config.kdl".source = ./niri.kdl;
-
-		#modulesHome.stylix.enable = true;
+    #modulesHome.stylix.enable = true;
 
     # Programs that are targeted with stylix need to be enabled here (or on nixos module in that case) to be affected by HM stylix
     services.udiskie = {

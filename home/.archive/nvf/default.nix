@@ -1,16 +1,15 @@
 {inputs, ...}: {
   # Ideas for configuration: https://github.com/NotAShelf/nvf (in configuration.nix)
-	# Needs to be inported in the flake
-	#imports = [inputs.nvf.homeManagerModules.default];
+  # Needs to be inported in the flake
+  #imports = [inputs.nvf.homeManagerModules.default];
 
   # Nvim configuration
   programs.nvf = {
     enable = false;
     settings.vim = {
-      
       # Separate lua file to start migrating away from nvf and home manager
       # to make the configuration more protable
-			#luaConfigRC.myConfig = builtins.readFile ./init.lua;
+      #luaConfigRC.myConfig = builtins.readFile ./init.lua;
 
       #autopairs.nvim-autopairs.enable = true;
       clipboard = {

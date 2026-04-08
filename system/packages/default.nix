@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   imports = [
     ./scripts
     ./programming.nix

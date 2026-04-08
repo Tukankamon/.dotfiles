@@ -45,8 +45,8 @@
       };
 
       kernelModules = [
-        "snd-seq" # Forgot what this is for, seems like an ALSA driver
-        "snd-rawmidi"
+        "snd-seq" # Support for MIDI and musical software (ALSA)
+        "snd-rawmidi" # Raw MIDI interface for hardware controller
       ];
       kernelParams = ["kvm.enable_virt_at_load=0"]; # For virtualbox
 
@@ -56,6 +56,7 @@
       };
     };
 
+    # Doesnt work for gparted and rpi-imager
     security.polkit.enable = true; # I think this is also needed
   };
 }

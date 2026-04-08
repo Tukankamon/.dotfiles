@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  #ib,
-  #configuration,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./sysPackages.nix
 
@@ -14,7 +8,9 @@
     ./modules/autofirma.nix
     ./modules/gaming.nix
     ./modules/amd.nix
-		./modules/ardour.nix
+    ./modules/ardour.nix
+    ./modules/specialisation.nix
+    ./modules/users.nix
   ];
 
   nix.settings.experimental-features = [
@@ -22,12 +18,16 @@
     "flakes"
   ];
 
+  modules = {
+    boot.enable = true;
+    specialisation.enable = true;
+    users.enable = true; # This has more options, check users.nix for more info
+  };
+
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 14d";
   };
-
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Forgot what this does
 
   # SSH daemon is on for the system recieving files
   # So activating for both will give a two way connection
@@ -39,6 +39,7 @@
       AllowUsers = ["aved"];
     };
   };
+
   networking.extraHosts = ''
     192.168.0.185 dwebble
     192.168.0.186 yamask
@@ -50,6 +51,25 @@
     enable = true;
     allowedTCPPorts = [1716];
     allowedUDPPorts = [1716];
+  };
+
+  networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
+
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = false;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
   };
 
   virtualisation.virtualbox.host.enable = true;

@@ -5,7 +5,7 @@
   ...
 }: {
   options.modules.gaming = {
-    enable = lib.mkEnableOption "Enable or disable gamin suite";
+    enable = lib.mkEnableOption "Enable or disable gaming suite";
   };
 
   config = lib.mkIf config.modules.gaming.enable {
@@ -30,9 +30,8 @@
 
       gamemode = {
         enable = true;
-        settings = {
-          # Find a way to enable this only if modules.amd.enable is true
-          #gpu.amd_performance_level = "high"; # Haven't tested this
+        settings = lib.mkIf config.modules.amd.enable {
+          gpu.amd_performance_level = "high"; # Haven't tested this
         };
       };
     };
@@ -43,7 +42,6 @@
       #pkgs.heroic
 
       # Fps overlay (add mangohud %command% to steam launch options in the game)
-      pkgs.mangohud
       pkgs.xonotic # FOSS quake-like game
     ];
   };

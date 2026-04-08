@@ -20,13 +20,14 @@
 
     python3
     pyright
-    (python313.withPackages (pypkgs: with pypkgs; [
-			matplotlib
-			numpy
-			pandas
-			scikit-learn
-			jupyter
-		]))
+    (python313.withPackages (pypkgs:
+      with pypkgs; [
+        matplotlib
+        numpy
+        pandas
+        scikit-learn
+        jupyter
+      ]))
 
     go
 
@@ -55,6 +56,4 @@
     gdb
     #gmp # GNU multiple precision arithmetic library
   ];
-
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"]; # Vimjoyer says I need it for the flake
 }

@@ -51,13 +51,13 @@
     caligula # Burning flash drives
     bluetui #Bluetooth TUI
     dotter # Dotfiles manager in combination with home manager, better than stow
-		tree-sitter # Needed for some neovim plugins
-		tmux
+    tree-sitter # Needed for some neovim plugins
+    tmux
 
     # --- GUIS ---
     kooha # Gif recorder but also ss and normal recordings
     vlc
-		#bottles
+    #bottles
     audacity
     qbittorrent
     tor-browser
@@ -65,7 +65,7 @@
     librewolf
     #libreoffice
     pavucontrol #Audio control
-		#zathura #PDF with vim binds
+    #zathura #PDF with vim binds
     vscodium
     #protonvpn-gui
     signal-desktop
@@ -80,8 +80,8 @@
     lact
     #gcolor3 # Screen color picker
     qdirstat # See how much storage space each folder uses, GUI
-		#thunderbird # Email
-		rpi-imager
+    #thunderbird # Email
+    #rpi-imager
   ];
 in {
   imports = [./packages];

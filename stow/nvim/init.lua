@@ -6,6 +6,7 @@ vim.keymap.set("n", "j", "gj", { silent = true })
 vim.keymap.set("n", "k", "gk", { silent = true })
 vim.keymap.set("n", "$", "g$", { silent = true })
 vim.keymap.set("i", "<C-BS>", "<C-w>", { silent = true })
+vim.keymap.set("i", "<C-h>", "<C-w>", { silent = true }) -- Wont work with tmux if not
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Allows moving blocks in v mode
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
@@ -39,6 +40,7 @@ vim.opt.linebreak = true -- Logical wrapping
 
 vim.opt.wrap = true
 vim.opt.incsearch = true
+vim.opt.smartcase = true
 
 -- diagnostics
 vim.diagnostic.config({

@@ -1,8 +1,6 @@
 {
   inputs,
   pkgs,
-  lib,
-  config,
   ...
 }:
 # add inputs
@@ -13,23 +11,9 @@
     ./../system/global.nix
   ];
 
-  specialisation = {
-    gnome.configuration = {
-      # Builds a second boot entry for gnome
-      desktop = "gnome";
-    };
-  };
-
-  # ONly applies to the default system
-  desktop = lib.mkIf (config.specialisation != {}) "niri";
-
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users.aved = import ./home.nix;
-  };
-
-  modules = {
-    boot.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -38,67 +22,6 @@
   ];
 
   networking.hostName = "dwebble"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  #hardware.pulseaudio.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  #security.pki.certificateFiles = [ ../other/harica.cer ]; # Eduroam
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Set the password using the passwd command. That way it is not stored inside of the config file
-  # If you still want it to be declarative, hash it with mkpasswd and set it below
-  #hashedPassword = "";
-  users.users.aved = {
-    isNormalUser = true;
-    description = "aved";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
-
-  environment.shells = with pkgs; [fish]; # Following a video
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # setting this to false will break noctalia shell daemon
   services.power-profiles-daemon.enable = false;

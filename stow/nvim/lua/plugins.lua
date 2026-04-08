@@ -59,7 +59,15 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.lsp.config("rust_analyzer", {})
 vim.lsp.config("clangd", {})
 vim.lsp.config("hls", {})
-vim.lsp.config("nil_ls", {})
+vim.lsp.config("nil_ls", {
+	settings = {
+		["nil"] = {
+			nix = {
+				flake = { autoArchive = true, }
+			}
+		}
+	}
+})
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {

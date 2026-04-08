@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   environment.systemPackages = [
     (pkgs.stdenv.mkDerivation {
       name = "snow";
@@ -9,7 +9,7 @@
         rev = "788470096c";
         sha256 = "sha256-wXsBepFjd1UYuFbhpHVPSd2XKbm8EqHQRKZBMShlhdM=";
       };
-      buildInputs = [ (pkgs.haskellPackages.ghcWithPackages (ps: [])) ];
+      buildInputs = [(pkgs.haskellPackages.ghcWithPackages (ps: []))];
       buildPhase = ''
         # Uncomment this line to change config file
         #cp ${./Config.hs} app/Config.hs

@@ -1,7 +1,6 @@
 # Remove ads and trackers from wuolah pdfs
 # This is the python CLI package not the rust library
-{ pkgs }:
-
+{pkgs}:
 pkgs.python3Packages.buildPythonPackage rec {
   pname = "gulagcleaner";
   version = "0.16.4";
@@ -15,7 +14,8 @@ pkgs.python3Packages.buildPythonPackage rec {
   };
 
   maturinBuildFlags = [
-    "-- -p" "gulagcleaner_python"
+    "-- -p"
+    "gulagcleaner_python"
   ];
 
   nativeBuildInputs = [
@@ -37,5 +37,5 @@ pkgs.python3Packages.buildPythonPackage rec {
     ln -s ${./Cargo.lock} Cargo.lock
   '';
 
-  pythonImportsCheck = [ "gulagcleaner" ];
+  pythonImportsCheck = ["gulagcleaner"];
 }

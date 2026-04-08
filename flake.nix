@@ -111,6 +111,7 @@
               inputs = builtins.removeAttrs inputs ["self"];
             };
           }
-      ) machines;
+      )
+      machines;
   };
 }

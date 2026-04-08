@@ -3,7 +3,6 @@
   rustPlatform,
   fetchFromGitHub,
 }:
-
 rustPlatform.buildRustPackage rec {
   pname = "gulagcleaner";
   version = "0.16.4";
