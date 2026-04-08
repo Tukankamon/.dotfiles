@@ -34,43 +34,5 @@
         program_options.file_manager = "nautilus"; # Fixes xdg-open error
       };
     };
-
-    programs.wlogout = {
-      # No stylix support yet
-      enable = true;
-      layout = [
-        # Logout option missing
-        {
-          label = "lock";
-          action = "swaylock";
-          text = "Lock";
-          keybind = "l";
-        }
-        {
-          label = "hibernate";
-          action = "systemctl hibernate";
-          text = "Hibernate";
-          keybind = "h";
-        }
-        {
-          label = "shutdown";
-          action = "systemctl poweroff";
-          text = "Shutdown";
-          keybind = "s";
-        }
-        {
-          label = "suspend";
-          action = "swaylock --daemonize && systemctl suspend";
-          text = "Suspend";
-          keybind = "u";
-        }
-        {
-          label = "reboot";
-          action = "systemctl reboot";
-          text = "Reboot";
-          keybind = "r";
-        }
-      ];
-    };
   };
 }

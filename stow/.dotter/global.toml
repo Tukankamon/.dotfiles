@@ -12,6 +12,7 @@ depends = []
 "fuzzel" = "~/.config/fuzzel"
 "tmux" = "~/.config/tmux"
 "fastfetch" = "~/.config/fastfetch"
+"wlogout" = "~/.config/wlogout"
 
 [default.variables]
 
