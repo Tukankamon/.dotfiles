@@ -22,7 +22,7 @@ local plugins = {
 		lazy = false,
 		build = ':TSUpdate',
     config = function()
-        require('nvim-treesitter').install({ 'lua', 'rust', 'c', 'zig', 'haskell', 'nix', 'markdown', 'markdown_inline' }):wait(300000)
+        require('nvim-treesitter').install({ 'lua', 'rust', 'c', 'zig', 'haskell', 'nix', 'markdown', 'markdown_inline' }):wait(100000)
     end,
 	},
 	{

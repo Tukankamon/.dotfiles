@@ -51,6 +51,7 @@
     caligula # Burning flash drives
     bluetui #Bluetooth TUI
     dotter # Dotfiles manager in combination with home manager, better than stow
+		tree-sitter # Needed for some neovim plugins
 		tmux
 
     # --- GUIS ---

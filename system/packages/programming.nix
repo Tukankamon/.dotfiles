@@ -25,6 +25,7 @@
 			numpy
 			pandas
 			scikit-learn
+			jupyter
 		]))
 
     go
