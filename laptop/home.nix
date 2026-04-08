@@ -8,10 +8,6 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  # List of home configurations, they dont interfere with eatch other
-  # Choose from niri, gnome, hyprland or none
-  desktopHome = ["niri" "gnome"];
-
   programs.fish = {
     enable = true;
 

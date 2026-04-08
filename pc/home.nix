@@ -8,8 +8,6 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  desktopHome = ["niri" "gnome"];
-
   fonts.fontconfig.enable = true;
 
   programs.fish = {

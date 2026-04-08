@@ -13,6 +13,7 @@ depends = []
 "tmux" = "~/.config/tmux"
 "fastfetch" = "~/.config/fastfetch"
 "wlogout" = "~/.config/wlogout"
+"udiskie" = "~/.config/udiskie"
 
 [default.variables]
 

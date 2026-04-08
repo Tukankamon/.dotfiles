@@ -8,6 +8,7 @@
 "nvim/lua/plugins.lua" = "/home/aved/.config/nvim/lua/plugins.lua"
 "swaylock/config" = "/home/aved/.config/swaylock/config"
 "tmux/tmux.conf" = "/home/aved/.config/tmux/tmux.conf"
+"udiskie/config.yml" = "/home/aved/.config/udiskie/config.yml"
 "wlogout/layout" = "/home/aved/.config/wlogout/layout"
 
 [templates]

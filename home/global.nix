@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./desktop
+    ./gnome.nix
     ./fish.nix
   ];
 

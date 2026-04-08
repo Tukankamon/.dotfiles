@@ -1,0 +1,6 @@
+program_options:
+  automount: true
+  file_manager: nautilus
+  notify: true
+  tray: auto
+tray: true
