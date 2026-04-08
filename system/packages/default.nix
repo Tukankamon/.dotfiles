@@ -4,6 +4,7 @@
     ./programming.nix
     ./snow
     ./fonts.nix
+    ./cursor.nix
   ];
 
   # Add self-wrapped packages here

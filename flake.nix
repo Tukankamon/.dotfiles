@@ -28,12 +28,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    # The name you choose here doesnt have to have anything to do with pname
-    futureCursors = {
-      url = "github:Tukankamon/Future-cursors";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -44,7 +38,6 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    #lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
     stablePkgs = nixpkgs-stable.legacyPackages.${system};
 
@@ -70,49 +63,28 @@
       # Run with nix run path/or/link/to/flake
       pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
 
-    # Applies the machines map from before as a general configuration
-    nixosConfigurations =
-      builtins.mapAttrs (
-        _: machine:
-          nixpkgs.lib.nixosSystem {
-            # Special Args allows you to use inputs, system and stablePkgs inside every module
-            # This is used for example when installing zen browser: inputs.zen-browser.
-            specialArgs = {inherit inputs system stablePkgs;};
-            modules =
-              [
-                machine.nixosConfig
-                inputs.autofirma-nix.nixosModules.default
-
-                # Enable this for grub and chromium theming
-                #inputs.stylix.nixosModules.stylix
-              ]
-              ++ machine.extraNixosModules;
-          }
-      )
-      machines;
+    nixosConfigurations = builtins.mapAttrs (
+      _: machine:
+        nixpkgs.lib.nixosSystem {
+          # Special Args allows you to import inputs and system inside every module
+          specialArgs = {inherit inputs system stablePkgs;};
+          modules = [machine.nixosConfig] ++ machine.extraNixosModules;
+        }
+    )
+    machines;
 
     # Same as nixosConfigurations but for home manager
-    homeConfigurations =
-      builtins.mapAttrs (
-        name: machine:
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+    homeConfigurations = builtins.mapAttrs (
+      _: machine:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [machine.homeConfig] ++ machine.extraHomeModules;
 
-            modules =
-              [
-                machine.homeConfig
-
-                # No need to import stylix here., already imported in stylix.nix (home)
-              ]
-              ++ machine.extraHomeModules;
-
-            # Arguments that can be passed to the modules
-            extraSpecialArgs = {
-              inputs = builtins.removeAttrs inputs ["self"];
-              hostname = name; # Used in fish.nix
-            };
-          }
-      )
-      machines;
+          # Same as special args but for home manager
+          extraSpecialArgs = {
+          };
+        }
+    )
+    machines;
   };
 }

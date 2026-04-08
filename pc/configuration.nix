@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   stablePkgs,
+  config,
   ...
 }: {
   imports = [
@@ -28,18 +29,18 @@
     deadnix #Scan for unused nix code   (https://github.com/astro/deadnix)
     #stablePkgs.kdePackages.kdenlive
     audacity
-    # https://github.com/0xc000022070/zen-browser-flake?tab=readme-ov-file
     #inputs.zen-browser.packages."x86_64-linux".default
   ];
 
   home-manager = {
-    # Not necesary but now hm also rebuilds with nixos-rebuild
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {
+      inherit inputs;
+      hostname = config.networking.hostName;
+    };
     users.aved = import ./home.nix;
   };
 
   networking.hostName = "yamask"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).

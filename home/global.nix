@@ -1,25 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./gnome.nix
     ./fish.nix
   ];
 
   # Last few programs that actually benefit from home manager
-
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    package =
-      inputs.futureCursors.packages."x86_64-linux".default.override
-      {
-        cursorColor = "cyan";
-      };
-    name = "future-cursors";
-  };
 
   services.gammastep = {
     # Gamma control for night light

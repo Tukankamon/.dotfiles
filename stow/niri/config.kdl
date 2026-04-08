@@ -78,8 +78,9 @@ gestures {
     }
 }
 
-cursor { //#TODO doesnt work
+cursor {
     hide-when-typing
+		xcursor-theme "future-cursors"
 }
 
 // You can configure outputs by their name, which you can find

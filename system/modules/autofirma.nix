@@ -2,11 +2,14 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }: {
   options.modules.autofirma = {
     enable = lib.mkEnableOption "Enable or disable autofirma (spanish government stuff)";
   };
+
+  imports = [inputs.autofirma-nix.nixosModules.default];
 
   config = lib.mkIf config.modules.autofirma.enable {
     programs.autofirma = {

@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }:
 # add inputs
@@ -12,7 +13,10 @@
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {
+      inherit inputs;
+      hostname = config.networking.hostName;
+    };
     users.aved = import ./home.nix;
   };
 
