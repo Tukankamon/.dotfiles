@@ -9,6 +9,8 @@
 "swaylock/config" = "/home/aved/.config/swaylock/config"
 "tmux/tmux.conf" = "/home/aved/.config/tmux/tmux.conf"
 "udiskie/config.yml" = "/home/aved/.config/udiskie/config.yml"
+"waybar/config" = "/home/aved/.config/waybar/config"
+"waybar/style.css" = "/home/aved/.config/waybar/style.css"
 "wlogout/layout" = "/home/aved/.config/wlogout/layout"
 
 [templates]

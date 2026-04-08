@@ -8,6 +8,8 @@
     ./fish.nix
   ];
 
+  # Last few programs that actually benefit from home manager
+
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;

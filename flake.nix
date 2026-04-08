@@ -94,7 +94,7 @@
     # Same as nixosConfigurations but for home manager
     homeConfigurations =
       builtins.mapAttrs (
-        _: machine:
+        name: machine:
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
 
@@ -106,9 +106,10 @@
               ]
               ++ machine.extraHomeModules;
 
-            # I honestly dont know what this is for
+            # Arguments that can be passed to the modules
             extraSpecialArgs = {
               inputs = builtins.removeAttrs inputs ["self"];
+              hostname = name; # Used in fish.nix
             };
           }
       )

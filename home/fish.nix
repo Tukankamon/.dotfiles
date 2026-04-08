@@ -1,8 +1,7 @@
-{...}: {
-  # There are shell aliases that are dependent on the host so there is
-  # Another programs.fish in each host/home.nix
-  # This is also where the programs is enabled
+# Hostname is a variable declared in the flake
+{hostname, ...}: {
   programs.fish = {
+    enable = true;
     /*
        Cntrl Delet doesnt work and that is a deal breaker
     shellInit =  ''
@@ -34,8 +33,9 @@
       */
     };
 
-    # More in host/home.nix
     shellAbbrs = {
+      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostname}";
+      hms = "home-manager switch --flake ~/.dotfiles#${hostname}";
     };
 
     shellAliases = {

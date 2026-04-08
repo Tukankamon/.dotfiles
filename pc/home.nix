@@ -7,14 +7,4 @@
   home.homeDirectory = "/home/aved";
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  fonts.fontconfig.enable = true;
-
-  programs.fish = {
-    enable = true;
-    shellAbbrs = {
-      nxs = "sudo nixos-rebuild switch --flake ~/.dotfiles#yamask";
-      hms = "home-manager switch --flake ~/.dotfiles#yamask";
-    };
-  };
 }

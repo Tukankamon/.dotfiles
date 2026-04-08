@@ -14,6 +14,8 @@ depends = []
 "fastfetch" = "~/.config/fastfetch"
 "wlogout" = "~/.config/wlogout"
 "udiskie" = "~/.config/udiskie"
+"waybar" = "~/.config/waybar"
+#"fish" = "~/.config/fish"
 
 [default.variables]
 
