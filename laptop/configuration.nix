@@ -57,7 +57,7 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  security.pki.certificateFiles = [ ../other/harica.cer ]; # Eduroam
+  #security.pki.certificateFiles = [ ../other/harica.cer ]; # Eduroam
   services.pipewire = {
     enable = true;
     alsa.enable = true;
