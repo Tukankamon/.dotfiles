@@ -3,6 +3,7 @@
   inputs,
   ...
 }: {
+  # Done so I dont need to run a nix flake every time I need some simple programming done
   environment.systemPackages = with pkgs; [
     man-pages
     man-pages-posix

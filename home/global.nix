@@ -4,9 +4,7 @@
   ...
 }: {
   imports = [
-    ./fastfetch.nix
     ./desktop
-    #./nvf
     ./fish.nix
   ];
 

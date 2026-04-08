@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{...}:
 #From Eli's dotfiles (https://github.com/elifouts/Dotfiles/tree/main)
 {
   programs.waybar = {

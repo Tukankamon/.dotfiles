@@ -11,6 +11,7 @@ depends = []
 "swaylock" = "~/.config/swaylock"
 "fuzzel" = "~/.config/fuzzel"
 "tmux" = "~/.config/tmux"
+"fastfetch" = "~/.config/fastfetch"
 
 [default.variables]
 

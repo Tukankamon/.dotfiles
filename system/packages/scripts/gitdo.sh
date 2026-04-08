@@ -2,7 +2,7 @@
 
 Help() {
 	# Display Help
-	echo "Runs git add, commit and push and prompts you for a git message"
+	echo "Runs the alejandra formatter, git add, commit and push and prompts you for a git message"
 	echo
 	echo "-m to add a commit message inline (use quotes for multiword inputs)"
 	echo "-p to pull before pushing"
@@ -46,6 +46,7 @@ if [[ -z "$MSG" ]]; then
 	read -r MSG
 fi
 
+alejandra ~/.dotfiles # This could be different on ther systems
 git add -A
 git commit -m "$MSG"
 
