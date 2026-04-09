@@ -37,6 +37,7 @@
     ffmpeg
     gnuplot_qt #2d and 3d plotting software
     ripgrep # better grep
+    fd # Better find
     #libinput #Idk if necessary for wacom tablet
     #libwacom # Wacom specifically
     hyperfine # command benchmark

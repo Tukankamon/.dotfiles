@@ -2,7 +2,8 @@
 # This script was vibecoded
 
 if [ $# -lt 1 ]; then
-  find "$HOME"/.dotfiles -name '*.nix' |fzf | xargs nvim
+	file=$(fd "$HOME"/.dotfiles -name '*.nix' |fzf)
+	nvim "$(file)" || echo "No nix file found"
   exit 0
 fi
 

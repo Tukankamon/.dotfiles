@@ -63,28 +63,30 @@
       # Run with nix run path/or/link/to/flake
       pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
 
-    nixosConfigurations = builtins.mapAttrs (
-      _: machine:
-        nixpkgs.lib.nixosSystem {
-          # Special Args allows you to import inputs and system inside every module
-          specialArgs = {inherit inputs system stablePkgs;};
-          modules = [machine.nixosConfig] ++ machine.extraNixosModules;
-        }
-    )
-    machines;
+    nixosConfigurations =
+      builtins.mapAttrs (
+        _: machine:
+          nixpkgs.lib.nixosSystem {
+            # Special Args allows you to import inputs and system inside every module
+            specialArgs = {inherit inputs system stablePkgs;};
+            modules = [machine.nixosConfig] ++ machine.extraNixosModules;
+          }
+      )
+      machines;
 
     # Same as nixosConfigurations but for home manager
-    homeConfigurations = builtins.mapAttrs (
-      _: machine:
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [machine.homeConfig] ++ machine.extraHomeModules;
+    homeConfigurations =
+      builtins.mapAttrs (
+        _: machine:
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [machine.homeConfig] ++ machine.extraHomeModules;
 
-          # Same as special args but for home manager
-          extraSpecialArgs = {
-          };
-        }
-    )
-    machines;
+            # Same as special args but for home manager
+            extraSpecialArgs = {
+            };
+          }
+      )
+      machines;
   };
 }
