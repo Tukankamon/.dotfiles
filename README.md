@@ -50,6 +50,6 @@ You must set the user password with the passwd command
 There is an explanation for this in pc/configuration.nix or laptop/configuration.nix in the user configuration
 
 # Home configuration
-Some dots (notably neovim) are configured directly with symlinks using [dotter](https://github.com/SuperCuber/dotter) in the [stow](./stow) folder (named like that so when running ```cd dot``` zoxide always goes to .dotfiles rather than a hypothetical dotter folder).
+Some dots (notably neovim) are configured directly with symlinks using [dotter](https://github.com/SuperCuber/dotter) in the [home](./home) folder alongiside what remains of the home manager config
 
 To deploy these you need to install dotter (comes in the system configuration) and run dotter deploy from the stow folder

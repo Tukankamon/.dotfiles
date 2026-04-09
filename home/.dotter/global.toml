@@ -15,7 +15,7 @@ depends = []
 "wlogout" = "~/.config/wlogout"
 "udiskie" = "~/.config/udiskie"
 "waybar" = "~/.config/waybar"
-#"fish" = "~/.config/fish"
+"fish" = "~/.config/fish"
 "git" = "~/.config/git"
 
 [default.variables]

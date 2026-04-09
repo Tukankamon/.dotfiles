@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./../home/global.nix
+    ../home
   ];
 
   home.username = "aved";

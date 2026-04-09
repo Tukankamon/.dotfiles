@@ -1,5 +1,6 @@
 [symlinks]
 "fastfetch/config.jsonc" = "/home/aved/.config/fastfetch/config.jsonc"
+"fish/config.fish" = "/home/aved/.config/fish/config.fish"
 "foot/foot.ini" = "/home/aved/.config/foot/foot.ini"
 "fuzzel/fuzzel.ini" = "/home/aved/.config/fuzzel/fuzzel.ini"
 "git/config" = "/home/aved/.config/git/config"
