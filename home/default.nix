@@ -8,7 +8,7 @@
     enable = true;
     #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
     #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
-    cursorTheme.name = "Future-cyan-cursors"; # folder needs to be in .local/share/icons
+    cursorTheme.name = "future-cursors"; # defined in cursor.nix
     gtk4.theme = config.gtk.theme;
   };
 
