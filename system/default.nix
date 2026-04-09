@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./sysPackages.nix
 
@@ -15,6 +11,7 @@
     ./modules/ardour.nix
     ./modules/specialisation.nix
     ./modules/users.nix
+    ./modules/gammastep.nix
   ];
 
   nix.settings.experimental-features = [
@@ -26,6 +23,7 @@
     boot.enable = true;
     specialisation.enable = true;
     users.enable = true; # This has more options, check users.nix for more info
+    gammastep.enable = true;
   };
 
   nix.gc = {

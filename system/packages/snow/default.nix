@@ -10,9 +10,9 @@
         sha256 = "sha256-wXsBepFjd1UYuFbhpHVPSd2XKbm8EqHQRKZBMShlhdM=";
       };
       buildInputs = [(pkgs.haskellPackages.ghcWithPackages (ps: []))];
+      # Add this line to buildPhase to change config file
+      #cp ${./Config.hs} app/Config.hs
       buildPhase = ''
-        # Uncomment this line to change config file
-        #cp ${./Config.hs} app/Config.hs
         ghc --make app/Main -iapp -outputdir build/ -o snow
       '';
       installPhase = ''
