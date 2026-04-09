@@ -1,0 +1,20 @@
+[init]
+	defaultBranch = "main"
+
+[user]
+	email = "wigle.flick228@passinbox.com"
+	name = "Tukankamon"
+
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+
+[url "ssh://git@codeberg.org/Tukankamon/"]
+	insteadOf = "tuka:"
+
+[url "ssh://git@codeberg.org/"]
+	insteadOf = "cb:"
+
+[url "git@github.com:"]
+	insteadOf = "gh:"

@@ -17,18 +17,6 @@
     tray = true;
   };
 
-  programs.git = {
-    enable = true;
-    settings = {
-      # Change this accordingly
-      init.defaultBranch = "main";
-      user.name = "Tukankamon";
-      # Github private email
-      user.email = "wigle.flick228@passinbox.com"; # Proton alias
-    };
-    signing.format = "openpgp"; # erorr popped up and said to set this
-  };
-
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;

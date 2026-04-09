@@ -2,6 +2,7 @@
 "fastfetch/config.jsonc" = "/home/aved/.config/fastfetch/config.jsonc"
 "foot/foot.ini" = "/home/aved/.config/foot/foot.ini"
 "fuzzel/fuzzel.ini" = "/home/aved/.config/fuzzel/fuzzel.ini"
+"git/config" = "/home/aved/.config/git/config"
 "kitty/kitty.conf" = "/home/aved/.config/kitty/kitty.conf"
 "niri/config.kdl" = "/home/aved/.config/niri/config.kdl"
 "nvim/init.lua" = "/home/aved/.config/nvim/init.lua"
