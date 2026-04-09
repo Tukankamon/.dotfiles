@@ -13,11 +13,13 @@
     })
 
     # Script takes a list from the nix store and returns which ones are duplicated
-    # Without flakeIgnore you get trivial errors (like missing space) while building
-    (writers.writePython3Bin "duplicate" {
-        flakeIgnore = ["E501" "E305" "E231" "E302" "E226" "E265"];
-      }
-      ./duplicate.py)
+    # For example the alias "nxls" in the fish config
+    # There is a writeHaskell function but I cant get it to work
+    (writeShellApplication {
+      name = "duplicate";
+      runtimeInputs = [pkgs.ghc];
+      text = "runghc ${./duplicate.hs}";
+    })
 
     # Uses ripgrep and fzf to jump to where a nixos option is declared
     # Only searches through nix files
@@ -28,11 +30,11 @@
         ripgrep
         #nvim # uncommenting this will use default nvim not nvf
       ];
-
       text = builtins.readFile ./edit.sh;
     })
 
     # Bind this to a key, for example in niri.kdl
+    /*
     (writeShellApplication {
       name = "z";
       runtimeInputs = with pkgs; [
@@ -43,6 +45,7 @@
       # Could change -i for smart case
       text = ''zathura "$(fzf -i -e)" &'';
     })
+    */
 
     /*
     (writeShellApplication {
@@ -53,7 +56,6 @@
             foot
             neovim
         ];
-
         text = builtins.readFile ./ty.sh;
     })
     */
