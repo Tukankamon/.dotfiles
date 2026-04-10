@@ -26,6 +26,9 @@
   ];
 
   networking.hostName = "dwebble"; # Define your hostname.
+  security.pki.certificates = [
+    (builtins.readFile ../other/ca.pem)
+  ];
 
   # setting this to false will break noctalia shell daemon
   services.power-profiles-daemon.enable = false;
@@ -47,6 +50,10 @@
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
+
+      # Should fix eduroam issues
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "off";
     };
   };
 

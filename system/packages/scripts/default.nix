@@ -12,6 +12,8 @@
       text = builtins.readFile ./gitdo.sh;
     })
 
+    (writeShellScriptBin "eduroam" (builtins.readFile ./eduroam.sh))
+
     # Script takes a list from the nix store and returns which ones are duplicated
     # For example the alias "nxls" in the fish config
     # There is a writeHaskell function but I cant get it to work
