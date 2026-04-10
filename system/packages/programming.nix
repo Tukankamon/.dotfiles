@@ -28,6 +28,7 @@
         pandas
         scikit-learn
         jupyter
+        dbus-python #eduroam
       ]))
 
     go

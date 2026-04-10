@@ -57,7 +57,6 @@
 
   networking.networkmanager.enable = true;
   #networking.wireless.iwd.enable = true; # For impala tui, BROKEN
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant, mutually exclusive with iwd
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
