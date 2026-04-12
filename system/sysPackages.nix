@@ -66,7 +66,6 @@
     librewolf
     #libreoffice
     pavucontrol #Audio control
-    #zathura #PDF with vim binds
     vscodium
     #protonvpn-gui
     signal-desktop

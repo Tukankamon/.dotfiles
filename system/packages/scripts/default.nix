@@ -3,6 +3,9 @@
 #If the command is too long you can just execute a bash script from the "text" section
 {
   environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "eduroam" (builtins.readFile ./eduroam.sh))
+    (writeShellScriptBin "inspect" (builtins.readFile ./inspect.sh))
+
     (writeShellApplication {
       #Git add, commit and push with a message
       name = "gitdo";
@@ -11,8 +14,6 @@
       # Allows reading from a file instead of an inline string
       text = builtins.readFile ./gitdo.sh;
     })
-
-    (writeShellScriptBin "eduroam" (builtins.readFile ./eduroam.sh))
 
     # Script takes a list from the nix store and returns which ones are duplicated
     # For example the alias "nxls" in the fish config

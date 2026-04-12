@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This script was vibecoded
 
+# this part doesnt work
 if [ $# -lt 1 ]; then
 	file=$(fd "$HOME"/.dotfiles -name '*.nix' |fzf)
 	nvim "$(file)" || echo "No nix file found"

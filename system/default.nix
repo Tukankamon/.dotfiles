@@ -12,6 +12,7 @@
     ./modules/specialisation.nix
     ./modules/users.nix
     ./modules/gammastep.nix
+    ./modules/zathura.nix
   ];
 
   nix.settings.experimental-features = [
@@ -24,6 +25,7 @@
     specialisation.enable = true;
     users.enable = true; # This has more options, check users.nix for more info
     gammastep.enable = true;
+    zathura.enable = true;
   };
 
   nix.gc = {
