@@ -3,23 +3,23 @@
   lib,
   ...
 }: {
-  programs.fish = {
-    enable = true;
-    shellAbbrs = {
-      nxs = "doas nixos-rebuild switch --flake ~/.dotfiles#ekko";
-      nxgc = "nix-store --gc && nix-collect-garbage -d && doas nix-collect-garbage -d";
-    };
-  };
+  imports = [../../system/packages/scripts];
+  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   environment.systemPackages = with pkgs; [
+    gcc
     vim
+    neovim
     git
     fastfetch
     pipes
     lf
+    yazi
     fzf
     ripgrep
+    fd
+    eza
     parted
     htop
     hyperfine
@@ -29,6 +29,7 @@
     alejandra
     tmux
     dotter #manage dotfiles
+    tree-sitter
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkgs:

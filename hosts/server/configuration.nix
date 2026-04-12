@@ -14,6 +14,8 @@
     "flakes"
   ];
 
+  environment.variables.EDITOR = "nvim";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -98,6 +100,7 @@
     };
   };
 
+  /*
   security = {
     doas = {
       enable = true;
@@ -110,6 +113,7 @@
     };
     sudo.enable = false;
   };
+  */
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

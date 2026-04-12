@@ -17,6 +17,7 @@ depends = []
 "waybar" = "~/.config/waybar"
 "fish" = "~/.config/fish"
 "git" = "~/.config/git"
+"vimrc" = "~/.vimrc"
 
 [default.variables]
 

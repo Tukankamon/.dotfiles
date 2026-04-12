@@ -1,6 +1,6 @@
 # My nixos dotfiles
 
-It includes a laptop and a pc configuration. Only difference is laptop doesn't have steam, discord etc.
+It includes a laptop, pc and server configuration. Only difference is laptop doesn't have steam, discord etc and ofcourse the server does not have a GUI
 
 Currently niri is enabled but can be changed for gnome or hyprland (not customized)
 
@@ -24,7 +24,7 @@ nix run --extra-experimental-features "flakes nix-command" github.com/Tukankamon
 ```
 Both options are optional and they default to "yamask" (that being the pc config) and .dotfiles respectively
 
-Set the HOSTNAME parameter to either yamask or dwebble, "yamask" is the pc host while "dwebble" is the laptop one
+Set the HOSTNAME parameter to either yamask or dwebble, "yamask" is the pc host while "dwebble" is the laptop one. The hostname for the server is "ekko"
 
 RepoName is optional and is the name of your cloned repo and therefore the folder on your system, it is used when running git clone https://github.com/Tukankamon/.dotfiles.git <RepoName>
 
@@ -52,4 +52,4 @@ There is an explanation for this in pc/configuration.nix or laptop/configuration
 # Home configuration
 Some dots (notably neovim) are configured directly with symlinks using [dotter](https://github.com/SuperCuber/dotter) in the [home](./home) folder alongiside what remains of the home manager config
 
-To deploy these you need to install dotter (comes in the system configuration) and run dotter deploy from the stow folder
+To deploy these you need to install dotter (comes in the system configuration) and run dotter deploy from the home folder
