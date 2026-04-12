@@ -92,9 +92,8 @@ in {
       #Doesnt install, just allows
       "obsidian"
       "spotify"
-      "steam"
       "steam-unwrapped"
-      "discord"
+      "steam"
     ];
 
   environment.systemPackages = stable ++ unstable;

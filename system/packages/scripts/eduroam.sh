@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Script to reset eduroam connection
 
 if [ $1 == "danger" ]; then
 	nmcli connection modify eduroam 802-1x.ca-cert ""

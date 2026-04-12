@@ -12,7 +12,7 @@
   ];
 
   modules = {
-    ollama.enable = true;
+    ollama.enable = false;
     autofirma.enable = false;
     gaming.enable = true;
     amd.enable = true;
@@ -21,7 +21,7 @@
 
   environment.systemPackages = with pkgs; [
     #inputs.vible.packages.x86_64-linux.default
-    discord #Unfree
+    vesktop # FOSS discord client
     #pkgs.godot
     #pkgs.blender
     #darktable  # Breaks in unstable
