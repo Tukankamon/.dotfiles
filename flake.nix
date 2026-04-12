@@ -38,37 +38,55 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    unstablePkgs = nixpkgs.legacyPackages.${system};
     stablePkgs = nixpkgs-stable.legacyPackages.${system};
 
     # Map for my hosts, any specific modules from one or the other go in extraXModules
     machines = {
       yamask = {
         #PC
-        nixosConfig = ./pc/configuration.nix;
-        homeConfig = ./pc/home.nix;
+        branch = "unstable";
+        nixosConfig = ./hosts/pc/configuration.nix;
+        homeConfig = ./hosts/pc/home.nix;
         extraNixosModules = [];
         extraHomeModules = [];
       };
       dwebble = {
         # Laptop
-        nixosConfig = ./laptop/configuration.nix;
-        homeConfig = ./laptop/home.nix;
+        branch = "unstable";
+        nixosConfig = ./hosts/laptop/configuration.nix;
+        homeConfig = ./hosts/laptop/home.nix;
         extraNixosModules = [];
         extraHomeModules = [];
       };
+      ekko = {
+        branch = "stable";
+        nixosConfig = ./hosts/server/configuration.nix;
+        extraNixosModules = [];
+      };
     };
+    pkgsFor = machine:
+      if machine.branch == "stable"
+      then stablePkgs
+      else unstablePkgs;
+
+    nixpkgsFor = machine:
+      if machine.branch == "stabke"
+      then nixpkgs-stable
+      else nixpkgs;
   in {
     packages.${system}.default =
       # Run with nix run path/or/link/to/flake
-      pkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
+      unstablePkgs.writeShellScriptBin "setup" (builtins.readFile ./setup.sh);
 
     nixosConfigurations =
       builtins.mapAttrs (
         _: machine:
-          nixpkgs.lib.nixosSystem {
+          (nixpkgsFor machine).lib.nixosSystem {
             # Special Args allows you to import inputs and system inside every module
-            specialArgs = {inherit inputs system stablePkgs;};
+            specialArgs = {
+              inherit inputs system stablePkgs unstablePkgs;
+            };
             modules = [machine.nixosConfig] ++ machine.extraNixosModules;
           }
       )
@@ -79,14 +97,16 @@
       builtins.mapAttrs (
         _: machine:
           home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+            pkgs = pkgsFor machine;
             modules = [machine.homeConfig] ++ machine.extraHomeModules;
 
-            # Same as special args but for home manager
+            # Same as specialArgs but for home manager
             extraSpecialArgs = {
+              inherit inputs;
             };
           }
       )
-      machines;
+      # Only those with a declared home config
+      (builtins.filterAttrs (_: m: m ? homeConfig) machines);
   };
 }

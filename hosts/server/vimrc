@@ -1,0 +1,10 @@
+filetype on
+syntax on
+set number
+set cursorline
+set shiftwidth=2
+set tabstop=2
+set ignorecase
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"

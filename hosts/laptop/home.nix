@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../home
+    ../../home
   ];
 
   home.username = "aved";
