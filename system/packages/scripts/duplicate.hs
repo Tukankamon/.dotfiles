@@ -1,4 +1,5 @@
 -- Not fully functional, some packages dont follow the normal naming convention and arent considered
+import System.Environment
 import Data.Char (isDigit)
 import Data.List (isInfixOf , isSuffixOf)
 import qualified Data.Set as S
@@ -97,7 +98,24 @@ printDupes (x:xs) = case maybeFindMin x of
   putStrLn "-------------------------"
   printDupes xs
 
+printHelp :: IO()
+printHelp = do
+ progName <- getProgName
+ putStrLn $ "Usage: " ++ progName ++" <n> <help> where n is the minimium number of duplicates"
+ putStrLn "Pipe the results of querying the nix store into this program"
+ putStrLn $ "Run: " ++ progName ++ " help, to see this page"
+
+handleArgs :: [String] -> String -> IO()
+handleArgs args input = case args of
+ [] -> run 2
+ ["help"] -> printHelp
+ [n]
+  | all isDigit n && not (null n) -> run (read n :: Int)
+ xs -> putStrLn $ "Unknown or too many args: " ++ show xs
+ where run x = printDupes $ getDupes x $ parse $ clean input
+
 main :: IO()
 main = do
+ args <- getArgs
  input <- getContents
- printDupes $ getDupes 2 $ parse $ clean input
+ handleArgs args input

@@ -27,7 +27,7 @@
 
   networking.hostName = "dwebble"; # Define your hostname.
   security.pki.certificates = [
-    (builtins.readFile ../other/ca.pem)
+    #(builtins.readFile ../other/ca.pem)
   ];
 
   # setting this to false will break noctalia shell daemon
