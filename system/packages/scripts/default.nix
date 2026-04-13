@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "eduroam" (builtins.readFile ./eduroam.sh))
     (writeShellScriptBin "inspect" (builtins.readFile ./inspect.sh))
+    (writeShellScriptBin "bandwidth" (builtins.readFile ./bandwidth.sh))
 
     (writeShellApplication {
       #Git add, commit and push with a message
