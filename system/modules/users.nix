@@ -38,6 +38,7 @@ in {
       users.users.${cfg.username} = {
         isNormalUser = true;
         description = cfg.username;
+        shell = shellPkg;
         extraGroups =
           [
             "networkmanager"

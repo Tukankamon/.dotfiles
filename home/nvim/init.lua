@@ -37,9 +37,11 @@ vim.opt.scrolloff = 8
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0 -- Uses tabstop value
 vim.opt.linebreak = true -- Logical wrapping
+vim.opt.expandtab = true
 
 vim.opt.wrap = true
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- diagnostics
