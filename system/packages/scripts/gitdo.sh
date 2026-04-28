@@ -16,7 +16,7 @@ PULL=0
 PUSH=0
 MSG=""
 
-while getopts ":hpr:m:" option; do
+while getopts ":hpro:m:" option; do
 	case $option in
 	h)
 		Help
