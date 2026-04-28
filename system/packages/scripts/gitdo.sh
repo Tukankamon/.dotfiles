@@ -16,7 +16,7 @@ PULL=0
 PUSH=0
 MSG=""
 
-while getopts ":hpro:m:" option; do
+while getopts ":hpr:om:" option; do
 	case $option in
 	h)
 		Help
@@ -60,5 +60,5 @@ if [[ $PULL == 1 ]]; then
 fi
 
 if [[ $PUSH == 1 ]]; then
-	git pull origin "$MAIN"
+	git push origin "$MAIN"
 fi
