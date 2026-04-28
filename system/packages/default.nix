@@ -3,8 +3,7 @@
     ./scripts
     ./programming.nix
     ./snow
-    ./fonts.nix
-    ./cursor.nix
+    ./themes.nix
   ];
 
   # Add self-wrapped packages here

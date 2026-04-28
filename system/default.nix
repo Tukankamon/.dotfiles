@@ -8,7 +8,7 @@
     ./modules/autofirma.nix
     ./modules/gaming.nix
     ./modules/amd.nix
-    ./modules/ardour.nix
+    ./modules/music.nix
     ./modules/specialisation.nix
     ./modules/users.nix
     ./modules/gammastep.nix
@@ -26,6 +26,7 @@
     users.enable = true; # This has more options, check users.nix for more info
     gammastep.enable = true;
     zathura.enable = true;
+    music.enable = true;
   };
 
   nix.gc = {

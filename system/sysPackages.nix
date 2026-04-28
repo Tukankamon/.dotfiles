@@ -82,8 +82,6 @@
     qdirstat # See how much storage space each folder uses, GUI
     #thunderbird # Email
     #rpi-imager
-    nicotine-plus # P2P music sharing, different from torrents
-    strawberry # FOOBAR2000-like music player
   ];
 in {
   imports = [./packages];

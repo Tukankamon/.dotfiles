@@ -1,13 +1,10 @@
-{pkgs, ...}:
-# From https://github.com/Tukankamon/Future-cursors
-# This derivation is directly copied from there
-# For the most up to date version import its flake in the github repo
-let
+{pkgs, ...}: let
   cursorColor = "cyan";
 in {
-  # Overlay so this can be reused in other parts of the config and bc why not
   nixpkgs.overlays = [
     (final: prev: {
+      # From https://github.com/Tukankamon/Future-cursors
+      # For the most up to date version import its flake in the github repo
       future = final.stdenvNoCC.mkDerivation {
         pname = "future-cursors";
         version = "2025-11-29";
@@ -26,13 +23,38 @@ in {
           runHook postInstall
         '';
       };
+
+      bsol-grub = final.fetchFromGitHub {
+        #TODO put the bsol pkg in boot.nix here
+      };
     })
   ];
-  environment.systemPackages = [pkgs.future];
 
-  # Must also be set in the config file of the DE
   environment.variables = {
+    # Must also be set in the config file of the DE
     XCURSOR_THEME = "future-cursors";
     XCURSOR_SIZE = "24";
   };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "kvantum";
+  };
+  environment.etc."xdg/Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=Nordic
+  '';
+
+  environment.systemPackages = with pkgs; [
+    future
+    #QT
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+    nordic
+  ];
 }

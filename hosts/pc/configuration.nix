@@ -16,7 +16,7 @@
     autofirma.enable = false;
     gaming.enable = true;
     amd.enable = true;
-    ardour.enable = true;
+    music.ardour.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
