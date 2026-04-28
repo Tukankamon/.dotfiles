@@ -82,6 +82,7 @@
     qdirstat # See how much storage space each folder uses, GUI
     #thunderbird # Email
     #rpi-imager
+    nicotine-plus # P2P music sharing, different from torrents
   ];
 in {
   imports = [./packages];
