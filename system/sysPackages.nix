@@ -83,6 +83,7 @@
     #thunderbird # Email
     #rpi-imager
     nicotine-plus # P2P music sharing, different from torrents
+    strawberry # FOOBAR2000-like music player
   ];
 in {
   imports = [./packages];
