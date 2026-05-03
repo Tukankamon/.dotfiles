@@ -13,6 +13,7 @@
     ./modules/users.nix
     ./modules/gammastep.nix
     ./modules/zathura.nix
+    ./modules/phonedrop.nix
   ];
 
   nix.settings.experimental-features = [
@@ -50,13 +51,6 @@
     192.168.0.186 yamask
     192.168.1.65 ekko
   '';
-
-  networking.firewall = {
-    # for gsconnect
-    enable = true;
-    allowedTCPPorts = [1716];
-    allowedUDPPorts = [1716];
-  };
 
   networking.networkmanager.enable = true;
   #networking.wireless.iwd.enable = true; # For impala tui, BROKEN

@@ -38,5 +38,12 @@
       gnomeExtensions.gsconnect
       gnomeExtensions.appindicator
     ];
+
+    networking.firewall = {
+      #enable = true; # To be set elsewhere
+      # for gsconnect
+      allowedTCPPorts = [1716];
+      allowedUDPPorts = [1716];
+    };
   };
 }
