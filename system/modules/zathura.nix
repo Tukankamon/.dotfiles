@@ -17,8 +17,11 @@
   config = lib.mkIf config.modules.zathura.enable {
     environment.systemPackages = with pkgs; [zathura];
 
-    xdg.mime.defaultApplications = lib.mkIf config.modules.zathura.isDefault {
-      "application/pdf" = "zathura.desktop";
+    xdg.mime = {
+      enable = true;
+      defaultApplications = lib.mkIf config.modules.zathura.isDefault {
+        "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
+      };
     };
   };
 }
