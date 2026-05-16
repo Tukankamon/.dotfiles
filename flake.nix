@@ -28,6 +28,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    # Secure boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -35,6 +41,7 @@
     nixpkgs,
     home-manager,
     nixpkgs-stable,
+    lanzaboote,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -48,7 +55,7 @@
         branch = "unstable";
         nixosConfig = ./hosts/pc/configuration.nix;
         homeConfig = ./hosts/pc/home.nix;
-        extraNixosModules = [];
+        extraNixosModules = [lanzaboote.nixosModules.lanzaboote];
         extraHomeModules = [];
       };
       dwebble = {

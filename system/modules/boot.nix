@@ -14,12 +14,12 @@
   config = lib.mkIf config.modules.boot.enable {
     boot = {
       loader = {
-        systemd-boot.enable = false; # Change when using / not using grub
+        systemd-boot.enable = true; # Change when using / not using grub
         efi.canTouchEfiVariables = true;
 
         timeout = 5;
         grub = {
-          enable = true;
+          enable = lib.mkForce false;
           devices = ["nodev"];
           efiSupport = true;
           useOSProber = true; #Detects other operating systems automatically
