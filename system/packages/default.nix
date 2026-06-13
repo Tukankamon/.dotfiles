@@ -4,6 +4,7 @@
     ./programming.nix
     ./snow
     ./themes.nix
+    ./zennotes.nix
   ];
 
   # Add self-wrapped packages here
