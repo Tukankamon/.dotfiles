@@ -1,6 +1,10 @@
 {pkgs, ...}: let
   # Obsidian alternative
   version = "2.3.0";
+  icon = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/ZenNotes/zennotes/main/apps/desktop/build/icon.png";
+    hash = "sha256-lfzsqTAFXcek3ZvvIUh+g83hJIFBOxS2QX+yNaPt/go=";
+  };
   zennotes = pkgs.appimageTools.wrapType2 {
     pname = "zennotes";
     version = version;
@@ -8,6 +12,18 @@
       url = "https://github.com/ZenNotes/zennotes/releases/download/v${version}/ZenNotes-${version}-linux-x86_64.AppImage";
       hash = "sha256-IvFGK7n3KQVGETmt6hQUy+bZNTOCkfuwH8ifl4KTxxw=";
     };
+    # Icon doesnt show
+    extraInstallCommands = ''
+      install -Dm644 ${pkgs.makeDesktopItem {
+        name = "zennotes";
+        desktopName = "ZenNotes";
+        exec = "zennotes";
+        icon = "zennotes";
+        categories = ["Office" "TextEditor"];
+      }}/share/applications/zennotes.desktop $out/share/applications/zennotes.desktop
+
+      install -Dm644 ${icon} $out/share/icons/hicolor/512x512/apps/zennotes.png
+    '';
 
     /*
      Shouldnt be necesary
