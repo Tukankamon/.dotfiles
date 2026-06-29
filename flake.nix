@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # Latest stable release of nixpkgs
-    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
