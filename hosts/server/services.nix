@@ -68,7 +68,7 @@ in {
   };
 
   services.forgejo = {
-    enable = true;
+    enable = false;
     database.type = "sqlite3";
     settings = {
       server = {
@@ -86,7 +86,6 @@ in {
   };
 
   services.minecraft-server = {
-    #Untested
     enable = false;
     eula = true;
     declarative = true;
@@ -114,6 +113,30 @@ in {
     enable = true;
     openFirewall = true;
     webuiPort = 8081; # 8080 taken by dashboard
+  };
+
+  # https://wiki.nixos.org/wiki/Pi-Hole
+  services.pihole-ftl = {
+    enable = true;
+    openFirewallDNS = true;
+    openFirewallWebserver = true;
+    lists = [
+      {
+        url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts";
+        type = "block";
+        enabled = true;
+        description = "StevenBlack blocklist";
+      }
+    ];
+    settings = {
+      dns.upstreams = ["9.9.9.9" "1.1.1.1"];
+      dns.hosts = ["192.168.1.65 ekko"]; # Custom domains
+    };
+  };
+
+  services.pihole-web = {
+    enable = true;
+    ports = [80];
   };
 
   services.glance = {
@@ -171,6 +194,11 @@ in {
                     title = "Grafana";
                     url = "http://${ip}:3000";
                     icon = "si:grafana";
+                  }
+                  {
+                    title = "PiHole";
+                    url = "http://${ip}:80";
+                    icon = "si:raspberrypi";
                   }
                 ];
               }
