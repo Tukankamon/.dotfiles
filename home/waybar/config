@@ -86,7 +86,7 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%) "
     },
     "niri/language": {
-      "format": "{long} ⌨️",
+      "format": "{short}",
       "format-es": "es",
       "format-gr": "gr",
       "tooltip": "Alt + Space to swap"

@@ -49,7 +49,7 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Madrid";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_ES.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_ES.UTF-8";
     LC_IDENTIFICATION = "es_ES.UTF-8";
