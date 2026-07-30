@@ -21,7 +21,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    #inputs.vible.packages.x86_64-linux.default
+    lutris
     stablePkgs.vesktop # FOSS discord client
     #pkgs.godot
     #pkgs.blender

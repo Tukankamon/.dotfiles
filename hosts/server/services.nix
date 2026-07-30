@@ -117,7 +117,7 @@ in {
 
   # https://wiki.nixos.org/wiki/Pi-Hole
   services.pihole-ftl = {
-    enable = true;
+    enable = false;
     openFirewallDNS = true;
     openFirewallWebserver = true;
     lists = [
