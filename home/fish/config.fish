@@ -9,9 +9,9 @@ abbr --add nxs 'sudo nixos-rebuild switch --flake ~/.dotfiles#'(hostname)
 abbr --add hms 'home-manager switch --flake ~/.dotfiles#'(hostname)
 
 # Aliases
-alias ls='eza --icons'
-alias ll='eza -l --time-style=relative --no-permissions --no-user --icons'
-alias la='eza -la --time-style=relative --no-permissions --no-user --icons'
+alias ls='eza --icons=always'
+alias ll='eza -l --time-style=relative --no-permissions --no-user --icons=always'
+alias la='eza -la --time-style=relative --no-permissions --no-user --icons=always'
 
 alias nxls='nix-store --query --requisites /run/current-system'
 alias nxgc='nix-store --gc && nix-collect-garbage -d && sudo nix-collect-garbage -d'
