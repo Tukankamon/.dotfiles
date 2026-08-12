@@ -135,8 +135,24 @@ in {
   };
 
   services.pihole-web = {
-    enable = true;
+    enable = false;
     ports = [80];
+  };
+
+  systemd.services.copyparty = {
+    description = "Copyparty file server";
+
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
+
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.copyparty}/bin/copyparty -c /home/aved/.config/copyparty/copyparty.conf";
+      Restart = "on-failure";
+
+      User = "aved"; # Could give it its own user
+      Group = "users";
+    };
   };
 
   services.glance = {
@@ -148,6 +164,7 @@ in {
       "listen-address" = "0.0.0.0";
       "port" = 8080;
     };
+
     settings.pages = [
       {
         name = "Dashboard";
@@ -199,6 +216,11 @@ in {
                     title = "PiHole";
                     url = "http://${ip}:80";
                     icon = "si:raspberrypi";
+                  }
+                  {
+                    title = "Copyparty";
+                    url = "http://${ip}:3923";
+                    #icon = ;
                   }
                 ];
               }

@@ -39,6 +39,7 @@
     3001
     9090
     9100
+    3923 # copyparty
   ];
   # 22 -> ssh
   # 3000 -> graphana (metrics dashboard)
@@ -49,7 +50,7 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Madrid";
-  i18n.defaultLocale = "en_ES.UTF-8";
+  i18n.defaultLocale = "es_ES.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_ES.UTF-8";
     LC_IDENTIFICATION = "es_ES.UTF-8";

@@ -1,4 +1,5 @@
 [symlinks]
+"copyparty/copyparty.conf" = "/home/aved/.config/copyparty/copyparty.conf"
 "fastfetch/config.jsonc" = "/home/aved/.config/fastfetch/config.jsonc"
 "fish/config.fish" = "/home/aved/.config/fish/config.fish"
 "foot/foot.ini" = "/home/aved/.config/foot/foot.ini"
