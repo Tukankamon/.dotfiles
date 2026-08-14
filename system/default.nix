@@ -13,7 +13,6 @@
     ./modules/users.nix
     ./modules/gammastep.nix
     ./modules/zathura.nix
-    ./modules/phonedrop.nix
   ];
 
   nix.settings.experimental-features = [

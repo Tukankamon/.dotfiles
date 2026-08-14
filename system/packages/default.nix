@@ -5,6 +5,7 @@
     ./snow
     ./themes.nix
     ./zennotes.nix
+    ./phonedrop.nix
   ];
 
   # Add self-wrapped packages here

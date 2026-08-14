@@ -54,6 +54,7 @@
     dotter # Dotfiles manager in combination with home manager, better than stow
     tree-sitter # Needed for some neovim plugins
     tmux
+    xxd # Dump the hex of a file
 
     # --- GUIS ---
     kooha # Gif recorder but also ss and normal recordings

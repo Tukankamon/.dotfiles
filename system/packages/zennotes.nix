@@ -3,7 +3,7 @@
   version = "2.3.0";
   icon = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/ZenNotes/zennotes/main/apps/desktop/build/icon.png";
-    hash = "sha256-lfzsqTAFXcek3ZvvIUh+g83hJIFBOxS2QX+yNaPt/go=";
+    hash = "sha256-dtxyOO4Y2C+vO/fAQxB3Rt6R2ETMM264+137uc1HtWg=";
   };
   zennotes = pkgs.appimageTools.wrapType2 {
     pname = "zennotes";

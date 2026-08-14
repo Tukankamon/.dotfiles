@@ -32,7 +32,7 @@
         wrapProgram $out/bin/phonedrop \
           --prefix PATH : ${pkgs.lib.makeBinPath [pkgs.zenity]} \
           --run 'cd $out/bin' # Not ideal
-      ''; # Allows zenity to be in the path at runtime
+      ''; # Allows zenity to be in the path at runtime for the gui and pop ups
     })
   ];
 
