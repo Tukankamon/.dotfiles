@@ -220,7 +220,7 @@ in {
                   {
                     title = "Copyparty";
                     url = "http://${ip}:3923";
-                    #icon = ;
+                    icon = "di:file-browser";
                   }
                 ];
               }
