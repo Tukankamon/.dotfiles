@@ -36,6 +36,16 @@
       text = builtins.readFile ./edit.sh;
     })
 
+    # Links movies from qbittorrent to jellyfin on the server
+    (writeShellApplication {
+      name = "link";
+      runtimeInputs = with pkgs; [
+        fzf
+        fd
+      ];
+      text = builtins.readFile ./link.sh;
+    })
+
     # Bind this to a key, for example in niri.kdl
     /*
     (writeShellApplication {
