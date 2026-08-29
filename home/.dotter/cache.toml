@@ -13,6 +13,7 @@
 "nvim/lua/plugins/md.lua" = "/home/aved/.config/nvim/lua/plugins/md.lua"
 "nvim/lua/plugins/nord.lua" = "/home/aved/.config/nvim/lua/plugins/nord.lua"
 "nvim/lua/plugins/snip.lua" = "/home/aved/.config/nvim/lua/plugins/snip.lua"
+"nvim/lua/plugins/snippets/latex.lua" = "/home/aved/.config/nvim/lua/plugins/snippets/latex.lua"
 "nvim/lua/plugins/telescope.lua" = "/home/aved/.config/nvim/lua/plugins/telescope.lua"
 "nvim/lua/plugins/tree.lua" = "/home/aved/.config/nvim/lua/plugins/tree.lua"
 "nvim/lua/plugins.lua" = "/home/aved/.config/nvim/lua/plugins.lua"

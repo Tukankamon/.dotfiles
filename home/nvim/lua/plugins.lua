@@ -23,6 +23,7 @@ local plugins = {
   require("plugins.md"),
   require("plugins.telescope"),
   require("plugins.snip"),
+  require("plugins.lualine"),
 }
 
 local opts = {}

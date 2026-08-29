@@ -1,22 +1,15 @@
 -- luasnip.lua
-
--- ChatGpt, should revert to normal "key" behaviour if there are no snippets
-local function fallback_key(key)
-  vim.api.nvim_feedkeys(
-    vim.api.nvim_replace_termcodes(key, true, false, true),
-    "i",
-    false
-  )
-end
+-- SOURCES FOR STUFF:
+-- https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 
 return {
-	"L3MON4D3/LuaSnip",
+  "L3MON4D3/LuaSnip",
 
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+  -- follow latest release.
+  version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 
-	-- install jsregexp (optional!). (idk what it is for)
-	--build = "make install_jsregexp"
+  -- install jsregexp (optional!). (idk what it is for)
+  --build = "make install_jsregexp"
 
   config = function()
     local ls = require("luasnip")
@@ -24,24 +17,24 @@ return {
     local s = ls.snippet
     local t = ls.text_node
     local i = ls.insert_node
-    local fmt = require("luasnip.extras.fmt").fmt
+    -- fmta bc latex uses {} a lot and escaping is a pain, this uses <>
+    local fmt = require("luasnip.extras.fmt").fmta
 
-    -- Expands the snippets on Tab in insert
-    vim.keymap.set("i", "<Tab>", function()
-      if ls.expand_or_jumpable() then
-        ls.expand_or_jump()
-      else
-        fallback_key("<Tab>")
-      end
-    end, {silent = true})
+    -- TODO make it shorter so it fits on a half screen
+    vim.cmd[[
+    " Use Tab to expand and jump through snippets
+    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+    smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
 
-    vim.keymap.set("i", "<S-Tab>", function()
-      if ls.jumpable(-1) then
-        ls.jump(-1)
-      else
-        fallback_key("<S-Tab>")
-      end
-    end, {silent = true})
+    " Use Shift-Tab to jump backwards through snippets
+    imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+    smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+    ]]
+    --[[ These break the config but could be useful
+      " Cycle forward through choice nodes with Control Tab
+      imap <silent><expr> <C-Tab> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+      smap <silent><expr> <C-Tab> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+    --]]
 
     -- === SNIPPETS ===
     -- Could move them into separate files if they get too big
@@ -49,36 +42,26 @@ return {
       s("hello", {
         t('print("hello world")'),
         i(1),
-        t('hello again'),
+        t('alright again'),
         i(2),
       })
     })
 
+    local latex = require("plugins.snippets.latex")
+    ls.add_snippets("markdown", latex)
+
+    ls.add_snippets("markdown", latex)
     ls.add_snippets("markdown", {
-      s("code", fmt(
-        [[
-          ```{}
-          {}
-          ```
-        ]],
-        { i(1), i(2) }
+      s({trig="code", snippetType="autosnippet"},
+      fmt([[
+        ```<>
+        <>
+        ```
+        <>
+      ]],
+      { i(1), i(2), i(3) }
       )),
 
-      s("mk", fmt(
-        [[
-          ${}$
-        ]],
-        { i(1) }
-      )),
-
-      s("dm", fmt(
-        [[
-          $$
-          {}
-          $$
-        ]],
-        { i(1) }
-      )),
   })
   end
 }
